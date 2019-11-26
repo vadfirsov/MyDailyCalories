@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainVC: UIViewController {
+class DailyCalsVC: UIViewController {
 
     private let cellID = "ProductCellID"
     private var products : [Product] = []
@@ -44,7 +44,6 @@ class MainVC: UIViewController {
         addGestures()
     }
     
-    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
         view.removeGestureRecognizer(tap)
@@ -53,21 +52,8 @@ class MainVC: UIViewController {
     }
     
     //MARK: UIBUTTONS
-    @IBAction func prevBtnTapped(_ sender: UIButton) {
+    @IBAction func showNextDate(_ sender: UIButton) {
         showNewDay(sender: sender)
-    }
-    
-    @IBAction func nextBtnTapped(_ sender: UIButton) {
-        showNewDay(sender: sender)
-    }
-    
-    @IBAction func addBtnTapped(_ sender: UIBarButtonItem) {
-//        products.append(Product())
-//
-//        tableView.reloadData()
-//
-//        let indexPath = IndexPath(row: self.products.count - 1, section: 0)
-//        tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
     }
     
     @IBAction func dailyTotalTapped(_ sender: UIButton) {
@@ -101,49 +87,11 @@ class MainVC: UIViewController {
 
     private func addGestures() {
         view.addGestureRecognizer(tap)
-        
-//        NotificationCenter.default.addObserver(self,
-//                                               selector: #selector(keyboardWillShow),
-//                                               name: UIResponder.keyboardWillShowNotification,
-//                                               object: nil )
-//        NotificationCenter.default.addObserver(self,
-//                                               selector: #selector(keyboardWillHide),
-//                                               name: UIResponder.keyboardWillHideNotification,
-//                                               object: nil )
     }
-
     
     @objc private func dismissKeyboard() {
         view.endEditing(true)
     }
-    
-//    @objc func keyboardWillShow(_ notification: Notification) {
-//        
-//        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-//            
-//            let keyboardHeight =    keyboardSize.height
-//
-//            tableViewBottomConstraint.constant = keyboardHeight + 8
-//
-//            UIView.animate(withDuration: 0.5, animations: {
-//                    self.view.layoutIfNeeded()
-//            }) { (_) in
-//                let indexPath = IndexPath(row: self.products.count - 1, section: 0)
-//                self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
-//            }
-//        }
-//    }
-//    
-//    @objc func keyboardWillHide(_ notification: Notification) {
-//        tableViewBottomConstraint.constant = 124.5
-//
-//        UIView.animate(withDuration: 0.5, animations: {
-//                self.view.layoutIfNeeded()
-//        }) { (_) in
-//            let indexPath = IndexPath(row: self.products.count - 1, section: 0)
-//            self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
-//        }
-//    }
     
     private func riseTableViewWithKeyboardTo(height : CGFloat) {
 
@@ -178,7 +126,7 @@ class MainVC: UIViewController {
     }
 }
 
-extension MainVC : UITableViewDelegate, UITableViewDataSource {
+extension DailyCalsVC : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return products.count
@@ -205,7 +153,7 @@ extension MainVC : UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension MainVC : FirebaseDelegate {
+extension DailyCalsVC : FirebaseDelegate {
     
     func newDailyCalorieGoalSet(calorieGoal: String) {
         if let maxCalories = Double(calorieGoal) {
@@ -224,7 +172,7 @@ extension MainVC : FirebaseDelegate {
     }
 }
 
-extension MainVC : ProductCellDelegate {
+extension DailyCalsVC : ProductCellDelegate {
     func tappedLonglyOnCell(atIndex : Int) {
         let product = products[atIndex]
         AlertManager.shared.showAlertDeleteProduct(inVC: self, product: product, index: atIndex)
@@ -239,7 +187,7 @@ extension MainVC : ProductCellDelegate {
     }
 }
 
-extension MainVC : AlertDelegate {
+extension DailyCalsVC : AlertDelegate {
     
     func newCalorieDailyGoalSet(calorieGoal: String) {
         if let calorieGoalInt = Double(calorieGoal) {

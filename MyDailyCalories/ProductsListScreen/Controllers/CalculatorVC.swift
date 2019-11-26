@@ -40,7 +40,6 @@ class CalculatorVC : UIViewController {
         super.viewWillAppear(true)
         setCalculatedLabels()
         addGestures()
-        print(entity.name)
     }
     
     @IBAction func addToCartTapped(_ sender: UIButton) {
@@ -76,6 +75,14 @@ class CalculatorVC : UIViewController {
         setCalculatedLabels()
     }
     
+    @IBAction func addToDailyTapped(_ sender: UIBarButtonItem) {
+        let product = Product(name:     entity.name,
+                              calories: lblCalories.text ?? "0.0",
+                              protein:  lblProtein.text  ?? "0.0",
+                              carbs:    lblCarbs.text    ?? "0.0",
+                              fat:      lblFat.text      ?? "0.0")
+        AlertManager.shared.showAlertShouldAdd(product: product, inVC: self)
+    }
     
     @objc private func dismissKeyboard() {
         view.endEditing(true)
@@ -127,6 +134,7 @@ class CalculatorVC : UIViewController {
         if let fat = Double(entity.fat) {
             lblFat.text = (fat * multiplier).roundedString()
         }
+        self.title = entity.name
     }
 }
 
@@ -137,7 +145,11 @@ extension CalculatorVC : UITextFieldDelegate {
             btn.backgroundColor = colorForDiselected
         }
         tfCustomGrams.backgroundColor = colorForSelected
-
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
 
@@ -147,3 +159,4 @@ extension Double {
         return rounded
     }
 }
+

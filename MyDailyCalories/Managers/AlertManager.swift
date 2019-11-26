@@ -25,12 +25,13 @@ class AlertManager {
     
     var delegate : AlertDelegate?
     
+    let cancel = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+
     func showAlertDeleteProduct(inVC vc : UIViewController, product : Product, index : Int) {
         
         let alert = UIAlertController(title: "Yo man",
                                       message: "You gonna delete entity <\(product.name)> yes!?",
                                       preferredStyle: .alert)
-        let cancel = UIAlertAction(title: "Cancel", style: .default, handler: nil)
         let ok = UIAlertAction(title: "OK", style: .default) { (action) in
             FirebaseManager.shared.delete(product: product)
             
@@ -44,7 +45,6 @@ class AlertManager {
         let alert = UIAlertController(title: "Yo man",
                                       message: "Please Insert Your Daily Calories Goal",
                                       preferredStyle: .alert)
-        let cancel = UIAlertAction(title: "Cancel", style: .default, handler: nil)
         let ok = UIAlertAction(title: "OK", style: .default) { (action) in
 
             if let inputText = Int(alert.textFields?.first?.text ?? "n") {
@@ -84,7 +84,6 @@ class AlertManager {
         alert.addTextField { (tf) in
             tf.placeholder = "Fats"
         }
-        let cancel = UIAlertAction(title: "Cancel", style: .default, handler: nil)
         let ok = UIAlertAction(title: "OK", style: .default) { (action) in
             
             if let entity = self.entityFrom(textFields: alert.textFields) {
@@ -98,7 +97,6 @@ class AlertManager {
         alert.addAction(cancel)
         alert.addAction(ok)
         vc.present(alert, animated: true, completion: nil)
-
     }
     
     func showAlertDeleteEntity(inVC vc : UIViewController, entity : Entity, index : Int) {
@@ -106,9 +104,20 @@ class AlertManager {
         let alert = UIAlertController(title: "Yo man",
                                       message: "You gonna delete entity \(entity.name) yes!?",
                                       preferredStyle: .alert)
-        let cancel = UIAlertAction(title: "Cancel", style: .default, handler: nil)
         let ok = UIAlertAction(title: "OK", style: .default) { (action) in
             FirebaseManager.shared.delete(entity: entity)
+        }
+        alert.addAction(cancel)
+        alert.addAction(ok)
+        vc.present(alert, animated: true, completion: nil)
+    }
+    
+    func showAlertEmptyCart(inVC vc : UIViewController) {
+        let alert = UIAlertController(title: "Empty Cart?",
+                                      message: nil,
+                                      preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default) { (action) in
+            FirebaseManager.shared.deleteCart()
         }
         alert.addAction(cancel)
         alert.addAction(ok)
@@ -132,16 +141,34 @@ class AlertManager {
         vc.present(alert, animated: true, completion: nil)
     }
     
+    func showAlertShouldAdd(product : Product, inVC vc : UIViewController) {
+        let alert = UIAlertController(title: "Add To Daily Calories?", message: nil, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default) { (_) in
+            FirebaseManager.shared.saveNew(product: product)
+        }
+        alert.addAction(cancel)
+        alert.addAction(ok)
+        vc.present(alert, animated: true, completion: nil)
+
+    }
+    
+    func showAlertProductSaved(inVC vc : UIViewController) {
+        let alert = UIAlertController(title: "Yey!", message: "Product Saved Successfully :)", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(ok)
+        vc.present(alert, animated: true, completion: nil)
+    }
+    
     private func entityFrom(textFields: [UITextField]?) -> Entity? {
         if let tfs = textFields {
             var newEntity = Entity()
             for tf in tfs {
                 switch tf.placeholder {
-                case "Entity Name" : newEntity.name = tf.text ?? "No Value"
+                case "Entity Name" : newEntity.name = tf.text     ?? "No Value"
                 case "Calories" :    newEntity.calories = tf.text ?? "No Value"
-                case "Protein" :     newEntity.protein = tf.text ?? "No Value"
-                case "Carbs" :       newEntity.carbs = tf.text ?? "No Value"
-                case "Fats" :        newEntity.fat = tf.text ?? "No Value"
+                case "Protein" :     newEntity.protein = tf.text  ?? "No Value"
+                case "Carbs" :       newEntity.carbs = tf.text    ?? "No Value"
+                case "Fats" :        newEntity.fat = tf.text      ?? "No Value"
                 default: break;
                 }
             }
@@ -152,9 +179,7 @@ class AlertManager {
     
     private func showAlertNumbersOnly(inVC vc : UIViewController) {
         let alert = UIAlertController(title: "Please Use Only Numbers!", message: nil, preferredStyle: .alert)
-        let cancel = UIAlertAction(title: "Cancel", style: .default, handler: nil)
         alert.addAction(cancel)
         vc.present(alert, animated: true, completion: nil)
-
     }
 }

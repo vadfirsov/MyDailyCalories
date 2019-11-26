@@ -13,7 +13,16 @@ class MyProductsVC : UIViewController {
     private let goToCalculatorID = "goToCalculator"
     private let cellID = "EntityCellID"
     private var entities = [Entity]()
+    private var filteredEntities = [Entity]()
     private var choosenEntityIndex = 200
+    private var lowerToHigher = true
+    
+    @IBOutlet weak var btnName:    UIButton!
+    @IBOutlet weak var btnCal:     UIButton!
+    @IBOutlet weak var btnProtein: UIButton!
+    @IBOutlet weak var btnCarbs:   UIButton!
+    @IBOutlet weak var btnFat:     UIButton!
+    
     
     @IBOutlet weak var tableView: UITableView! {
         didSet {
@@ -22,7 +31,11 @@ class MyProductsVC : UIViewController {
         }
     }
     
-    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var searchBar: UISearchBar! {
+        didSet {
+            searchBar.delegate = self
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,13 +47,34 @@ class MyProductsVC : UIViewController {
         FirebaseManager.shared.delegate = self
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        searchBar.resignFirstResponder()
+    }
+    
+    @IBAction func btnTitleTapped(_ sender: UIButton) {
+        var filter = Filter.name
+        switch sender {
+        case btnCal:     filter = Filter.cal
+        case btnFat:     filter = Filter.fat
+        case btnCarbs:   filter = Filter.carbs
+        case btnProtein: filter = Filter.protein
+        case btnName:    filter = Filter.name
+        default: break
+        }
+        lowerToHigher = lowerToHigher ? false : true
+        filteredEntities = FilterManager.shared.filtered(entities: filteredEntities, by: filter, lowerToHigher: lowerToHigher)
+        tableView.reloadData()
+    }
+    
+    
     @IBAction func addBtnTapped(_ sender: UIBarButtonItem) {
         AlertManager.shared.showAddNewEntity(inVC: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destinationVC = segue.destination as? CalculatorVC {
-            destinationVC.entity = entities[choosenEntityIndex]
+            destinationVC.entity = filteredEntities[choosenEntityIndex]
         }
     }
 }
@@ -48,12 +82,12 @@ class MyProductsVC : UIViewController {
 extension MyProductsVC : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return entities.count
+        return filteredEntities.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as? EntityCell {
-            let entity = entities[indexPath.row]
+            let entity = filteredEntities[indexPath.row]
             
             cell.lblName.text =     entity.name
             cell.lblCalories.text = entity.calories
@@ -78,12 +112,32 @@ extension MyProductsVC : UITableViewDelegate, UITableViewDataSource {
 extension MyProductsVC : FirebaseDelegate {
     func didReceive(entities: [Entity]) {
         self.entities = entities
+        filteredEntities = entities
         tableView.reloadData()
     }
 }
 
 extension MyProductsVC : EntityCellDelegate {
     func tappedLonglyOnCell(index: Int) {
-        AlertManager.shared.showAlertDeleteEntity(inVC: self, entity: entities[index], index: index)
+        AlertManager.shared.showAlertDeleteEntity(inVC: self, entity: filteredEntities[index], index: index)
+    }
+}
+
+extension MyProductsVC : UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if let searchText = searchBar.text {
+            filteredEntities = FilterManager.shared.entities(entities, contain: searchText)
+            tableView.reloadData()
+        }
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        filteredEntities = entities
+        tableView.reloadData()
     }
 }

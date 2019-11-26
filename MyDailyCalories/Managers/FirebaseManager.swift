@@ -14,6 +14,7 @@ protocol FirebaseDelegate {
     func newDailyCalorieGoalSet(calorieGoal : String)
     func didReceive(entities : [Entity])
     func didReceive(cart : [CartEntity])
+    func productSavedSuccessfully()
 }
 
 extension FirebaseDelegate {
@@ -21,6 +22,7 @@ extension FirebaseDelegate {
     func newDailyCalorieGoalSet(calorieGoal : String) {}
     func didReceive(entities : [Entity]) {}
     func didReceive(cart : [CartEntity]) {}
+    func productSavedSuccessfully() {}
 }
 
 class FirebaseManager {
@@ -43,7 +45,10 @@ class FirebaseManager {
         
         ref.child(my_user).child(product.dateString).child(fullDate).setValue(product.productDict()) { (error, ref) in
             if error != nil { print(error!.localizedDescription) }
-            else { self.loadProductsFrom(dateString: product.dateString) }
+            else {
+                self.loadProductsFrom(dateString: product.dateString)
+                self.delegate?.productSavedSuccessfully()
+            }
         }
     }
     
@@ -131,6 +136,13 @@ class FirebaseManager {
     func delete(entity : Entity) {
         ref.child(my_user).child(my_entities).child(entity.name).removeValue { (error, ref) in
             self.loadEntities()
+        }
+    }
+    
+    func deleteCart() {
+        ref.child(my_user).child(cart).removeValue { (error, ref) in
+            let emptyCart = [CartEntity]()
+            self.delegate?.didReceive(cart: emptyCart)
         }
     }
 }

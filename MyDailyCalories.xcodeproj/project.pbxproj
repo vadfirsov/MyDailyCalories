@@ -17,11 +17,12 @@
 		DA280732238C1B9F00C6547A /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA280731238C1B9E00C6547A /* CartVC.swift */; };
 		DA280734238C1D2100C6547A /* CartEntityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA280733238C1D2100C6547A /* CartEntityCell.swift */; };
 		DA280736238C1EC800C6547A /* CartEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA280735238C1EC800C6547A /* CartEntity.swift */; };
+		DA280742238D514900C6547A /* FilterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA280741238D514900C6547A /* FilterManager.swift */; };
 		DAC0D2EB2386DC4400BFC4C4 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC0D2EA2386DC4400BFC4C4 /* AlertManager.swift */; };
 		DAC0D2F22387D51F00BFC4C4 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC0D2F12387D51F00BFC4C4 /* DateManager.swift */; };
 		DAD7EE912386646200D251F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD7EE902386646200D251F1 /* AppDelegate.swift */; };
 		DAD7EE932386646200D251F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD7EE922386646200D251F1 /* SceneDelegate.swift */; };
-		DAD7EE952386646200D251F1 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD7EE942386646200D251F1 /* MainVC.swift */; };
+		DAD7EE952386646200D251F1 /* DailyCalsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD7EE942386646200D251F1 /* DailyCalsVC.swift */; };
 		DAD7EE982386646200D251F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAD7EE962386646200D251F1 /* Main.storyboard */; };
 		DAD7EE9A2386646400D251F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAD7EE992386646400D251F1 /* Assets.xcassets */; };
 		DAD7EE9D2386646400D251F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAD7EE9B2386646400D251F1 /* LaunchScreen.storyboard */; };
@@ -44,12 +45,13 @@
 		DA280731238C1B9E00C6547A /* CartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartVC.swift; sourceTree = "<group>"; };
 		DA280733238C1D2100C6547A /* CartEntityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartEntityCell.swift; sourceTree = "<group>"; };
 		DA280735238C1EC800C6547A /* CartEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartEntity.swift; sourceTree = "<group>"; };
+		DA280741238D514900C6547A /* FilterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterManager.swift; sourceTree = "<group>"; };
 		DAC0D2EA2386DC4400BFC4C4 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		DAC0D2F12387D51F00BFC4C4 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 		DAD7EE8D2386646200D251F1 /* MyDailyCalories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDailyCalories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAD7EE902386646200D251F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAD7EE922386646200D251F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DAD7EE942386646200D251F1 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		DAD7EE942386646200D251F1 /* DailyCalsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCalsVC.swift; sourceTree = "<group>"; };
 		DAD7EE972386646200D251F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DAD7EE992386646400D251F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DAD7EE9C2386646400D251F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -102,7 +104,7 @@
 		DA280738238D084800C6547A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				DAD7EE942386646200D251F1 /* MainVC.swift */,
+				DAD7EE942386646200D251F1 /* DailyCalsVC.swift */,
 				DA28072B238BE41C00C6547A /* NewProductVC.swift */,
 			);
 			path = Controllers;
@@ -169,6 +171,7 @@
 				DAC0D2F12387D51F00BFC4C4 /* DateManager.swift */,
 				DAD7EEAB2386737200D251F1 /* FirebaseManager.swift */,
 				DAC0D2EA2386DC4400BFC4C4 /* AlertManager.swift */,
+				DA280741238D514900C6547A /* FilterManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -352,8 +355,9 @@
 				DAC0D2EB2386DC4400BFC4C4 /* AlertManager.swift in Sources */,
 				DAD7EEAC2386737200D251F1 /* FirebaseManager.swift in Sources */,
 				DA280736238C1EC800C6547A /* CartEntity.swift in Sources */,
-				DAD7EE952386646200D251F1 /* MainVC.swift in Sources */,
+				DAD7EE952386646200D251F1 /* DailyCalsVC.swift in Sources */,
 				DAD7EEA623866F0700D251F1 /* ProductCell.swift in Sources */,
+				DA280742238D514900C6547A /* FilterManager.swift in Sources */,
 				DA28072E238BF02F00C6547A /* NewEntityVC.swift in Sources */,
 				DA280726238A829300C6547A /* MyProductsVC.swift in Sources */,
 				DA280734238C1D2100C6547A /* CartEntityCell.swift in Sources */,

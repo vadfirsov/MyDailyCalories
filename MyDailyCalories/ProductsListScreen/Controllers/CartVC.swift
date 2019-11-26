@@ -27,9 +27,8 @@ class CartVC : UIViewController {
     
     private var cart = [CartEntity]()
     
-    
     @IBAction func emptyCartTapped(_ sender: UIButton) {
-        //show alert empty cart
+        AlertManager.shared.showAlertEmptyCart(inVC: self)
     }
     
     @IBAction func servingsTapped(_ sender: UIButton) {
@@ -40,7 +39,7 @@ class CartVC : UIViewController {
         super.viewWillAppear(true)
         FirebaseManager.shared.delegate = self
         FirebaseManager.shared.loadCart()
-        AlertManager.shared.delegate = self
+        updateLabels()
     }
     
     private func updateLabels() {
@@ -82,6 +81,12 @@ extension CartVC : FirebaseDelegate {
         self.cart = cart
         updateLabels()
         tableView.reloadData()
+    }
+    
+    func productSavedSuccessfully() {
+        if parent != nil {
+            AlertManager.shared.showAlertProductSaved(inVC: parent!)
+        }
     }
 }
 
