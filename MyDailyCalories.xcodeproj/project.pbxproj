@@ -18,6 +18,7 @@
 		DA280734238C1D2100C6547A /* CartEntityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA280733238C1D2100C6547A /* CartEntityCell.swift */; };
 		DA280736238C1EC800C6547A /* CartEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA280735238C1EC800C6547A /* CartEntity.swift */; };
 		DA280742238D514900C6547A /* FilterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA280741238D514900C6547A /* FilterManager.swift */; };
+		DA280745238D6FE800C6547A /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA280744238D6FE800C6547A /* LoginVC.swift */; };
 		DAC0D2EB2386DC4400BFC4C4 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC0D2EA2386DC4400BFC4C4 /* AlertManager.swift */; };
 		DAC0D2F22387D51F00BFC4C4 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC0D2F12387D51F00BFC4C4 /* DateManager.swift */; };
 		DAD7EE912386646200D251F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD7EE902386646200D251F1 /* AppDelegate.swift */; };
@@ -46,6 +47,7 @@
 		DA280733238C1D2100C6547A /* CartEntityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartEntityCell.swift; sourceTree = "<group>"; };
 		DA280735238C1EC800C6547A /* CartEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartEntity.swift; sourceTree = "<group>"; };
 		DA280741238D514900C6547A /* FilterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterManager.swift; sourceTree = "<group>"; };
+		DA280744238D6FE800C6547A /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		DAC0D2EA2386DC4400BFC4C4 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		DAC0D2F12387D51F00BFC4C4 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 		DAD7EE8D2386646200D251F1 /* MyDailyCalories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDailyCalories.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,6 +167,22 @@
 			path = Modal;
 			sourceTree = "<group>";
 		};
+		DA280743238D6FCD00C6547A /* Login Screen */ = {
+			isa = PBXGroup;
+			children = (
+				DA280746238D6FF400C6547A /* Controllers */,
+			);
+			path = "Login Screen";
+			sourceTree = "<group>";
+		};
+		DA280746238D6FF400C6547A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DA280744238D6FE800C6547A /* LoginVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		DAC0D2EC2387CD7100BFC4C4 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,6 +226,7 @@
 			children = (
 				DAD7EEA42386647900D251F1 /* Service */,
 				DAC0D2EC2387CD7100BFC4C4 /* Managers */,
+				DA280743238D6FCD00C6547A /* Login Screen */,
 				DA28073B238D087400C6547A /* ProductsListScreen */,
 				DA280737238D082900C6547A /* MainScreen */,
 				DAC0D2F02387CD9B00BFC4C4 /* Views */,
@@ -355,6 +374,7 @@
 				DAC0D2EB2386DC4400BFC4C4 /* AlertManager.swift in Sources */,
 				DAD7EEAC2386737200D251F1 /* FirebaseManager.swift in Sources */,
 				DA280736238C1EC800C6547A /* CartEntity.swift in Sources */,
+				DA280745238D6FE800C6547A /* LoginVC.swift in Sources */,
 				DAD7EE952386646200D251F1 /* DailyCalsVC.swift in Sources */,
 				DAD7EEA623866F0700D251F1 /* ProductCell.swift in Sources */,
 				DA280742238D514900C6547A /* FilterManager.swift in Sources */,
