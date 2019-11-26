@@ -346,7 +346,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HZH-0A-UFl">
                                                 <rect key="frame" x="0.0" y="0.0" width="82.5" height="30"/>
-                                                <color key="backgroundColor" red="0.77039629220000005" green="0.36910772320000002" blue="0.35684347150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" red="0.60060055992581751" green="0.75436747952359384" blue="0.77039629220000005" alpha="0.080854023972602745" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="100g">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -356,7 +356,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DH7-pk-vfz">
                                                 <rect key="frame" x="90.5" y="0.0" width="84" height="30"/>
-                                                <color key="backgroundColor" red="0.77039629220000005" green="0.36910772320000002" blue="0.35684347150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" red="0.60060055992581751" green="0.75436747952359384" blue="0.77039629220000005" alpha="0.080854023972602745" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Spoon (15g)">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -366,7 +366,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="goF-Hf-zwL">
                                                 <rect key="frame" x="182.5" y="0.0" width="113" height="30"/>
-                                                <color key="backgroundColor" red="0.77039629220000005" green="0.36910772320000002" blue="0.35684347150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" red="0.60060055992581751" green="0.75436747952359384" blue="0.77039629220000005" alpha="0.080854023972602745" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Tablespoon (8g)">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -376,7 +376,7 @@
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Custom g" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sl1-lp-BgX">
                                                 <rect key="frame" x="303.5" y="0.0" width="70.5" height="30"/>
-                                                <color key="backgroundColor" red="0.77039629220000005" green="0.36910772320000002" blue="0.35684347150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" red="0.61040878509847263" green="0.73961998775404969" blue="0.77039629220000005" alpha="0.25746468321917809" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                             </textField>
@@ -1097,13 +1097,13 @@
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZj-5F-qzK">
                                                                             <rect key="frame" x="0.0" y="0.0" width="108.5" height="20.5"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grams :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EmW-5L-d0e">
                                                                             <rect key="frame" x="0.0" y="28.5" width="108.5" height="20.5"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
@@ -1126,13 +1126,13 @@
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cal :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rh1-M0-lHz">
                                                                             <rect key="frame" x="0.0" y="0.0" width="117" height="20.5"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carbs :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sw2-24-m40">
                                                                             <rect key="frame" x="0.0" y="28.5" width="117" height="20.5"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
@@ -1154,14 +1154,14 @@
                                                                     <rect key="frame" x="0.0" y="8" width="116.5" height="49"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Protein :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a2v-Ud-bEr">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="63.5" height="20.5"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="52" height="20.5"/>
+                                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fat :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BYg-yd-5gr">
-                                                                            <rect key="frame" x="0.0" y="28.5" width="33" height="20.5"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <rect key="frame" x="0.0" y="28.5" width="27" height="20.5"/>
+                                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
@@ -1270,26 +1270,40 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ycn-em-Oun">
-                                <rect key="frame" x="147.5" y="360" width="79" height="30"/>
-                                <state key="normal" title="Servings : 1"/>
-                                <connections>
-                                    <action selector="servingsTapped:" destination="3B2-wn-U60" eventType="touchUpInside" id="d2Q-ua-RUD"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="D2v-0B-ihj">
+                                <rect key="frame" x="30" y="360" width="314" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ycn-em-Oun">
+                                        <rect key="frame" x="0.0" y="0.0" width="152" height="30"/>
+                                        <state key="normal" title="Servings : 1"/>
+                                        <connections>
+                                            <action selector="servingsTapped:" destination="3B2-wn-U60" eventType="touchUpInside" id="d2Q-ua-RUD"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fre-5h-dbY">
+                                        <rect key="frame" x="162" y="0.0" width="152" height="30"/>
+                                        <state key="normal" title="Empty Cart"/>
+                                        <connections>
+                                            <action selector="emptyCartTapped:" destination="3B2-wn-U60" eventType="touchUpInside" id="Tow-2V-5QZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.33315646650000003" green="0.10227710750000001" blue="0.3098182082" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="905-IE-le8" firstAttribute="leading" secondItem="q8h-w7-eeC" secondAttribute="leadingMargin" constant="8" id="4RV-Gq-nIv"/>
+                            <constraint firstItem="D2v-0B-ihj" firstAttribute="leading" secondItem="qyd-vl-Juz" secondAttribute="leading" constant="30" id="5Hj-IU-v3k"/>
                             <constraint firstAttribute="trailingMargin" secondItem="905-IE-le8" secondAttribute="trailing" constant="8" id="Ag1-dF-rJx"/>
                             <constraint firstItem="zbg-h7-qyK" firstAttribute="top" secondItem="q8h-w7-eeC" secondAttribute="top" id="EQb-Pf-Rof"/>
                             <constraint firstAttribute="bottomMargin" secondItem="905-IE-le8" secondAttribute="bottom" constant="8" id="NUl-In-uJx"/>
                             <constraint firstItem="zbg-h7-qyK" firstAttribute="leading" secondItem="q8h-w7-eeC" secondAttribute="leading" id="OPj-fM-8kd"/>
-                            <constraint firstItem="905-IE-le8" firstAttribute="top" secondItem="Ycn-em-Oun" secondAttribute="bottom" constant="8" id="lLR-TI-hfv"/>
-                            <constraint firstItem="Ycn-em-Oun" firstAttribute="centerX" secondItem="q8h-w7-eeC" secondAttribute="centerX" id="njR-sb-uNv"/>
+                            <constraint firstItem="D2v-0B-ihj" firstAttribute="top" secondItem="zbg-h7-qyK" secondAttribute="bottom" constant="2" id="QI6-8h-7gr"/>
+                            <constraint firstItem="qyd-vl-Juz" firstAttribute="trailing" secondItem="D2v-0B-ihj" secondAttribute="trailing" constant="30" id="cGd-t5-PGX"/>
+                            <constraint firstItem="905-IE-le8" firstAttribute="top" secondItem="D2v-0B-ihj" secondAttribute="bottom" constant="8" id="tSz-GB-5im"/>
                             <constraint firstAttribute="trailing" secondItem="zbg-h7-qyK" secondAttribute="trailing" id="utn-NR-v0B"/>
-                            <constraint firstItem="Ycn-em-Oun" firstAttribute="top" secondItem="zbg-h7-qyK" secondAttribute="bottom" constant="2" id="zgg-Fh-2S5"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="qyd-vl-Juz"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="RUQ-Og-y0V"/>
                     <navigationItem key="navigationItem" id="LqM-lw-yAc"/>
@@ -1304,7 +1318,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JNJ-xT-QV8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="545" y="1617"/>
+            <point key="canvasLocation" x="544.92753623188412" y="1616.8526785714284"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

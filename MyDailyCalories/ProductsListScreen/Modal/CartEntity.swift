@@ -35,4 +35,12 @@ struct CartEntity {
         fat =       dict["fat"]      ?? 0.0
         grams =     dict["grams"]    ?? 0.0
     }
+    
+    mutating func devidePropertiesBy(_ servings : Double) {
+        grams /=    servings
+        calories /= servings
+        protein /=  servings
+        carbs /=    servings
+        fat /=      servings
+    }
 }

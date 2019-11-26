@@ -17,4 +17,13 @@ class CartEntityCell : UITableViewCell {
     @IBOutlet weak var lblFat:      UILabel!
     @IBOutlet weak var lblProtein:  UILabel!
     
+    func setCell(withCartEntity cartEntity : CartEntity) {
+        lblName.text =     cartEntity.name
+        lblCalories.text = "Cal: \(cartEntity.calories.roundedString())"
+        lblGrams.text =    "Grams: \(cartEntity.grams.roundedString())"
+        lblProtein.text =  "Protein: \(cartEntity.protein.roundedString())"
+        lblCartbs.text =   "Carbs: \(cartEntity.protein.roundedString())"
+        lblFat.text =      "Fat: \(cartEntity.protein.roundedString())"
+    }
+    
 }

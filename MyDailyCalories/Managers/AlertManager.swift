@@ -10,9 +10,13 @@ import UIKit
 
 protocol AlertDelegate {
     func newCalorieDailyGoalSet(calorieGoal : String)
+    func servingsUpdated(servings : Double)
 }
 
-
+extension AlertDelegate {
+    func newCalorieDailyGoalSet(calorieGoal : String) {}
+    func servingsUpdated(servings : Double) {}
+}
 
 class AlertManager {
     
@@ -107,6 +111,23 @@ class AlertManager {
             FirebaseManager.shared.delete(entity: entity)
         }
         alert.addAction(cancel)
+        alert.addAction(ok)
+        vc.present(alert, animated: true, completion: nil)
+    }
+    
+    func showAlertChooseServings(inVC vc : UIViewController) {
+        let alert = UIAlertController(title: "Servings", message: nil, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default) { (action) in
+            if let servings = Double(alert.textFields![0].text ?? "1") {
+                self.delegate?.servingsUpdated(servings: servings)
+            }
+            else {
+                self.showAlertNumbersOnly(inVC: vc)
+            }
+        }
+        alert.addTextField { (tf) in
+            tf.placeholder = "Digits Only"
+        }
         alert.addAction(ok)
         vc.present(alert, animated: true, completion: nil)
     }

@@ -32,7 +32,7 @@ class CalculatorVC : UIViewController {
     @IBOutlet var gramBtns: [UIButton]!
     
     private let colorForSelected = #colorLiteral(red: 0.3636647761, green: 0.07851565629, blue: 0.3194839656, alpha: 1)
-    private let colorForDiselected = #colorLiteral(red: 0.5797533989, green: 0.8102962375, blue: 0.7939001322, alpha: 1)
+    private let colorForDiselected = #colorLiteral(red: 0.5797533989, green: 0.8102962375, blue: 0.7939001322, alpha: 0.194723887)
     
     var entity = Entity()
     
@@ -40,6 +40,7 @@ class CalculatorVC : UIViewController {
         super.viewWillAppear(true)
         setCalculatedLabels()
         addGestures()
+        print(entity.name)
     }
     
     @IBAction func addToCartTapped(_ sender: UIButton) {
@@ -57,7 +58,7 @@ class CalculatorVC : UIViewController {
             cartEntity.fat = fat
         }
         cartEntity.grams = 100 * getMultiplier()
-        cartEntity.name = entity.name + "_\(Int(cartEntity.grams))g"
+        cartEntity.name = entity.name
         FirebaseManager.shared.save(cartEntity: cartEntity)
     }
     
