@@ -94,7 +94,10 @@ class AlertManager {
         let alert = UIAlertController(title: "Servings", message: nil, preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .default) { (action) in
             if let servings = Double(alert.textFields![0].text ?? "1") {
-                self.delegate?.servingsUpdated(servings: servings)
+                if vc is CartVC {
+                    self.delegate = vc as! CartVC
+                    self.delegate?.servingsUpdated(servings: servings)
+                }
             }
             else {
                 self.showAlertNumbersOnly(inVC: vc)

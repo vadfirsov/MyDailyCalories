@@ -14,6 +14,9 @@ class DailyCalsVC: UIViewController {
     private var products : [Product] = []
     private var dateToDisplay = Date()
     
+    private var maxDailyCalories = 0.0
+    private var totalCalories = 0.0
+    
     let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self,
                                                              action: #selector(dismissKeyboard))
     
@@ -29,7 +32,7 @@ class DailyCalsVC: UIViewController {
     @IBOutlet weak var lblTotalFat:      UILabel!
     @IBOutlet weak var lblTotalProtein:  UILabel!
     
-    @IBOutlet weak var tableViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var progressBar: UIProgressView!
     
     @IBOutlet weak var tableView:        UITableView! {
         didSet {
@@ -42,6 +45,7 @@ class DailyCalsVC: UIViewController {
         super.viewWillAppear(true)
         setManagers()
         addGestures()
+//        progressBar.setProgress(0, animated: true)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -77,6 +81,11 @@ class DailyCalsVC: UIViewController {
         FirebaseManager.shared.loadProductsFrom(dateString: nextDate)
     }
     
+    private func updateProgressBar() {
+        let progress : Float = Float(totalCalories / maxDailyCalories)
+        progressBar.setProgress(progress, animated: true)
+    }
+    
     private func setManagers() {
         AlertManager.shared.delegate =    self
         FirebaseManager.shared.delegate = self
@@ -97,9 +106,6 @@ class DailyCalsVC: UIViewController {
 
     }
     
-    private var totalCalories = 0.0
-    private var maxDailyCalories = 0.0
-    
     private func setLabels() {
         var totalProtein =  0.0
         var totalCarbs =    0.0
@@ -116,13 +122,16 @@ class DailyCalsVC: UIViewController {
         lblTotalFat.text =      String(totalFat)
     }
     
-    private func setDailyTotalBtn() {
-        let btnLabel = "\(Int(totalCalories)) / \(Int(maxDailyCalories)) Cal"
+    private func setDailyCaloriesIndicator() {
+        let btnLabel = "\(Int(totalCalories)) / \(Int(maxDailyCalories)) Calories"
         btnDailyTotal.setTitle(btnLabel, for: .normal)
 
         btnDailyTotal.setTitleColor(.white, for: .normal)
-        let isOverEaten = (totalCalories > maxDailyCalories)
-        btnDailyTotal.backgroundColor = isOverEaten ? #colorLiteral(red: 0.6822561026, green: 0.279179126, blue: 0.2858773768, alpha: 1) : #colorLiteral(red: 0, green: 0.8136156201, blue: 0.1591542363, alpha: 1)
+        let color = (totalCalories > maxDailyCalories) ? #colorLiteral(red: 1, green: 0.3694292903, blue: 0, alpha: 1) : #colorLiteral(red: 0, green: 0.8136156201, blue: 0.1591542363, alpha: 1)
+        btnDailyTotal.setTitleColor(color, for: .normal)
+        progressBar.progressTintColor = color
+        if maxDailyCalories > 0 { updateProgressBar() }
+
     }
 }
 
@@ -158,7 +167,7 @@ extension DailyCalsVC : FirebaseDelegate {
     func newDailyCalorieGoalSet(calorieGoal: String) {
         if let maxCalories = Double(calorieGoal) {
             maxDailyCalories = maxCalories
-            setDailyTotalBtn()
+            setDailyCaloriesIndicator()
         }
     }
     
@@ -166,10 +175,10 @@ extension DailyCalsVC : FirebaseDelegate {
         self.products = products
         totalCalories = 0
         setLabels()
-        setDailyTotalBtn()
+        setDailyCaloriesIndicator()
         tableView.reloadData()
         loader.stopAnimating()
-        
+
     }
 }
 
@@ -193,7 +202,8 @@ extension DailyCalsVC : AlertDelegate {
     func newCalorieDailyGoalSet(calorieGoal: String) {
         if let calorieGoalInt = Double(calorieGoal) {
             maxDailyCalories = calorieGoalInt
-            setDailyTotalBtn()
+            setDailyCaloriesIndicator()
         }
     }
 }
+

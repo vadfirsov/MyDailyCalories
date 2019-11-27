@@ -8,10 +8,17 @@
 
 import UIKit
 
+protocol CartDelegate {
+    func didReceive(cart : [CartEntity])
+}
+
 class CartVC : UIViewController {
     
     private let cellID = "cartCellID"
     private var servings : Double = 1
+    
+    var delegate : CartDelegate?
+    
     @IBOutlet weak var btnSarvings: UIButton!
     @IBOutlet weak var lblCalories: UILabel!
     @IBOutlet weak var lblProtein:  UILabel!
@@ -98,6 +105,8 @@ extension CartVC : UITableViewDelegate, UITableViewDataSource  {
 extension CartVC : FirebaseDelegate {
     func didReceive(cart: [CartEntity]) {
         self.cart = cart
+        delegate?.didReceive(cart : cart)
+
         updateLabels()
         tableView.reloadData()
     }

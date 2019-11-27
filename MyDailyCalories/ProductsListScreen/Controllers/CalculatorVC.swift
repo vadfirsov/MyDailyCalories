@@ -10,6 +10,8 @@ import UIKit
 
 class CalculatorVC : UIViewController {
     
+    private let containerSegueID = "showContainer"
+    
     @IBOutlet weak var cartContainer: UIView!
     
     @IBOutlet weak var lblCalories:   UILabel!
@@ -29,6 +31,12 @@ class CalculatorVC : UIViewController {
             tfCustomGrams.delegate = self }
     }
     
+    @IBOutlet weak var cartViewContainer: UIView! {
+        didSet {
+            cartViewContainer.isHidden = true
+        }
+    }
+    
     @IBOutlet var gramBtns: [UIButton]!
     
     @IBOutlet weak var loader: UIActivityIndicatorView!
@@ -46,6 +54,7 @@ class CalculatorVC : UIViewController {
     }
     
     @IBAction func addToCartTapped(_ sender: UIButton) {
+        loader.startAnimating()
         var cartEntity = CartEntity()
         if let calories = Double(lblCalories.text ?? "0") {
             cartEntity.calories = calories
@@ -139,6 +148,15 @@ class CalculatorVC : UIViewController {
         }
         self.title = entity.name
     }
+    
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == containerSegueID {
+            if let destinationVC = segue.destination as? CartVC {
+                destinationVC.delegate = self
+            }
+        }
+    }
 }
 
 extension CalculatorVC : UITextFieldDelegate {
@@ -163,3 +181,9 @@ extension Double {
     }
 }
 
+extension CalculatorVC : CartDelegate {
+    func didReceive(cart: [CartEntity]) {
+        loader.stopAnimating()
+        cartContainer.isHidden = cart.isEmpty
+    }
+}
