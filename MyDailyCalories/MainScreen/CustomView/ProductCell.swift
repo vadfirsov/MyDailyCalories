@@ -18,20 +18,11 @@ class ProductCell : UITableViewCell {
     var delegate : ProductCellDelegate?
     var index = 0
     
-    @IBOutlet weak var tfName:     UITextField!
-    @IBOutlet weak var tfCalories: UITextField!
-    @IBOutlet weak var tfProtein:  UITextField!
-    @IBOutlet weak var tfCarbs:    UITextField!
-    @IBOutlet weak var tfFat:      UITextField!
-    
-    @IBOutlet var textFields: [UITextField]! {
-        didSet {
-            for tf in textFields {
-                tf.delegate =  self
-                tf.isEnabled = false
-            }
-        }
-    }
+    @IBOutlet weak var tfName:     UILabel!
+    @IBOutlet weak var tfCalories: UILabel!
+    @IBOutlet weak var tfProtein:  UILabel!
+    @IBOutlet weak var tfCarbs:    UILabel!
+    @IBOutlet weak var tfFat:      UILabel!
     
     func addGesture() {
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPressed))
