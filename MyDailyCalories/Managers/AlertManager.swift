@@ -65,40 +65,6 @@ class AlertManager {
         vc.present(alert, animated: true, completion: nil)
     }
     
-    func showAddNewEntity(inVC vc : UIViewController) {
-        let alert = UIAlertController(title: "New Entity",
-        message: nil,
-        preferredStyle: .alert)
-        alert.addTextField { (tf) in
-            tf.placeholder = "Entity Name"
-        }
-        alert.addTextField { (tf) in
-            tf.placeholder = "Calories"
-        }
-        alert.addTextField { (tf) in
-            tf.placeholder = "Protein"
-        }
-        alert.addTextField { (tf) in
-            tf.placeholder = "Carbs"
-        }
-        alert.addTextField { (tf) in
-            tf.placeholder = "Fats"
-        }
-        let ok = UIAlertAction(title: "OK", style: .default) { (action) in
-            
-            if let entity = self.entityFrom(textFields: alert.textFields) {
-                FirebaseManager.shared.saveNew(entity: entity)
-                //check if values empty
-            }
-            else {
-                // show alert
-            }
-        }
-        alert.addAction(cancel)
-        alert.addAction(ok)
-        vc.present(alert, animated: true, completion: nil)
-    }
-    
     func showAlertDeleteEntity(inVC vc : UIViewController, entity : Entity, index : Int) {
         
         let alert = UIAlertController(title: "Yo man",
@@ -182,22 +148,10 @@ class AlertManager {
         vc.present(alert, animated: true, completion: nil)
     }
     
-    private func entityFrom(textFields: [UITextField]?) -> Entity? {
-        if let tfs = textFields {
-            var newEntity = Entity()
-            for tf in tfs {
-                switch tf.placeholder {
-                case "Entity Name" : newEntity.name = tf.text     ?? "No Value"
-                case "Calories" :    newEntity.calories = tf.text ?? "No Value"
-                case "Protein" :     newEntity.protein = tf.text  ?? "No Value"
-                case "Carbs" :       newEntity.carbs = tf.text    ?? "No Value"
-                case "Fats" :        newEntity.fat = tf.text      ?? "No Value"
-                default: break;
-                }
-            }
-            return newEntity
-        }
-        return nil
+    func showAlertWithLoginError(inVC vc : UIViewController, message : String) {
+        let alert = UIAlertController(title: "Uh-Oh!", message: message, preferredStyle: .alert)
+        alert.addAction(cancel)
+        vc.present(alert, animated: true, completion: nil)
     }
     
     private func showAlertNumbersOnly(inVC vc : UIViewController) {

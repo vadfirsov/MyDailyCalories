@@ -23,6 +23,7 @@ class MyProductsVC : UIViewController {
     @IBOutlet weak var btnCarbs:   UIButton!
     @IBOutlet weak var btnFat:     UIButton!
     
+    @IBOutlet weak var loader: UIActivityIndicatorView!
     
     @IBOutlet weak var tableView: UITableView! {
         didSet {
@@ -39,6 +40,7 @@ class MyProductsVC : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loader.startAnimating()
         FirebaseManager.shared.loadEntities()
     }
     
@@ -65,11 +67,6 @@ class MyProductsVC : UIViewController {
         lowerToHigher = lowerToHigher ? false : true
         filteredEntities = FilterManager.shared.filtered(entities: filteredEntities, by: filter, lowerToHigher: lowerToHigher)
         tableView.reloadData()
-    }
-    
-    
-    @IBAction func addBtnTapped(_ sender: UIBarButtonItem) {
-        AlertManager.shared.showAddNewEntity(inVC: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

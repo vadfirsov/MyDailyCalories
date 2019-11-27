@@ -8,6 +8,7 @@
 
 import Foundation
 import FirebaseDatabase
+import FirebaseAuth
 
 protocol FirebaseDelegate {
     func didReceived(products : [Product])
@@ -15,6 +16,9 @@ protocol FirebaseDelegate {
     func didReceive(entities : [Entity])
     func didReceive(cart : [CartEntity])
     func productSavedSuccessfully()
+    func loginSuccess()
+    func loginFailedWith(error : String)
+    func savedUserName()
 }
 
 extension FirebaseDelegate {
@@ -23,6 +27,9 @@ extension FirebaseDelegate {
     func didReceive(entities : [Entity]) {}
     func didReceive(cart : [CartEntity]) {}
     func productSavedSuccessfully() {}
+    func loginSuccess() {}
+    func loginFailedWith(error : String) {}
+    func savedUserName() {}
 }
 
 class FirebaseManager {
@@ -33,17 +40,54 @@ class FirebaseManager {
     var delegate : FirebaseDelegate?
     private let ref = Database.database().reference()
     
-    private let my_user =             "my_user"
     private let daily_calories_goal = "daily_calories_goal"
     private let my_entities =         "my_entities"
     private let cart =                "cart"
     
+    //MARK: AUTHENTICATION
+    func signUpNewUser(email : String, pw : String) {
+        Auth.auth().createUser(withEmail: email, password: pw) { authResult, error in
+            self.handleLoginResult(withError: error)
+        }
+    }
+    
+    func signIn(email : String, pw : String) {
+        Auth.auth().signIn(withEmail: email, password: pw) { authResult, error in
+            self.handleLoginResult(withError: error)
+        }
+    }
+    
+    private func handleLoginResult(withError error : Error?) {
+        if error != nil {
+            delegate?.loginFailedWith(error: error!.localizedDescription)
+        }
+        else {
+
+            //save name to db
+            delegate?.loginSuccess()
+        }
+    }
+    
+    
     //MARK: SAVE
+    func saveNewUserWith(userName : String) {
+        if let user = Auth.auth().currentUser {
+            ref.child(user.uid).child("full_name").setValue(userName) { (error, _) in
+                if error != nil {
+                    print(error!.localizedDescription)
+                }
+                else {
+                    self.delegate?.savedUserName()
+                }
+            }
+        }
+    }
+    
     func saveNew(product : Product) {
         let fullDate = "\(product.date)"
-
+        let uid = Auth.auth().currentUser?.uid ?? ""
         
-        ref.child(my_user).child(product.dateString).child(fullDate).setValue(product.productDict()) { (error, ref) in
+        ref.child(uid).child(product.dateString).child(fullDate).setValue(product.productDict()) { (error, ref) in
             if error != nil { print(error!.localizedDescription) }
             else {
                 self.loadProductsFrom(dateString: product.dateString)
@@ -51,9 +95,11 @@ class FirebaseManager {
             }
         }
     }
+
     
     func save(dailyCaloriesGoal : String) {
-        ref.child(my_user).child(daily_calories_goal).setValue(dailyCaloriesGoal) { (error, ref) in
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        ref.child(uid).child(daily_calories_goal).setValue(dailyCaloriesGoal) { (error, ref) in
             if error == nil {
                 self.delegate?.newDailyCalorieGoalSet(calorieGoal: dailyCaloriesGoal)
             }
@@ -61,7 +107,8 @@ class FirebaseManager {
     }
     
     func save(cartEntity : CartEntity) {
-        ref.child(my_user).child(cart).child(cartEntity.name).setValue(cartEntity.cartEntityDic()) { (error, ref) in
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        ref.child(uid).child(cart).child(cartEntity.name).setValue(cartEntity.cartEntityDic()) { (error, ref) in
             if error != nil {
                 print(error!.localizedDescription)
             }
@@ -70,14 +117,15 @@ class FirebaseManager {
     }
     
     func saveNew(entity : Entity) {
-        
-        ref.child(my_user).child(my_entities).child(entity.name).setValue(entity.entityDict()) { (error, ref) in
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        ref.child(uid).child(my_entities).child(entity.name).setValue(entity.entityDict()) { (error, ref) in
             self.loadEntities()
         }
     }
     //MARK: LOAD
     func loadDailyCalorieGoal() {
-        ref.child(my_user).child(daily_calories_goal).observeSingleEvent(of: .value) { (snap) in
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        ref.child(uid).child(daily_calories_goal).observeSingleEvent(of: .value) { (snap) in
             if let snapValue = snap.value as? String {
                 self.delegate?.newDailyCalorieGoalSet(calorieGoal: snapValue)
             }
@@ -86,8 +134,8 @@ class FirebaseManager {
     
     func loadProductsFrom(dateString : String) {
         var products : [Product] = []
-                
-        ref.child(my_user).child(dateString).observeSingleEvent(of: .value) { (snap) in
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        ref.child(uid).child(dateString).observeSingleEvent(of: .value) { (snap) in
     
             if let snapValue = snap.value as? [String : [String : String]] {
                 for (_, dict) in snapValue {
@@ -101,7 +149,8 @@ class FirebaseManager {
     }
     
     func loadEntities() {
-        ref.child(my_user).child(my_entities).observeSingleEvent(of: .value) { (snap) in
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        ref.child(uid).child(my_entities).observeSingleEvent(of: .value) { (snap) in
             if let snapValue = snap.value as? [String : [String : String]] {
                 var entities = [Entity]()
                 for (_,dict) in snapValue {
@@ -114,7 +163,8 @@ class FirebaseManager {
     }
     
     func loadCart() {
-        ref.child(my_user).child(cart).observeSingleEvent(of: .value) { (snap) in
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        ref.child(uid).child(cart).observeSingleEvent(of: .value) { (snap) in
             var cart = [CartEntity]()
             if let snapValue = snap.value as? [String : [String : Double]] {
                 for (key,value) in snapValue {
@@ -128,19 +178,22 @@ class FirebaseManager {
     
     //MARK: DELETE
     func delete(product : Product) {
-        ref.child(my_user).child(product.dateString).child("\(product.date)").removeValue { (error, ref) in
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        ref.child(uid).child(product.dateString).child("\(product.date)").removeValue { (error, ref) in
             self.loadProductsFrom(dateString: product.dateString)
         }
     }
     
     func delete(entity : Entity) {
-        ref.child(my_user).child(my_entities).child(entity.name).removeValue { (error, ref) in
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        ref.child(uid).child(my_entities).child(entity.name).removeValue { (error, ref) in
             self.loadEntities()
         }
     }
     
     func deleteCart() {
-        ref.child(my_user).child(cart).removeValue { (error, ref) in
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        ref.child(uid).child(cart).removeValue { (error, ref) in
             let emptyCart = [CartEntity]()
             self.delegate?.didReceive(cart: emptyCart)
         }

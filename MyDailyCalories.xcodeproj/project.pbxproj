@@ -19,6 +19,7 @@
 		DA280736238C1EC800C6547A /* CartEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA280735238C1EC800C6547A /* CartEntity.swift */; };
 		DA280742238D514900C6547A /* FilterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA280741238D514900C6547A /* FilterManager.swift */; };
 		DA280745238D6FE800C6547A /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA280744238D6FE800C6547A /* LoginVC.swift */; };
+		DAB0116E238E69F800539CAD /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0116D238E69F800539CAD /* LoginManager.swift */; };
 		DAC0D2EB2386DC4400BFC4C4 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC0D2EA2386DC4400BFC4C4 /* AlertManager.swift */; };
 		DAC0D2F22387D51F00BFC4C4 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC0D2F12387D51F00BFC4C4 /* DateManager.swift */; };
 		DAD7EE912386646200D251F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD7EE902386646200D251F1 /* AppDelegate.swift */; };
@@ -48,6 +49,7 @@
 		DA280735238C1EC800C6547A /* CartEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartEntity.swift; sourceTree = "<group>"; };
 		DA280741238D514900C6547A /* FilterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterManager.swift; sourceTree = "<group>"; };
 		DA280744238D6FE800C6547A /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		DAB0116D238E69F800539CAD /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		DAC0D2EA2386DC4400BFC4C4 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		DAC0D2F12387D51F00BFC4C4 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 		DAD7EE8D2386646200D251F1 /* MyDailyCalories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDailyCalories.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				DA280746238D6FF400C6547A /* Controllers */,
+				DAB0116F238E6A1200539CAD /* Modal */,
 			);
 			path = "Login Screen";
 			sourceTree = "<group>";
@@ -183,6 +186,13 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		DAB0116F238E6A1200539CAD /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
 		DAC0D2EC2387CD7100BFC4C4 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +200,7 @@
 				DAD7EEAB2386737200D251F1 /* FirebaseManager.swift */,
 				DAC0D2EA2386DC4400BFC4C4 /* AlertManager.swift */,
 				DA280741238D514900C6547A /* FilterManager.swift */,
+				DAB0116D238E69F800539CAD /* LoginManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -325,6 +336,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MyDailyCalories/Pods-MyDailyCalories-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -333,6 +345,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -376,6 +389,7 @@
 				DA280736238C1EC800C6547A /* CartEntity.swift in Sources */,
 				DA280745238D6FE800C6547A /* LoginVC.swift in Sources */,
 				DAD7EE952386646200D251F1 /* DailyCalsVC.swift in Sources */,
+				DAB0116E238E69F800539CAD /* LoginManager.swift in Sources */,
 				DAD7EEA623866F0700D251F1 /* ProductCell.swift in Sources */,
 				DA280742238D514900C6547A /* FilterManager.swift in Sources */,
 				DA28072E238BF02F00C6547A /* NewEntityVC.swift in Sources */,

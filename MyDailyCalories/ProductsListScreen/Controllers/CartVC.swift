@@ -24,11 +24,13 @@ class CartVC : UIViewController {
         }
     }
 
+    @IBOutlet weak var loader: UIActivityIndicatorView!
     
     private var cart = [CartEntity]()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        loader.startAnimating()
         FirebaseManager.shared.delegate = self
         FirebaseManager.shared.loadCart()
         updateLabels()

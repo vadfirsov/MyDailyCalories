@@ -8,6 +8,8 @@ target 'MyDailyCalories' do
 pod 'Firebase/Analytics'
 pod 'Firebase'
 pod 'Firebase/Database'
+pod 'Firebase/Auth'
+
 
   # Pods for MyDailyCalories
 

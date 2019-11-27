@@ -122,7 +122,7 @@ class DailyCalsVC: UIViewController {
 
         btnDailyTotal.setTitleColor(.white, for: .normal)
         let isOverEaten = (totalCalories > maxDailyCalories)
-        btnDailyTotal.backgroundColor = isOverEaten ? #colorLiteral(red: 0.6822561026, green: 0.279179126, blue: 0.2858773768, alpha: 1) : #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
+        btnDailyTotal.backgroundColor = isOverEaten ? #colorLiteral(red: 0.6822561026, green: 0.279179126, blue: 0.2858773768, alpha: 1) : #colorLiteral(red: 0, green: 0.8136156201, blue: 0.1591542363, alpha: 1)
     }
 }
 
@@ -169,6 +169,7 @@ extension DailyCalsVC : FirebaseDelegate {
         setDailyTotalBtn()
         tableView.reloadData()
         loader.stopAnimating()
+        
     }
 }
 
