@@ -11,9 +11,6 @@ import UIKit
 class LoginVC : UIViewController {
     
     private let segueID = "goToDailyCals"
-    private let signUpIndex = 1
-    private let signInIndex = 0
-    private var isSignInSelected = false
     
     @IBOutlet weak var tfName:  UITextField!
     @IBOutlet weak var tfEmail: UITextField!
@@ -23,20 +20,21 @@ class LoginVC : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        hideTextFields(ifSignInSelected: true)
+        hideShowTextFields()
     }
 
     @IBAction func segmentValueChanged(_ sender: UISegmentedControl) {
-        hideTextFields(ifSignInSelected: (segment.selectedSegmentIndex == signInIndex))
+        hideShowTextFields()
     }
     
     @IBAction func loginTapped(_ sender: UIButton) {
         performSegue(withIdentifier: segueID, sender: self)
     }
     
-    private func hideTextFields(ifSignInSelected isSignInSelected : Bool) {
-        tfName.isHidden = isSignInSelected
-        tfPw2.isHidden = isSignInSelected
+    private func hideShowTextFields() {
+        let isSignInChosen = segment.selectedSegmentIndex == 0
+        tfName.isHidden = isSignInChosen
+        tfPw2.isHidden = isSignInChosen
     }
 }
 

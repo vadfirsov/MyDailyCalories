@@ -27,6 +27,13 @@ class CartVC : UIViewController {
     
     private var cart = [CartEntity]()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        FirebaseManager.shared.delegate = self
+        FirebaseManager.shared.loadCart()
+        updateLabels()
+    }
+    
     @IBAction func emptyCartTapped(_ sender: UIButton) {
         AlertManager.shared.showAlertEmptyCart(inVC: self)
     }
@@ -35,30 +42,40 @@ class CartVC : UIViewController {
         AlertManager.shared.showAlertChooseServings(inVC: self)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        FirebaseManager.shared.delegate = self
-        FirebaseManager.shared.loadCart()
-        updateLabels()
+    @IBAction func addToDailyTapped(_ sender: UIButton) {
+        let sumOfCart = sumOfCartEntities()
+        let product = Product(name:     "No Name",
+                              calories: "\(sumOfCart.calories)",
+                              protein:  "\(sumOfCart.protein)",
+                              carbs:    "\(sumOfCart.carbs)",
+                              fat:      "\(sumOfCart.fat)")
+        
+        AlertManager.shared.showAlertAddToDailyWithName(inVC: self, product: product)
+        
     }
     
     private func updateLabels() {
-        var demoCart = CartEntity()
-        for cartEntity in cart {
-
-            demoCart.calories += cartEntity.calories
-            demoCart.grams +=    cartEntity.grams
-            demoCart.protein +=  cartEntity.protein
-            demoCart.carbs +=    cartEntity.carbs
-            demoCart.fat +=      cartEntity.carbs
-        }
-        demoCart.devidePropertiesBy(servings)
+        var sumOfCart = sumOfCartEntities()
+        sumOfCart.devidePropertiesBy(servings)
         
         btnSarvings.setTitle("Servings : \(Int(servings))", for: .normal)
-        lblCalories.text = demoCart.calories.roundedString()
-        lblProtein.text =  demoCart.protein.roundedString()
-        lblCarbs.text =    demoCart.carbs.roundedString()
-        lblFat.text =      demoCart.fat.roundedString()
+        lblCalories.text = sumOfCart.calories.roundedString()
+        lblProtein.text =  sumOfCart.protein.roundedString()
+        lblCarbs.text =    sumOfCart.carbs.roundedString()
+        lblFat.text =      sumOfCart.fat.roundedString()
+    }
+    
+    private func sumOfCartEntities() -> CartEntity {
+        var sumOfCart = CartEntity()
+        for cartEntity in cart {
+
+            sumOfCart.calories += cartEntity.calories
+            sumOfCart.grams +=    cartEntity.grams
+            sumOfCart.protein +=  cartEntity.protein
+            sumOfCart.carbs +=    cartEntity.carbs
+            sumOfCart.fat +=      cartEntity.carbs
+        }
+        return sumOfCart
     }
 }
 

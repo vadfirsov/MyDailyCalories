@@ -159,6 +159,29 @@ class AlertManager {
         vc.present(alert, animated: true, completion: nil)
     }
     
+    func showAlertAddToDailyWithName(inVC vc : UIViewController, product : Product) {
+        let alert = UIAlertController(title: "Choose Name", message: nil, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default) { (_) in
+            if alert.textFields?[0] != nil {
+                if !(alert.textFields?[0].text?.isEmpty ?? true) {
+                    var newProduct = product
+                    newProduct.name = alert.textFields![0].text ?? "No Name"
+                    FirebaseManager.shared.saveNew(product: newProduct)
+                }
+                else {
+                    self.showAlertProductNameCantBeEmpty(inVC: vc)
+                }
+            }
+            
+        }
+        alert.addTextField { (tf) in
+            tf.placeholder = "Product Name"
+        }
+        alert.addAction(cancel)
+        alert.addAction(ok)
+        vc.present(alert, animated: true, completion: nil)
+    }
+    
     private func entityFrom(textFields: [UITextField]?) -> Entity? {
         if let tfs = textFields {
             var newEntity = Entity()
@@ -179,6 +202,12 @@ class AlertManager {
     
     private func showAlertNumbersOnly(inVC vc : UIViewController) {
         let alert = UIAlertController(title: "Please Use Only Numbers!", message: nil, preferredStyle: .alert)
+        alert.addAction(cancel)
+        vc.present(alert, animated: true, completion: nil)
+    }
+    
+    private func showAlertProductNameCantBeEmpty(inVC vc : UIViewController) {
+        let alert = UIAlertController(title: "Product Name Can't Be Empty", message: nil, preferredStyle: .alert)
         alert.addAction(cancel)
         vc.present(alert, animated: true, completion: nil)
     }

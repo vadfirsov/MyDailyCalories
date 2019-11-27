@@ -1263,7 +1263,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="374" height="433"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zbg-h7-qyK">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zbg-h7-qyK">
                                 <rect key="frame" x="0.0" y="0.0" width="374" height="336"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
@@ -1462,23 +1462,27 @@
                                 <rect key="frame" x="30" y="338" width="314" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ycn-em-Oun">
-                                        <rect key="frame" x="0.0" y="0.0" width="152" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="98" height="30"/>
                                         <state key="normal" title="Servings : 1"/>
                                         <connections>
                                             <action selector="servingsTapped:" destination="3B2-wn-U60" eventType="touchUpInside" id="d2Q-ua-RUD"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fre-5h-dbY">
-                                        <rect key="frame" x="162" y="0.0" width="152" height="30"/>
+                                        <rect key="frame" x="108" y="0.0" width="98" height="30"/>
                                         <state key="normal" title="Empty Cart"/>
                                         <connections>
                                             <action selector="emptyCartTapped:" destination="3B2-wn-U60" eventType="touchUpInside" id="Tow-2V-5QZ"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8TF-Yl-UdW">
+                                        <rect key="frame" x="216" y="0.0" width="98" height="30"/>
+                                        <state key="normal" title="Add To Daily"/>
+                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.33315646650000003" green="0.10227710750000001" blue="0.3098182082" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.19887483119999999" green="0.25279510020000001" blue="0.41570234299999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="905-IE-le8" firstAttribute="leading" secondItem="q8h-w7-eeC" secondAttribute="leadingMargin" constant="8" id="4RV-Gq-nIv"/>
                             <constraint firstItem="D2v-0B-ihj" firstAttribute="leading" secondItem="qyd-vl-Juz" secondAttribute="leading" constant="30" id="5Hj-IU-v3k"/>
