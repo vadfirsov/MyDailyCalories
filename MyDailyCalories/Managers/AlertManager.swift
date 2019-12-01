@@ -29,8 +29,8 @@ class AlertManager {
 
     func showAlertDeleteProduct(inVC vc : UIViewController, product : Product, index : Int) {
         
-        let alert = UIAlertController(title: "Yo man",
-                                      message: "You gonna delete entity <\(product.name)> yes!?",
+        let alert = UIAlertController(title: "Uh-Oh!",
+                                      message: "You are about to delete entity: \(product.name)",
                                       preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .default) { (action) in
             FirebaseManager.shared.delete(product: product)
@@ -42,7 +42,7 @@ class AlertManager {
     }
     
     func showAlertSetMaxDailyCalories(inVC vc : UIViewController) {
-        let alert = UIAlertController(title: "Yo man",
+        let alert = UIAlertController(title: nil,
                                       message: "Please Insert Your Daily Calories Goal",
                                       preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .default) { (action) in
@@ -59,7 +59,7 @@ class AlertManager {
         alert.addAction(ok)
         
         alert.addTextField { (tf) in
-            tf.placeholder = "Numbers Only !"
+            tf.placeholder = "Numbers Only!"
         }
         
         vc.present(alert, animated: true, completion: nil)
@@ -67,8 +67,8 @@ class AlertManager {
     
     func showAlertDeleteEntity(inVC vc : UIViewController, entity : Entity, index : Int) {
         
-        let alert = UIAlertController(title: "Yo man",
-                                      message: "You gonna delete entity \(entity.name) yes!?",
+        let alert = UIAlertController(title: "Uh-Oh!",
+                                      message: "You are about to delete entity: \(entity.name)",
                                       preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .default) { (action) in
             FirebaseManager.shared.delete(entity: entity)
@@ -122,7 +122,7 @@ class AlertManager {
     }
     
     func showAlertProductSaved(inVC vc : UIViewController) {
-        let alert = UIAlertController(title: "Yey!", message: "Product Saved Successfully :)", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Yippee Ki-Yay", message: "Product Saved Successfully", preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(ok)
         vc.present(alert, animated: true, completion: nil)

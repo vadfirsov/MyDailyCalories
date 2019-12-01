@@ -7,21 +7,31 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class NewEntityVC : UIViewController {
     
-    @IBOutlet weak var tfName:     UITextField!
+
     @IBOutlet weak var tfCalories: UITextField!
     @IBOutlet weak var tfCarbs:    UITextField!
     @IBOutlet weak var tfProtein:  UITextField!
     @IBOutlet weak var tfFat:      UITextField!
+    @IBOutlet weak var tfName:     UITextField! {
+        didSet { tfName.becomeFirstResponder() }
+    }
     
     @IBOutlet var textFields: [UITextField]! {
         didSet {
-            for tf in textFields { tf.delegate = self }
+//            for tf in textFields { tf.delegate = self }
         }
     }
     
+    @IBOutlet weak var bannerView: GADBannerView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+//        AdMobManager.shared.set(banner: bannerView, inVC: self)
+    }
     
     private func moveToNextTF() {
         for i in textFields.indices {

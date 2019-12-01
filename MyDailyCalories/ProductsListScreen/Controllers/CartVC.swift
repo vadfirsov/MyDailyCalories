@@ -103,6 +103,7 @@ extension CartVC : UITableViewDelegate, UITableViewDataSource  {
 }
 
 extension CartVC : FirebaseDelegate {
+
     func didReceive(cart: [CartEntity]) {
         self.cart = cart
         delegate?.didReceive(cart : cart)

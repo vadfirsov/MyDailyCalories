@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class MyProductsVC : UIViewController {
     
@@ -22,6 +23,9 @@ class MyProductsVC : UIViewController {
     @IBOutlet weak var btnProtein: UIButton!
     @IBOutlet weak var btnCarbs:   UIButton!
     @IBOutlet weak var btnFat:     UIButton!
+    
+    
+    @IBOutlet weak var bannerAdd: GADBannerView!
     
     @IBOutlet weak var loader: UIActivityIndicatorView!
     
@@ -40,6 +44,7 @@ class MyProductsVC : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        AdMobManager.shared.set(banner: bannerAdd, inVC: self)
         loader.startAnimating()
         FirebaseManager.shared.loadEntities()
     }
@@ -65,7 +70,8 @@ class MyProductsVC : UIViewController {
         default: break
         }
         lowerToHigher = lowerToHigher ? false : true
-        filteredEntities = FilterManager.shared.filtered(entities: filteredEntities, by: filter, lowerToHigher: lowerToHigher)
+        filteredEntities = FilterManager.shared.filtered(entities: filteredEntities,
+                                                         by: filter, lowerToHigher: lowerToHigher)
         tableView.reloadData()
     }
     
@@ -85,12 +91,12 @@ extension MyProductsVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as? EntityCell {
             let entity = filteredEntities[indexPath.row]
-            
-            cell.lblName.text =     entity.name
-            cell.lblCalories.text = entity.calories
-            cell.lblCarbs.text =    entity.carbs
-            cell.lblProtein.text =  entity.protein
-            cell.lblFat.text =      entity.fat
+            let emptyValIndicator = "--"
+            cell.lblName.text =     (entity.name     == "") ? emptyValIndicator : entity.name
+            cell.lblCalories.text = (entity.calories == "") ? emptyValIndicator : entity.calories
+            cell.lblCarbs.text =    (entity.carbs    == "") ? emptyValIndicator : entity.carbs
+            cell.lblProtein.text =  (entity.protein  == "") ? emptyValIndicator : entity.protein
+            cell.lblFat.text =      (entity.fat      == "") ? emptyValIndicator : entity.fat
             cell.index =            indexPath.row
             
             cell.addGesture()
@@ -107,6 +113,7 @@ extension MyProductsVC : UITableViewDelegate, UITableViewDataSource {
 }
 
 extension MyProductsVC : FirebaseDelegate {
+    
     func didReceive(entities: [Entity]) {
         self.entities = entities
         filteredEntities = entities

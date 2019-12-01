@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class CalculatorVC : UIViewController {
     
@@ -37,6 +38,7 @@ class CalculatorVC : UIViewController {
         }
     }
     
+    @IBOutlet weak var bannerView: GADBannerView!
     @IBOutlet var gramBtns: [UIButton]!
     
     @IBOutlet weak var loader: UIActivityIndicatorView!
@@ -46,11 +48,20 @@ class CalculatorVC : UIViewController {
     
     var entity = Entity()
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        AdMobManager.shared.set(banner: bannerView, inVC: self)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        loader.startAnimating()
         setCalculatedLabels()
         addGestures()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func addToCartTapped(_ sender: UIButton) {

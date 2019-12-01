@@ -23,11 +23,16 @@ class LoginVC : UIViewController {
     
     @IBOutlet var textFields: [UITextField]!
     
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        FirebaseManager.shared.delegate = self
+//        FirebaseManager.shared.tryAutoLogin()
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         setTextFields()
         tfEmail.becomeFirstResponder()
-        FirebaseManager.shared.delegate = self
         //mockdata
         tfEmail.text = "test@t.com"
         tfPw.text = "123456"
@@ -97,6 +102,7 @@ class LoginVC : UIViewController {
 }
 
 extension LoginVC : FirebaseDelegate {
+    
     func loginSuccess() {
         if segment.selectedSegmentIndex != signInIndex {
             FirebaseManager.shared.saveNewUserWith(userName: tfName.text!)
@@ -112,6 +118,10 @@ extension LoginVC : FirebaseDelegate {
     }
     
     func savedUserName() {
+        performSegue(withIdentifier: segueID, sender: self)
+    }
+    
+    func autoLogin() {
         performSegue(withIdentifier: segueID, sender: self)
     }
 }

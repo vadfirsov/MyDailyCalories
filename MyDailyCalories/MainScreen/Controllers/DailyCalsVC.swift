@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import GoogleMobileAds
+
 
 class DailyCalsVC: UIViewController {
 
@@ -34,6 +36,8 @@ class DailyCalsVC: UIViewController {
     
     @IBOutlet weak var progressBar: UIProgressView!
     
+    @IBOutlet weak var bannerView: GADBannerView!
+    
     @IBOutlet weak var tableView:        UITableView! {
         didSet {
             tableView.delegate =   self
@@ -41,11 +45,15 @@ class DailyCalsVC: UIViewController {
         }
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        AdMobManager.shared.set(banner: bannerView, inVC: self)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         setManagers()
         addGestures()
-//        progressBar.setProgress(0, animated: true)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -53,6 +61,7 @@ class DailyCalsVC: UIViewController {
         view.removeGestureRecognizer(tap)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        bannerView = nil
     }
     
     //MARK: UIBUTTONS
@@ -116,10 +125,10 @@ class DailyCalsVC: UIViewController {
             if let carbs =    Double(product.carbs)    { totalCarbs +=    carbs }
             if let fat =      Double(product.fat)      { totalFat +=      fat }
         }
-        lblTotalCalories.text = String(totalCalories)
-        lblTotalProtein.text =  String(totalProtein)
-        lblTotalCarbs.text =    String(totalCarbs)
-        lblTotalFat.text =      String(totalFat)
+        lblTotalCalories.text = totalCalories.roundedString()
+        lblTotalProtein.text =  totalProtein.roundedString()
+        lblTotalCarbs.text =    totalCarbs.roundedString()
+        lblTotalFat.text =      totalFat.roundedString()
     }
     
     private func setDailyCaloriesIndicator() {
@@ -145,12 +154,13 @@ extension DailyCalsVC : UITableViewDelegate, UITableViewDataSource {
         if let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as? ProductCell {
             let product = products[indexPath.row]
             cell.delegate = self
+            let noValueIndicator = "--"
+            cell.tfName.text =     (product.name    == "") ? noValueIndicator : product.name
+            cell.tfCalories.text = (product.calories == "") ? noValueIndicator : product.calories
+            cell.tfProtein.text =  (product.protein  == "") ? noValueIndicator : product.protein
+            cell.tfCarbs.text =    (product.carbs    == "") ? noValueIndicator : product.carbs
+            cell.tfFat.text =      (product.fat      == "") ? noValueIndicator : product.fat
             
-            cell.tfName.text =     product.name
-            cell.tfCalories.text = product.calories
-            cell.tfProtein.text =  product.protein
-            cell.tfCarbs.text =    product.carbs
-            cell.tfFat.text =      product.fat
             cell.index =           indexPath.row
             
             cell.addGesture()
@@ -163,7 +173,7 @@ extension DailyCalsVC : UITableViewDelegate, UITableViewDataSource {
 }
 
 extension DailyCalsVC : FirebaseDelegate {
-    
+
     func newDailyCalorieGoalSet(calorieGoal: String) {
         if let maxCalories = Double(calorieGoal) {
             maxDailyCalories = maxCalories
@@ -206,4 +216,3 @@ extension DailyCalsVC : AlertDelegate {
         }
     }
 }
-

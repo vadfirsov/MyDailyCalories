@@ -10,11 +10,11 @@ import Foundation
 
 struct Product {
 
-    var name =     ""
-    var calories = ""
-    var protein =  ""
-    var carbs =    ""
-    var fat =      ""
+    var name =     "--"
+    var calories = "--"
+    var protein =  "--"
+    var carbs =    "--"
+    var fat =      "--"
     var isNew =    false
     
     var dateString = DateManager.shared.stringFrom(date: Date())
@@ -35,12 +35,14 @@ struct Product {
     }
     
     init(withDict dict : [String : String], dateString : String) {
+        
         self.name =       dict["name"]     ?? ""
         self.calories =   dict["calories"] ?? "0.0"
         self.protein =    dict["protein"]  ?? "0.0"
         self.carbs =      dict["carbs"]    ?? "0.0"
         self.fat =        dict["fat"]      ?? "0.0"
         let date =        dict["date"]     ?? ""
+        
         self.dateString = dateString
         self.date = DateManager.shared.dateFrom(string: date) ?? Date()
     }

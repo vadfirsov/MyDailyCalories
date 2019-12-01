@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9175445B6435872D5F46563B /* Pods_MyDailyCalories.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C44E69AD94402E6375A19521 /* Pods_MyDailyCalories.framework */; };
+		DA08C8C7238FCCE5003EB10C /* PreLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA08C8C6238FCCE5003EB10C /* PreLoginVC.swift */; };
 		DA280726238A829300C6547A /* MyProductsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA280725238A829300C6547A /* MyProductsVC.swift */; };
 		DA280728238AAA3F00C6547A /* EntityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA280727238AAA3F00C6547A /* EntityCell.swift */; };
 		DA28072A238AB0EC00C6547A /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA280729238AB0EC00C6547A /* Entity.swift */; };
@@ -19,6 +20,9 @@
 		DA280736238C1EC800C6547A /* CartEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA280735238C1EC800C6547A /* CartEntity.swift */; };
 		DA280742238D514900C6547A /* FilterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA280741238D514900C6547A /* FilterManager.swift */; };
 		DA280745238D6FE800C6547A /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA280744238D6FE800C6547A /* LoginVC.swift */; };
+		DAA4BD31238FA67300A34F68 /* BannerTestingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA4BD30238FA67300A34F68 /* BannerTestingVC.swift */; };
+		DAA4BD34238FAD4700A34F68 /* Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA4BD33238FAD4700A34F68 /* Consts.swift */; };
+		DAA4BD36238FAE3600A34F68 /* AdMobManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA4BD35238FAE3600A34F68 /* AdMobManager.swift */; };
 		DAB0116E238E69F800539CAD /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0116D238E69F800539CAD /* LoginManager.swift */; };
 		DAC0D2EB2386DC4400BFC4C4 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC0D2EA2386DC4400BFC4C4 /* AlertManager.swift */; };
 		DAC0D2F22387D51F00BFC4C4 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC0D2F12387D51F00BFC4C4 /* DateManager.swift */; };
@@ -38,6 +42,7 @@
 		6A3F84D5B30792DB95B7B11E /* Pods-MyDailyCalories.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyDailyCalories.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyDailyCalories/Pods-MyDailyCalories.release.xcconfig"; sourceTree = "<group>"; };
 		792936008DE969FF88F2E5A2 /* Pods-MyDailyCalories.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyDailyCalories.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyDailyCalories/Pods-MyDailyCalories.debug.xcconfig"; sourceTree = "<group>"; };
 		C44E69AD94402E6375A19521 /* Pods_MyDailyCalories.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyDailyCalories.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA08C8C6238FCCE5003EB10C /* PreLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreLoginVC.swift; sourceTree = "<group>"; };
 		DA280725238A829300C6547A /* MyProductsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProductsVC.swift; sourceTree = "<group>"; };
 		DA280727238AAA3F00C6547A /* EntityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityCell.swift; sourceTree = "<group>"; };
 		DA280729238AB0EC00C6547A /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
@@ -49,6 +54,9 @@
 		DA280735238C1EC800C6547A /* CartEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartEntity.swift; sourceTree = "<group>"; };
 		DA280741238D514900C6547A /* FilterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterManager.swift; sourceTree = "<group>"; };
 		DA280744238D6FE800C6547A /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		DAA4BD30238FA67300A34F68 /* BannerTestingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerTestingVC.swift; sourceTree = "<group>"; };
+		DAA4BD33238FAD4700A34F68 /* Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consts.swift; sourceTree = "<group>"; };
+		DAA4BD35238FAE3600A34F68 /* AdMobManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobManager.swift; sourceTree = "<group>"; };
 		DAB0116D238E69F800539CAD /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		DAC0D2EA2386DC4400BFC4C4 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		DAC0D2F12387D51F00BFC4C4 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
@@ -182,8 +190,25 @@
 			isa = PBXGroup;
 			children = (
 				DA280744238D6FE800C6547A /* LoginVC.swift */,
+				DA08C8C6238FCCE5003EB10C /* PreLoginVC.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DAA4BD2F238FA66400A34F68 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				DAA4BD30238FA67300A34F68 /* BannerTestingVC.swift */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		DAA4BD32238FAD3200A34F68 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				DAA4BD33238FAD4700A34F68 /* Consts.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		DAB0116F238E6A1200539CAD /* Modal */ = {
@@ -201,6 +226,7 @@
 				DAC0D2EA2386DC4400BFC4C4 /* AlertManager.swift */,
 				DA280741238D514900C6547A /* FilterManager.swift */,
 				DAB0116D238E69F800539CAD /* LoginManager.swift */,
+				DAA4BD35238FAE3600A34F68 /* AdMobManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -235,6 +261,8 @@
 		DAD7EE8F2386646200D251F1 /* MyDailyCalories */ = {
 			isa = PBXGroup;
 			children = (
+				DAA4BD32238FAD3200A34F68 /* Constants */,
+				DAA4BD2F238FA66400A34F68 /* Test */,
 				DAD7EEA42386647900D251F1 /* Service */,
 				DAC0D2EC2387CD7100BFC4C4 /* Managers */,
 				DA280743238D6FCD00C6547A /* Login Screen */,
@@ -338,6 +366,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-MyDailyCalories/Pods-MyDailyCalories-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -347,6 +376,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -385,6 +415,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAC0D2EB2386DC4400BFC4C4 /* AlertManager.swift in Sources */,
+				DAA4BD34238FAD4700A34F68 /* Consts.swift in Sources */,
 				DAD7EEAC2386737200D251F1 /* FirebaseManager.swift in Sources */,
 				DA280736238C1EC800C6547A /* CartEntity.swift in Sources */,
 				DA280745238D6FE800C6547A /* LoginVC.swift in Sources */,
@@ -395,13 +426,16 @@
 				DA28072E238BF02F00C6547A /* NewEntityVC.swift in Sources */,
 				DA280726238A829300C6547A /* MyProductsVC.swift in Sources */,
 				DA280734238C1D2100C6547A /* CartEntityCell.swift in Sources */,
+				DA08C8C7238FCCE5003EB10C /* PreLoginVC.swift in Sources */,
 				DA28072C238BE41C00C6547A /* NewProductVC.swift in Sources */,
 				DAD7EE912386646200D251F1 /* AppDelegate.swift in Sources */,
 				DA280732238C1B9F00C6547A /* CartVC.swift in Sources */,
 				DAD7EE932386646200D251F1 /* SceneDelegate.swift in Sources */,
+				DAA4BD31238FA67300A34F68 /* BannerTestingVC.swift in Sources */,
 				DA28072A238AB0EC00C6547A /* Entity.swift in Sources */,
 				DAD7EEA8238671FB00D251F1 /* Product.swift in Sources */,
 				DA280728238AAA3F00C6547A /* EntityCell.swift in Sources */,
+				DAA4BD36238FAE3600A34F68 /* AdMobManager.swift in Sources */,
 				DA280730238BFCCF00C6547A /* CalculatorVC.swift in Sources */,
 				DAC0D2F22387D51F00BFC4C4 /* DateManager.swift in Sources */,
 			);

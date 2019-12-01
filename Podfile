@@ -9,6 +9,8 @@ pod 'Firebase/Analytics'
 pod 'Firebase'
 pod 'Firebase/Database'
 pod 'Firebase/Auth'
+pod 'SwiftyUserDefaults'
+pod 'Google-Mobile-Ads-SDK'
 
 
   # Pods for MyDailyCalories

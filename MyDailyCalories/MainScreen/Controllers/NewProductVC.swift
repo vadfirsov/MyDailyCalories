@@ -7,10 +7,9 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class NewProductVC : UIViewController {
-    
-    private var date = Date()
     
     @IBOutlet weak var tfCalories: UITextField!
     @IBOutlet weak var tfCarbs:    UITextField!
@@ -20,6 +19,17 @@ class NewProductVC : UIViewController {
         didSet { tfName.becomeFirstResponder() }
     }
 
+    @IBOutlet weak var bannerView: GADBannerView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        AdMobManager.shared.set(banner: bannerView, inVC: self)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        bannerView = nil 
+    }
        
     @IBOutlet var textFields: [UITextField]! {
         didSet {
@@ -33,7 +43,7 @@ class NewProductVC : UIViewController {
                               protein:  tfProtein.text  ?? "",
                               carbs:    tfCarbs.text    ?? "",
                               fat:      tfFat.text      ?? "")
-        product.dateString = DateManager.shared.stringFrom(date: date)
+        product.dateString = DateManager.shared.stringFrom(date: Date())
         FirebaseManager.shared.saveNew(product: product)
         self.navigationController?.popViewController(animated: true)
     }
