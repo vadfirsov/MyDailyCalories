@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol LoginDelegate {
+protocol LoginDelegate { 
     func authentication(error : String)
 }
 

@@ -151,7 +151,7 @@ class AlertManager {
         vc.present(alert, animated: true, completion: nil)
     }
     
-    func showAlertWithLoginError(inVC vc : UIViewController, message : String) {
+    func showAlertWithAuthError(inVC vc : UIViewController, message : String) {
         let alert = UIAlertController(title: "Uh-Oh!", message: message, preferredStyle: .alert)
         alert.addAction(cancel)
         vc.present(alert, animated: true, completion: nil)

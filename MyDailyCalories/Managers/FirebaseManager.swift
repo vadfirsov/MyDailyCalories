@@ -9,6 +9,9 @@
 import Foundation
 import FirebaseDatabase
 import FirebaseAuth
+import GoogleSignIn
+import FirebaseUI
+import FBSDKLoginKit
 
 protocol FirebaseDelegate {
     func didReceived(products : [Product])
@@ -21,6 +24,7 @@ protocol FirebaseDelegate {
     func savedUserName()
     func autoLoginWith(email : String, pw : String)
     func user(isLogin : Bool) //mandatory
+    func didLoggedOutWith(error : Error?)
 }
 
 extension FirebaseDelegate {
@@ -34,6 +38,7 @@ extension FirebaseDelegate {
     func savedUserName() {}
     func autoLoginWith(email : String, pw : String) {}
     func user(isLogin : Bool) {}
+    func didLoggedOutWith(error : Error?) {}
 }
 
 class FirebaseManager {
@@ -80,8 +85,41 @@ class FirebaseManager {
     }
     
     func tryLogOut() {
-        do { try Auth.auth().signOut() }
-        catch { print(error.localizedDescription) }
+        var err : Error?
+        do {
+            try Auth.auth().signOut()
+        }
+        catch {
+            err = error
+        }
+        delegate?.didLoggedOutWith(error: err)
+    }
+    
+    //MARK: THIRD PARTY SIGNIN
+    func signInWithGoogle(user : GIDGoogleUser) {
+        if let authentication = user.authentication {
+            let credentials = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
+            signInWith(credentials: credentials)
+
+        }
+    }
+    
+    func signInWithFB() {
+        guard let token = AccessToken.current?.tokenString else { return }
+        
+        let credentials = FacebookAuthProvider.credential(withAccessToken: token)
+        
+        signInWith(credentials: credentials)
+    }
+    
+    private func signInWith(credentials : AuthCredential) {
+        Auth.auth().signInAndRetrieveData(with: credentials) { (user, error) in
+                if error != nil {
+                    self.delegate?.loginFailedWith(error: error!.localizedDescription)
+                } else if error == nil {
+                    self.delegate?.loginSuccess()
+                }
+        }
     }
     
     //MARK: SAVE

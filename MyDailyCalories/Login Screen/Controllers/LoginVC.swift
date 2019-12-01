@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import FirebaseUI
+import GoogleSignIn
+import FBSDKLoginKit
+//import FirebaseAu
 
 class LoginVC : UIViewController {
     
@@ -21,21 +25,41 @@ class LoginVC : UIViewController {
     
     @IBOutlet weak var loader: UIActivityIndicatorView!
     
+    @IBOutlet weak var btnFBLogin: FBLoginButton!
+    @IBOutlet weak var btnGoogleLogin: GIDSignInButton!
+    
     @IBOutlet var textFields: [UITextField]!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         FirebaseManager.shared.delegate = self
-//        FirebaseManager.shared.tryAutoLogin()
+        btnFBLogin.delegate = self
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        GIDSignIn.sharedInstance()?.delegate = self
+        GIDSignIn.sharedInstance()?.signOut()
+        
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         setTextFields()
-        tfEmail.becomeFirstResponder()
+        addGestures()
         //mockdata
         tfEmail.text = "test@t.com"
         tfPw.text = "123456"
+    }
+
+    private func addGestures() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self,
+                                                                 action: #selector(dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+        
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     private func setTextFields() {
@@ -96,14 +120,17 @@ class LoginVC : UIViewController {
     
     private func hideShowTextFields() {
         let isSignInChosen = segment.selectedSegmentIndex == 0
-        tfName.isHidden = isSignInChosen
-        tfPw2.isHidden = isSignInChosen
+        tfName.isHidden =         isSignInChosen
+        tfPw2.isHidden =          isSignInChosen
+        btnFBLogin.isHidden =     !isSignInChosen
+        btnGoogleLogin.isHidden = !isSignInChosen
     }
 }
 
 extension LoginVC : FirebaseDelegate {
     
     func loginSuccess() {
+        loader.stopAnimating()
         if segment.selectedSegmentIndex != signInIndex {
             FirebaseManager.shared.saveNewUserWith(userName: tfName.text!)
         }
@@ -114,7 +141,7 @@ extension LoginVC : FirebaseDelegate {
     
     func loginFailedWith(error: String) {
         loader.stopAnimating()
-        AlertManager.shared.showAlertWithLoginError(inVC: self, message: error)
+        AlertManager.shared.showAlertWithAuthError(inVC: self, message: error)
     }
     
     func savedUserName() {
@@ -122,14 +149,14 @@ extension LoginVC : FirebaseDelegate {
     }
     
     func autoLogin() {
-        performSegue(withIdentifier: segueID, sender: self)
+        performSegue(withIdentifier: segueID, sender: self) //is needed?
     }
 }
 
 extension LoginVC : LoginDelegate {
     func authentication(error: String) {
         loader.stopAnimating()
-        AlertManager.shared.showAlertWithLoginError(inVC: self, message: error)
+        AlertManager.shared.showAlertWithAuthError(inVC: self, message: error)
     }
 }
 
@@ -137,5 +164,32 @@ extension LoginVC : UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         moveToNextTF()
         return true
+    }
+}
+
+extension LoginVC : GIDSignInDelegate {
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if error != nil {
+            AlertManager.shared.showAlertWithAuthError(inVC: self, message: error.localizedDescription)
+        }
+        else if user != nil {
+            loader.startAnimating()
+            FirebaseManager.shared.signInWithGoogle(user: user)
+        }
+    }
+}
+
+extension LoginVC : LoginButtonDelegate {
+    func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
+        print("logout")
+    }
+    
+    func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
+        if error != nil {
+            AlertManager.shared.showAlertWithAuthError(inVC: self, message: error!.localizedDescription)
+        }
+        else {
+            FirebaseManager.shared.signInWithFB()
+        }
     }
 }
