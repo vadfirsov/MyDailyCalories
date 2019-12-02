@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FBSDKLoginKit
 
 class ProfileVC : UIViewController {
     
@@ -26,6 +27,7 @@ extension ProfileVC : FirebaseDelegate {
             AlertManager.shared.showAlertWithAuthError(inVC: self, message: error!.localizedDescription)
         }
         else {
+            AccessToken.current = nil
             self.view.window!.rootViewController?.dismiss(animated: true, completion: nil)
         }
     }

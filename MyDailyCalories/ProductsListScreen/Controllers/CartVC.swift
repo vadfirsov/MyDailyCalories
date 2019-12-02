@@ -52,15 +52,13 @@ class CartVC : UIViewController {
     }
     
     @IBAction func addToDailyTapped(_ sender: UIButton) {
-        let sumOfCart = sumOfCartEntities()
         let product = Product(name:     "No Name",
-                              calories: "\(sumOfCart.calories)",
-                              protein:  "\(sumOfCart.protein)",
-                              carbs:    "\(sumOfCart.carbs)",
-                              fat:      "\(sumOfCart.fat)")
+                              calories: lblCalories.text ?? "0",
+                              protein:  lblProtein.text  ?? "0",
+                              carbs:    lblCarbs.text    ?? "0",
+                              fat:      lblFat.text      ?? "0")
         
         AlertManager.shared.showAlertAddToDailyWithName(inVC: self, product: product)
-        
     }
     
     private func updateLabels() {

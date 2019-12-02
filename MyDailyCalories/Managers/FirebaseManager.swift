@@ -86,12 +86,12 @@ class FirebaseManager {
     
     func tryLogOut() {
         var err : Error?
-        do {
-            try Auth.auth().signOut()
-        }
-        catch {
-            err = error
-        }
+        //facebook
+        let loginManager = LoginManager()
+        loginManager.logOut()
+        //everything else
+        do { try Auth.auth().signOut() }
+        catch { err = error }
         delegate?.didLoggedOutWith(error: err)
     }
     
@@ -105,20 +105,22 @@ class FirebaseManager {
     }
     
     func signInWithFB() {
-        guard let token = AccessToken.current?.tokenString else { return }
-        
+        guard let token = AccessToken.current?.tokenString else {
+            return
+        }
+
         let credentials = FacebookAuthProvider.credential(withAccessToken: token)
-        
         signInWith(credentials: credentials)
     }
     
     private func signInWith(credentials : AuthCredential) {
-        Auth.auth().signInAndRetrieveData(with: credentials) { (user, error) in
-                if error != nil {
-                    self.delegate?.loginFailedWith(error: error!.localizedDescription)
-                } else if error == nil {
-                    self.delegate?.loginSuccess()
-                }
+        Auth.auth().signIn(with: credentials) { (user, error) in
+             if error != nil {
+                self.tryLogOut()
+                self.delegate?.loginFailedWith(error: error!.localizedDescription)
+            } else if error == nil {
+             self.delegate?.loginSuccess()
+            }
         }
     }
     

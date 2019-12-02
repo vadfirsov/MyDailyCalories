@@ -12,7 +12,7 @@ protocol LoginDelegate {
     func authentication(error : String)
 }
 
-class LoginManager {
+class SignInManager {
     
     var name :  String?
     var email : String

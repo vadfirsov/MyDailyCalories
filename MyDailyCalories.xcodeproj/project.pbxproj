@@ -24,7 +24,7 @@
 		DAA4BD31238FA67300A34F68 /* BannerTestingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA4BD30238FA67300A34F68 /* BannerTestingVC.swift */; };
 		DAA4BD34238FAD4700A34F68 /* Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA4BD33238FAD4700A34F68 /* Consts.swift */; };
 		DAA4BD36238FAE3600A34F68 /* AdMobManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA4BD35238FAE3600A34F68 /* AdMobManager.swift */; };
-		DAB0116E238E69F800539CAD /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0116D238E69F800539CAD /* LoginManager.swift */; };
+		DAB0116E238E69F800539CAD /* SignInManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0116D238E69F800539CAD /* SignInManager.swift */; };
 		DAC0D2EB2386DC4400BFC4C4 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC0D2EA2386DC4400BFC4C4 /* AlertManager.swift */; };
 		DAC0D2F22387D51F00BFC4C4 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC0D2F12387D51F00BFC4C4 /* DateManager.swift */; };
 		DAD7EE912386646200D251F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD7EE902386646200D251F1 /* AppDelegate.swift */; };
@@ -60,7 +60,7 @@
 		DAA4BD30238FA67300A34F68 /* BannerTestingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerTestingVC.swift; sourceTree = "<group>"; };
 		DAA4BD33238FAD4700A34F68 /* Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consts.swift; sourceTree = "<group>"; };
 		DAA4BD35238FAE3600A34F68 /* AdMobManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobManager.swift; sourceTree = "<group>"; };
-		DAB0116D238E69F800539CAD /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
+		DAB0116D238E69F800539CAD /* SignInManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInManager.swift; sourceTree = "<group>"; };
 		DAC0D2EA2386DC4400BFC4C4 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		DAC0D2F12387D51F00BFC4C4 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 		DAD7EE8D2386646200D251F1 /* MyDailyCalories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDailyCalories.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -236,7 +236,7 @@
 				DAD7EEAB2386737200D251F1 /* FirebaseManager.swift */,
 				DAC0D2EA2386DC4400BFC4C4 /* AlertManager.swift */,
 				DA280741238D514900C6547A /* FilterManager.swift */,
-				DAB0116D238E69F800539CAD /* LoginManager.swift */,
+				DAB0116D238E69F800539CAD /* SignInManager.swift */,
 				DAA4BD35238FAE3600A34F68 /* AdMobManager.swift */,
 			);
 			path = Managers;
@@ -471,7 +471,7 @@
 				DA280745238D6FE800C6547A /* LoginVC.swift in Sources */,
 				DA53D4B02393B9D10071F3BC /* ProfileVC.swift in Sources */,
 				DAD7EE952386646200D251F1 /* DailyCalsVC.swift in Sources */,
-				DAB0116E238E69F800539CAD /* LoginManager.swift in Sources */,
+				DAB0116E238E69F800539CAD /* SignInManager.swift in Sources */,
 				DAD7EEA623866F0700D251F1 /* ProductCell.swift in Sources */,
 				DA280742238D514900C6547A /* FilterManager.swift in Sources */,
 				DA28072E238BF02F00C6547A /* NewEntityVC.swift in Sources */,

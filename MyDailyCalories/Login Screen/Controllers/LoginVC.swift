@@ -25,8 +25,9 @@ class LoginVC : UIViewController {
     
     @IBOutlet weak var loader: UIActivityIndicatorView!
     
-    @IBOutlet weak var btnFBLogin: FBLoginButton!
-    @IBOutlet weak var btnGoogleLogin: GIDSignInButton!
+    @IBOutlet weak var btnGoogleLogin: GIDSignInButton! 
+    @IBOutlet weak var btnFBLogin:     FBLoginButton! {
+        didSet {btnFBLogin.permissions = ["public_profile", "email"] } }
     
     @IBOutlet var textFields: [UITextField]!
     
@@ -80,7 +81,7 @@ class LoginVC : UIViewController {
     
     @IBAction func loginTapped(_ sender: UIButton) {
         loader.startAnimating()
-        let login = LoginManager(name:  tfName.text,
+        let login = SignInManager(name:  tfName.text,
                                  email: tfEmail.text ?? "",
                                  pw:    tfPw.text ?? "",
                                  pw2:   tfPw2.text)
@@ -192,4 +193,10 @@ extension LoginVC : LoginButtonDelegate {
             FirebaseManager.shared.signInWithFB()
         }
     }
+    
+    func loginButtonWillLogin(_ loginButton: FBLoginButton) -> Bool {
+        return true
+    }
+    
+    
 }
