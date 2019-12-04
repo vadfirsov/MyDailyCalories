@@ -121,6 +121,19 @@ class AlertManager {
 
     }
     
+    func showAlertDeleteCartEntity(inVC vc : UIViewController, entity : CartEntity) {
+        
+        let alert = UIAlertController(title: "Uh-Oh!",
+                                      message: "You are about to delete entity: \(entity.name)",
+                                      preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default) { (action) in
+            FirebaseManager.shared.delete(cartEntity: entity)            
+        }
+        alert.addAction(cancel)
+        alert.addAction(ok)
+        vc.present(alert, animated: true, completion: nil)
+    }
+    
     func showAlertProductSaved(inVC vc : UIViewController) {
         let alert = UIAlertController(title: "Yippee Ki-Yay", message: "Product Saved Successfully", preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .default, handler: nil)

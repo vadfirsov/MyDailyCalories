@@ -116,6 +116,7 @@ extension MyProductsVC : FirebaseDelegate {
     
     func didReceive(entities: [Entity]) {
         self.entities = entities
+        loader.stopAnimating()
         filteredEntities = entities
         tableView.reloadData()
     }

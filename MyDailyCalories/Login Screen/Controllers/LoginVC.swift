@@ -25,15 +25,25 @@ class LoginVC : UIViewController {
     
     @IBOutlet weak var loader: UIActivityIndicatorView!
     
-    @IBOutlet weak var btnGoogleLogin: GIDSignInButton! 
+    @IBOutlet weak var btnGoogleLogin: GIDSignInButton! {
+        didSet {btnGoogleLogin.style = .wide }
+    }
     @IBOutlet weak var btnFBLogin:     FBLoginButton! {
-        didSet {btnFBLogin.permissions = ["public_profile", "email"] } }
+        didSet {
+            btnFBLogin.permissions = ["public_profile", "email"]
+        }
+    }
     
     @IBOutlet var textFields: [UITextField]!
     
     
+    @IBOutlet weak var imgTest: UIImageView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        imgTest.image = UIImage(named: "yolodsfdsfdsf")
+        
         FirebaseManager.shared.delegate = self
         btnFBLogin.delegate = self
         GIDSignIn.sharedInstance()?.presentingViewController = self

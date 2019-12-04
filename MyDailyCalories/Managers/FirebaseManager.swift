@@ -226,8 +226,8 @@ class FirebaseManager {
                     let cartEntity = CartEntity(fromDict: value, name: key)
                     cart.append(cartEntity)
                 }
-                self?.delegate?.didReceive(cart: cart)
             }
+            self?.delegate?.didReceive(cart: cart)
         }
     }
     
@@ -243,6 +243,13 @@ class FirebaseManager {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         ref.child(uid).child(my_entities).child(entity.name).removeValue { [weak self] (error, ref) in
             self?.loadEntities()
+        }
+    }
+    
+    func delete(cartEntity : CartEntity) {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        ref.child(uid).child("cart").child(cartEntity.name).removeValue { [weak self] (error, ref) in
+            self?.loadCart()
         }
     }
     

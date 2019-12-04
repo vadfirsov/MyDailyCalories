@@ -20,9 +20,10 @@ class CalculatorVC : UIViewController {
     @IBOutlet weak var lblCarbs:      UILabel!
     @IBOutlet weak var lblFat:        UILabel!
     
-    @IBOutlet weak var btn100g:  UIButton!
-    @IBOutlet weak var btnSpoon: UIButton!
-    
+    @IBOutlet weak var btn200g:       UIButton!
+    @IBOutlet weak var btn100g:       UIButton!
+    @IBOutlet weak var btnSpoon:      UIButton!
+    @IBOutlet weak var btn50g:        UIButton!
     @IBOutlet weak var btnTableSpoon: UIButton!
     @IBOutlet weak var tfCustomGrams: UITextField! {
         didSet {
@@ -135,6 +136,8 @@ class CalculatorVC : UIViewController {
                     case btn100g :       multiplier = 1.0
                     case btnSpoon :      multiplier = 0.15
                     case btnTableSpoon : multiplier = 0.08
+                    case btn50g :        multiplier = 0.5
+                    case btn200g :       multiplier = 2.0
                     default:             multiplier = 1.0
                     }
                 }
@@ -196,5 +199,6 @@ extension CalculatorVC : CartDelegate {
     func didReceive(cart: [CartEntity]) {
         loader.stopAnimating()
         cartContainer.isHidden = cart.isEmpty
+//        view.layoutIfNeeded()
     }
 }

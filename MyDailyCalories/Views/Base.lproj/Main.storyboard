@@ -48,9 +48,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="lN8-ud-EPy">
-                                <rect key="frame" x="188.5" y="434.5" width="37" height="37"/>
-                            </activityIndicatorView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gry-zn-g7v">
                                 <rect key="frame" x="40" y="124" width="334" height="320"/>
                                 <subviews>
@@ -58,28 +55,28 @@
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="0.0"/>
                                         <color key="backgroundColor" red="0.77039629220000005" green="0.36910772320000002" blue="0.35684347150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6UK-KY-jtc">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="46.5"/>
                                         <color key="backgroundColor" red="0.77039629220000005" green="0.36910772320000002" blue="0.35684347150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NZ4-Zs-0SF">
                                         <rect key="frame" x="0.0" y="54.5" width="334" height="47"/>
                                         <color key="backgroundColor" red="0.77039629220000005" green="0.36910772320000002" blue="0.35684347150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password Again" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cfP-UG-NAP">
                                         <rect key="frame" x="0.0" y="105.5" width="334" height="0.0"/>
                                         <color key="backgroundColor" red="0.77039629220000005" green="0.36910772320000002" blue="0.35684347150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YNo-te-98f" customClass="FBSDKLoginButton">
@@ -90,12 +87,14 @@
                                         <rect key="frame" x="0.0" y="164" width="334" height="46.5"/>
                                         <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="nv6-ku-vLa">
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="nv6-ku-vLa">
                                         <rect key="frame" x="0.0" y="218.5" width="334" height="48"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                         <segments>
                                             <segment title="Sign-In"/>
                                             <segment title="Sign-Up"/>
                                         </segments>
+                                        <color key="selectedSegmentTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <action selector="segmentValueChanged:" destination="UN8-Q2-BVB" eventType="valueChanged" id="YVk-4P-RWW"/>
                                         </connections>
@@ -103,6 +102,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g1F-Il-Q7T">
                                         <rect key="frame" x="0.0" y="273.5" width="334" height="46.5"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="g1F-Il-Q7T" secondAttribute="height" multiplier="167:23" id="daA-LH-jf2"/>
+                                        </constraints>
                                         <state key="normal" title="Login">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -119,17 +121,53 @@
                                 <rect key="frame" x="40" y="730" width="173" height="30"/>
                                 <state key="normal" title="TODO :Forgot Password?"/>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fdsafsaf" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NMn-d4-xbY">
+                                <rect key="frame" x="40" y="452" width="334" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="DYV-5v-dW2"/>
+                                </constraints>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="google_btn_1" translatesAutoresizingMaskIntoConstraints="NO" id="kcd-fx-Phm">
+                                <rect key="frame" x="40" y="515" width="334" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="RbZ-2Q-zCr"/>
+                                </constraints>
+                            </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="lN8-ud-EPy">
+                                <rect key="frame" x="188.5" y="434.5" width="37" height="37"/>
+                            </activityIndicatorView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="google_btn_1" translatesAutoresizingMaskIntoConstraints="NO" id="8x2-st-Lsa">
+                                <rect key="frame" x="40" y="575" width="334" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="ec5-wc-SCq"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SWN-F7-gqR">
+                                <rect key="frame" x="35" y="594" width="271" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="google_BTN"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.77039629220000005" green="0.36910772320000002" blue="0.35684347150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="gry-zn-g7v" firstAttribute="top" secondItem="ir7-HL-81e" secondAttribute="top" constant="80" id="5JK-eH-gfz"/>
                             <constraint firstItem="ir7-HL-81e" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kWI-7M-jOF" secondAttribute="trailing" symbolic="YES" id="9Dl-XJ-rtd"/>
                             <constraint firstItem="ir7-HL-81e" firstAttribute="trailing" secondItem="gry-zn-g7v" secondAttribute="trailing" constant="40" id="Amw-JI-SVk"/>
+                            <constraint firstItem="ir7-HL-81e" firstAttribute="trailing" secondItem="8x2-st-Lsa" secondAttribute="trailing" constant="40" id="BEH-5F-WMs"/>
+                            <constraint firstItem="kcd-fx-Phm" firstAttribute="leading" secondItem="ir7-HL-81e" secondAttribute="leading" constant="40" id="Eso-l9-A3i"/>
+                            <constraint firstItem="8x2-st-Lsa" firstAttribute="top" secondItem="kcd-fx-Phm" secondAttribute="bottom" constant="5" id="Hfn-aS-EsA"/>
+                            <constraint firstItem="ir7-HL-81e" firstAttribute="trailing" secondItem="kcd-fx-Phm" secondAttribute="trailing" constant="40" id="JMp-Ds-TAW"/>
                             <constraint firstItem="ir7-HL-81e" firstAttribute="bottom" secondItem="kWI-7M-jOF" secondAttribute="bottom" constant="102" id="Nzt-Zk-lI1"/>
+                            <constraint firstItem="kcd-fx-Phm" firstAttribute="top" secondItem="NMn-d4-xbY" secondAttribute="bottom" constant="8" id="WfN-DS-lZD"/>
+                            <constraint firstItem="8x2-st-Lsa" firstAttribute="leading" secondItem="ir7-HL-81e" secondAttribute="leading" constant="40" id="Zd7-ZE-Lcd"/>
+                            <constraint firstItem="ir7-HL-81e" firstAttribute="trailing" secondItem="NMn-d4-xbY" secondAttribute="trailing" constant="40" id="fr4-5m-Ynn"/>
+                            <constraint firstItem="NMn-d4-xbY" firstAttribute="top" secondItem="g1F-Il-Q7T" secondAttribute="bottom" constant="8" id="i8w-Ka-xIX"/>
                             <constraint firstItem="kWI-7M-jOF" firstAttribute="leading" secondItem="ir7-HL-81e" secondAttribute="leading" constant="40" id="mvX-g0-Z9v"/>
                             <constraint firstItem="lN8-ud-EPy" firstAttribute="centerX" secondItem="ir7-HL-81e" secondAttribute="centerX" id="plE-A3-IFv"/>
                             <constraint firstItem="lN8-ud-EPy" firstAttribute="centerY" secondItem="ir7-HL-81e" secondAttribute="centerY" id="ppG-2l-H5c"/>
                             <constraint firstItem="gry-zn-g7v" firstAttribute="leading" secondItem="ir7-HL-81e" secondAttribute="leading" constant="40" id="rkJ-9Z-Hke"/>
+                            <constraint firstItem="NMn-d4-xbY" firstAttribute="leading" secondItem="ir7-HL-81e" secondAttribute="leading" constant="40" id="u1W-5R-Jg8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ir7-HL-81e"/>
                     </view>
@@ -137,6 +175,7 @@
                     <connections>
                         <outlet property="btnFBLogin" destination="YNo-te-98f" id="Kx0-8r-GLA"/>
                         <outlet property="btnGoogleLogin" destination="gb3-vG-cry" id="DlO-s4-gX4"/>
+                        <outlet property="imgTest" destination="kcd-fx-Phm" id="7md-Pq-mMC"/>
                         <outlet property="loader" destination="lN8-ud-EPy" id="MOS-E9-Uaf"/>
                         <outlet property="segment" destination="nv6-ku-vLa" id="w1X-ce-ML1"/>
                         <outlet property="tfEmail" destination="6UK-KY-jtc" id="2jG-3q-Y2k"/>
@@ -152,7 +191,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="onI-CR-bDw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3246.376811594203" y="358.92857142857139"/>
+            <point key="canvasLocation" x="-3247.1999999999998" y="358.4707646176912"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="bNz-PP-2J2">
@@ -175,11 +214,11 @@
             </objects>
             <point key="canvasLocation" x="-2363" y="359"/>
         </scene>
-        <!--Profile-->
+        <!--Navigation Controller-->
         <scene sceneID="ITI-6q-Zkf">
             <objects>
                 <navigationController modalPresentationStyle="fullScreen" id="Tq8-LG-ZyP" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" id="abW-Gh-o8x"/>
+                    <tabBarItem key="tabBarItem" title="" image="profile-icon-2" id="abW-Gh-o8x"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ga5-wd-nZA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -225,11 +264,11 @@
             </objects>
             <point key="canvasLocation" x="-2365.217391304348" y="1820.7589285714284"/>
         </scene>
-        <!--My Products-->
+        <!--Navigation Controller-->
         <scene sceneID="Pb4-IP-G05">
             <objects>
                 <navigationController modalPresentationStyle="fullScreen" id="okC-pz-H0n" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Products" id="grp-zz-Mx1"/>
+                    <tabBarItem key="tabBarItem" title="" image="grocery-icon-19" id="grp-zz-Mx1"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hRq-8e-2P1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -250,9 +289,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="9zz-XH-aVh">
-                                <rect key="frame" x="188.5" y="389" width="37" height="37"/>
-                            </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="f7r-vP-6C4">
                                 <rect key="frame" x="0.0" y="178" width="414" height="531"/>
                                 <color key="backgroundColor" red="0.1137269512" green="0.1137235239" blue="0.1137242243" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -535,6 +571,9 @@
                                 <rect key="frame" x="0.0" y="709" width="414" height="50"/>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="9zz-XH-aVh">
+                                <rect key="frame" x="188.5" y="389" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.1137269512" green="0.1137235239" blue="0.1137242243" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -560,6 +599,7 @@
                     <tabBarItem key="tabBarItem" title="Item" id="bZg-JW-OhU"/>
                     <navigationItem key="navigationItem" title="Products" id="0JZ-Uw-5WD">
                         <barButtonItem key="rightBarButtonItem" title="Add" id="fRw-cQ-XXV">
+                            <color key="tintColor" red="0.77039629220000005" green="0.36910772320000002" blue="0.35684347150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="addBtnTapped:" destination="qIp-aS-2ms" id="rnx-ZL-kIt"/>
                                 <segue destination="vRc-go-hJU" kind="show" id="r7z-c6-6Dh"/>
@@ -591,9 +631,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="yZn-66-L6p">
-                                <rect key="frame" x="188.5" y="389" width="37" height="37"/>
-                            </activityIndicatorView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Pjs-NG-DnG">
                                 <rect key="frame" x="20" y="76" width="374" height="176"/>
                                 <subviews>
@@ -668,41 +705,63 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="hxr-AC-9fD">
                                         <rect key="frame" x="0.0" y="146" width="374" height="30"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HZH-0A-UFl">
-                                                <rect key="frame" x="0.0" y="0.0" width="49.5" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qSU-8P-f1G">
+                                                <rect key="frame" x="0.0" y="0.0" width="45" height="30"/>
+                                                <color key="backgroundColor" red="0.60060055990000005" green="0.75436747950000005" blue="0.77039629220000005" alpha="0.080854023969999994" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                <state key="normal" title=" 200g ">
+                                                    <color key="titleColor" red="0.77039629220000005" green="0.36910772320000002" blue="0.35684347150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="gramButtonTapped:" destination="M1U-EC-Bt8" eventType="touchUpInside" id="vxc-D1-5u8"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HZH-0A-UFl">
+                                                <rect key="frame" x="53" y="0.0" width="51" height="30"/>
                                                 <color key="backgroundColor" red="0.20558497310000001" green="0.7828625441" blue="0.34891250730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                                <state key="normal" title=" 100g ">
+                                                <state key="normal" title="  100g  ">
                                                     <color key="titleColor" red="0.77039629220000005" green="0.36910772320000002" blue="0.35684347150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="gramButtonTapped:" destination="M1U-EC-Bt8" eventType="touchUpInside" id="Ehb-Gw-t6B"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DH7-pk-vfz">
-                                                <rect key="frame" x="57.5" y="0.0" width="94" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RyH-9b-h3F">
+                                                <rect key="frame" x="112" y="0.0" width="36" height="30"/>
+                                                <color key="backgroundColor" red="0.60060055990000005" green="0.75436747950000005" blue="0.77039629220000005" alpha="0.080854023969999994" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                <state key="normal" title=" 50g ">
+                                                    <color key="titleColor" red="0.77039629220000005" green="0.36910772320000002" blue="0.35684347150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="gramButtonTapped:" destination="M1U-EC-Bt8" eventType="touchUpInside" id="9nz-MQ-L3W"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DH7-pk-vfz">
+                                                <rect key="frame" x="156" y="0.0" width="34" height="30"/>
                                                 <color key="backgroundColor" red="0.60060055992581751" green="0.75436747952359384" blue="0.77039629220000005" alpha="0.080854023972602745" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                                <state key="normal" title=" Spoon (15g) ">
+                                                <state key="normal" title=" 15g ">
                                                     <color key="titleColor" red="0.77039629220000005" green="0.36910772320000002" blue="0.35684347150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="gramButtonTapped:" destination="M1U-EC-Bt8" eventType="touchUpInside" id="UvP-L7-CgS"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="goF-Hf-zwL">
-                                                <rect key="frame" x="159.5" y="0.0" width="123" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="goF-Hf-zwL">
+                                                <rect key="frame" x="198" y="0.0" width="30" height="30"/>
                                                 <color key="backgroundColor" red="0.60060055992581751" green="0.75436747952359384" blue="0.77039629220000005" alpha="0.080854023972602745" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                                <state key="normal" title=" Tablespoon (8g) ">
+                                                <state key="normal" title=" 8g ">
                                                     <color key="titleColor" red="0.77039629220000005" green="0.36910772320000002" blue="0.35684347150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="gramButtonTapped:" destination="M1U-EC-Bt8" eventType="touchUpInside" id="x4i-2L-XlE"/>
                                                 </connections>
                                             </button>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Custom g " textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sl1-lp-BgX">
-                                                <rect key="frame" x="290.5" y="0.0" width="83.5" height="30"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Custom g " textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sl1-lp-BgX">
+                                                <rect key="frame" x="236" y="0.0" width="138" height="30"/>
                                                 <color key="backgroundColor" red="0.98382954879999995" green="0.98820835870000001" blue="1" alpha="0.08350278253" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
@@ -733,6 +792,9 @@
                                 <rect key="frame" x="0.0" y="709" width="414" height="50"/>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="yZn-66-L6p">
+                                <rect key="frame" x="188.5" y="389" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.1137269512" green="0.1137235239" blue="0.1137242243" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -765,6 +827,8 @@
                     <connections>
                         <outlet property="bannerView" destination="hCM-qd-tBY" id="9T8-Ph-vDR"/>
                         <outlet property="btn100g" destination="HZH-0A-UFl" id="wEm-mK-krI"/>
+                        <outlet property="btn200g" destination="qSU-8P-f1G" id="rKo-bB-XCX"/>
+                        <outlet property="btn50g" destination="RyH-9b-h3F" id="8dp-Y6-DhH"/>
                         <outlet property="btnSpoon" destination="DH7-pk-vfz" id="r3x-fq-Hwz"/>
                         <outlet property="btnTableSpoon" destination="goF-Hf-zwL" id="cAi-LJ-cah"/>
                         <outlet property="cartContainer" destination="kep-5j-rHC" id="eYj-hd-VUl"/>
@@ -778,6 +842,8 @@
                         <outletCollection property="gramBtns" destination="HZH-0A-UFl" collectionClass="NSMutableArray" id="uRm-8v-d7i"/>
                         <outletCollection property="gramBtns" destination="DH7-pk-vfz" collectionClass="NSMutableArray" id="VeC-X9-lfT"/>
                         <outletCollection property="gramBtns" destination="goF-Hf-zwL" collectionClass="NSMutableArray" id="3CF-bB-kiB"/>
+                        <outletCollection property="gramBtns" destination="qSU-8P-f1G" collectionClass="NSMutableArray" id="9pt-jd-Fnk"/>
+                        <outletCollection property="gramBtns" destination="RyH-9b-h3F" collectionClass="NSMutableArray" id="cq0-hX-gRs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cmh-Iz-GnL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -940,11 +1006,11 @@
             </objects>
             <point key="canvasLocation" x="515.94202898550725" y="866.51785714285711"/>
         </scene>
-        <!--Daily Calories-->
+        <!--Navigation Controller-->
         <scene sceneID="NfL-L6-2Bp">
             <objects>
                 <navigationController modalPresentationStyle="fullScreen" id="ObV-Bm-nnq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Daily Calories" id="fIu-v3-kCJ"/>
+                    <tabBarItem key="tabBarItem" title="" image="calories-icon-4a" id="fIu-v3-kCJ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JjI-Jb-vBx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -965,9 +1031,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="SZC-Tx-N29">
-                                <rect key="frame" x="188.5" y="389" width="37" height="37"/>
-                            </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rFX-yJ-AAg">
                                 <rect key="frame" x="0.0" y="138.5" width="414" height="453.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1249,6 +1312,9 @@
                                 <color key="progressTintColor" red="0.20558497310000001" green="0.7828625441" blue="0.34891250730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="trackTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </progressView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="SZC-Tx-N29">
+                                <rect key="frame" x="188.5" y="389" width="37" height="37"/>
+                            </activityIndicatorView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Oo-Qn-i7i" customClass="GADBannerView">
                                 <rect key="frame" x="0.0" y="709" width="414" height="50"/>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1477,9 +1543,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="408"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="UvO-aQ-MKt">
-                                <rect key="frame" x="197" y="216" width="20" height="20"/>
-                            </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zbg-h7-qyK">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="311"/>
                                 <color key="backgroundColor" red="0.11372695118188858" green="0.113723523914814" blue="0.11372422426939011" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1712,6 +1775,9 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="UvO-aQ-MKt">
+                                <rect key="frame" x="188.5" y="207.5" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.1137269512" green="0.1137235239" blue="0.1137242243" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -1747,6 +1813,14 @@
             <point key="canvasLocation" x="1464" y="1630"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="calories-icon-4a" width="25" height="25"/>
+        <image name="fdsafsaf" width="624" height="116"/>
+        <image name="google_BTN" width="334" height="55"/>
+        <image name="google_btn_1" width="197" height="35"/>
+        <image name="grocery-icon-19" width="25" height="25"/>
+        <image name="profile-icon-2" width="25" height="25"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ozl-AG-QEQ"/>
     </inferredMetricsTieBreakers>

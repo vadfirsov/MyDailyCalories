@@ -93,7 +93,9 @@ extension CartVC : UITableViewDelegate, UITableViewDataSource  {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as? CartEntityCell {
-            cell.setCell(withCartEntity: cart[indexPath.row])
+            cell.setCell(withCartEntity: cart[indexPath.row], index : indexPath.row)
+            cell.delegate = self
+    
             return cell
         }
         return UITableViewCell()
@@ -105,7 +107,7 @@ extension CartVC : FirebaseDelegate {
     func didReceive(cart: [CartEntity]) {
         self.cart = cart
         delegate?.didReceive(cart : cart)
-
+        loader.stopAnimating()
         updateLabels()
         tableView.reloadData()
     }
@@ -121,5 +123,11 @@ extension CartVC : AlertDelegate {
     func servingsUpdated(servings: Double) {
         self.servings = servings
         updateLabels()
+    }
+}
+
+extension CartVC : CartCellDelegate {
+    func tappedLonglyOnCell(index: Int) {
+        AlertManager.shared.showAlertDeleteCartEntity(inVC: self, entity: cart[index])
     }
 }
