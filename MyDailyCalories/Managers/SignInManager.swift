@@ -14,15 +14,13 @@ protocol LoginDelegate {
 
 class SignInManager {
     
-    var name :  String?
     var email : String
     var pw :    String
     var pw2 :   String?
     
     var delegate : LoginDelegate?
     
-    init(name : String?, email: String, pw : String, pw2 : String?) {
-        self.name =  name
+    init(email: String, pw : String, pw2 : String?) {
         self.email = email
         self.pw =    pw
         self.pw2 =   pw2
@@ -39,11 +37,7 @@ class SignInManager {
             delegate?.authentication(error: errorString)
             return
         }
-        else if name == nil || name?.isEmpty ?? true {
-            let errorString = "User Name Empty"
-            delegate?.authentication(error: errorString)
-            return
-        }
+
         FirebaseManager.shared.signUpNewUser(email: email, pw: pw)
     }
     

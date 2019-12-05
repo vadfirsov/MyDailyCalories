@@ -21,7 +21,7 @@ protocol FirebaseDelegate {
     func productSavedSuccessfully()
     func loginSuccess()
     func loginFailedWith(error : String)
-    func savedUserName()
+//    func savedUserName()
     func autoLoginWith(email : String, pw : String)
     func user(isLogin : Bool) //mandatory
     func didLoggedOutWith(error : Error?)
@@ -35,7 +35,7 @@ extension FirebaseDelegate {
     func productSavedSuccessfully() {}
     func loginSuccess() {}
     func loginFailedWith(error : String) {}
-    func savedUserName() {}
+//    func savedUserName() {}
     func autoLoginWith(email : String, pw : String) {}
     func user(isLogin : Bool) {}
     func didLoggedOutWith(error : Error?) {}
@@ -86,9 +86,10 @@ class FirebaseManager {
     
     func tryLogOut() {
         var err : Error?
-        //facebook
+        //facebook & google
         let loginManager = LoginManager()
         loginManager.logOut()
+        GIDSignIn.sharedInstance()?.signOut()
         //everything else
         do { try Auth.auth().signOut() }
         catch { err = error }
@@ -125,18 +126,18 @@ class FirebaseManager {
     }
     
     //MARK: SAVE
-    func saveNewUserWith(userName : String) {
-        if let user = Auth.auth().currentUser {
-            ref.child(user.uid).child("full_name").setValue(userName) { [weak self] (error, _) in
-                if error != nil {
-                    print(error!.localizedDescription)
-                }
-                else {
-                    self?.delegate?.savedUserName()
-                }
-            }
-        }
-    }
+//    func saveNewUserWith(userName : String) {
+//        if let user = Auth.auth().currentUser {
+//            ref.child(user.uid).child("full_name").setValue(userName) { [weak self] (error, _) in
+//                if error != nil {
+//                    print(error!.localizedDescription)
+//                }
+//                else {
+//                    self?.delegate?.savedUserName()
+//                }
+//            }
+//        }
+//    }
     
     func saveNew(product : Product) {
         let fullDate = "\(product.date)"

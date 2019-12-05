@@ -15,43 +15,34 @@ import FBSDKLoginKit
 class LoginVC : UIViewController {
     
     private let segueID = "goToDailyCals"
-    private let signInIndex = 0
+    private var isKeyboardShown = false
     
-    @IBOutlet weak var tfName:  UITextField!
     @IBOutlet weak var tfEmail: UITextField!
     @IBOutlet weak var tfPw:    UITextField!
     @IBOutlet weak var tfPw2:   UITextField!
-    @IBOutlet weak var segment: UISegmentedControl!
+    @IBOutlet weak var segment: CustomSegment! 
+
     
     @IBOutlet weak var loader: UIActivityIndicatorView!
     
-    @IBOutlet weak var btnGoogleLogin: GIDSignInButton! {
-        didSet {btnGoogleLogin.style = .wide }
+    @IBOutlet weak var btnFbSignIn:     CustomBtn! {
+        didSet { btnFbSignIn.setFbDesign()}
     }
-    @IBOutlet weak var btnFBLogin:     FBLoginButton! {
-        didSet {
-            btnFBLogin.permissions = ["public_profile", "email"]
-        }
+    @IBOutlet weak var btnGoogleSignIn: CustomBtn! {
+        didSet { btnGoogleSignIn.setGoogleDesign()}
     }
-    
+
+
     @IBOutlet var textFields: [UITextField]!
-    
-    
-    @IBOutlet weak var imgTest: UIImageView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        imgTest.image = UIImage(named: "yolodsfdsfdsf")
         
         FirebaseManager.shared.delegate = self
-        btnFBLogin.delegate = self
         GIDSignIn.sharedInstance()?.presentingViewController = self
         GIDSignIn.sharedInstance()?.delegate = self
-        GIDSignIn.sharedInstance()?.signOut()
-        
-        
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         setTextFields()
@@ -59,17 +50,71 @@ class LoginVC : UIViewController {
         //mockdata
         tfEmail.text = "test@t.com"
         tfPw.text = "123456"
-    }
-
-    private func addGestures() {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self,
-                                                                 action: #selector(dismissKeyboard))
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
         
     }
     
-    @objc func dismissKeyboard() {
+    @IBAction func segmentValueChanged(_ sender: UISegmentedControl) {
+        hideShowTextFields()
+    }
+    
+    @IBAction func sameSegmentTapped(_ sender: CustomSegment) {
+        loader.startAnimating()
+        let login = SignInManager(email: tfEmail.text ?? "",
+                                  pw:    tfPw.text ?? "",
+                                  pw2:   tfPw2.text)
+        login.delegate = self
+        
+        switch segment.isSignInChosen {
+        case true : login.performSignIn()
+        case false : login.performSignUp()
+        }
+    }
+    
+    @IBAction func fbSignInTapped(_ sender: UIButton) {
+        let fbLoginManager = LoginManager()
+
+        fbLoginManager.logIn(permissions: ["public_profile", "email"], from: self) { (result, error) -> Void in
+            if (error != nil) {
+                AlertManager.shared.showAlertWithAuthError(inVC: self, message: error!.localizedDescription)
+                return
+            }
+            if (result?.isCancelled)! {
+                return
+            }
+            else if (result!.grantedPermissions.contains("email")) {
+                FirebaseManager.shared.signInWithFB()
+            }
+        }
+    }
+    
+    @IBAction func googleSignInTapped(_ sender: CustomBtn) {
+        GIDSignIn.sharedInstance()?.signIn()
+    }
+
+    private func addGestures() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow),
+                                               name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide),
+                                               name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            isKeyboardShown = true
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        isKeyboardShown = false
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
     
@@ -85,27 +130,7 @@ class LoginVC : UIViewController {
         loader.stopAnimating()
     }
 
-    @IBAction func segmentValueChanged(_ sender: UISegmentedControl) {
-        hideShowTextFields()
-    }
-    
-    @IBAction func loginTapped(_ sender: UIButton) {
-        loader.startAnimating()
-        let login = SignInManager(name:  tfName.text,
-                                 email: tfEmail.text ?? "",
-                                 pw:    tfPw.text ?? "",
-                                 pw2:   tfPw2.text)
-        login.delegate = self
-        if segment.selectedSegmentIndex == signInIndex {
-            login.performSignIn()
-        }
-        else {
-            login.performSignUp()
-        }
-    }
-    
     private func moveToNextTF() {
-        
         for i in textFields.indices {
             if textFields[i].isFirstResponder {
                 if textFields[i] == textFields.last {
@@ -130,11 +155,14 @@ class LoginVC : UIViewController {
     }
     
     private func hideShowTextFields() {
-        let isSignInChosen = segment.selectedSegmentIndex == 0
-        tfName.isHidden =         isSignInChosen
-        tfPw2.isHidden =          isSignInChosen
-        btnFBLogin.isHidden =     !isSignInChosen
-        btnGoogleLogin.isHidden = !isSignInChosen
+
+        tfPw.isHidden =            segment.isSignInChosen
+        tfPw2.isHidden =           segment.isSignInChosen
+        btnFbSignIn.isHidden =     !segment.isSignInChosen
+        btnGoogleSignIn.isHidden = !segment.isSignInChosen
+        if isKeyboardShown {
+            tfPw.isHidden = false
+        }
     }
 }
 
@@ -142,23 +170,14 @@ extension LoginVC : FirebaseDelegate {
     
     func loginSuccess() {
         loader.stopAnimating()
-        if segment.selectedSegmentIndex != signInIndex {
-            FirebaseManager.shared.saveNewUserWith(userName: tfName.text!)
-        }
-        else {
-            performSegue(withIdentifier: segueID, sender: self)
-        }
+        performSegue(withIdentifier: segueID, sender: self)
     }
     
     func loginFailedWith(error: String) {
         loader.stopAnimating()
         AlertManager.shared.showAlertWithAuthError(inVC: self, message: error)
     }
-    
-    func savedUserName() {
-        performSegue(withIdentifier: segueID, sender: self)
-    }
-    
+
     func autoLogin() {
         performSegue(withIdentifier: segueID, sender: self) //is needed?
     }
@@ -176,6 +195,18 @@ extension LoginVC : UITextFieldDelegate {
         moveToNextTF()
         return true
     }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if segment.isSignInChosen {
+            tfPw.isHidden = false
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+         if segment.isSignInChosen {
+            tfPw.isHidden = true
+        }
+    }
 }
 
 extension LoginVC : GIDSignInDelegate {
@@ -188,25 +219,4 @@ extension LoginVC : GIDSignInDelegate {
             FirebaseManager.shared.signInWithGoogle(user: user)
         }
     }
-}
-
-extension LoginVC : LoginButtonDelegate {
-    func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
-        print("logout")
-    }
-    
-    func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
-        if error != nil {
-            AlertManager.shared.showAlertWithAuthError(inVC: self, message: error!.localizedDescription)
-        }
-        else {
-            FirebaseManager.shared.signInWithFB()
-        }
-    }
-    
-    func loginButtonWillLogin(_ loginButton: FBLoginButton) -> Bool {
-        return true
-    }
-    
-    
 }

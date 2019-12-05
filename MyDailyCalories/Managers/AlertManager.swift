@@ -60,6 +60,7 @@ class AlertManager {
         
         alert.addTextField { (tf) in
             tf.placeholder = "Numbers Only!"
+            tf.autocapitalizationType = .words
         }
         
         vc.present(alert, animated: true, completion: nil)
@@ -105,6 +106,7 @@ class AlertManager {
         }
         alert.addTextField { (tf) in
             tf.placeholder = "Digits Only"
+            tf.autocapitalizationType = .words
         }
         alert.addAction(ok)
         vc.present(alert, animated: true, completion: nil)
@@ -158,6 +160,7 @@ class AlertManager {
         }
         alert.addTextField { (tf) in
             tf.placeholder = "Product Name"
+            tf.autocapitalizationType = .words
         }
         alert.addAction(cancel)
         alert.addAction(ok)

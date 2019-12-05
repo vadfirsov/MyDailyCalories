@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>181894632389-ned1pf84tm2rul6rb8uvea8lp79gljns.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.181894632389-ned1pf84tm2rul6rb8uvea8lp79gljns</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDezY9HQLxLLZGJvCxtWoJdb8V4iCAtSOo</string>
+	<key>GCM_SENDER_ID</key>
+	<string>181894632389</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.vadimfirsov.MyDailyCalories</string>
+	<key>PROJECT_ID</key>
+	<string>mydailycalories</string>
+	<key>STORAGE_BUCKET</key>
+	<string>mydailycalories.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:181894632389:ios:a2e1a61dc206dd1abc31ac</string>
+	<key>DATABASE_URL</key>
+	<string>https://mydailycalories.firebaseio.com</string>
+</dict>
+</plist>
