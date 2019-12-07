@@ -10,7 +10,7 @@ import UIKit
 
 protocol ProductCellDelegate {
     func savedNew(product : Product)
-    func tappedLonglyOnCell(atIndex : Int)
+    func tappedLonglyOnCell(atIndex index : Int)
 }
 
 class ProductCell : UITableViewCell {

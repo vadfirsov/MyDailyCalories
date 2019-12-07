@@ -16,15 +16,6 @@ struct Entity {
     var carbs =    "0.0"
     var fat =      "0.0"
     
-    func entityDict() -> [String : String] {
-        let entityDict = ["name" :     name,
-                          "calories" : calories,
-                          "protein" :  protein,
-                          "carbs" :    carbs,
-                          "fat" :      fat]
-        return entityDict
-    }
-    
     init() {}
     
     init(name: String, calories: String, protein: String, carbs: String, fat: String) {
@@ -41,5 +32,14 @@ struct Entity {
         self.protein =  dict["protein"]  ?? "0.0"
         self.carbs =    dict["carbs"]    ?? "0.0"
         self.fat =      dict["fat"]      ?? "0.0"
+    }
+    
+    func entityDict() -> [String : String] {
+        let entityDict = ["name" :     name,
+                          "calories" : calories,
+                          "protein" :  protein,
+                          "carbs" :    carbs,
+                          "fat" :      fat]
+        return entityDict
     }
 }

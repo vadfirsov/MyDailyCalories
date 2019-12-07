@@ -9,7 +9,7 @@
 import UIKit
 
 class CustomSegment : UISegmentedControl {
-//    private let signInIndex = 0
+
     private var oldValue : Int!
     
     var isSignInChosen : Bool {
@@ -23,6 +23,8 @@ class CustomSegment : UISegmentedControl {
         self.layer.shadowOffset = CGSize(width: 1, height: 2)
         self.layer.masksToBounds = false
         self.layer.shadowOpacity = 0.5
+        
+        self.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: .selected)
     }
     
     //CHECKS IF TAPPED ON ALREADY SELECTED SEGMENT
@@ -38,6 +40,4 @@ class CustomSegment : UISegmentedControl {
             sendActions(for: .touchUpInside)
         }
     }
-    
-
 }

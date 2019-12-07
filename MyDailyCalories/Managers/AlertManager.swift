@@ -33,7 +33,7 @@ class AlertManager {
                                       message: "You are about to delete entity: \(product.name)",
                                       preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .default) { (action) in
-            FirebaseManager.shared.delete(product: product)
+            Firebase.shared.delete(product: product)
             
         }
         alert.addAction(cancel)
@@ -48,7 +48,7 @@ class AlertManager {
         let ok = UIAlertAction(title: "OK", style: .default) { (action) in
 
             if let inputText = Int(alert.textFields?.first?.text ?? "n") {
-                FirebaseManager.shared.save(dailyCaloriesGoal: "\(inputText)")
+                Firebase.shared.save(dailyCaloriesGoal: "\(inputText)")
             }
             else {
                 self.showAlertNumbersOnly(inVC: vc)
@@ -72,7 +72,7 @@ class AlertManager {
                                       message: "You are about to delete entity: \(entity.name)",
                                       preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .default) { (action) in
-            FirebaseManager.shared.delete(entity: entity)
+            Firebase.shared.delete(entity: entity)
         }
         alert.addAction(cancel)
         alert.addAction(ok)
@@ -84,7 +84,7 @@ class AlertManager {
                                       message: nil,
                                       preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .default) { (action) in
-            FirebaseManager.shared.deleteCart()
+            Firebase.shared.deleteCart()
         }
         alert.addAction(cancel)
         alert.addAction(ok)
@@ -115,7 +115,7 @@ class AlertManager {
     func showAlertShouldAdd(product : Product, inVC vc : UIViewController) {
         let alert = UIAlertController(title: "Add To Daily Calories?", message: nil, preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .default) { (_) in
-            FirebaseManager.shared.saveNew(product: product)
+            Firebase.shared.saveNew(product: product)
         }
         alert.addAction(cancel)
         alert.addAction(ok)
@@ -129,7 +129,7 @@ class AlertManager {
                                       message: "You are about to delete entity: \(entity.name)",
                                       preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .default) { (action) in
-            FirebaseManager.shared.delete(cartEntity: entity)            
+            Firebase.shared.delete(cartEntity: entity)            
         }
         alert.addAction(cancel)
         alert.addAction(ok)
@@ -150,7 +150,7 @@ class AlertManager {
                 if !(alert.textFields?[0].text?.isEmpty ?? true) {
                     var newProduct = product
                     newProduct.name = alert.textFields![0].text ?? "No Name"
-                    FirebaseManager.shared.saveNew(product: newProduct)
+                    Firebase.shared.saveNew(product: newProduct)
                 }
                 else {
                     self.showAlertProductNameCantBeEmpty(inVC: vc)

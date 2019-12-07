@@ -38,8 +38,8 @@ class CartVC : UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         loader.startAnimating()
-        FirebaseManager.shared.delegate = self
-        FirebaseManager.shared.loadCart()
+        Firebase.shared.delegate = self
+        Firebase.shared.loadCart()
         updateLabels()
     }
     
@@ -127,7 +127,7 @@ extension CartVC : AlertDelegate {
 }
 
 extension CartVC : CartCellDelegate {
-    func tappedLonglyOnCell(index: Int) {
+    func tappedLonglyOnCell(atIndex index: Int) {
         AlertManager.shared.showAlertDeleteCartEntity(inVC: self, entity: cart[index])
     }
 }

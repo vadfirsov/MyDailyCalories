@@ -16,14 +16,14 @@ class MyProductsVC : UIViewController {
     private var entities = [Entity]()
     private var filteredEntities = [Entity]()
     private var choosenEntityIndex = 200
-    private var lowerToHigher = true
-    
-    @IBOutlet weak var btnName:    UIButton!
+
     @IBOutlet weak var btnCal:     UIButton!
     @IBOutlet weak var btnProtein: UIButton!
     @IBOutlet weak var btnCarbs:   UIButton!
     @IBOutlet weak var btnFat:     UIButton!
-    
+    @IBOutlet weak var btnName:    UIButton! {
+        didSet { btnName.contentHorizontalAlignment = .left }
+    }
     
     @IBOutlet weak var bannerAdd: GADBannerView!
     
@@ -44,14 +44,15 @@ class MyProductsVC : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        AdMobManager.shared.set(banner: bannerAdd, inVC: self)
+        AdMob.shared.set(banner: bannerAdd, inVC: self)
         loader.startAnimating()
-        FirebaseManager.shared.loadEntities()
+        Firebase.shared.loadEntities()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        FirebaseManager.shared.delegate = self
+        Firebase.shared.delegate = self
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -59,8 +60,12 @@ class MyProductsVC : UIViewController {
         searchBar.resignFirstResponder()
     }
     
+    @IBOutlet var titleBtns: [UIButton]!
+    
+    
     @IBAction func btnTitleTapped(_ sender: UIButton) {
         var filter = Filter.name
+    
         switch sender {
         case btnCal:     filter = Filter.cal
         case btnFat:     filter = Filter.fat
@@ -69,10 +74,23 @@ class MyProductsVC : UIViewController {
         case btnName:    filter = Filter.name
         default: break
         }
-        lowerToHigher = lowerToHigher ? false : true
-        filteredEntities = FilterManager.shared.filtered(entities: filteredEntities,
-                                                         by: filter, lowerToHigher: lowerToHigher)
+        
+        setFilterIndicatorOn(button: sender) 
+        filteredEntities = EntitiesFilter.shared.filtered(entities: entities, byFilter: filter)
+
         tableView.reloadData()
+    }
+    
+    private func setFilterIndicatorOn(button : UIButton) {
+        for btn in titleBtns {
+            var btnTitle = btn.titleLabel?.text ?? ""
+            btnTitle = btnTitle.replacingOccurrences(of: "↑", with: "")
+            btnTitle = btnTitle.replacingOccurrences(of: "↓", with: "")
+            if btn == button {
+                btnTitle = EntitiesFilter.shared.isLowestToHighest ? btnTitle + "↑" : btnTitle + "↓"
+            }
+            btn.setTitle(btnTitle, for: .normal)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -117,7 +135,7 @@ extension MyProductsVC : FirebaseDelegate {
     func didReceive(entities: [Entity]) {
         self.entities = entities
         loader.stopAnimating()
-        filteredEntities = entities
+        filteredEntities = EntitiesFilter.shared.filtered(entities: entities, byFilter: .name)
         tableView.reloadData()
     }
 }
@@ -131,7 +149,7 @@ extension MyProductsVC : EntityCellDelegate {
 extension MyProductsVC : UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if let searchText = searchBar.text {
-            filteredEntities = FilterManager.shared.entities(entities, contain: searchText)
+            filteredEntities = EntitiesFilter.shared.entities(entities, contain: searchText)
             tableView.reloadData()
         }
     }

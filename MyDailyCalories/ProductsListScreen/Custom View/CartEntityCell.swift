@@ -8,7 +8,7 @@
 
 import UIKit
 protocol CartCellDelegate {
-    func tappedLonglyOnCell(index : Int)
+    func tappedLonglyOnCell(atIndex index : Int)
 }
 
 class CartEntityCell : UITableViewCell {
@@ -42,7 +42,7 @@ class CartEntityCell : UITableViewCell {
     }
     
     @objc func longPressed() {
-        delegate?.tappedLonglyOnCell(index: index)
+        delegate?.tappedLonglyOnCell(atIndex: index)
     }
     
 }

@@ -47,7 +47,7 @@ class DailyCalsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        AdMobManager.shared.set(banner: bannerView, inVC: self)
+        AdMob.shared.set(banner: bannerView, inVC: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -87,7 +87,7 @@ class DailyCalsVC: UIViewController {
             lblDate.text = nextDate
         }
         loader.startAnimating()
-        FirebaseManager.shared.loadProductsFrom(dateString: nextDate)
+        Firebase.shared.loadProductsFrom(dateString: nextDate)
     }
     
     private func updateProgressBar() {
@@ -97,10 +97,10 @@ class DailyCalsVC: UIViewController {
     
     private func setManagers() {
         AlertManager.shared.delegate =    self
-        FirebaseManager.shared.delegate = self
+        Firebase.shared.delegate = self
         loader.startAnimating()
-        FirebaseManager.shared.loadProductsFrom(dateString: DateManager.shared.stringFrom(date: dateToDisplay))
-        FirebaseManager.shared.loadDailyCalorieGoal()
+        Firebase.shared.loadProductsFrom(dateString: DateManager.shared.stringFrom(date: dateToDisplay))
+        Firebase.shared.loadDailyCalorieGoal()
     }
 
     private func addGestures() {
@@ -136,7 +136,7 @@ class DailyCalsVC: UIViewController {
         btnDailyTotal.setTitle(btnLabel, for: .normal)
 
         btnDailyTotal.setTitleColor(.white, for: .normal)
-        let color = (totalCalories > maxDailyCalories) ? #colorLiteral(red: 1, green: 0.3694292903, blue: 0, alpha: 1) : #colorLiteral(red: 0, green: 0.8136156201, blue: 0.1591542363, alpha: 1)
+        let color = (totalCalories > maxDailyCalories) ? #colorLiteral(red: 1, green: 0.3351041079, blue: 0.3041929901, alpha: 1) : #colorLiteral(red: 0.5527830124, green: 0.9990368485, blue: 0.239377737, alpha: 1)
         btnDailyTotal.setTitleColor(color, for: .normal)
         progressBar.progressTintColor = color
         if maxDailyCalories > 0 { updateProgressBar() }
@@ -188,21 +188,20 @@ extension DailyCalsVC : FirebaseDelegate {
         setDailyCaloriesIndicator()
         tableView.reloadData()
         loader.stopAnimating()
-
     }
 }
 
 extension DailyCalsVC : ProductCellDelegate {
-    func tappedLonglyOnCell(atIndex : Int) {
-        let product = products[atIndex]
-        AlertManager.shared.showAlertDeleteProduct(inVC: self, product: product, index: atIndex)
+    func tappedLonglyOnCell(atIndex index : Int) {
+        let product = products[index]
+        AlertManager.shared.showAlertDeleteProduct(inVC: self, product: product, index: index)
     }
     
     func savedNew(product: Product) {
         loader.startAnimating()
         var p = product
         p.dateString = DateManager.shared.stringFrom(date: dateToDisplay)
-        FirebaseManager.shared.saveNew(product: p)
+        Firebase.shared.saveNew(product: p)
         tableView.reloadData()
     }
 }

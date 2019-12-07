@@ -14,11 +14,11 @@ class ProfileVC : UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        FirebaseManager.shared.delegate = self
+        Firebase.shared.delegate = self
     }
     
     @IBAction func logoutTapped(_ sender: UIButton) {
-        FirebaseManager.shared.tryLogOut()
+        Firebase.shared.tryLogOut()
     }
 }
 

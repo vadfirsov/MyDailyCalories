@@ -14,14 +14,14 @@ class PreLoginVC : UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        FirebaseManager.shared.delegate = self
-        FirebaseManager.shared.checkIfUserLoggedIn() //leak
+        Firebase.shared.delegate = self
+        Firebase.shared.checkIfUserLoggedIn() //leak
     }
 }
 
 extension PreLoginVC : FirebaseDelegate {
-    func user(isLogin: Bool) {
-        if isLogin {
+    func isUser(login: Bool) {
+        if login {
             performSegue(withIdentifier: goToMainScreen, sender: self)
         }
         else {

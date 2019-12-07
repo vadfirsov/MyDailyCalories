@@ -17,28 +17,32 @@ class LoginVC : UIViewController {
     private let segueID = "goToDailyCals"
     private var isKeyboardShown = false
     
-    @IBOutlet weak var tfEmail: UITextField!
-    @IBOutlet weak var tfPw:    UITextField!
-    @IBOutlet weak var tfPw2:   UITextField!
-    @IBOutlet weak var segment: CustomSegment! 
-
+    @IBOutlet weak var tfEmail: CustomTextField! {
+        didSet { tfEmail.setPlaceholder(string: "email") }
+    }
+    @IBOutlet weak var tfPw:    CustomTextField! {
+        didSet { tfPw.setPlaceholder(string: "password") }
+    }
+    @IBOutlet weak var tfPw2:   CustomTextField!{
+        didSet { tfPw2.setPlaceholder(string: "repeat password") }
+    }
     
+    @IBOutlet weak var segment: CustomSegment!
     @IBOutlet weak var loader: UIActivityIndicatorView!
     
-    @IBOutlet weak var btnFbSignIn:     CustomBtn! {
+    @IBOutlet weak var btnFbSignIn: CustomBtn! {
         didSet { btnFbSignIn.setFbDesign()}
     }
     @IBOutlet weak var btnGoogleSignIn: CustomBtn! {
         didSet { btnGoogleSignIn.setGoogleDesign()}
     }
 
-
     @IBOutlet var textFields: [UITextField]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        FirebaseManager.shared.delegate = self
+        Firebase.shared.delegate = self
         GIDSignIn.sharedInstance()?.presentingViewController = self
         GIDSignIn.sharedInstance()?.delegate = self
     }
@@ -59,7 +63,7 @@ class LoginVC : UIViewController {
     
     @IBAction func sameSegmentTapped(_ sender: CustomSegment) {
         loader.startAnimating()
-        let login = SignInManager(email: tfEmail.text ?? "",
+        let login = Authentication(email: tfEmail.text ?? "",
                                   pw:    tfPw.text ?? "",
                                   pw2:   tfPw2.text)
         login.delegate = self
@@ -73,16 +77,18 @@ class LoginVC : UIViewController {
     @IBAction func fbSignInTapped(_ sender: UIButton) {
         let fbLoginManager = LoginManager()
 
-        fbLoginManager.logIn(permissions: ["public_profile", "email"], from: self) { (result, error) -> Void in
+        fbLoginManager.logIn(permissions: ["public_profile", "email"], from: self) { (loginResult, error) -> Void in
             if (error != nil) {
                 AlertManager.shared.showAlertWithAuthError(inVC: self, message: error!.localizedDescription)
                 return
             }
-            if (result?.isCancelled)! {
-                return
-            }
-            else if (result!.grantedPermissions.contains("email")) {
-                FirebaseManager.shared.signInWithFB()
+            else if let result = loginResult {
+                if result.isCancelled {
+                    return
+                }
+                else if result.grantedPermissions.contains("email") {
+                    Firebase.shared.signInWithFB()
+                }
             }
         }
     }
@@ -97,6 +103,7 @@ class LoginVC : UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide),
                                                name: UIResponder.keyboardWillHideNotification, object: nil)
     }
+    
     
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
@@ -133,21 +140,12 @@ class LoginVC : UIViewController {
     private func moveToNextTF() {
         for i in textFields.indices {
             if textFields[i].isFirstResponder {
-                if textFields[i] == textFields.last {
-                    if !textFields[0].isHidden {
-                        textFields[0].becomeFirstResponder()
-                    }
-                    else {
-                        tfEmail.becomeFirstResponder()
-                    }
+                let index = textFields[i] == textFields.last ? 0 : 1 + i
+                if textFields[index].isHidden {
+                    tfEmail.becomeFirstResponder()
                 }
                 else {
-                    if !textFields[i+1].isHidden {
-                        textFields[i+1].becomeFirstResponder()
-                    }
-                    else {
-                        tfEmail.becomeFirstResponder()
-                    }
+                    textFields[index].becomeFirstResponder()
                 }
                 return
             }
@@ -155,14 +153,11 @@ class LoginVC : UIViewController {
     }
     
     private func hideShowTextFields() {
-
         tfPw.isHidden =            segment.isSignInChosen
         tfPw2.isHidden =           segment.isSignInChosen
         btnFbSignIn.isHidden =     !segment.isSignInChosen
         btnGoogleSignIn.isHidden = !segment.isSignInChosen
-        if isKeyboardShown {
-            tfPw.isHidden = false
-        }
+        tfPw.isHidden =            !isKeyboardShown
     }
 }
 
@@ -216,7 +211,7 @@ extension LoginVC : GIDSignInDelegate {
         }
         else if user != nil {
             loader.startAnimating()
-            FirebaseManager.shared.signInWithGoogle(user: user)
+            Firebase.shared.signInWithGoogle(user: user)
         }
     }
 }

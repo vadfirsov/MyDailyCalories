@@ -23,7 +23,7 @@ class NewProductVC : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        AdMobManager.shared.set(banner: bannerView, inVC: self)
+        AdMob.shared.set(banner: bannerView, inVC: self)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -44,19 +44,16 @@ class NewProductVC : UIViewController {
                               carbs:    tfCarbs.text    ?? "",
                               fat:      tfFat.text      ?? "")
         product.dateString = DateManager.shared.stringFrom(date: Date())
-        FirebaseManager.shared.saveNew(product: product)
+        Firebase.shared.saveNew(product: product)
         self.navigationController?.popViewController(animated: true)
     }
     
     private func moveToNextTF() {
+        
         for i in textFields.indices {
             if textFields[i].isFirstResponder {
-                if textFields[i] == textFields.last {
-                    textFields[0].becomeFirstResponder()
-                }
-                else {
-                    textFields[i+1].becomeFirstResponder()
-                }
+                let index = textFields[i] == textFields.last ? 0 : i + 1
+                textFields[index].becomeFirstResponder()
                 return
             }
         }

@@ -20,11 +20,7 @@ class NewEntityVC : UIViewController {
         didSet { tfName.becomeFirstResponder() }
     }
     
-    @IBOutlet var textFields: [UITextField]! {
-        didSet {
-//            for tf in textFields { tf.delegate = self }
-        }
-    }
+    @IBOutlet var textFields: [UITextField]! 
     
     @IBOutlet weak var bannerView: GADBannerView!
     
@@ -34,14 +30,11 @@ class NewEntityVC : UIViewController {
     }
     
     private func moveToNextTF() {
+        
         for i in textFields.indices {
             if textFields[i].isFirstResponder {
-                if textFields[i] == textFields.last {
-                    textFields[0].becomeFirstResponder()
-                }
-                else {
-                    textFields[i+1].becomeFirstResponder()
-                }
+                let index = textFields[i] == textFields.last ? 0 : i + 1
+                textFields[index].becomeFirstResponder()
                 return
             }
         }
@@ -53,7 +46,7 @@ class NewEntityVC : UIViewController {
                             protein:  tfProtein.text  ?? "",
                             carbs:    tfCarbs.text    ?? "",
                             fat:      tfFat.text      ?? "")
-        FirebaseManager.shared.saveNew(entity: entity)
+        Firebase.shared.saveNew(entity: entity)
         self.navigationController?.popViewController(animated: true)
     }
     
