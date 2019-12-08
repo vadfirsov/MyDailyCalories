@@ -45,6 +45,14 @@ class LoginVC : UIViewController {
 
     }
     
+//    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+//        return UIInterfaceOrientationMask.portrait
+//    }
+//    
+//    override var shouldAutorotate: Bool {
+//        return false
+//    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         addGestures()

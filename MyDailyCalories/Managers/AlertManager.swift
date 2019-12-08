@@ -26,7 +26,7 @@ class AlertManager {
     var delegate : AlertDelegate?
     
     let cancel = UIAlertAction(title: "Cancel", style: .default, handler: nil)
-
+    
     func showAlertDeleteProduct(inVC vc : UIViewController, product : Product, index : Int) {
         
         let alert = UIAlertController(title: "Uh-Oh!",
@@ -173,6 +173,13 @@ class AlertManager {
         vc.present(alert, animated: true, completion: nil)
     }
     
+    func showHintChooseCaloriesCap(inVC vc : UIViewController) {
+        let alert = UIAlertController(title: "Hint!", message: "Tap on Calories on bottom to choose your daily calories cap 🤓", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(ok)
+        vc.present(alert, animated: true, completion: nil)
+    }
+    
     private func showAlertNumbersOnly(inVC vc : UIViewController) {
         let alert = UIAlertController(title: "Please Use Only Numbers!", message: nil, preferredStyle: .alert)
         alert.addAction(cancel)
@@ -183,5 +190,5 @@ class AlertManager {
         let alert = UIAlertController(title: "Product Name Can't Be Empty", message: nil, preferredStyle: .alert)
         alert.addAction(cancel)
         vc.present(alert, animated: true, completion: nil)
-    }
+    }    
 }

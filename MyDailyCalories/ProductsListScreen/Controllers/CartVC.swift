@@ -19,11 +19,6 @@ class CartVC : UIViewController {
     
     var delegate : CartDelegate?
     
-    @IBOutlet weak var btnSarvings: UIButton!
-    @IBOutlet weak var lblCalories: UILabel!
-    @IBOutlet weak var lblProtein:  UILabel!
-    @IBOutlet weak var lblCarbs:    UILabel!
-    @IBOutlet weak var lblFat:      UILabel!
     @IBOutlet weak var tableView:   UITableView! {
         didSet {
             tableView.delegate =   self
@@ -40,41 +35,8 @@ class CartVC : UIViewController {
         loader.startAnimating()
         Firebase.shared.delegate = self
         Firebase.shared.loadCart()
-        updateLabels()
     }
-    
-    @IBAction func emptyCartTapped(_ sender: CustomParentButton) {
-//        sender.animateTap()
-        AlertManager.shared.showAlertEmptyCart(inVC: self)
-    }
-    
-    @IBAction func servingsTapped(_ sender: CustomParentButton) {
-//        sender.animateTap()
-        AlertManager.shared.showAlertChooseServings(inVC: self)
-    }
-    
-    @IBAction func addToDailyTapped(_ sender: CustomParentButton) {
-//        sender.animateTap()
-        let product = Product(name:     "No Name",
-                              calories: lblCalories.text ?? "0",
-                              protein:  lblProtein.text  ?? "0",
-                              carbs:    lblCarbs.text    ?? "0",
-                              fat:      lblFat.text      ?? "0")
-        
-        AlertManager.shared.showAlertAddToDailyWithName(inVC: self, product: product)
-    }
-    
-    private func updateLabels() {
-        var sumOfCart = sumOfCartEntities()
-        sumOfCart.devidePropertiesBy(servings)
-        
-        btnSarvings.setTitle("Servings : \(Int(servings))", for: .normal)
-        lblCalories.text = sumOfCart.calories.roundedString()
-        lblProtein.text =  sumOfCart.protein.roundedString()
-        lblCarbs.text =    sumOfCart.carbs.roundedString()
-        lblFat.text =      sumOfCart.fat.roundedString()
-    }
-    
+
     private func sumOfCartEntities() -> CartEntity {
         var sumOfCart = CartEntity()
         for cartEntity in cart {
@@ -85,6 +47,7 @@ class CartVC : UIViewController {
             sumOfCart.carbs +=    cartEntity.carbs
             sumOfCart.fat +=      cartEntity.carbs
         }
+        sumOfCart.devidePropertiesBy(servings)
         return sumOfCart
     }
 }
@@ -98,7 +61,13 @@ extension CartVC : UITableViewDelegate, UITableViewDataSource  {
         if let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as? CartEntityCell {
             cell.setCell(withCartEntity: cart[indexPath.row], index : indexPath.row)
             cell.delegate = self
-    
+            if cart.count - 1 == indexPath.row {
+                cell.viewActionButtons.isHidden = false
+                cell.viewTotalNutritions.isHidden = false
+                cell.setLastCellLabels(withSummedCart: sumOfCartEntities())
+                cell.btnServings.setTitle("Servings : \(Int(servings))", for: .normal)
+                cell.parentVC = self
+            }
             return cell
         }
         return UITableViewCell()
@@ -111,7 +80,7 @@ extension CartVC : FirebaseDelegate {
         self.cart = cart
         delegate?.didReceive(cart : cart)
         loader.stopAnimating()
-        updateLabels()
+//        updateLabels()
         tableView.reloadData()
     }
     
@@ -125,7 +94,8 @@ extension CartVC : FirebaseDelegate {
 extension CartVC : AlertDelegate {
     func servingsUpdated(servings: Double) {
         self.servings = servings
-        updateLabels()
+        tableView.reloadData()
+//        updateLabels()
     }
 }
 

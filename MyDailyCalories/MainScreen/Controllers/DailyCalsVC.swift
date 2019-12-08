@@ -54,6 +54,7 @@ class DailyCalsVC: UIViewController {
         super.viewWillAppear(true)
         setManagers()
         addGestures()
+        showHint()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -137,6 +138,12 @@ class DailyCalsVC: UIViewController {
         progressBar.progressTintColor = color
         if maxDailyCalories > 0 { updateProgressBar() }
 
+    }
+    
+    private func showHint() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            AlertManager.shared.showHintChooseCaloriesCap(inVC: self)
+        }
     }
 }
 
