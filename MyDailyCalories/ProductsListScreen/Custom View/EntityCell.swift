@@ -32,6 +32,19 @@ class EntityCell: UITableViewCell {
         delegate?.tappedLonglyOnCell(index: index)
     }
     
+    func setWith(entity : Entity, index: Int) {
+
+        let emptyValIndicator = "--"
+        lblName.text =     (entity.name     == "") ? emptyValIndicator : entity.name
+        lblCalories.text = (entity.calories == "") ? emptyValIndicator : entity.calories
+        lblCarbs.text =    (entity.carbs    == "") ? emptyValIndicator : entity.carbs
+        lblProtein.text =  (entity.protein  == "") ? emptyValIndicator : entity.protein
+        lblFat.text =      (entity.fat      == "") ? emptyValIndicator : entity.fat
+        
+        addGesture()
+        self.index =      index
+    }
+    
 }
 
 extension EntityCell : UITextFieldDelegate {

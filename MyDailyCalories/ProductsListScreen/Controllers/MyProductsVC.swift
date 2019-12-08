@@ -109,14 +109,7 @@ extension MyProductsVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as? EntityCell {
             let entity = filteredEntities[indexPath.row]
-            let emptyValIndicator = "--"
-            cell.lblName.text =     (entity.name     == "") ? emptyValIndicator : entity.name
-            cell.lblCalories.text = (entity.calories == "") ? emptyValIndicator : entity.calories
-            cell.lblCarbs.text =    (entity.carbs    == "") ? emptyValIndicator : entity.carbs
-            cell.lblProtein.text =  (entity.protein  == "") ? emptyValIndicator : entity.protein
-            cell.lblFat.text =      (entity.fat      == "") ? emptyValIndicator : entity.fat
-            cell.index =            indexPath.row
-            
+            cell.setWith(entity : entity, index: indexPath.row)
             cell.addGesture()
             cell.delegate = self
             return cell

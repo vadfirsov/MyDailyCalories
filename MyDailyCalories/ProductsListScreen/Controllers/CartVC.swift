@@ -43,15 +43,18 @@ class CartVC : UIViewController {
         updateLabels()
     }
     
-    @IBAction func emptyCartTapped(_ sender: UIButton) {
+    @IBAction func emptyCartTapped(_ sender: CustomParentButton) {
+//        sender.animateTap()
         AlertManager.shared.showAlertEmptyCart(inVC: self)
     }
     
-    @IBAction func servingsTapped(_ sender: UIButton) {
+    @IBAction func servingsTapped(_ sender: CustomParentButton) {
+//        sender.animateTap()
         AlertManager.shared.showAlertChooseServings(inVC: self)
     }
     
-    @IBAction func addToDailyTapped(_ sender: UIButton) {
+    @IBAction func addToDailyTapped(_ sender: CustomParentButton) {
+//        sender.animateTap()
         let product = Product(name:     "No Name",
                               calories: lblCalories.text ?? "0",
                               protein:  lblProtein.text  ?? "0",

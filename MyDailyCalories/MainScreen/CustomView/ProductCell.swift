@@ -24,13 +24,26 @@ class ProductCell : UITableViewCell {
     @IBOutlet weak var tfCarbs:    UILabel!
     @IBOutlet weak var tfFat:      UILabel!
     
-    func addGesture() {
-        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPressed))
-        self.addGestureRecognizer(longPress)
+    private func addGesture() {
+           let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPressed))
+           self.addGestureRecognizer(longPress)
     }
     
     @objc func longPressed() {
         delegate?.tappedLonglyOnCell(atIndex: index)
+    }
+    
+    func setWith(product : Product, index: Int) {
+        addGesture()
+        
+        let noValueIndicator = "--"
+        tfName.text =     (product.name     == "") ? noValueIndicator : product.name
+        tfCalories.text = (product.calories == "") ? noValueIndicator : product.calories
+        tfProtein.text =  (product.protein  == "") ? noValueIndicator : product.protein
+        tfCarbs.text =    (product.carbs    == "") ? noValueIndicator : product.carbs
+        tfFat.text =      (product.fat      == "") ? noValueIndicator : product.fat
+
+        self.index =      index
     }
 }
 

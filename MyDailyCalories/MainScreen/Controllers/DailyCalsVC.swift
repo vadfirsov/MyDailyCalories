@@ -111,10 +111,6 @@ class DailyCalsVC: UIViewController {
         view.endEditing(true)
     }
     
-    private func riseTableViewWithKeyboardTo(height : CGFloat) {
-
-    }
-    
     private func setLabels() {
         var totalProtein =  0.0
         var totalCarbs =    0.0
@@ -152,18 +148,8 @@ extension DailyCalsVC : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as? ProductCell {
-            let product = products[indexPath.row]
+            cell.setWith(product: products[indexPath.row], index: indexPath.row)
             cell.delegate = self
-            let noValueIndicator = "--"
-            cell.tfName.text =     (product.name    == "") ? noValueIndicator : product.name
-            cell.tfCalories.text = (product.calories == "") ? noValueIndicator : product.calories
-            cell.tfProtein.text =  (product.protein  == "") ? noValueIndicator : product.protein
-            cell.tfCarbs.text =    (product.carbs    == "") ? noValueIndicator : product.carbs
-            cell.tfFat.text =      (product.fat      == "") ? noValueIndicator : product.fat
-            
-            cell.index =           indexPath.row
-            
-            cell.addGesture()
             return cell
         }
         else {

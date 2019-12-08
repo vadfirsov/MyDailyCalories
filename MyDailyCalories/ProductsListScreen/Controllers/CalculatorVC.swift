@@ -20,11 +20,18 @@ class CalculatorVC : UIViewController {
     @IBOutlet weak var lblCarbs:      UILabel!
     @IBOutlet weak var lblFat:        UILabel!
     
-    @IBOutlet weak var btn200g:       SmallBtn!
-    @IBOutlet weak var btn100g:       SmallBtn!
-    @IBOutlet weak var btnSpoon:      SmallBtn!
-    @IBOutlet weak var btn50g:        SmallBtn!
-    @IBOutlet weak var btnTableSpoon: SmallBtn!
+    var entity = Entity()
+    
+    @IBOutlet weak var bannerView: GADBannerView!
+    @IBOutlet var gramBtns: [SmallButton]!
+    
+    @IBOutlet weak var loader: UIActivityIndicatorView!
+    
+    @IBOutlet weak var btn200g:       SmallButton!
+    @IBOutlet weak var btn100g:       SmallButton!
+    @IBOutlet weak var btnSpoon:      SmallButton!
+    @IBOutlet weak var btn50g:        SmallButton!
+    @IBOutlet weak var btnTableSpoon: SmallButton!
     @IBOutlet weak var tfCustomGrams: SmallTextField! {
         didSet {
             tfCustomGrams.addTarget(self,
@@ -33,18 +40,12 @@ class CalculatorVC : UIViewController {
             tfCustomGrams.delegate = self }
     }
     
+    
     @IBOutlet weak var cartViewContainer: UIView! {
         didSet {
             cartViewContainer.isHidden = true
         }
     }
-    
-    @IBOutlet weak var bannerView: GADBannerView!
-    @IBOutlet var gramBtns: [SmallBtn]!
-    
-    @IBOutlet weak var loader: UIActivityIndicatorView!
-    
-    var entity = Entity()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,8 +64,9 @@ class CalculatorVC : UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func addToCartTapped(_ sender: UIButton) {
+    @IBAction func addToCartTapped(_ sender: CustomButton) {
         loader.startAnimating()
+        sender.animateTap(bgColor: sender.animatedBgColor, borderColor: sender.animatedBorderColor)
         var cartEntity = CartEntity()
         
         cartEntity.calories = lblCalories.doubleFromText() ?? 0
@@ -77,7 +79,7 @@ class CalculatorVC : UIViewController {
         Firebase.shared.save(cartEntity: cartEntity)
     }
     
-    @IBAction func gramButtonTapped(_ sender: SmallBtn) {
+    @IBAction func gramButtonTapped(_ sender: SmallButton) {
         dismissKeyboard()
         tfCustomGrams.updateDesign()
         tfCustomGrams.resignFirstResponder()

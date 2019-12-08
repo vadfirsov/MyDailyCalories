@@ -25,8 +25,8 @@ class CartEntityCell : UITableViewCell {
     
     func setCell(withCartEntity cartEntity : CartEntity, index : Int) {
         lblName.text =     cartEntity.name
-        lblCalories.text = "Cal: \(cartEntity.calories.roundedString())"
-        lblGrams.text =    "Grams: \(cartEntity.grams.roundedString())"
+        lblCalories.text = "kCal: \(cartEntity.calories.roundedString())"
+        lblGrams.text =    "Gram: \(cartEntity.grams.roundedString())"
         lblProtein.text =  "Protein: \(cartEntity.protein.roundedString())"
         lblCartbs.text =   "Carbs: \(cartEntity.protein.roundedString())"
         lblFat.text =      "Fat: \(cartEntity.protein.roundedString())"

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SmallBtn : UIButton {
+class SmallButton : UIButton {
     
     var isBtnSelected = false {
         didSet { updateBtnDesign() }
@@ -40,8 +40,8 @@ class SmallBtn : UIButton {
     }
 
     private func updateBtnDesign() {
-        self.backgroundColor =   isBtnSelected ? #colorLiteral(red: 1, green: 0.4904733896, blue: 0.3423442841, alpha: 1) : #colorLiteral(red: 0.2541798353, green: 0.2546336055, blue: 0.2484343648, alpha: 0.1010809075)
-        self.layer.borderColor = isBtnSelected ? #colorLiteral(red: 1, green: 0.5693049431, blue: 0.4109791517, alpha: 1) : #colorLiteral(red: 0.1516718268, green: 0.1586366892, blue: 0.149766326, alpha: 0)
+        self.backgroundColor =   isBtnSelected ? #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1) : #colorLiteral(red: 0.2541798353, green: 0.2546336055, blue: 0.2484343648, alpha: 0.1010809075)
+        self.layer.borderColor = isBtnSelected ? #colorLiteral(red: 1, green: 0.7751850486, blue: 0.2916682661, alpha: 1) : #colorLiteral(red: 0.1516718268, green: 0.1586366892, blue: 0.149766326, alpha: 0)
         self.layer.shadowColor = isBtnSelected ? #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) : #colorLiteral(red: 0.1516718268, green: 0.1586366892, blue: 0.149766326, alpha: 0)
         let titleColor =         isBtnSelected ? #colorLiteral(red: 0.2227313817, green: 0.2275489867, blue: 0.2318012118, alpha: 1) : #colorLiteral(red: 0.7686912417, green: 0.7685188651, blue: 0.7771531343, alpha: 1)
         self.setTitleColor(titleColor, for: .normal)

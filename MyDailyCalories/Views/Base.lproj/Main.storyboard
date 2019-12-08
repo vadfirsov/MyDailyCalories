@@ -16,19 +16,7 @@
                     <view key="view" contentMode="scaleToFill" id="HXA-vc-pY5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gm2-0Y-kUk">
-                                <rect key="frame" x="140.5" y="318.5" width="94" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                <color key="textColor" red="0.98269696790000005" green="0.98067434330000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="0.87331157922744751" green="0.90843111276626587" blue="0.74507302045822144" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <constraints>
-                            <constraint firstItem="gm2-0Y-kUk" firstAttribute="centerX" secondItem="tj3-39-GDz" secondAttribute="centerX" id="INB-I0-X5o"/>
-                            <constraint firstItem="gm2-0Y-kUk" firstAttribute="centerY" secondItem="tj3-39-GDz" secondAttribute="centerY" id="T71-Vh-0Ai"/>
-                        </constraints>
+                        <color key="backgroundColor" red="0.14505955576896667" green="0.14516586065292358" blue="0.14117598533630371" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="tj3-39-GDz"/>
                     </view>
                     <connections>
@@ -38,7 +26,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0zF-FA-nxk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2830" y="-410"/>
+            <point key="canvasLocation" x="-2831.1999999999998" y="-410.64467766116945"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="eJE-6b-w76">
@@ -52,10 +40,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V1u-ss-i1W">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="311"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="340"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_page_image3" translatesAutoresizingMaskIntoConstraints="NO" id="BGG-tV-2dU">
-                                                <rect key="frame" x="67.5" y="69.5" width="240" height="240"/>
+                                                <rect key="frame" x="67.5" y="87.5" width="240" height="240"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="BGG-tV-2dU" secondAttribute="height" multiplier="1:1" id="S64-Xe-3GZ"/>
                                                     <constraint firstAttribute="height" constant="240" id="cHV-Ej-dsa"/>
@@ -66,6 +54,7 @@
                                         <constraints>
                                             <constraint firstItem="BGG-tV-2dU" firstAttribute="centerY" secondItem="V1u-ss-i1W" secondAttribute="centerY" multiplier="1.22" id="AUg-Zh-qD5"/>
                                             <constraint firstItem="BGG-tV-2dU" firstAttribute="centerX" secondItem="V1u-ss-i1W" secondAttribute="centerX" id="hGt-8M-w6d"/>
+                                            <constraint firstAttribute="height" constant="340" id="rAi-EC-UqE"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -94,7 +83,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ywz-xX-F7q" customClass="CustomBtn" customModule="MyDailyCalories" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ywz-xX-F7q" customClass="FacebookButton" customModule="MyDailyCalories" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="335" height="34"/>
                                         <color key="backgroundColor" red="0.68301332889999999" green="0.77890866660000002" blue="0.96620899439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
@@ -103,7 +92,7 @@
                                             <action selector="fbSignInTapped:" destination="UN8-Q2-BVB" eventType="touchUpInside" id="u2R-hn-Qi7"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b5N-6o-hZV" customClass="CustomBtn" customModule="MyDailyCalories" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b5N-6o-hZV" customClass="GoogleButton" customModule="MyDailyCalories" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="138" width="335" height="34"/>
                                         <color key="backgroundColor" red="0.68301332889999999" green="0.77890866660000002" blue="0.96620899439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
@@ -150,7 +139,6 @@
                             <constraint firstItem="nv6-ku-vLa" firstAttribute="top" secondItem="gry-zn-g7v" secondAttribute="bottom" constant="12" id="XAs-dd-epO"/>
                             <constraint firstItem="ir7-HL-81e" firstAttribute="bottom" secondItem="nv6-ku-vLa" secondAttribute="bottom" constant="80" id="a7W-fd-VVm"/>
                             <constraint firstItem="r3y-9K-mwO" firstAttribute="trailing" secondItem="ir7-HL-81e" secondAttribute="trailing" id="fLz-uq-GkK"/>
-                            <constraint firstItem="gry-zn-g7v" firstAttribute="top" secondItem="V1u-ss-i1W" secondAttribute="bottom" constant="12" id="iTc-hc-7PJ"/>
                             <constraint firstItem="lN8-ud-EPy" firstAttribute="centerY" secondItem="ir7-HL-81e" secondAttribute="centerY" id="ppG-2l-H5c"/>
                             <constraint firstItem="r3y-9K-mwO" firstAttribute="top" secondItem="KcJ-8f-LHt" secondAttribute="top" id="rTe-aA-3rU"/>
                             <constraint firstItem="gry-zn-g7v" firstAttribute="leading" secondItem="ir7-HL-81e" secondAttribute="leading" constant="20" id="rkJ-9Z-Hke"/>
@@ -225,7 +213,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="arK-Rd-fRM">
-                                <rect key="frame" x="22" y="316" width="333" height="96"/>
+                                <rect key="frame" x="22" y="364" width="333" height="48"/>
                                 <state key="normal" image="logout">
                                     <color key="titleColor" red="0.98269696790000005" green="0.98067434330000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
@@ -246,7 +234,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4JU-Ry-yGM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2365.217391304348" y="1820.7589285714284"/>
+            <point key="canvasLocation" x="-2364" y="1818"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Pb4-IP-G05">
@@ -256,6 +244,14 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hRq-8e-2P1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.99221473930000004" green="0.57126843930000004" blue="0.41563755270000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="qIp-aS-2ms" kind="relationship" relationship="rootViewController" id="GUu-kk-kIQ"/>
@@ -297,29 +293,23 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="231"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qqJ-bj-vch">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="227"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qqJ-bj-vch" customClass="CustomCellView" customModule="MyDailyCalories" customModuleProvider="target">
+                                                    <rect key="frame" x="4" y="0.0" width="367" height="223"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glass_cell_2" translatesAutoresizingMaskIntoConstraints="NO" id="CuY-QS-SAh">
-                                                            <rect key="frame" x="4" y="0.0" width="367" height="227"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="60" id="Cke-f2-59C"/>
-                                                            </constraints>
-                                                        </imageView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8o9-k0-S6e">
-                                                            <rect key="frame" x="0.0" y="0.0" width="131" height="227"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="127" height="223"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9u-JV-r75">
-                                                                    <rect key="frame" x="20" y="0.0" width="111" height="227"/>
+                                                                    <rect key="frame" x="16" y="0.0" width="111" height="223"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
                                                             <color key="backgroundColor" red="0.1137269512" green="0.1137235239" blue="0.1137242243" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <constraints>
-                                                                <constraint firstItem="c9u-JV-r75" firstAttribute="leading" secondItem="8o9-k0-S6e" secondAttribute="leading" constant="20" id="8pZ-Zn-dmK"/>
+                                                                <constraint firstItem="c9u-JV-r75" firstAttribute="leading" secondItem="8o9-k0-S6e" secondAttribute="leading" constant="16" id="8pZ-Zn-dmK"/>
                                                                 <constraint firstAttribute="trailing" secondItem="c9u-JV-r75" secondAttribute="trailing" id="U8c-YX-r9D"/>
                                                                 <constraint firstAttribute="trailing" secondItem="c9u-JV-r75" secondAttribute="trailing" id="VXC-Og-gPB"/>
                                                                 <constraint firstAttribute="bottom" secondItem="c9u-JV-r75" secondAttribute="bottom" id="pvG-d0-x32"/>
@@ -327,15 +317,15 @@
                                                             </constraints>
                                                         </view>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="s4p-0V-R0W">
-                                                            <rect key="frame" x="135" y="0.0" width="220" height="227"/>
+                                                            <rect key="frame" x="131" y="0.0" width="220" height="223"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lZF-wg-EhO">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="52" height="227"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="52" height="223"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZdP-JC-Evk">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="52" height="227"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="52" height="223"/>
                                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
@@ -348,13 +338,13 @@
                                                                     </constraints>
                                                                 </view>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aOV-bj-k0O">
-                                                                    <rect key="frame" x="56" y="0.0" width="52" height="227"/>
+                                                                    <rect key="frame" x="56" y="0.0" width="52" height="223"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wom-8z-Bk8">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="52" height="227"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="52" height="223"/>
                                                                             <color key="backgroundColor" red="0.1137269512" green="0.1137235239" blue="0.1137242243" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
                                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
@@ -367,12 +357,12 @@
                                                                     </constraints>
                                                                 </view>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PFr-gC-AbL">
-                                                                    <rect key="frame" x="112" y="0.0" width="52" height="227"/>
+                                                                    <rect key="frame" x="112" y="0.0" width="52" height="223"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4v9-o8-NKm">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="52" height="227"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="52" height="223"/>
                                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
@@ -385,13 +375,13 @@
                                                                     </constraints>
                                                                 </view>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JPm-Gz-2v7">
-                                                                    <rect key="frame" x="168" y="0.0" width="52" height="227"/>
+                                                                    <rect key="frame" x="168" y="0.0" width="52" height="223"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nrT-6d-6Je">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="52" height="227"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="52" height="223"/>
                                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
@@ -409,26 +399,23 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="s4p-0V-R0W" secondAttribute="trailing" constant="20" id="9x8-tZ-1kL"/>
+                                                        <constraint firstAttribute="trailing" secondItem="s4p-0V-R0W" secondAttribute="trailing" constant="16" id="9x8-tZ-1kL"/>
                                                         <constraint firstItem="8o9-k0-S6e" firstAttribute="leading" secondItem="qqJ-bj-vch" secondAttribute="leading" id="GbX-UA-g26"/>
                                                         <constraint firstAttribute="bottom" secondItem="s4p-0V-R0W" secondAttribute="bottom" id="IEJ-Gi-7dd"/>
                                                         <constraint firstItem="8o9-k0-S6e" firstAttribute="top" secondItem="qqJ-bj-vch" secondAttribute="top" id="LqU-91-a1A"/>
-                                                        <constraint firstAttribute="bottom" secondItem="CuY-QS-SAh" secondAttribute="bottom" id="NsQ-th-bFH"/>
-                                                        <constraint firstItem="CuY-QS-SAh" firstAttribute="top" secondItem="qqJ-bj-vch" secondAttribute="top" id="Pz9-aL-jpi"/>
-                                                        <constraint firstAttribute="trailing" secondItem="CuY-QS-SAh" secondAttribute="trailing" constant="4" id="Xcv-eA-uzh"/>
                                                         <constraint firstItem="s4p-0V-R0W" firstAttribute="leading" secondItem="8o9-k0-S6e" secondAttribute="trailing" constant="4" id="cyQ-E7-6N1"/>
                                                         <constraint firstAttribute="bottom" secondItem="8o9-k0-S6e" secondAttribute="bottom" id="ekY-Dk-Qyu"/>
-                                                        <constraint firstItem="CuY-QS-SAh" firstAttribute="leading" secondItem="qqJ-bj-vch" secondAttribute="leading" constant="4" id="hgV-fW-Ziv"/>
+                                                        <constraint firstAttribute="height" constant="60" id="gdA-nY-vtc"/>
                                                         <constraint firstItem="s4p-0V-R0W" firstAttribute="top" secondItem="qqJ-bj-vch" secondAttribute="top" id="qYA-Vz-vn9"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" red="0.1137269512" green="0.1137235239" blue="0.1137242243" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
-                                                <constraint firstItem="qqJ-bj-vch" firstAttribute="leading" secondItem="FkP-rT-uLO" secondAttribute="leading" id="9eP-NP-Cyd"/>
+                                                <constraint firstItem="qqJ-bj-vch" firstAttribute="leading" secondItem="FkP-rT-uLO" secondAttribute="leading" constant="4" id="9eP-NP-Cyd"/>
                                                 <constraint firstItem="qqJ-bj-vch" firstAttribute="top" secondItem="FkP-rT-uLO" secondAttribute="top" id="eQ7-Te-P3x"/>
-                                                <constraint firstAttribute="bottom" secondItem="qqJ-bj-vch" secondAttribute="bottom" constant="4" id="fEo-u9-OFi"/>
-                                                <constraint firstAttribute="trailing" secondItem="qqJ-bj-vch" secondAttribute="trailing" id="z24-Q1-Tna"/>
+                                                <constraint firstAttribute="bottom" secondItem="qqJ-bj-vch" secondAttribute="bottom" constant="8" id="fEo-u9-OFi"/>
+                                                <constraint firstAttribute="trailing" secondItem="qqJ-bj-vch" secondAttribute="trailing" constant="4" id="z24-Q1-Tna"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.1137269512" green="0.1137235239" blue="0.1137242243" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
@@ -588,7 +575,7 @@
                     <tabBarItem key="tabBarItem" title="Item" id="bZg-JW-OhU"/>
                     <navigationItem key="navigationItem" title="Products" id="0JZ-Uw-5WD">
                         <barButtonItem key="rightBarButtonItem" title="Add" id="fRw-cQ-XXV">
-                            <color key="tintColor" red="0.77039629220000005" green="0.36910772320000002" blue="0.35684347150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="tintColor" red="0.99221473930000004" green="0.57126843930000004" blue="0.41563755270000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="addBtnTapped:" destination="qIp-aS-2ms" id="rnx-ZL-kIt"/>
                                 <segue destination="vRc-go-hJU" kind="show" id="r7z-c6-6Dh"/>
@@ -629,8 +616,75 @@
                                 <rect key="frame" x="0.0" y="56" width="375" height="542"/>
                                 <color key="backgroundColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="hxr-AC-9fD">
+                                <rect key="frame" x="16" y="214" width="343" height="29"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qSU-8P-f1G" customClass="SmallButton" customModule="MyDailyCalories" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="42" height="29"/>
+                                        <color key="backgroundColor" red="0.60060055990000005" green="0.75436747950000005" blue="0.77039629220000005" alpha="0.080854023969999994" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title=" 200g ">
+                                            <color key="titleColor" red="0.77039629220000005" green="0.36910772320000002" blue="0.35684347150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="gramButtonTapped:" destination="M1U-EC-Bt8" eventType="touchUpInside" id="vxc-D1-5u8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HZH-0A-UFl" customClass="SmallButton" customModule="MyDailyCalories" customModuleProvider="target">
+                                        <rect key="frame" x="54" y="0.0" width="48" height="29"/>
+                                        <color key="backgroundColor" red="0.20558497310000001" green="0.7828625441" blue="0.34891250730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title="  100g  ">
+                                            <color key="titleColor" red="0.77039629220000005" green="0.36910772320000002" blue="0.35684347150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="gramButtonTapped:" destination="M1U-EC-Bt8" eventType="touchUpInside" id="Ehb-Gw-t6B"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RyH-9b-h3F" customClass="SmallButton" customModule="MyDailyCalories" customModuleProvider="target">
+                                        <rect key="frame" x="114" y="0.0" width="34" height="29"/>
+                                        <color key="backgroundColor" red="0.60060055990000005" green="0.75436747950000005" blue="0.77039629220000005" alpha="0.080854023969999994" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title=" 50g ">
+                                            <color key="titleColor" red="0.77039629220000005" green="0.36910772320000002" blue="0.35684347150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="gramButtonTapped:" destination="M1U-EC-Bt8" eventType="touchUpInside" id="9nz-MQ-L3W"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DH7-pk-vfz" customClass="SmallButton" customModule="MyDailyCalories" customModuleProvider="target">
+                                        <rect key="frame" x="160" y="0.0" width="31" height="29"/>
+                                        <color key="backgroundColor" red="0.60060055992581751" green="0.75436747952359384" blue="0.77039629220000005" alpha="0.080854023972602745" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title=" 15g ">
+                                            <color key="titleColor" red="0.77039629220000005" green="0.36910772320000002" blue="0.35684347150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="gramButtonTapped:" destination="M1U-EC-Bt8" eventType="touchUpInside" id="UvP-L7-CgS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="goF-Hf-zwL" customClass="SmallButton" customModule="MyDailyCalories" customModuleProvider="target">
+                                        <rect key="frame" x="203" y="0.0" width="30" height="29"/>
+                                        <color key="backgroundColor" red="0.60060055992581751" green="0.75436747952359384" blue="0.77039629220000005" alpha="0.080854023972602745" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title=" 8g ">
+                                            <color key="titleColor" red="0.77039629220000005" green="0.36910772320000002" blue="0.35684347150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="gramButtonTapped:" destination="M1U-EC-Bt8" eventType="touchUpInside" id="x4i-2L-XlE"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Custom g " textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sl1-lp-BgX" customClass="SmallTextField" customModule="MyDailyCalories" customModuleProvider="target">
+                                        <rect key="frame" x="245" y="0.0" width="98" height="29"/>
+                                        <color key="backgroundColor" red="0.98382954879999995" green="0.98820835870000001" blue="1" alpha="0.08350278253" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Pjs-NG-DnG">
-                                <rect key="frame" x="20" y="76" width="335" height="175"/>
+                                <rect key="frame" x="20" y="76" width="335" height="130"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZrY-7b-nFG">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="20.5"/>
@@ -700,85 +754,21 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="hxr-AC-9fD">
-                                        <rect key="frame" x="0.0" y="146" width="335" height="29"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qSU-8P-f1G" customClass="SmallBtn" customModule="MyDailyCalories" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="42" height="29"/>
-                                                <color key="backgroundColor" red="0.60060055990000005" green="0.75436747950000005" blue="0.77039629220000005" alpha="0.080854023969999994" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <state key="normal" title=" 200g ">
-                                                    <color key="titleColor" red="0.77039629220000005" green="0.36910772320000002" blue="0.35684347150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="gramButtonTapped:" destination="M1U-EC-Bt8" eventType="touchUpInside" id="vxc-D1-5u8"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HZH-0A-UFl" customClass="SmallBtn" customModule="MyDailyCalories" customModuleProvider="target">
-                                                <rect key="frame" x="50" y="0.0" width="48" height="29"/>
-                                                <color key="backgroundColor" red="0.20558497310000001" green="0.7828625441" blue="0.34891250730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <state key="normal" title="  100g  ">
-                                                    <color key="titleColor" red="0.77039629220000005" green="0.36910772320000002" blue="0.35684347150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="gramButtonTapped:" destination="M1U-EC-Bt8" eventType="touchUpInside" id="Ehb-Gw-t6B"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RyH-9b-h3F" customClass="SmallBtn" customModule="MyDailyCalories" customModuleProvider="target">
-                                                <rect key="frame" x="106" y="0.0" width="34" height="29"/>
-                                                <color key="backgroundColor" red="0.60060055990000005" green="0.75436747950000005" blue="0.77039629220000005" alpha="0.080854023969999994" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <state key="normal" title=" 50g ">
-                                                    <color key="titleColor" red="0.77039629220000005" green="0.36910772320000002" blue="0.35684347150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="gramButtonTapped:" destination="M1U-EC-Bt8" eventType="touchUpInside" id="9nz-MQ-L3W"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DH7-pk-vfz" customClass="SmallBtn" customModule="MyDailyCalories" customModuleProvider="target">
-                                                <rect key="frame" x="148" y="0.0" width="31" height="29"/>
-                                                <color key="backgroundColor" red="0.60060055992581751" green="0.75436747952359384" blue="0.77039629220000005" alpha="0.080854023972602745" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <state key="normal" title=" 15g ">
-                                                    <color key="titleColor" red="0.77039629220000005" green="0.36910772320000002" blue="0.35684347150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="gramButtonTapped:" destination="M1U-EC-Bt8" eventType="touchUpInside" id="UvP-L7-CgS"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="goF-Hf-zwL" customClass="SmallBtn" customModule="MyDailyCalories" customModuleProvider="target">
-                                                <rect key="frame" x="187" y="0.0" width="30" height="29"/>
-                                                <color key="backgroundColor" red="0.60060055992581751" green="0.75436747952359384" blue="0.77039629220000005" alpha="0.080854023972602745" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <state key="normal" title=" 8g ">
-                                                    <color key="titleColor" red="0.77039629220000005" green="0.36910772320000002" blue="0.35684347150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="gramButtonTapped:" destination="M1U-EC-Bt8" eventType="touchUpInside" id="x4i-2L-XlE"/>
-                                                </connections>
-                                            </button>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Custom g " textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sl1-lp-BgX" customClass="SmallTextField" customModule="MyDailyCalories" customModuleProvider="target">
-                                                <rect key="frame" x="225" y="0.0" width="110" height="29"/>
-                                                <color key="backgroundColor" red="0.98382954879999995" green="0.98820835870000001" blue="1" alpha="0.08350278253" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
-                                            </textField>
-                                        </subviews>
-                                    </stackView>
                                 </subviews>
                             </stackView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kep-5j-rHC">
-                                <rect key="frame" x="0.0" y="300" width="375" height="248"/>
+                                <rect key="frame" x="16" y="289" width="343" height="259"/>
                                 <connections>
                                     <segue destination="3B2-wn-U60" kind="embed" identifier="showContainer" id="Ytn-7R-8Gi"/>
                                 </connections>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgL-bi-dKX">
-                                <rect key="frame" x="0.0" y="259" width="375" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgL-bi-dKX" customClass="CustomButton" customModule="MyDailyCalories" customModuleProvider="target">
+                                <rect key="frame" x="16" y="251" width="343" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="BX2-9K-RRY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Add to Cart">
                                     <color key="titleColor" red="0.99601525069999997" green="0.52405595780000003" blue="0.38426378369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
@@ -797,25 +787,28 @@
                         <color key="backgroundColor" red="0.1137269512" green="0.1137235239" blue="0.1137242243" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="hCM-qd-tBY" firstAttribute="leading" secondItem="dp1-YD-YBF" secondAttribute="leading" id="5lf-MV-dbr"/>
-                            <constraint firstItem="hgL-bi-dKX" firstAttribute="leading" secondItem="dp1-YD-YBF" secondAttribute="leading" id="5yI-k9-skS"/>
+                            <constraint firstItem="hgL-bi-dKX" firstAttribute="leading" secondItem="dp1-YD-YBF" secondAttribute="leading" constant="16" id="5yI-k9-skS"/>
                             <constraint firstItem="hCM-qd-tBY" firstAttribute="top" secondItem="kep-5j-rHC" secondAttribute="bottom" id="9vg-Ls-62u"/>
                             <constraint firstItem="Pjs-NG-DnG" firstAttribute="top" secondItem="dp1-YD-YBF" secondAttribute="top" constant="20" id="Hy9-yq-lIu"/>
+                            <constraint firstItem="hgL-bi-dKX" firstAttribute="top" secondItem="hxr-AC-9fD" secondAttribute="bottom" constant="8" id="KJW-Vn-u6g"/>
                             <constraint firstItem="hCM-qd-tBY" firstAttribute="bottom" secondItem="dp1-YD-YBF" secondAttribute="bottom" id="Mov-lf-vqA"/>
                             <constraint firstItem="dp1-YD-YBF" firstAttribute="trailing" secondItem="EYg-7M-6XW" secondAttribute="trailing" id="N3v-bJ-u7M"/>
                             <constraint firstItem="dp1-YD-YBF" firstAttribute="leading" secondItem="EYg-7M-6XW" secondAttribute="leading" id="Qxv-1v-PpU"/>
                             <constraint firstItem="yZn-66-L6p" firstAttribute="centerX" secondItem="dp1-YD-YBF" secondAttribute="centerX" id="RZu-g5-bZT"/>
                             <constraint firstItem="dp1-YD-YBF" firstAttribute="top" secondItem="EYg-7M-6XW" secondAttribute="top" id="S9g-ct-AXh"/>
                             <constraint firstItem="yZn-66-L6p" firstAttribute="centerY" secondItem="dp1-YD-YBF" secondAttribute="centerY" id="V8C-Sy-LEk"/>
-                            <constraint firstItem="kep-5j-rHC" firstAttribute="leading" secondItem="dp1-YD-YBF" secondAttribute="leading" id="bRX-qX-674"/>
+                            <constraint firstItem="dp1-YD-YBF" firstAttribute="trailing" secondItem="hxr-AC-9fD" secondAttribute="trailing" constant="16" id="VkS-il-TAe"/>
+                            <constraint firstItem="hxr-AC-9fD" firstAttribute="leading" secondItem="dp1-YD-YBF" secondAttribute="leading" constant="16" id="WcB-Ta-PFc"/>
+                            <constraint firstItem="kep-5j-rHC" firstAttribute="leading" secondItem="dp1-YD-YBF" secondAttribute="leading" constant="16" id="bRX-qX-674"/>
                             <constraint firstItem="Pjs-NG-DnG" firstAttribute="leading" secondItem="dp1-YD-YBF" secondAttribute="leading" constant="20" id="eoM-va-Hbz"/>
                             <constraint firstItem="kep-5j-rHC" firstAttribute="top" secondItem="hgL-bi-dKX" secondAttribute="bottom" constant="8" id="fAc-BN-LzZ"/>
+                            <constraint firstItem="hxr-AC-9fD" firstAttribute="top" secondItem="Pjs-NG-DnG" secondAttribute="bottom" constant="8" id="iaV-Zw-iEg"/>
                             <constraint firstItem="hCM-qd-tBY" firstAttribute="trailing" secondItem="dp1-YD-YBF" secondAttribute="trailing" id="jJM-fG-Z5d"/>
-                            <constraint firstItem="hgL-bi-dKX" firstAttribute="top" secondItem="Pjs-NG-DnG" secondAttribute="bottom" constant="8" id="kAx-l4-RL3"/>
-                            <constraint firstItem="hgL-bi-dKX" firstAttribute="trailing" secondItem="dp1-YD-YBF" secondAttribute="trailing" id="lcT-Qf-gW9"/>
+                            <constraint firstItem="hgL-bi-dKX" firstAttribute="trailing" secondItem="dp1-YD-YBF" secondAttribute="trailing" constant="-16" id="lcT-Qf-gW9"/>
                             <constraint firstItem="dp1-YD-YBF" firstAttribute="trailing" secondItem="Pjs-NG-DnG" secondAttribute="trailing" constant="20" id="n4z-HQ-I42"/>
                             <constraint firstItem="dp1-YD-YBF" firstAttribute="bottom" secondItem="kep-5j-rHC" secondAttribute="bottom" constant="50" id="sPJ-23-dDF"/>
                             <constraint firstItem="dp1-YD-YBF" firstAttribute="bottom" secondItem="EYg-7M-6XW" secondAttribute="bottom" id="sUd-lp-3e3"/>
-                            <constraint firstItem="dp1-YD-YBF" firstAttribute="trailing" secondItem="kep-5j-rHC" secondAttribute="trailing" id="u73-nC-JiO"/>
+                            <constraint firstItem="dp1-YD-YBF" firstAttribute="trailing" secondItem="kep-5j-rHC" secondAttribute="trailing" constant="16" id="u73-nC-JiO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dp1-YD-YBF"/>
                     </view>
@@ -842,16 +835,16 @@
                         <outlet property="lblProtein" destination="OO0-9I-wXS" id="RzS-DA-zl2"/>
                         <outlet property="loader" destination="yZn-66-L6p" id="NBa-g7-h1j"/>
                         <outlet property="tfCustomGrams" destination="sl1-lp-BgX" id="OmX-Wq-JYr"/>
-                        <outletCollection property="gramBtns" destination="HZH-0A-UFl" collectionClass="NSMutableArray" id="uRm-8v-d7i"/>
-                        <outletCollection property="gramBtns" destination="DH7-pk-vfz" collectionClass="NSMutableArray" id="VeC-X9-lfT"/>
                         <outletCollection property="gramBtns" destination="goF-Hf-zwL" collectionClass="NSMutableArray" id="3CF-bB-kiB"/>
+                        <outletCollection property="gramBtns" destination="HZH-0A-UFl" collectionClass="NSMutableArray" id="uRm-8v-d7i"/>
                         <outletCollection property="gramBtns" destination="qSU-8P-f1G" collectionClass="NSMutableArray" id="9pt-jd-Fnk"/>
                         <outletCollection property="gramBtns" destination="RyH-9b-h3F" collectionClass="NSMutableArray" id="cq0-hX-gRs"/>
+                        <outletCollection property="gramBtns" destination="DH7-pk-vfz" collectionClass="NSMutableArray" id="VeC-X9-lfT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cmh-Iz-GnL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="515.94202898550725" y="1629.9107142857142"/>
+            <point key="canvasLocation" x="514.39999999999998" y="1629.5352323838083"/>
         </scene>
         <!--New EntityVC-->
         <scene sceneID="bgb-Be-XI5">
@@ -861,6 +854,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FaY-3a-PcA" customClass="GradiantViewOrange" customModule="MyDailyCalories" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="56" width="375" height="542"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="cMc-9W-jRB">
                                 <rect key="frame" x="20" y="116" width="335" height="203.5"/>
                                 <subviews>
@@ -873,9 +870,12 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NLY-Qn-PkT">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NLY-Qn-PkT" customClass="CustomTextField" customModule="MyDailyCalories" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28.5" width="335" height="34"/>
                                                 <color key="backgroundColor" red="0.77039629220000005" green="0.36910772320000002" blue="0.35684347150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="34" id="xgH-hG-r9P"/>
+                                                </constraints>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
@@ -894,9 +894,12 @@
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vTK-Fe-Zjt">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vTK-Fe-Zjt" customClass="CustomTextField" customModule="MyDailyCalories" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28.5" width="163.5" height="34"/>
                                                         <color key="backgroundColor" red="0.77039629220000005" green="0.36910772320000002" blue="0.35684347150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="34" id="uRB-KL-9a7"/>
+                                                        </constraints>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
@@ -912,9 +915,12 @@
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CXH-fn-A0B">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CXH-fn-A0B" customClass="CustomTextField" customModule="MyDailyCalories" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28.5" width="163.5" height="34"/>
                                                         <color key="backgroundColor" red="0.77039629220000005" green="0.36910772320000002" blue="0.35684347150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="34" id="BXl-5F-ZCN"/>
+                                                        </constraints>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
@@ -935,9 +941,12 @@
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nQG-mv-LcY">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nQG-mv-LcY" customClass="CustomTextField" customModule="MyDailyCalories" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28.5" width="163.5" height="34"/>
                                                         <color key="backgroundColor" red="0.77039629220000005" green="0.36910772320000002" blue="0.35684347150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="34" id="NfS-GG-Y9G"/>
+                                                        </constraints>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
@@ -953,9 +962,12 @@
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HBC-Pq-AyW">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HBC-Pq-AyW" customClass="CustomTextField" customModule="MyDailyCalories" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28.5" width="163.5" height="34"/>
                                                         <color key="backgroundColor" red="0.77039629220000005" green="0.36910772320000002" blue="0.35684347150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="34" id="61x-yE-AKz"/>
+                                                        </constraints>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
@@ -973,19 +985,23 @@
                         </subviews>
                         <color key="backgroundColor" red="0.77039629220000005" green="0.36910772320000002" blue="0.35684347150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="FaY-3a-PcA" firstAttribute="leading" secondItem="IZU-VV-bdL" secondAttribute="leading" id="4kr-Vf-Snf"/>
                             <constraint firstItem="17i-op-4Qp" firstAttribute="top" secondItem="IZU-VV-bdL" secondAttribute="top" id="5Rv-k9-Ed4"/>
                             <constraint firstItem="cMc-9W-jRB" firstAttribute="top" secondItem="17i-op-4Qp" secondAttribute="bottom" constant="10" id="5Tw-gR-5GO"/>
+                            <constraint firstItem="IZU-VV-bdL" firstAttribute="bottom" secondItem="FaY-3a-PcA" secondAttribute="bottom" id="9Mz-Pt-id2"/>
                             <constraint firstItem="cMc-9W-jRB" firstAttribute="top" secondItem="IZU-VV-bdL" secondAttribute="top" constant="60" id="IVR-s9-7qr"/>
                             <constraint firstItem="17i-op-4Qp" firstAttribute="trailing" secondItem="IZU-VV-bdL" secondAttribute="trailing" id="VzK-l5-L30"/>
                             <constraint firstItem="IZU-VV-bdL" firstAttribute="trailing" secondItem="cMc-9W-jRB" secondAttribute="trailing" constant="20" id="WD7-Zh-41f"/>
                             <constraint firstItem="17i-op-4Qp" firstAttribute="leading" secondItem="IZU-VV-bdL" secondAttribute="leading" id="aHf-Nx-2ac"/>
+                            <constraint firstItem="FaY-3a-PcA" firstAttribute="top" secondItem="IZU-VV-bdL" secondAttribute="top" id="aPR-x6-PC2"/>
+                            <constraint firstItem="IZU-VV-bdL" firstAttribute="trailing" secondItem="FaY-3a-PcA" secondAttribute="trailing" id="cZD-v7-6Gg"/>
                             <constraint firstItem="cMc-9W-jRB" firstAttribute="leading" secondItem="IZU-VV-bdL" secondAttribute="leading" constant="20" id="rAK-oa-eTQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IZU-VV-bdL"/>
                     </view>
                     <navigationItem key="navigationItem" id="50q-bi-Es2">
                         <barButtonItem key="rightBarButtonItem" title="Save" id="lHh-hf-BRH">
-                            <color key="tintColor" red="0.77039629220000005" green="0.36910772320000002" blue="0.35684347150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="tintColor" red="0.99221473930000004" green="0.57126843930000004" blue="0.41563755270000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="saveTapped:" destination="vRc-go-hJU" id="lCQ-5k-gQC"/>
                             </connections>
@@ -1014,9 +1030,17 @@
             <objects>
                 <navigationController modalPresentationStyle="fullScreen" id="ObV-Bm-nnq" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="calories-icon-4a" id="fIu-v3-kCJ"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JjI-Jb-vBx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="JjI-Jb-vBx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.99221473930000004" green="0.57126843930000004" blue="0.41563755270000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.079893443915238962" green="0.080588845285998439" blue="0.080603585025380675" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="pN4-Bf-nKG"/>
@@ -1057,17 +1081,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="108"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eR5-bs-TbF">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="104"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eR5-bs-TbF" customClass="CustomCellView" customModule="MyDailyCalories" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glass_cell_2" translatesAutoresizingMaskIntoConstraints="NO" id="wlM-MX-4T9">
-                                                            <rect key="frame" x="4" y="0.0" width="367" height="104"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="60" id="kww-Yg-Gvi"/>
-                                                            </constraints>
-                                                        </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="qie-dw-UQh">
-                                                            <rect key="frame" x="135" y="2" width="220" height="100"/>
+                                                            <rect key="frame" x="135" y="0.0" width="220" height="100"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eUg-cW-r2P">
                                                                     <rect key="frame" x="0.0" y="0.0" width="52" height="100"/>
@@ -1076,7 +1094,7 @@
                                                                             <rect key="frame" x="0.0" y="0.0" width="52" height="100"/>
                                                                             <color key="backgroundColor" red="0.77039629220000005" green="0.36910772320000002" blue="0.35684347150000001" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
                                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
@@ -1095,7 +1113,7 @@
                                                                             <rect key="frame" x="0.0" y="0.0" width="52" height="100"/>
                                                                             <color key="backgroundColor" red="0.77039629220000005" green="0.36910772320000002" blue="0.35684347150000001" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
                                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
@@ -1113,7 +1131,7 @@
                                                                             <rect key="frame" x="0.0" y="0.0" width="52" height="100"/>
                                                                             <color key="backgroundColor" red="0.77039629220000005" green="0.36910772320000002" blue="0.35684347150000001" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
                                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
@@ -1131,7 +1149,7 @@
                                                                             <rect key="frame" x="0.0" y="0.0" width="52" height="100"/>
                                                                             <color key="backgroundColor" red="0.77039629220000005" green="0.36910772320000002" blue="0.35684347150000001" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
                                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
@@ -1145,10 +1163,10 @@
                                                             </subviews>
                                                         </stackView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u03-4F-8d1">
-                                                            <rect key="frame" x="20" y="0.0" width="111" height="104"/>
+                                                            <rect key="frame" x="20" y="0.0" width="111" height="100"/>
                                                             <color key="backgroundColor" red="0.77039629220000005" green="0.36910772320000002" blue="0.35684347150000001" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -1156,21 +1174,18 @@
                                                     <constraints>
                                                         <constraint firstItem="u03-4F-8d1" firstAttribute="leading" secondItem="eR5-bs-TbF" secondAttribute="leading" constant="20" id="3cz-oM-jwF"/>
                                                         <constraint firstItem="qie-dw-UQh" firstAttribute="leading" secondItem="u03-4F-8d1" secondAttribute="trailing" constant="4" id="CC5-Pp-J0j"/>
-                                                        <constraint firstAttribute="trailing" secondItem="wlM-MX-4T9" secondAttribute="trailing" constant="4" id="Feh-5u-HL6"/>
-                                                        <constraint firstItem="qie-dw-UQh" firstAttribute="top" secondItem="eR5-bs-TbF" secondAttribute="top" constant="2" id="Idd-xp-gqd"/>
+                                                        <constraint firstItem="qie-dw-UQh" firstAttribute="top" secondItem="eR5-bs-TbF" secondAttribute="top" id="Idd-xp-gqd"/>
                                                         <constraint firstAttribute="trailing" secondItem="qie-dw-UQh" secondAttribute="trailing" constant="20" id="O2N-08-JEf"/>
-                                                        <constraint firstAttribute="bottom" secondItem="qie-dw-UQh" secondAttribute="bottom" constant="2" id="T7d-dk-6Vi"/>
-                                                        <constraint firstItem="wlM-MX-4T9" firstAttribute="leading" secondItem="eR5-bs-TbF" secondAttribute="leading" constant="4" id="c0m-OG-z16"/>
+                                                        <constraint firstAttribute="bottom" secondItem="qie-dw-UQh" secondAttribute="bottom" id="T7d-dk-6Vi"/>
+                                                        <constraint firstAttribute="height" constant="60" id="dWP-5S-343"/>
                                                         <constraint firstAttribute="bottom" secondItem="u03-4F-8d1" secondAttribute="bottom" id="hRa-GY-gM0"/>
-                                                        <constraint firstItem="wlM-MX-4T9" firstAttribute="top" secondItem="eR5-bs-TbF" secondAttribute="top" id="hhc-8f-Bsg"/>
-                                                        <constraint firstAttribute="bottom" secondItem="wlM-MX-4T9" secondAttribute="bottom" id="ms6-0b-kQV"/>
                                                         <constraint firstItem="u03-4F-8d1" firstAttribute="top" secondItem="eR5-bs-TbF" secondAttribute="top" id="mwv-Gc-ph6"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" red="0.1137269512" green="0.1137235239" blue="0.1137242243" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="eR5-bs-TbF" secondAttribute="bottom" constant="4" id="1SW-S0-h1l"/>
+                                                <constraint firstAttribute="bottom" secondItem="eR5-bs-TbF" secondAttribute="bottom" constant="8" id="1SW-S0-h1l"/>
                                                 <constraint firstItem="eR5-bs-TbF" firstAttribute="leading" secondItem="v6k-r3-G3e" secondAttribute="leading" id="7Au-nS-mXP"/>
                                                 <constraint firstAttribute="trailing" secondItem="eR5-bs-TbF" secondAttribute="trailing" id="AZp-OO-oUK"/>
                                                 <constraint firstItem="eR5-bs-TbF" firstAttribute="top" secondItem="v6k-r3-G3e" secondAttribute="top" id="d6b-E9-sOQ"/>
@@ -1373,7 +1388,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Daily Calories" id="S84-U9-mof">
                         <barButtonItem key="rightBarButtonItem" title="Add" id="TvP-NG-set">
-                            <color key="tintColor" red="0.99601525068283081" green="0.52405595779418945" blue="0.3842637836933136" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="tintColor" red="0.99221473930000004" green="0.57126843930000004" blue="0.41563755270000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <segue destination="sE1-ri-fp9" kind="show" identifier="go_to_add_new_product" id="HJ4-z5-Ml8"/>
                             </connections>
@@ -1406,6 +1421,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2NP-BK-285" customClass="GradiantViewBlack" customModule="MyDailyCalories" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="56" width="375" height="542"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6bW-ll-xmj">
                                 <rect key="frame" x="20" y="116" width="335" height="203.5"/>
                                 <subviews>
@@ -1418,11 +1437,14 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" background="text_field" translatesAutoresizingMaskIntoConstraints="NO" id="hrb-rz-4iY">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hrb-rz-4iY" customClass="CustomTextField" customModule="MyDailyCalories" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28.5" width="335" height="34"/>
                                                 <color key="backgroundColor" red="0.1137269512" green="0.1137235239" blue="0.1137242243" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="34" id="yqa-nH-ebm"/>
+                                                </constraints>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                             </textField>
                                         </subviews>
@@ -1439,11 +1461,14 @@
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" background="text_field_small" translatesAutoresizingMaskIntoConstraints="NO" id="QsV-aW-ufr">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QsV-aW-ufr" customClass="CustomTextField" customModule="MyDailyCalories" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28.5" width="163.5" height="34"/>
                                                         <color key="backgroundColor" red="0.1137269512" green="0.1137235239" blue="0.1137242243" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="34" id="lh5-Va-X1h"/>
+                                                        </constraints>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                                     </textField>
                                                 </subviews>
@@ -1457,11 +1482,14 @@
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" background="text_field_small" translatesAutoresizingMaskIntoConstraints="NO" id="f1C-Od-EQX">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f1C-Od-EQX" customClass="CustomTextField" customModule="MyDailyCalories" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28.5" width="163.5" height="34"/>
                                                         <color key="backgroundColor" red="0.1137269512" green="0.1137235239" blue="0.1137242243" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="34" id="QMh-bg-Etf"/>
+                                                        </constraints>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                                     </textField>
                                                 </subviews>
@@ -1480,11 +1508,14 @@
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" background="text_field_small" translatesAutoresizingMaskIntoConstraints="NO" id="ll9-zU-Dsd">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ll9-zU-Dsd" customClass="CustomTextField" customModule="MyDailyCalories" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28.5" width="163.5" height="34"/>
                                                         <color key="backgroundColor" red="0.1137269512" green="0.1137235239" blue="0.1137242243" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="34" id="dXX-1o-Ttt"/>
+                                                        </constraints>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                                     </textField>
                                                 </subviews>
@@ -1501,8 +1532,11 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TiM-uM-ujl" customClass="CustomTextField" customModule="MyDailyCalories" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28.5" width="163.5" height="34"/>
                                                         <color key="backgroundColor" red="0.1137269512" green="0.1137235239" blue="0.1137242243" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="34" id="R0m-so-JPg"/>
+                                                        </constraints>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                                     </textField>
                                                 </subviews>
@@ -1519,10 +1553,14 @@
                         <color key="backgroundColor" red="0.76862745099999996" green="0.36862745099999999" blue="0.35686274509999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="6bW-ll-xmj" firstAttribute="top" secondItem="Uji-3Y-lQ5" secondAttribute="top" constant="60" id="2FG-jH-v3X"/>
+                            <constraint firstItem="2NP-BK-285" firstAttribute="bottom" secondItem="Uji-3Y-lQ5" secondAttribute="bottom" id="2fF-8L-5LP"/>
                             <constraint firstItem="dYu-OI-tAi" firstAttribute="leading" secondItem="Uji-3Y-lQ5" secondAttribute="leading" id="4Lx-sW-wx3"/>
+                            <constraint firstItem="2NP-BK-285" firstAttribute="leading" secondItem="Uji-3Y-lQ5" secondAttribute="leading" id="7jN-mH-b64"/>
                             <constraint firstItem="dYu-OI-tAi" firstAttribute="top" secondItem="Uji-3Y-lQ5" secondAttribute="top" id="8dB-MX-twn"/>
                             <constraint firstItem="Uji-3Y-lQ5" firstAttribute="trailing" secondItem="6bW-ll-xmj" secondAttribute="trailing" constant="20" id="DxD-CS-pJG"/>
+                            <constraint firstItem="2NP-BK-285" firstAttribute="top" secondItem="Uji-3Y-lQ5" secondAttribute="top" id="Of0-Xf-uuk"/>
                             <constraint firstItem="6bW-ll-xmj" firstAttribute="top" secondItem="dYu-OI-tAi" secondAttribute="bottom" constant="10" id="RhG-rW-2k9"/>
+                            <constraint firstItem="2NP-BK-285" firstAttribute="trailing" secondItem="Uji-3Y-lQ5" secondAttribute="trailing" id="hQI-Jg-DDe"/>
                             <constraint firstItem="6bW-ll-xmj" firstAttribute="leading" secondItem="Uji-3Y-lQ5" secondAttribute="leading" constant="20" id="ofD-Aj-QfZ"/>
                             <constraint firstItem="Uji-3Y-lQ5" firstAttribute="trailing" secondItem="dYu-OI-tAi" secondAttribute="trailing" id="wfZ-uw-Asc"/>
                         </constraints>
@@ -1530,7 +1568,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="145-ZC-PHL">
                         <barButtonItem key="rightBarButtonItem" title="Save" id="gW5-q2-ihA">
-                            <color key="tintColor" red="0.77039629220000005" green="0.36910772320000002" blue="0.35684347150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="tintColor" red="0.99221473930000004" green="0.57126843930000004" blue="0.41563755270000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="saveTapped:" destination="sE1-ri-fp9" id="RC0-hk-JGv"/>
                             </connections>
@@ -1552,52 +1590,53 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vo6-vb-zoC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="472" y="132"/>
+            <point key="canvasLocation" x="471.19999999999999" y="131.78410794602701"/>
         </scene>
         <!--Item-->
         <scene sceneID="63B-56-gfa">
             <objects>
                 <viewController id="3B2-wn-U60" customClass="CartVC" customModule="MyDailyCalories" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q8h-w7-eeC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="248"/>
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="259"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zbg-h7-qyK">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="151"/>
+                                <rect key="frame" x="0.0" y="0.0" width="343" height="158"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cartCellID" rowHeight="65" id="kuO-hR-jcJ" customClass="CartEntityCell" customModule="MyDailyCalories" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="65"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="cartCellID" rowHeight="65" id="kuO-hR-jcJ" customClass="CartEntityCell" customModule="MyDailyCalories" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kuO-hR-jcJ" id="kYL-tn-taJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="65"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glass_cell_2" translatesAutoresizingMaskIntoConstraints="NO" id="HZY-ce-7ms">
-                                                    <rect key="frame" x="4" y="0.0" width="367" height="61"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Evs-HB-y3h" customClass="CustomCellView" customModule="MyDailyCalories" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="57"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="60" id="SeX-fj-OiO"/>
+                                                        <constraint firstAttribute="height" constant="60" id="o1C-6S-vU7"/>
                                                     </constraints>
-                                                </imageView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="lul-Qz-T1p">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="61"/>
+                                                </view>
+                                                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="lul-Qz-T1p">
+                                                    <rect key="frame" x="-1" y="2" width="336" height="61"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u9t-MD-YaW">
-                                                            <rect key="frame" x="0.0" y="0.0" width="125" height="61"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="112" height="61"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="naF-wb-rrL">
-                                                                    <rect key="frame" x="20" y="8" width="97" height="45"/>
+                                                                    <rect key="frame" x="12" y="8" width="92" height="45"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZj-5F-qzK">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="97" height="18.5"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="92" height="18.5"/>
                                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grams :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EmW-5L-d0e">
-                                                                            <rect key="frame" x="0.0" y="26.5" width="97" height="18.5"/>
+                                                                            <rect key="frame" x="0.0" y="26.5" width="92" height="18.5"/>
                                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
@@ -1607,26 +1646,26 @@
                                                             <constraints>
                                                                 <constraint firstItem="naF-wb-rrL" firstAttribute="top" secondItem="u9t-MD-YaW" secondAttribute="top" constant="8" id="Lpm-Pf-eb1"/>
                                                                 <constraint firstAttribute="trailing" secondItem="naF-wb-rrL" secondAttribute="trailing" constant="8" id="hl3-NZ-WCj"/>
-                                                                <constraint firstItem="naF-wb-rrL" firstAttribute="leading" secondItem="u9t-MD-YaW" secondAttribute="leading" constant="20" id="r98-IU-oJT"/>
+                                                                <constraint firstItem="naF-wb-rrL" firstAttribute="leading" secondItem="u9t-MD-YaW" secondAttribute="leading" constant="12" id="r98-IU-oJT"/>
                                                                 <constraint firstAttribute="bottom" secondItem="naF-wb-rrL" secondAttribute="bottom" constant="8" id="vhm-xF-TuD"/>
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DMZ-LP-1a7">
-                                                            <rect key="frame" x="125" y="0.0" width="125" height="61"/>
+                                                            <rect key="frame" x="112" y="0.0" width="112" height="61"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZwM-Kq-PJY">
-                                                                    <rect key="frame" x="0.0" y="8" width="117" height="45"/>
+                                                                    <rect key="frame" x="0.0" y="8" width="104" height="45"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cal :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rh1-M0-lHz">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="117" height="18.5"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="104" height="18.5"/>
                                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carbs :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sw2-24-m40">
-                                                                            <rect key="frame" x="0.0" y="26.5" width="117" height="18.5"/>
+                                                                            <rect key="frame" x="0.0" y="26.5" width="104" height="18.5"/>
                                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
@@ -1641,21 +1680,21 @@
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bTd-oe-wXP">
-                                                            <rect key="frame" x="250" y="0.0" width="125" height="61"/>
+                                                            <rect key="frame" x="224" y="0.0" width="112" height="61"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="CLe-i3-UTJ">
-                                                                    <rect key="frame" x="0.0" y="8" width="105" height="45"/>
+                                                                    <rect key="frame" x="0.0" y="8" width="100" height="45"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Protein :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a2v-Ud-bEr">
                                                                             <rect key="frame" x="0.0" y="0.0" width="55.5" height="18.5"/>
                                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fat :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BYg-yd-5gr">
                                                                             <rect key="frame" x="0.0" y="26.5" width="28.5" height="18.5"/>
                                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
@@ -1665,7 +1704,8 @@
                                                             <constraints>
                                                                 <constraint firstItem="CLe-i3-UTJ" firstAttribute="top" secondItem="bTd-oe-wXP" secondAttribute="top" constant="8" id="79E-NE-oeJ"/>
                                                                 <constraint firstItem="CLe-i3-UTJ" firstAttribute="leading" secondItem="bTd-oe-wXP" secondAttribute="leading" id="OjN-Ov-9bd"/>
-                                                                <constraint firstAttribute="trailing" secondItem="CLe-i3-UTJ" secondAttribute="trailing" constant="20" id="g7K-T2-bUh"/>
+                                                                <constraint firstAttribute="trailing" secondItem="CLe-i3-UTJ" secondAttribute="trailing" constant="12" id="g7K-T2-bUh"/>
+                                                                <constraint firstAttribute="height" constant="61" id="kEt-Eh-JVY"/>
                                                                 <constraint firstAttribute="bottom" secondItem="CLe-i3-UTJ" secondAttribute="bottom" constant="8" id="msT-pW-1Ps"/>
                                                             </constraints>
                                                         </view>
@@ -1674,19 +1714,13 @@
                                             </subviews>
                                             <color key="backgroundColor" red="0.1137269512" green="0.1137235239" blue="0.1137242243" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="lul-Qz-T1p" secondAttribute="trailing" id="N3n-az-dWE"/>
-                                                <constraint firstItem="lul-Qz-T1p" firstAttribute="top" secondItem="kYL-tn-taJ" secondAttribute="top" id="f6N-Y9-fB4"/>
-                                                <constraint firstAttribute="bottom" secondItem="lul-Qz-T1p" secondAttribute="bottom" constant="4" id="uoD-JT-1jQ"/>
-                                                <constraint firstItem="lul-Qz-T1p" firstAttribute="leading" secondItem="kYL-tn-taJ" secondAttribute="leading" id="zAh-qq-Gmn"/>
+                                                <constraint firstAttribute="trailing" secondItem="Evs-HB-y3h" secondAttribute="trailing" id="81j-VE-Rnz"/>
+                                                <constraint firstAttribute="bottom" secondItem="Evs-HB-y3h" secondAttribute="bottom" constant="8" id="GT4-7M-uEc"/>
+                                                <constraint firstItem="Evs-HB-y3h" firstAttribute="top" secondItem="kYL-tn-taJ" secondAttribute="top" id="SZE-63-CaT"/>
+                                                <constraint firstItem="Evs-HB-y3h" firstAttribute="leading" secondItem="kYL-tn-taJ" secondAttribute="leading" id="cZz-ge-i7v"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.1137269512" green="0.1137235239" blue="0.1137242243" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <constraints>
-                                            <constraint firstItem="HZY-ce-7ms" firstAttribute="leading" secondItem="kuO-hR-jcJ" secondAttribute="leading" constant="4" id="Fk6-3R-VoA"/>
-                                            <constraint firstAttribute="trailing" secondItem="HZY-ce-7ms" secondAttribute="trailing" constant="4" id="Xis-4c-ZPs"/>
-                                            <constraint firstItem="HZY-ce-7ms" firstAttribute="top" secondItem="kuO-hR-jcJ" secondAttribute="top" id="dGJ-7a-HZx"/>
-                                            <constraint firstAttribute="bottom" secondItem="HZY-ce-7ms" secondAttribute="bottom" constant="4" id="va6-X6-Hmc"/>
-                                        </constraints>
                                         <connections>
                                             <outlet property="lblCalories" destination="rh1-M0-lHz" id="kJz-TK-pZN"/>
                                             <outlet property="lblCartbs" destination="Sw2-24-m40" id="g5j-gi-iR4"/>
@@ -1698,8 +1732,46 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="905-IE-le8">
-                                <rect key="frame" x="16" y="191" width="343" height="49"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="D2v-0B-ihj">
+                                <rect key="frame" x="0.0" y="164" width="343" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ycn-em-Oun" customClass="CustomButton" customModule="MyDailyCalories" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="107.5" height="30"/>
+                                        <color key="backgroundColor" red="0.96563429722026628" green="1" blue="0.98830760928799466" alpha="0.074566566780821922" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Servings : 1">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="servingsTapped:" destination="3B2-wn-U60" eventType="touchUpInside" id="d2Q-ua-RUD"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fre-5h-dbY" customClass="CustomButton" customModule="MyDailyCalories" customModuleProvider="target">
+                                        <rect key="frame" x="117.5" y="0.0" width="108" height="30"/>
+                                        <color key="backgroundColor" red="0.96563429722026628" green="1" blue="0.98830760928799466" alpha="0.074566566780821922" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Empty Cart">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="emptyCartTapped:" destination="3B2-wn-U60" eventType="touchUpInside" id="Tow-2V-5QZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8TF-Yl-UdW" customClass="CustomButton" customModule="MyDailyCalories" customModuleProvider="target">
+                                        <rect key="frame" x="235.5" y="0.0" width="107.5" height="30"/>
+                                        <color key="backgroundColor" red="0.96563429722026628" green="1" blue="0.98830760928799466" alpha="0.074566566780821922" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Add To Daily">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addToDailyTapped:" destination="3B2-wn-U60" eventType="touchUpInside" id="ZVT-4m-sEF"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="UvO-aQ-MKt">
+                                <rect key="frame" x="153" y="111" width="37" height="37"/>
+                            </activityIndicatorView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="42" translatesAutoresizingMaskIntoConstraints="NO" id="905-IE-le8">
+                                <rect key="frame" x="4" y="202" width="335" height="49"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gLl-hT-MDB">
                                         <rect key="frame" x="0.0" y="0.0" width="71.5" height="49"/>
@@ -1719,7 +1791,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ehl-Ml-9hW">
-                                        <rect key="frame" x="101.5" y="0.0" width="41" height="49"/>
+                                        <rect key="frame" x="113.5" y="0.0" width="41" height="49"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="2035" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Usm-Cm-SMP">
                                                 <rect key="frame" x="0.0" y="0.0" width="41" height="20.5"/>
@@ -1736,7 +1808,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="32D-nt-bBt">
-                                        <rect key="frame" x="172.5" y="0.0" width="99.5" height="49"/>
+                                        <rect key="frame" x="196.5" y="0.0" width="55.5" height="49"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Carbs :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Obe-oQ-LYO">
                                                 <rect key="frame" x="0.0" y="0.0" width="54.5" height="20.5"/>
@@ -1753,7 +1825,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jhz-ph-fwu">
-                                        <rect key="frame" x="302" y="0.0" width="41" height="49"/>
+                                        <rect key="frame" x="294" y="0.0" width="41" height="49"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="2035" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xp9-VO-9Yf">
                                                 <rect key="frame" x="0.0" y="0.0" width="41" height="20.5"/>
@@ -1772,57 +1844,19 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="D2v-0B-ihj">
-                                <rect key="frame" x="20" y="153" width="335" height="30"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ycn-em-Oun">
-                                        <rect key="frame" x="0.0" y="0.0" width="105" height="30"/>
-                                        <color key="backgroundColor" red="0.96563429722026628" green="1" blue="0.98830760928799466" alpha="0.074566566780821922" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <state key="normal" title="Servings : 1">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="servingsTapped:" destination="3B2-wn-U60" eventType="touchUpInside" id="d2Q-ua-RUD"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fre-5h-dbY">
-                                        <rect key="frame" x="115" y="0.0" width="105" height="30"/>
-                                        <color key="backgroundColor" red="0.96563429722026628" green="1" blue="0.98830760928799466" alpha="0.074566566780821922" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <state key="normal" title="Empty Cart">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="emptyCartTapped:" destination="3B2-wn-U60" eventType="touchUpInside" id="Tow-2V-5QZ"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8TF-Yl-UdW">
-                                        <rect key="frame" x="230" y="0.0" width="105" height="30"/>
-                                        <color key="backgroundColor" red="0.96563429722026628" green="1" blue="0.98830760928799466" alpha="0.074566566780821922" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <state key="normal" title="Add To Daily">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="addToDailyTapped:" destination="3B2-wn-U60" eventType="touchUpInside" id="ZVT-4m-sEF"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="UvO-aQ-MKt">
-                                <rect key="frame" x="169" y="105.5" width="37" height="37"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="905-IE-le8" firstAttribute="leading" secondItem="q8h-w7-eeC" secondAttribute="leadingMargin" id="4RV-Gq-nIv"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="905-IE-le8" secondAttribute="trailing" id="Ag1-dF-rJx"/>
+                            <constraint firstItem="qyd-vl-Juz" firstAttribute="trailing" secondItem="905-IE-le8" secondAttribute="trailing" constant="4" id="9Bb-tm-7sZ"/>
                             <constraint firstItem="zbg-h7-qyK" firstAttribute="top" secondItem="q8h-w7-eeC" secondAttribute="top" id="EQb-Pf-Rof"/>
                             <constraint firstAttribute="bottomMargin" secondItem="905-IE-le8" secondAttribute="bottom" constant="8" id="NUl-In-uJx"/>
                             <constraint firstItem="zbg-h7-qyK" firstAttribute="leading" secondItem="q8h-w7-eeC" secondAttribute="leading" id="OPj-fM-8kd"/>
                             <constraint firstItem="UvO-aQ-MKt" firstAttribute="centerY" secondItem="qyd-vl-Juz" secondAttribute="centerY" id="QA4-ig-HlW"/>
-                            <constraint firstItem="D2v-0B-ihj" firstAttribute="top" secondItem="zbg-h7-qyK" secondAttribute="bottom" constant="2" id="QI6-8h-7gr"/>
+                            <constraint firstItem="D2v-0B-ihj" firstAttribute="top" secondItem="zbg-h7-qyK" secondAttribute="bottom" constant="6" id="QI6-8h-7gr"/>
                             <constraint firstItem="UvO-aQ-MKt" firstAttribute="centerX" secondItem="qyd-vl-Juz" secondAttribute="centerX" id="TLk-uU-hZj"/>
-                            <constraint firstItem="D2v-0B-ihj" firstAttribute="leadingMargin" secondItem="qyd-vl-Juz" secondAttribute="leading" constant="20" id="UOz-d6-PCq"/>
-                            <constraint firstItem="qyd-vl-Juz" firstAttribute="trailing" secondItem="D2v-0B-ihj" secondAttribute="trailing" constant="20" id="cGd-t5-PGX"/>
+                            <constraint firstItem="D2v-0B-ihj" firstAttribute="leadingMargin" secondItem="qyd-vl-Juz" secondAttribute="leading" id="UOz-d6-PCq"/>
+                            <constraint firstItem="905-IE-le8" firstAttribute="leading" secondItem="qyd-vl-Juz" secondAttribute="leading" constant="4" id="WEC-S0-yyz"/>
+                            <constraint firstItem="qyd-vl-Juz" firstAttribute="trailing" secondItem="D2v-0B-ihj" secondAttribute="trailing" id="cGd-t5-PGX"/>
                             <constraint firstItem="905-IE-le8" firstAttribute="top" secondItem="D2v-0B-ihj" secondAttribute="bottom" constant="8" id="tSz-GB-5im"/>
                             <constraint firstAttribute="trailing" secondItem="zbg-h7-qyK" secondAttribute="trailing" id="utn-NR-v0B"/>
                         </constraints>
@@ -1842,18 +1876,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JNJ-xT-QV8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1464" y="1630"/>
+            <point key="canvasLocation" x="1463.2" y="1629.5352323838083"/>
         </scene>
     </scenes>
     <resources>
         <image name="calories-icon-4a" width="25" height="25"/>
-        <image name="glass_cell_2" width="514" height="110.5"/>
         <image name="grocery-icon-19" width="25" height="25"/>
         <image name="login_page_image3" width="350" height="350"/>
         <image name="logout" width="314" height="48"/>
         <image name="profile-icon-2" width="25" height="25"/>
-        <image name="text_field" width="314" height="47"/>
-        <image name="text_field_small" width="157" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ozl-AG-QEQ"/>

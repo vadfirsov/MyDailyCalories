@@ -27,15 +27,11 @@ class LoginVC : UIViewController {
         didSet { tfPw2.setPlaceholder(string: "repeat password") }
     }
     
-    @IBOutlet weak var segment: CustomSegment!
     @IBOutlet weak var loader: UIActivityIndicatorView!
     
-    @IBOutlet weak var btnFbSignIn: CustomBtn! {
-        didSet { btnFbSignIn.setFbDesign()}
-    }
-    @IBOutlet weak var btnGoogleSignIn: CustomBtn! {
-        didSet { btnGoogleSignIn.setGoogleDesign()}
-    }
+    @IBOutlet weak var segment:         CustomSegment!
+    @IBOutlet weak var btnFbSignIn:     FacebookButton!
+    @IBOutlet weak var btnGoogleSignIn: GoogleButton!
 
     @IBOutlet var textFields: [UITextField]!
     
@@ -45,16 +41,16 @@ class LoginVC : UIViewController {
         Firebase.shared.delegate = self
         GIDSignIn.sharedInstance()?.presentingViewController = self
         GIDSignIn.sharedInstance()?.delegate = self
+        setTextFields()
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        setTextFields()
         addGestures()
         //mockdata
         tfEmail.text = "test@t.com"
         tfPw.text = "123456"
-        
     }
     
     @IBAction func segmentValueChanged(_ sender: UISegmentedControl) {
@@ -74,9 +70,9 @@ class LoginVC : UIViewController {
         }
     }
     
-    @IBAction func fbSignInTapped(_ sender: UIButton) {
+    @IBAction func fbSignInTapped(_ sender: FacebookButton) {
         let fbLoginManager = LoginManager()
-
+        sender.animateTap(bgColor: sender.animatedBgColor, borderColor: sender.animatedBorderColor)
         fbLoginManager.logIn(permissions: ["public_profile", "email"], from: self) { (loginResult, error) -> Void in
             if (error != nil) {
                 AlertManager.shared.showAlertWithAuthError(inVC: self, message: error!.localizedDescription)
@@ -93,7 +89,8 @@ class LoginVC : UIViewController {
         }
     }
     
-    @IBAction func googleSignInTapped(_ sender: CustomBtn) {
+    @IBAction func googleSignInTapped(_ sender: GoogleButton) {
+        sender.animateTap(bgColor: sender.animatedBgColor, borderColor: sender.animatedBorderColor)
         GIDSignIn.sharedInstance()?.signIn()
     }
 
@@ -157,7 +154,9 @@ class LoginVC : UIViewController {
         tfPw2.isHidden =           segment.isSignInChosen
         btnFbSignIn.isHidden =     !segment.isSignInChosen
         btnGoogleSignIn.isHidden = !segment.isSignInChosen
-        tfPw.isHidden =            !isKeyboardShown
+        if isKeyboardShown {
+            tfPw.isHidden = false
+        }
     }
 }
 
