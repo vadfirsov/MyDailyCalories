@@ -27,7 +27,8 @@ class MyProductsVC : UIViewController {
     }
     
     @IBOutlet weak var bannerAdd: GADBannerView!
-    
+    @IBOutlet var titleBtns: [UIButton]!
+
     @IBOutlet weak var loader: UIActivityIndicatorView!
     
     @IBOutlet weak var tableView: UITableView! {
@@ -48,8 +49,6 @@ class MyProductsVC : UIViewController {
         AdMob.shared.set(banner: bannerAdd, inVC: self)
         loader.startAnimating()
         Firebase.shared.loadEntities()
-        
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -58,23 +57,26 @@ class MyProductsVC : UIViewController {
         
         AdMob.shared.showInterstitialAd(inVC: self)
         
-        showIntro()
-
+        //mockdata
+//        showIntro()
+        if HintsManager.shared.shouldShowIntroInMyProducts == true {
+            showIntro()
+        }
     }
     
     private func showIntro() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
             self.performSegue(withIdentifier: self.presentIntroVC, sender: self)
+            HintsManager.shared.shouldShowIntroInMyProducts = false
         }
     }
+    
+    
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
         searchBar.resignFirstResponder()
     }
-    
-    @IBOutlet var titleBtns: [UIButton]!
-    
     
     @IBAction func btnTitleTapped(_ sender: UIButton) {
         var filter = Filter.name
@@ -107,8 +109,11 @@ class MyProductsVC : UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destinationVC = segue.destination as? CalculatorVC {
-            destinationVC.entity = filteredEntities[choosenEntityIndex]
+        if let calculatorVC = segue.destination as? CalculatorVC {
+            calculatorVC.entity = filteredEntities[choosenEntityIndex]
+        }
+        else if let introVC = segue.destination as? MyProductsIntroVC {
+            introVC.delegate = self
         }
     }
 }
@@ -145,6 +150,13 @@ extension MyProductsVC : FirebaseDelegate {
         print(filteredEntities)
         tableView.reloadData()
     }
+    
+    func didReceive(foods: [Entity]) {
+        self.entities.append(contentsOf: foods)
+        filteredEntities = EntitiesFilter.shared.filtered(entities: entities, byFilter: .name)
+        //save to firebase and reloadddd
+        tableView.reloadData()
+    }
 }
 
 extension MyProductsVC : EntityCellDelegate {
@@ -172,12 +184,8 @@ extension MyProductsVC : UISearchBarDelegate {
     }
 }
 
-extension MyProductsVC : ProductsIntroViewDelegate {
-    func didTapLoadProducts() {
-        //load products
-    }
-    
-    func didTapAddProduct() {
+extension MyProductsVC : MyProductsIntroDelegate {
+    func didTapAddNew() {
         performSegue(withIdentifier: goToAddNewProductID, sender: self)
     }
 }

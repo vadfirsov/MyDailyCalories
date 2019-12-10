@@ -8,9 +8,13 @@
 
 import UIKit
 
-class IntroVC : UIViewController {
-    
-    var introView = ProductsIntroView()
+protocol MyProductsIntroDelegate {
+    func didTapAddNew()
+}
+
+class MyProductsIntroVC : UIViewController {
+        
+    var delegate : MyProductsIntroDelegate?
     
     @IBOutlet weak var lblMessage: UILabel!
     
@@ -19,13 +23,13 @@ class IntroVC : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        foo()
+        setLabel()
         setStyleFor(btn: btnLoadProducts)
         setStyleFor(btn: btnAddNewProduct)
         addTapGesture()
     }
     
-    private func foo() {
+    private func setLabel() {
         let attributedString = NSMutableAttributedString(string: "Pssst!.. \n Here you can load ready-to-use products or add your own products that you use daily! \n *You can always go back to Settings and add / remove ready-to-use products 🤓")
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 10
@@ -43,11 +47,14 @@ class IntroVC : UIViewController {
     }
     
     @IBAction func loadProductsTapped(_ sender: CustomParentButton) {
-        
+        Firebase.shared.loadFoods()
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func addnewTapped(_ sender: CustomParentButton) {
-        
+        self.dismiss(animated: true) {
+            self.delegate?.didTapAddNew()
+        }
     }
     
     private func addTapGesture() {

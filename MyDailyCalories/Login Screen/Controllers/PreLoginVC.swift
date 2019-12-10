@@ -19,6 +19,14 @@ class PreLoginVC : UIViewController {
         Firebase.shared.delegate = self
         Firebase.shared.checkIfUserLoggedIn() //leak
         
+        setUserDefaults()
+    }
+    
+    private func setUserDefaults() {
+        if HintsManager.shared.shouldShowIntroInMyProducts == nil {
+            HintsManager.shared.shouldShowIntroInMyProducts = true
+            print(HintsManager.shared.shouldShowIntroInMyProducts!)
+        }
     }
 }
 

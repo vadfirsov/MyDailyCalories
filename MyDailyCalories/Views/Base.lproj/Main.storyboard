@@ -215,7 +215,7 @@
         <!--Settings-->
         <scene sceneID="opY-wM-OLT">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="8eb-Bd-xIw" customClass="ProfileVC" customModule="MyDailyCalories" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="8eb-Bd-xIw" customClass="SettingsVC" customModule="MyDailyCalories" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6y3-6v-WEG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -259,7 +259,7 @@
         <!--Products-->
         <scene sceneID="CNU-5l-Mpq">
             <objects>
-                <viewController id="h0W-l4-dLM" sceneMemberID="viewController">
+                <viewController id="h0W-l4-dLM" customClass="ReadyProductsListVC" customModule="MyDailyCalories" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PhP-Oh-PXm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -268,12 +268,12 @@
                                 <rect key="frame" x="0.0" y="56" width="375" height="542"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sMu-HU-tzR">
-                                <rect key="frame" x="0.0" y="56" width="375" height="542"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sMu-HU-tzR">
+                                <rect key="frame" x="0.0" y="112" width="375" height="486"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="120" id="Yqp-hr-kk6">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ready_product_cell_ID" rowHeight="120" id="Yqp-hr-kk6" customClass="ReadyProductCell" customModule="MyDailyCalories" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Yqp-hr-kk6" id="Ozl-0t-jCt">
@@ -281,18 +281,19 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pb5-43-whA" customClass="CustomCellView" customModule="MyDailyCalories" customModuleProvider="target">
-                                                    <rect key="frame" x="4" y="0.0" width="367" height="112"/>
+                                                    <rect key="frame" x="8" y="4" width="359" height="112"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gay-9N-lpz">
-                                                            <rect key="frame" x="8" y="45.5" width="351" height="21"/>
+                                                            <rect key="frame" x="8" y="45.5" width="343" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
                                                         <constraint firstItem="Gay-9N-lpz" firstAttribute="leading" secondItem="Pb5-43-whA" secondAttribute="leading" constant="8" id="GqE-Jf-Kzq"/>
+                                                        <constraint firstAttribute="height" constant="60" id="TlA-pp-mAV"/>
                                                         <constraint firstItem="Gay-9N-lpz" firstAttribute="centerY" secondItem="Pb5-43-whA" secondAttribute="centerY" id="fnZ-Mm-P8C"/>
                                                         <constraint firstAttribute="trailing" secondItem="Gay-9N-lpz" secondAttribute="trailing" constant="8" id="q1h-6g-AN7"/>
                                                     </constraints>
@@ -300,30 +301,52 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="Pb5-43-whA" firstAttribute="top" secondItem="Ozl-0t-jCt" secondAttribute="top" id="8kb-K6-W5V"/>
-                                                <constraint firstAttribute="bottom" secondItem="Pb5-43-whA" secondAttribute="bottom" constant="8" id="VIi-UK-diF"/>
-                                                <constraint firstItem="Pb5-43-whA" firstAttribute="leading" secondItem="Ozl-0t-jCt" secondAttribute="leading" constant="4" id="etv-lH-Sig"/>
-                                                <constraint firstAttribute="trailing" secondItem="Pb5-43-whA" secondAttribute="trailing" constant="4" id="hBq-Ot-qhC"/>
+                                                <constraint firstItem="Pb5-43-whA" firstAttribute="top" secondItem="Ozl-0t-jCt" secondAttribute="top" constant="4" id="8kb-K6-W5V"/>
+                                                <constraint firstAttribute="bottom" secondItem="Pb5-43-whA" secondAttribute="bottom" constant="4" id="VIi-UK-diF"/>
+                                                <constraint firstItem="Pb5-43-whA" firstAttribute="leading" secondItem="Ozl-0t-jCt" secondAttribute="leading" constant="8" id="etv-lH-Sig"/>
+                                                <constraint firstAttribute="trailing" secondItem="Pb5-43-whA" secondAttribute="trailing" constant="8" id="hBq-Ot-qhC"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblProductName" destination="Gay-9N-lpz" id="Imc-Mj-RX9"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <searchBar contentMode="redraw" barStyle="black" searchBarStyle="minimal" placeholder="What'chu searchin'?" translatesAutoresizingMaskIntoConstraints="NO" id="7Kq-Xa-ud9">
+                                <rect key="frame" x="0.0" y="56" width="375" height="56"/>
+                                <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                            </searchBar>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="W6B-Ah-JJK">
+                                <rect key="frame" x="177.5" y="317" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="sMu-HU-tzR" firstAttribute="top" secondItem="hMx-5P-J2V" secondAttribute="top" id="7oS-bI-HVe"/>
                             <constraint firstItem="2co-lP-JcB" firstAttribute="leading" secondItem="hMx-5P-J2V" secondAttribute="leading" id="9eX-PD-5RC"/>
                             <constraint firstItem="sMu-HU-tzR" firstAttribute="trailing" secondItem="hMx-5P-J2V" secondAttribute="trailing" id="Dqi-8z-NBR"/>
                             <constraint firstItem="hMx-5P-J2V" firstAttribute="bottom" secondItem="sMu-HU-tzR" secondAttribute="bottom" id="FLu-w8-Yh0"/>
                             <constraint firstItem="hMx-5P-J2V" firstAttribute="bottom" secondItem="2co-lP-JcB" secondAttribute="bottom" id="Vfg-wS-ANd"/>
                             <constraint firstItem="hMx-5P-J2V" firstAttribute="trailing" secondItem="2co-lP-JcB" secondAttribute="trailing" id="Wtm-aX-YUj"/>
+                            <constraint firstItem="7Kq-Xa-ud9" firstAttribute="leading" secondItem="hMx-5P-J2V" secondAttribute="leading" id="Yc5-YQ-wan"/>
+                            <constraint firstItem="hMx-5P-J2V" firstAttribute="trailing" secondItem="7Kq-Xa-ud9" secondAttribute="trailing" id="caV-dz-DYz"/>
+                            <constraint firstItem="W6B-Ah-JJK" firstAttribute="centerX" secondItem="hMx-5P-J2V" secondAttribute="centerX" id="jSP-BU-dVE"/>
                             <constraint firstItem="2co-lP-JcB" firstAttribute="top" secondItem="hMx-5P-J2V" secondAttribute="top" id="nBU-MA-5Og"/>
+                            <constraint firstItem="sMu-HU-tzR" firstAttribute="top" secondItem="7Kq-Xa-ud9" secondAttribute="bottom" id="ojy-Km-Bkx"/>
+                            <constraint firstItem="7Kq-Xa-ud9" firstAttribute="top" secondItem="hMx-5P-J2V" secondAttribute="top" id="pE7-0R-UPX"/>
+                            <constraint firstItem="W6B-Ah-JJK" firstAttribute="centerY" secondItem="hMx-5P-J2V" secondAttribute="centerY" id="pTa-d5-urM"/>
                             <constraint firstItem="sMu-HU-tzR" firstAttribute="leading" secondItem="hMx-5P-J2V" secondAttribute="leading" id="sDT-HO-sCR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hMx-5P-J2V"/>
                     </view>
                     <navigationItem key="navigationItem" title="Products" id="Pea-hF-cwG"/>
+                    <connections>
+                        <outlet property="loader" destination="W6B-Ah-JJK" id="nhv-xt-N2y"/>
+                        <outlet property="searchBar" destination="7Kq-Xa-ud9" id="xvf-U1-BsT"/>
+                        <outlet property="tableView" destination="sMu-HU-tzR" id="SXl-Om-6cI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yf6-1O-4fw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -393,7 +416,7 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8o9-k0-S6e">
                                                             <rect key="frame" x="0.0" y="0.0" width="127" height="223"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9u-JV-r75">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9u-JV-r75">
                                                                     <rect key="frame" x="16" y="0.0" width="111" height="223"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
@@ -700,10 +723,10 @@
             </objects>
             <point key="canvasLocation" x="-346" y="866"/>
         </scene>
-        <!--IntroVC-->
+        <!--My Products IntroVC-->
         <scene sceneID="aKQ-FM-cYC">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="tzL-YN-DVm" customClass="IntroVC" customModule="MyDailyCalories" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="tzL-YN-DVm" customClass="MyProductsIntroVC" customModule="MyDailyCalories" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gmf-ci-ZCK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2142,6 +2165,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="HJ4-z5-Ml8"/>
         <segue reference="j1n-7l-jNk"/>
-        <segue reference="ozl-AG-QEQ"/>
+        <segue reference="6E4-ln-v5A"/>
     </inferredMetricsTieBreakers>
 </document>

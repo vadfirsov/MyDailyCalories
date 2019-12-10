@@ -25,6 +25,7 @@ protocol FirebaseDelegate {
     func isUser(login : Bool) //mandatory
     func didLoggedOutWith(error : Error?)
     func didRecieve(firstLoginDateString : String)
+    func didReceive(foods : [Entity])
 //    func didReceive(lastTimeWatchedAd : String)
 }
 
@@ -40,6 +41,8 @@ extension FirebaseDelegate {
     func isUser(login : Bool) {}
     func didLoggedOutWith(error : Error?) {}
     func didRecieve(firstLoginDateString : String) {}
+    func didReceive(foods : [Entity]) {}
+
 //    func didReceive(lastTimeWatchedAd : String) {}
 }
 
@@ -56,6 +59,8 @@ class Firebase {
     private let cart =                "cart"
     private let first_login_date =    "first_login_date"
     private let last_time_ad_showed = "last_time_ad_showed"
+    private let users =               "users"
+    private let foods =               "foods"
     
     //MARK: AUTHENTICATION
     func signUpNewUser(email : String, pw : String) {
@@ -132,7 +137,7 @@ class Firebase {
         let fullDate = "\(product.date)"
         let uid = Auth.auth().currentUser?.uid ?? ""
         
-        ref.child(uid).child(product.dateString).child(fullDate).setValue(product.productDict()) { [weak self] (error, ref) in
+        ref.child(users).child(uid).child(product.dateString).child(fullDate).setValue(product.productDict()) { [weak self] (error, ref) in
             if error != nil { print(error!.localizedDescription) }
             else {
                 self?.loadProductsFrom(dateString: product.dateString)
@@ -144,7 +149,7 @@ class Firebase {
     private func saveUserFirstLoginDate() {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         let dateString = "\(Date())"
-        ref.child(uid).child(first_login_date).setValue(dateString) { (error, _) in
+        ref.child(users).child(uid).child(first_login_date).setValue(dateString) { (error, _) in
             if error != nil {
                 print(error!.localizedDescription)
             }
@@ -157,7 +162,7 @@ class Firebase {
     func saveAdShowedDate() {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         let dateString = "\(Date())"
-        ref.child(uid).child(last_time_ad_showed).setValue(dateString) { (error, _) in
+        ref.child(users).child(uid).child(last_time_ad_showed).setValue(dateString) { (error, _) in
             if error != nil {
                 print(error!.localizedDescription)
             }
@@ -166,7 +171,7 @@ class Firebase {
     
     func save(dailyCaloriesGoal : String) {
         guard let uid = Auth.auth().currentUser?.uid else { return }
-        ref.child(uid).child(daily_calories_goal).setValue(dailyCaloriesGoal) { [weak self] (error, ref) in
+        ref.child(users).child(uid).child(daily_calories_goal).setValue(dailyCaloriesGoal) { [weak self] (error, ref) in
             if error == nil {
                 self?.delegate?.newDailyCalorieGoalSet(calorieGoal: dailyCaloriesGoal)
             }
@@ -175,7 +180,7 @@ class Firebase {
     
     func save(cartEntity : CartEntity) {
         guard let uid = Auth.auth().currentUser?.uid else { return }
-        ref.child(uid).child(cart).child(cartEntity.name).setValue(cartEntity.cartEntityDic()) { [weak self] (error, ref) in
+        ref.child(users).child(uid).child(cart).child(cartEntity.name).setValue(cartEntity.cartEntityDic()) { [weak self] (error, ref) in
             if error != nil {
                 print(error!.localizedDescription)
             }
@@ -185,14 +190,15 @@ class Firebase {
     
     func saveNew(entity : Entity) {
         guard let uid = Auth.auth().currentUser?.uid else { return }
-        ref.child(uid).child(my_entities).child(entity.name).setValue(entity.entityDict()) { [weak self] (error, ref) in
+        ref.child(users).child(uid).child(my_entities).child(entity.name).setValue(entity.entityDict()) { [weak self] (error, ref) in
             self?.loadEntities()
         }
     }
+
     //MARK: LOAD
     func loadDailyCalorieGoal() {
         guard let uid = Auth.auth().currentUser?.uid else { return }
-        ref.child(uid).child(daily_calories_goal).observeSingleEvent(of: .value) { [weak self] (snap) in
+        ref.child(users).child(uid).child(daily_calories_goal).observeSingleEvent(of: .value) { [weak self] (snap) in
             if let snapValue = snap.value as? String {
                 self?.delegate?.newDailyCalorieGoalSet(calorieGoal: snapValue)
             }
@@ -202,7 +208,7 @@ class Firebase {
     func loadProductsFrom(dateString : String) {
         var products : [Product] = []
         guard let uid = Auth.auth().currentUser?.uid else { return }
-        ref.child(uid).child(dateString).observeSingleEvent(of: .value) { [weak self] (snap) in
+        ref.child(users).child(uid).child(dateString).observeSingleEvent(of: .value) { [weak self] (snap) in
     
             if let snapValue = snap.value as? [String : [String : String]] {
                 for (_, dict) in snapValue {
@@ -217,7 +223,7 @@ class Firebase {
     
     func loadUserFirstLoginDate() {
         guard let uid = Auth.auth().currentUser?.uid else { return }
-        ref.child(uid).child(first_login_date).observeSingleEvent(of: .value) { (snap) in
+        ref.child(users).child(uid).child(first_login_date).observeSingleEvent(of: .value) { (snap) in
             if let snapValue = snap.value as? String {
                 self.delegate?.didRecieve(firstLoginDateString: snapValue)
             }
@@ -229,7 +235,7 @@ class Firebase {
     
     func loadUserWatchedAdDate() {
         guard let uid = Auth.auth().currentUser?.uid else { return }
-        ref.child(uid).child(last_time_ad_showed).observeSingleEvent(of: .value) { (snap) in
+        ref.child(users).child(uid).child(last_time_ad_showed).observeSingleEvent(of: .value) { (snap) in
             if let snapValue = snap.value as? String {
                 if DateManager.shared.isFullDayPassedSince(lastTimeWatchedAd: snapValue) {
                     AdMob.shared.shouldShowInterstitialAd = true
@@ -243,7 +249,7 @@ class Firebase {
     
     func loadEntities() {
         guard let uid = Auth.auth().currentUser?.uid else { return }
-        ref.child(uid).child(my_entities).observeSingleEvent(of: .value) { (snap) in
+        ref.child(users).child(uid).child(my_entities).observeSingleEvent(of: .value) { (snap) in
             self.delegate?.didReceive(entities: self.entitiesFrom(snap: snap))
         }
     }
@@ -261,9 +267,26 @@ class Firebase {
     
     func loadCart() {
         guard let uid = Auth.auth().currentUser?.uid else { return }
-        ref.child(uid).child(cart).observeSingleEvent(of: .value) { (snap) in
+        ref.child(users).child(uid).child(cart).observeSingleEvent(of: .value) { (snap) in
             self.delegate?.didReceive(cart: self.cartFrom(snap: snap))
         }
+    }
+    
+    func loadFoods() {
+        ref.child(foods).observeSingleEvent(of: .value) { (snap) in
+            self.delegate?.didReceive(foods: self.foodsFrom(snap: snap))
+        }
+    }
+    
+    private func foodsFrom(snap : DataSnapshot) -> [Entity] {
+        var foods = [Entity]()
+        if let snapValue = snap.value as? [String : [String : String]] {
+            for (_,value) in snapValue {
+                let food = Entity(withDict: value)
+                foods.append(food)
+            }
+        }
+        return foods
     }
     
     private func cartFrom(snap : DataSnapshot) -> [CartEntity] {
@@ -280,28 +303,28 @@ class Firebase {
     //MARK: DELETE
     func delete(product : Product) {
         guard let uid = Auth.auth().currentUser?.uid else { return }
-        ref.child(uid).child(product.dateString).child("\(product.date)").removeValue { [weak self] (error, ref) in
+        ref.child(users).child(uid).child(product.dateString).child("\(product.date)").removeValue { [weak self] (error, ref) in
             self?.loadProductsFrom(dateString: product.dateString)
         }
     }
     
     func delete(entity : Entity) {
         guard let uid = Auth.auth().currentUser?.uid else { return }
-        ref.child(uid).child(my_entities).child(entity.name).removeValue { [weak self] (error, ref) in
+        ref.child(users).child(uid).child(my_entities).child(entity.name).removeValue { [weak self] (error, ref) in
             self?.loadEntities()
         }
     }
     
     func delete(cartEntity : CartEntity) {
         guard let uid = Auth.auth().currentUser?.uid else { return }
-        ref.child(uid).child("cart").child(cartEntity.name).removeValue { [weak self] (error, ref) in
+        ref.child(users).child(uid).child("cart").child(cartEntity.name).removeValue { [weak self] (error, ref) in
             self?.loadCart()
         }
     }
     
     func deleteCart() {
         guard let uid = Auth.auth().currentUser?.uid else { return }
-        ref.child(uid).child(cart).removeValue { [weak self] (error, ref) in
+        ref.child(users).child(uid).child(cart).removeValue { [weak self] (error, ref) in
             let emptyCart = [CartEntity]()
             self?.delegate?.didReceive(cart: emptyCart)
         }

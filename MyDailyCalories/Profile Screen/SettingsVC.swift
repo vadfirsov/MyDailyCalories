@@ -10,7 +10,7 @@ import UIKit
 import FBSDKLoginKit
 import GoogleSignIn
 
-class ProfileVC : UIViewController {
+class SettingsVC : UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -20,9 +20,11 @@ class ProfileVC : UIViewController {
     @IBAction func logoutTapped(_ sender: UIButton) {
         Firebase.shared.tryLogOut()
     }
+    
+
 }
 
-extension ProfileVC : FirebaseDelegate {
+extension SettingsVC : FirebaseDelegate {
     func didLoggedOutWith(error: Error?) {
         if (error != nil) {
             AlertManager.shared.showAlertWithAuthError(inVC: self, message: error!.localizedDescription)

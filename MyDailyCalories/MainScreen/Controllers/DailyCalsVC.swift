@@ -57,15 +57,15 @@ class DailyCalsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         AdMob.shared.set(banner: bannerView, inVC: self)
+        
     }
+    
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         setManagers()
         addGestures()
-//        showHint() TODO //not sure should use hints
-//        Firebase.shared.loadUserFirstLoginDate()
-        
         AdMob.shared.showInterstitialAd(inVC: self)
     }
     
@@ -151,13 +151,6 @@ class DailyCalsVC: UIViewController {
         if maxDailyCalories > 0 { updateProgressBar() }
 
     }
-    
-//    private func showHint() { TODO
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-//            AlertManager.shared.showHintChooseCaloriesCap(inVC: self)
-//        }
-//    }
-    
 }
 
 extension DailyCalsVC : UITableViewDelegate, UITableViewDataSource {
