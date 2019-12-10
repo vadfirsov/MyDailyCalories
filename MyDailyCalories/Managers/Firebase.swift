@@ -24,6 +24,8 @@ protocol FirebaseDelegate {
     func autoLoginWith(email : String, pw : String)
     func isUser(login : Bool) //mandatory
     func didLoggedOutWith(error : Error?)
+    func didRecieve(firstLoginDateString : String)
+//    func didReceive(lastTimeWatchedAd : String)
 }
 
 extension FirebaseDelegate {
@@ -37,6 +39,8 @@ extension FirebaseDelegate {
     func autoLoginWith(email : String, pw : String) {}
     func isUser(login : Bool) {}
     func didLoggedOutWith(error : Error?) {}
+    func didRecieve(firstLoginDateString : String) {}
+//    func didReceive(lastTimeWatchedAd : String) {}
 }
 
 class Firebase {
@@ -50,6 +54,8 @@ class Firebase {
     private let daily_calories_goal = "daily_calories_goal"
     private let my_entities =         "my_entities"
     private let cart =                "cart"
+    private let first_login_date =    "first_login_date"
+    private let last_time_ad_showed = "last_time_ad_showed"
     
     //MARK: AUTHENTICATION
     func signUpNewUser(email : String, pw : String) {
@@ -76,7 +82,6 @@ class Firebase {
     } 
 
     func checkIfUserLoggedIn() {
-
         let user = Auth.auth().currentUser
         print(user != nil)
         delegate?.isUser(login: (user != nil))
@@ -123,7 +128,6 @@ class Firebase {
     }
     
     //MARK: SAVE
-    
     func saveNew(product : Product) {
         let fullDate = "\(product.date)"
         let uid = Auth.auth().currentUser?.uid ?? ""
@@ -137,6 +141,28 @@ class Firebase {
         }
     }
 
+    private func saveUserFirstLoginDate() {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        let dateString = "\(Date())"
+        ref.child(uid).child(first_login_date).setValue(dateString) { (error, _) in
+            if error != nil {
+                print(error!.localizedDescription)
+            }
+            else {
+                self.loadUserFirstLoginDate()
+            }
+        }
+    }
+    
+    func saveAdShowedDate() {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        let dateString = "\(Date())"
+        ref.child(uid).child(last_time_ad_showed).setValue(dateString) { (error, _) in
+            if error != nil {
+                print(error!.localizedDescription)
+            }
+        }
+    }
     
     func save(dailyCaloriesGoal : String) {
         guard let uid = Auth.auth().currentUser?.uid else { return }
@@ -186,6 +212,32 @@ class Firebase {
             }
             products.sort(by: {$0.date < $1.date})
             self?.delegate?.didReceived(products: products)
+        }
+    }
+    
+    func loadUserFirstLoginDate() {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        ref.child(uid).child(first_login_date).observeSingleEvent(of: .value) { (snap) in
+            if let snapValue = snap.value as? String {
+                self.delegate?.didRecieve(firstLoginDateString: snapValue)
+            }
+            else {
+                self.saveUserFirstLoginDate()
+            }
+        }
+    }
+    
+    func loadUserWatchedAdDate() {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        ref.child(uid).child(last_time_ad_showed).observeSingleEvent(of: .value) { (snap) in
+            if let snapValue = snap.value as? String {
+                if DateManager.shared.isFullDayPassedSince(lastTimeWatchedAd: snapValue) {
+                    AdMob.shared.shouldShowInterstitialAd = true
+                }
+            }
+            else {
+                self.saveAdShowedDate()
+            }
         }
     }
     

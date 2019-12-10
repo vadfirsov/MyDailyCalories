@@ -48,6 +48,11 @@ class NewProductVC : UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func goToProducts(_ sender: CustomButton) {
+        let indexOfProductsTab = 1
+        tabBarController?.selectedIndex = indexOfProductsTab
+    }
+    
     private func moveToNextTF() {
         
         for i in textFields.indices {

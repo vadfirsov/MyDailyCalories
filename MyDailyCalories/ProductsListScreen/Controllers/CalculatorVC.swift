@@ -114,7 +114,8 @@ class CalculatorVC : UIViewController {
 
     private func getMultiplier() -> Double {
         if tfCustomGrams.isEditing && tfCustomGrams.text != nil {
-            return Double(tfCustomGrams.text!) ?? 1.0
+            let gramMultiplier = (Double(tfCustomGrams.text!) ?? 100) / 100
+            return gramMultiplier
         }
         else {
             return multiplierFromSelectedBtn()

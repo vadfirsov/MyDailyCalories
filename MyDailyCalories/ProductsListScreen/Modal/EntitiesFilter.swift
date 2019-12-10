@@ -13,7 +13,7 @@ class EntitiesFilter {
     static let shared = EntitiesFilter()
     private init() {}
     
-    var isLowestToHighest = false
+    var isLowestToHighest = true
     
     private func lowestToHighest(entities : [Entity], by filter : Filter) -> [Entity] {
         return entities.sorted { (p1, p2) -> Bool in

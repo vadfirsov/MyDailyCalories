@@ -21,6 +21,7 @@ class AdMob {
     //production IDs
 //    private let bannerID = "your id here"
 //    private let interstitialID = "your id here"
+    
 
     func set(banner : GADBannerView, inVC vc: UIViewController) {
         banner.adUnitID = bannerID
@@ -28,23 +29,22 @@ class AdMob {
         banner.load(GADRequest())
     }
     
-    
     // NOT USED AT THE MOMENT
-//    private var interstitialAd : GADInterstitial!
-//    
-//    func requestInterstitialAd() {
-//        interstitialAd = GADInterstitial(adUnitID: interstitialID)
-//        let request = GADRequest()
-//        interstitialAd.load(request)
-//    }
-//    
-//    func showInterstitialAd(inVC vc : UIViewController) {
-//        if interstitialAd.isReady {
-//            interstitialAd.present(fromRootViewController: vc)
-//            requestInterstitialAd()
-//        } else {
-//            print("Ad wasn't ready")
-//        }
-//    }
+    private var interstitialAd : GADInterstitial!
+    var shouldShowInterstitialAd = false
+
+    func requestInterstitialAd() {
+        interstitialAd = GADInterstitial(adUnitID: interstitialID)
+        let request = GADRequest()
+        interstitialAd.load(request)
+    }
+    
+    func showInterstitialAd(inVC vc : UIViewController) {
+        if shouldShowInterstitialAd && interstitialAd.isReady {
+            interstitialAd.present(fromRootViewController: vc)
+            shouldShowInterstitialAd = false
+            Firebase.shared.saveAdShowedDate()
+        }
+    }
 }
 

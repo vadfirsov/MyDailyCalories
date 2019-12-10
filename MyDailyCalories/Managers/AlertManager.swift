@@ -27,10 +27,14 @@ class AlertManager {
     
     let cancel = UIAlertAction(title: "Cancel", style: .default, handler: nil)
     
+    private func messageRemove(entityName : String) -> String {
+        return "You are about to remove entity: \(entityName)"
+    }
+    
     func showAlertDeleteProduct(inVC vc : UIViewController, product : Product, index : Int) {
         
         let alert = UIAlertController(title: "Uh-Oh!",
-                                      message: "You are about to delete entity: \(product.name)",
+                                      message: messageRemove(entityName: product.name),
                                       preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .default) { (action) in
             Firebase.shared.delete(product: product)
@@ -69,7 +73,7 @@ class AlertManager {
     func showAlertDeleteEntity(inVC vc : UIViewController, entity : Entity, index : Int) {
         
         let alert = UIAlertController(title: "Uh-Oh!",
-                                      message: "You are about to delete entity: \(entity.name)",
+                                      message: messageRemove(entityName: entity.name),
                                       preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .default) { (action) in
             Firebase.shared.delete(entity: entity)
@@ -126,7 +130,7 @@ class AlertManager {
     func showAlertDeleteCartEntity(inVC vc : UIViewController, entity : CartEntity) {
         
         let alert = UIAlertController(title: "Uh-Oh!",
-                                      message: "You are about to delete entity: \(entity.name)",
+                                      message: messageRemove(entityName: entity.name),
                                       preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .default) { (action) in
             Firebase.shared.delete(cartEntity: entity)            
@@ -173,12 +177,12 @@ class AlertManager {
         vc.present(alert, animated: true, completion: nil)
     }
     
-    func showHintChooseCaloriesCap(inVC vc : UIViewController) {
-        let alert = UIAlertController(title: "Hint!", message: "Tap on Calories on bottom to choose your daily calories cap 🤓", preferredStyle: .alert)
-        let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alert.addAction(ok)
-        vc.present(alert, animated: true, completion: nil)
-    }
+//    func showHintChooseCaloriesCap(inVC vc : UIViewController) {
+//        let alert = UIAlertController(title: "Hint!", message: "Tap on Calories on bottom to choose your daily calories cap 🤓", preferredStyle: .alert)
+//        let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+//        alert.addAction(ok)
+//        vc.present(alert, animated: true, completion: nil)
+//    }
     
     private func showAlertNumbersOnly(inVC vc : UIViewController) {
         let alert = UIAlertController(title: "Please Use Only Numbers!", message: nil, preferredStyle: .alert)

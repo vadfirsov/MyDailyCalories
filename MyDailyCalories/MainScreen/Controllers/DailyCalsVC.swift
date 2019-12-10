@@ -18,6 +18,7 @@ class DailyCalsVC: UIViewController {
     
     private var maxDailyCalories = 0.0
     private var totalCalories = 0.0
+//    private var did
     
     let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self,
                                                              action: #selector(dismissKeyboard))
@@ -38,11 +39,19 @@ class DailyCalsVC: UIViewController {
     
     @IBOutlet weak var bannerView: GADBannerView!
     
-    @IBOutlet weak var tableView:        UITableView! {
+    @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.delegate =   self
             tableView.dataSource = self
         }
+    }
+    
+    private var dailyCalsLabel : String {
+        var btnLabel = "Tap To Choose Daily Calories Cap"
+        if maxDailyCalories > 0 {
+            btnLabel = "\(Int(totalCalories)) / \(Int(maxDailyCalories)) Calories"
+        }
+        return btnLabel
     }
     
     override func viewDidLoad() {
@@ -54,7 +63,10 @@ class DailyCalsVC: UIViewController {
         super.viewWillAppear(true)
         setManagers()
         addGestures()
-        showHint()
+//        showHint() TODO //not sure should use hints
+//        Firebase.shared.loadUserFirstLoginDate()
+        
+        AdMob.shared.showInterstitialAd(inVC: self)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -129,8 +141,8 @@ class DailyCalsVC: UIViewController {
     }
     
     private func setDailyCaloriesIndicator() {
-        let btnLabel = "\(Int(totalCalories)) / \(Int(maxDailyCalories)) Calories"
-        btnDailyTotal.setTitle(btnLabel, for: .normal)
+        
+        btnDailyTotal.setTitle(dailyCalsLabel, for: .normal)
 
         btnDailyTotal.setTitleColor(.white, for: .normal)
         let color = (totalCalories > maxDailyCalories) ? #colorLiteral(red: 1, green: 0.3351041079, blue: 0.3041929901, alpha: 1) : #colorLiteral(red: 0.5527830124, green: 0.9990368485, blue: 0.239377737, alpha: 1)
@@ -140,23 +152,31 @@ class DailyCalsVC: UIViewController {
 
     }
     
-    private func showHint() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            AlertManager.shared.showHintChooseCaloriesCap(inVC: self)
-        }
-    }
+//    private func showHint() { TODO
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+//            AlertManager.shared.showHintChooseCaloriesCap(inVC: self)
+//        }
+//    }
+    
 }
 
 extension DailyCalsVC : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return products.count
+        if loader.isAnimating { return 0 }
+        return products.isEmpty ? 1 : products.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as? ProductCell {
-            cell.setWith(product: products[indexPath.row], index: indexPath.row)
-            cell.delegate = self
+            if products.isEmpty {
+                cell.addNewProductView.isHidden = false
+                cell.productView.isHidden = true
+            }
+            else {
+                cell.setWith(product: products[indexPath.row], index: indexPath.row)
+                cell.delegate = self
+            }
             return cell
         }
         else {
@@ -179,12 +199,17 @@ extension DailyCalsVC : FirebaseDelegate {
         totalCalories = 0
         setLabels()
         setDailyCaloriesIndicator()
-        tableView.reloadData()
         loader.stopAnimating()
+        tableView.reloadData()
+    }
+    
+    func didRecieve(firstLoginDateString: String) {
+        // for now not used.
     }
 }
 
 extension DailyCalsVC : ProductCellDelegate {
+    
     func tappedLonglyOnCell(atIndex index : Int) {
         let product = products[index]
         AlertManager.shared.showAlertDeleteProduct(inVC: self, product: product, index: index)
@@ -208,3 +233,6 @@ extension DailyCalsVC : AlertDelegate {
         }
     }
 }
+
+//if cart is empty insert empty cell with add button or something
+//new user receives ad if just sign up

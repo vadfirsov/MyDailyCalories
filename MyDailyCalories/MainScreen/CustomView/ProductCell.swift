@@ -24,6 +24,9 @@ class ProductCell : UITableViewCell {
     @IBOutlet weak var tfCarbs:    UILabel!
     @IBOutlet weak var tfFat:      UILabel!
     
+    @IBOutlet weak var productView:       CustomCellView!
+    @IBOutlet weak var addNewProductView: CustomCellView!
+    
     private func addGesture() {
            let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPressed))
            self.addGestureRecognizer(longPress)
@@ -43,7 +46,10 @@ class ProductCell : UITableViewCell {
         tfCarbs.text =    (product.carbs    == "") ? noValueIndicator : product.carbs
         tfFat.text =      (product.fat      == "") ? noValueIndicator : product.fat
 
-        self.index =      index
+        addNewProductView.isHidden = true
+        productView.isHidden = false
+        
+        self.index = index
     }
 }
 

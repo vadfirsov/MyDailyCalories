@@ -10,9 +10,10 @@ import UIKit
 import GoogleMobileAds
 
 class MyProductsVC : UIViewController {
-    
-    private let goToCalculatorID = "goToCalculator"
-    private let cellID = "EntityCellID"
+    private let presentIntroVC =      "presentIntroView"
+    private let goToCalculatorID =    "goToCalculator"
+    private let goToAddNewProductID = "showAddNewProduct"
+    private let cellID =              "EntityCellID"
     private var entities = [Entity]()
     private var filteredEntities = [Entity]()
     private var choosenEntityIndex = 200
@@ -47,12 +48,24 @@ class MyProductsVC : UIViewController {
         AdMob.shared.set(banner: bannerAdd, inVC: self)
         loader.startAnimating()
         Firebase.shared.loadEntities()
+        
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         Firebase.shared.delegate = self
         
+        AdMob.shared.showInterstitialAd(inVC: self)
+        
+        showIntro()
+
+    }
+    
+    private func showIntro() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+            self.performSegue(withIdentifier: self.presentIntroVC, sender: self)
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -87,7 +100,7 @@ class MyProductsVC : UIViewController {
             btnTitle = btnTitle.replacingOccurrences(of: "↑", with: "")
             btnTitle = btnTitle.replacingOccurrences(of: "↓", with: "")
             if btn == button {
-                btnTitle = EntitiesFilter.shared.isLowestToHighest ? btnTitle + "↑" : btnTitle + "↓"
+                btnTitle = EntitiesFilter.shared.isLowestToHighest ? btnTitle + "↓" : btnTitle + "↑"
             }
             btn.setTitle(btnTitle, for: .normal)
         }
@@ -129,6 +142,7 @@ extension MyProductsVC : FirebaseDelegate {
         self.entities = entities
         loader.stopAnimating()
         filteredEntities = EntitiesFilter.shared.filtered(entities: entities, byFilter: .name)
+        print(filteredEntities)
         tableView.reloadData()
     }
 }
@@ -155,5 +169,15 @@ extension MyProductsVC : UISearchBarDelegate {
         searchBar.text = ""
         filteredEntities = entities
         tableView.reloadData()
+    }
+}
+
+extension MyProductsVC : ProductsIntroViewDelegate {
+    func didTapLoadProducts() {
+        //load products
+    }
+    
+    func didTapAddProduct() {
+        performSegue(withIdentifier: goToAddNewProductID, sender: self)
     }
 }
