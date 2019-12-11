@@ -20,8 +20,8 @@
                         <viewLayoutGuide key="safeArea" id="tj3-39-GDz"/>
                     </view>
                     <connections>
-                        <segue destination="UN8-Q2-BVB" kind="show" identifier="goToLogin" id="anM-6X-HfP"/>
-                        <segue destination="zBb-oC-cd3" kind="show" identifier="goToMainScreen" id="6E4-ln-v5A"/>
+                        <segue destination="UN8-Q2-BVB" kind="show" identifier="go_to_login" id="anM-6X-HfP"/>
+                        <segue destination="zBb-oC-cd3" kind="show" identifier="go_to_daily_cals" id="6E4-ln-v5A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0zF-FA-nxk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -42,7 +42,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V1u-ss-i1W">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="340"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_page_image3" translatesAutoresizingMaskIntoConstraints="NO" id="BGG-tV-2dU">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-1024" translatesAutoresizingMaskIntoConstraints="NO" id="BGG-tV-2dU">
                                                 <rect key="frame" x="67.5" y="87.5" width="240" height="240"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="BGG-tV-2dU" secondAttribute="height" multiplier="1:1" id="S64-Xe-3GZ"/>
@@ -119,7 +119,7 @@
                                     <segment title="Sign-In"/>
                                     <segment title="Sign-Up"/>
                                 </segments>
-                                <color key="selectedSegmentTintColor" red="0.98831337690353394" green="0.56332969665527344" blue="0.41563922166824341" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="selectedSegmentTintColor" red="0.95266991853713989" green="0.62837308645248413" blue="0.19981485605239868" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <action selector="sameSegmentTapped:" destination="UN8-Q2-BVB" eventType="touchUpInside" id="bVh-H2-a4y"/>
                                     <action selector="segmentValueChanged:" destination="UN8-Q2-BVB" eventType="valueChanged" id="oWj-OC-Qdg"/>
@@ -158,7 +158,7 @@
                         <outletCollection property="textFields" destination="6UK-KY-jtc" collectionClass="NSMutableArray" id="CoO-O7-87u"/>
                         <outletCollection property="textFields" destination="NZ4-Zs-0SF" collectionClass="NSMutableArray" id="WEF-9X-6iG"/>
                         <outletCollection property="textFields" destination="cfP-UG-NAP" collectionClass="NSMutableArray" id="sMU-RS-ItG"/>
-                        <segue destination="zBb-oC-cd3" kind="show" identifier="goToDailyCals" id="ozl-AG-QEQ"/>
+                        <segue destination="zBb-oC-cd3" kind="show" identifier="go_to_daily_cals" id="ozl-AG-QEQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="onI-CR-bDw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -175,7 +175,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="selectedImageTintColor" red="0.98832648992538452" green="0.5513758659362793" blue="0.419563889503479" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="selectedImageTintColor" red="0.95266991850000005" green="0.62837308650000001" blue="0.19981485609999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
                         <segue destination="ObV-Bm-nnq" kind="relationship" relationship="viewControllers" id="Fg1-bM-QNz"/>
@@ -191,11 +191,11 @@
         <scene sceneID="ITI-6q-Zkf">
             <objects>
                 <navigationController modalPresentationStyle="fullScreen" id="Tq8-LG-ZyP" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="profile-icon-2" id="abW-Gh-o8x"/>
+                    <tabBarItem key="tabBarItem" title="" image="tab_bar_settings" id="abW-Gh-o8x"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ga5-wd-nZA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="0.99601525069999997" green="0.52405595780000003" blue="0.38426378369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" red="0.95266991850000005" green="0.62837308650000001" blue="0.19981485609999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -220,6 +220,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u4f-ip-DYo" customClass="GradiantViewOrange" customModule="MyDailyCalories" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="56" width="375" height="542"/>
+                                <color key="backgroundColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="arK-Rd-fRM" customClass="CustomButton" customModule="MyDailyCalories" customModuleProvider="target">
                                 <rect key="frame" x="22" y="378" width="333" height="34"/>
                                 <state key="normal" title="Logout">
@@ -243,6 +247,10 @@
                         <constraints>
                             <constraint firstItem="arK-Rd-fRM" firstAttribute="leading" secondItem="Y4i-r0-TyC" secondAttribute="leading" constant="22" id="Iy8-Hc-gRn"/>
                             <constraint firstItem="Y4i-r0-TyC" firstAttribute="trailing" secondItem="oPo-df-guF" secondAttribute="trailing" constant="20" id="Res-KS-Nfd"/>
+                            <constraint firstItem="Y4i-r0-TyC" firstAttribute="trailing" secondItem="u4f-ip-DYo" secondAttribute="trailing" id="WCB-3o-Msw"/>
+                            <constraint firstItem="u4f-ip-DYo" firstAttribute="top" secondItem="Y4i-r0-TyC" secondAttribute="top" id="ZhB-FH-UCf"/>
+                            <constraint firstItem="Y4i-r0-TyC" firstAttribute="bottom" secondItem="u4f-ip-DYo" secondAttribute="bottom" id="stU-rn-m6X"/>
+                            <constraint firstItem="u4f-ip-DYo" firstAttribute="leading" secondItem="Y4i-r0-TyC" secondAttribute="leading" id="vBx-Hr-Erj"/>
                             <constraint firstItem="oPo-df-guF" firstAttribute="leading" secondItem="Y4i-r0-TyC" secondAttribute="leading" constant="22" id="vGK-og-VQV"/>
                             <constraint firstItem="arK-Rd-fRM" firstAttribute="top" secondItem="oPo-df-guF" secondAttribute="bottom" constant="38" id="vxT-lN-Oun"/>
                             <constraint firstItem="Y4i-r0-TyC" firstAttribute="trailing" secondItem="arK-Rd-fRM" secondAttribute="trailing" constant="20" id="yXs-ph-ByG"/>
@@ -268,12 +276,12 @@
                                 <rect key="frame" x="0.0" y="56" width="375" height="542"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sMu-HU-tzR">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sMu-HU-tzR">
                                 <rect key="frame" x="0.0" y="112" width="375" height="486"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ready_product_cell_ID" rowHeight="120" id="Yqp-hr-kk6" customClass="ReadyProductCell" customModule="MyDailyCalories" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ready_product_cell_ID" rowHeight="120" id="Yqp-hr-kk6" customClass="ReadyProductCell" customModule="MyDailyCalories" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Yqp-hr-kk6" id="Ozl-0t-jCt">
@@ -341,7 +349,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hMx-5P-J2V"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Products" id="Pea-hF-cwG"/>
+                    <navigationItem key="navigationItem" title="Products" id="Pea-hF-cwG">
+                        <barButtonItem key="rightBarButtonItem" title="Add All" id="lsB-kN-Xfv">
+                            <connections>
+                                <action selector="addAllTapped:" destination="h0W-l4-dLM" id="UKh-IZ-wqJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="loader" destination="W6B-Ah-JJK" id="nhv-xt-N2y"/>
                         <outlet property="searchBar" destination="7Kq-Xa-ud9" id="xvf-U1-BsT"/>
@@ -356,11 +370,11 @@
         <scene sceneID="Pb4-IP-G05">
             <objects>
                 <navigationController modalPresentationStyle="fullScreen" id="okC-pz-H0n" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="grocery-icon-19" id="grp-zz-Mx1"/>
+                    <tabBarItem key="tabBarItem" title="" image="tab_bar_foods" id="grp-zz-Mx1"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hRq-8e-2P1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="0.99221473930000004" green="0.57126843930000004" blue="0.41563755270000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" red="0.95266991850000005" green="0.62837308650000001" blue="0.19981485609999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -692,10 +706,10 @@
                     <tabBarItem key="tabBarItem" title="Item" id="bZg-JW-OhU"/>
                     <navigationItem key="navigationItem" title="My Products" id="0JZ-Uw-5WD">
                         <barButtonItem key="rightBarButtonItem" title="New" id="fRw-cQ-XXV">
-                            <color key="tintColor" red="0.99221473930000004" green="0.57126843930000004" blue="0.41563755270000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="tintColor" red="0.95266991850000005" green="0.62837308650000001" blue="0.19981485609999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="addBtnTapped:" destination="qIp-aS-2ms" id="rnx-ZL-kIt"/>
-                                <segue destination="vRc-go-hJU" kind="show" id="r7z-c6-6Dh"/>
+                                <segue destination="vRc-go-hJU" kind="show" identifier="go_to_add_new_product" id="r7z-c6-6Dh"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -714,8 +728,8 @@
                         <outletCollection property="titleBtns" destination="WPo-OJ-Tq7" collectionClass="NSMutableArray" id="Tm0-mq-qd7"/>
                         <outletCollection property="titleBtns" destination="U3y-ix-vZU" collectionClass="NSMutableArray" id="obw-Mz-UnK"/>
                         <outletCollection property="titleBtns" destination="AJo-NM-XUm" collectionClass="NSMutableArray" id="yjy-iK-aA8"/>
-                        <segue destination="M1U-EC-Bt8" kind="show" identifier="goToCalculator" id="340-go-38q"/>
-                        <segue destination="vRc-go-hJU" kind="show" identifier="showAddNewProduct" id="j1n-7l-jNk"/>
+                        <segue destination="M1U-EC-Bt8" kind="show" identifier="go_to_calculator" id="340-go-38q"/>
+                        <segue destination="vRc-go-hJU" kind="show" identifier="go_to_add_new_product" id="j1n-7l-jNk"/>
                         <segue destination="tzL-YN-DVm" kind="presentation" identifier="presentIntroView" id="JXo-FI-ieg"/>
                     </connections>
                 </viewController>
@@ -951,9 +965,9 @@
                                 </subviews>
                             </stackView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kep-5j-rHC">
-                                <rect key="frame" x="16" y="289" width="343" height="259"/>
+                                <rect key="frame" x="0.0" y="289" width="375" height="259"/>
                                 <connections>
-                                    <segue destination="3B2-wn-U60" kind="embed" identifier="showContainer" id="Wl0-bn-TdW"/>
+                                    <segue destination="3B2-wn-U60" kind="embed" identifier="show_container" id="Wl0-bn-TdW"/>
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgL-bi-dKX" customClass="CustomButton" customModule="MyDailyCalories" customModuleProvider="target">
@@ -993,7 +1007,7 @@
                             <constraint firstItem="yZn-66-L6p" firstAttribute="centerY" secondItem="dp1-YD-YBF" secondAttribute="centerY" id="V8C-Sy-LEk"/>
                             <constraint firstItem="dp1-YD-YBF" firstAttribute="trailing" secondItem="hxr-AC-9fD" secondAttribute="trailing" constant="16" id="VkS-il-TAe"/>
                             <constraint firstItem="hxr-AC-9fD" firstAttribute="leading" secondItem="dp1-YD-YBF" secondAttribute="leading" constant="16" id="WcB-Ta-PFc"/>
-                            <constraint firstItem="kep-5j-rHC" firstAttribute="leading" secondItem="dp1-YD-YBF" secondAttribute="leading" constant="16" id="bRX-qX-674"/>
+                            <constraint firstItem="kep-5j-rHC" firstAttribute="leading" secondItem="dp1-YD-YBF" secondAttribute="leading" id="bRX-qX-674"/>
                             <constraint firstItem="Pjs-NG-DnG" firstAttribute="leading" secondItem="dp1-YD-YBF" secondAttribute="leading" constant="20" id="eoM-va-Hbz"/>
                             <constraint firstItem="kep-5j-rHC" firstAttribute="top" secondItem="hgL-bi-dKX" secondAttribute="bottom" constant="8" id="fAc-BN-LzZ"/>
                             <constraint firstItem="hxr-AC-9fD" firstAttribute="top" secondItem="Pjs-NG-DnG" secondAttribute="bottom" constant="8" id="iaV-Zw-iEg"/>
@@ -1002,13 +1016,13 @@
                             <constraint firstItem="dp1-YD-YBF" firstAttribute="trailing" secondItem="Pjs-NG-DnG" secondAttribute="trailing" constant="20" id="n4z-HQ-I42"/>
                             <constraint firstItem="dp1-YD-YBF" firstAttribute="bottom" secondItem="kep-5j-rHC" secondAttribute="bottom" constant="50" id="sPJ-23-dDF"/>
                             <constraint firstItem="dp1-YD-YBF" firstAttribute="bottom" secondItem="EYg-7M-6XW" secondAttribute="bottom" id="sUd-lp-3e3"/>
-                            <constraint firstItem="dp1-YD-YBF" firstAttribute="trailing" secondItem="kep-5j-rHC" secondAttribute="trailing" constant="16" id="u73-nC-JiO"/>
+                            <constraint firstItem="dp1-YD-YBF" firstAttribute="trailing" secondItem="kep-5j-rHC" secondAttribute="trailing" id="u73-nC-JiO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dp1-YD-YBF"/>
                     </view>
                     <navigationItem key="navigationItem" title="Product Name" id="I5D-t5-GZU">
                         <barButtonItem key="rightBarButtonItem" title="Add To Daily" id="Q9R-ug-hOp">
-                            <color key="tintColor" red="0.99601525069999997" green="0.52405595780000003" blue="0.38426378369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="tintColor" red="0.95266991850000005" green="0.62837308650000001" blue="0.19981485609999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="addToDailyTapped:" destination="M1U-EC-Bt8" id="WtE-ai-Uok"/>
                             </connections>
@@ -1195,7 +1209,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="50q-bi-Es2">
                         <barButtonItem key="rightBarButtonItem" title="Save" id="lHh-hf-BRH">
-                            <color key="tintColor" red="0.99221473930000004" green="0.57126843930000004" blue="0.41563755270000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="tintColor" red="0.95266991850000005" green="0.62837308650000001" blue="0.19981485609999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="saveTapped:" destination="vRc-go-hJU" id="lCQ-5k-gQC"/>
                             </connections>
@@ -1223,11 +1237,11 @@
         <scene sceneID="NfL-L6-2Bp">
             <objects>
                 <navigationController modalPresentationStyle="fullScreen" id="ObV-Bm-nnq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="calories-icon-4a" id="fIu-v3-kCJ"/>
+                    <tabBarItem key="tabBarItem" title="" image="tab_bar_daily_cals" id="fIu-v3-kCJ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="JjI-Jb-vBx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="0.99221473930000004" green="0.57126843930000004" blue="0.41563755270000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" red="0.95266991850000005" green="0.62837308650000001" blue="0.19981485609999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="barTintColor" red="0.079893443915238962" green="0.080588845285998439" blue="0.080603585025380675" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1613,7 +1627,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Daily Calories" id="S84-U9-mof">
                         <barButtonItem key="rightBarButtonItem" title="Add" id="TvP-NG-set">
-                            <color key="tintColor" red="0.99221473930000004" green="0.57126843930000004" blue="0.41563755270000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="tintColor" red="0.95266991850000005" green="0.62837308650000001" blue="0.19981485609999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <segue destination="sE1-ri-fp9" kind="show" identifier="go_to_add_new_product" id="HJ4-z5-Ml8"/>
                             </connections>
@@ -1806,7 +1820,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="145-ZC-PHL">
                         <barButtonItem key="rightBarButtonItem" title="Save" id="gW5-q2-ihA">
-                            <color key="tintColor" red="0.99221473930000004" green="0.57126843930000004" blue="0.41563755270000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="tintColor" red="0.95266991850000005" green="0.62837308650000001" blue="0.19981485609999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="saveTapped:" destination="sE1-ri-fp9" id="RC0-hk-JGv"/>
                             </connections>
@@ -1835,22 +1849,22 @@
             <objects>
                 <viewController id="3B2-wn-U60" customClass="CartVC" customModule="MyDailyCalories" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q8h-w7-eeC">
-                        <rect key="frame" x="0.0" y="0.0" width="343" height="259"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="259"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zbg-h7-qyK">
-                                <rect key="frame" x="0.0" y="0.0" width="343" height="259"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="259"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="cartCellID" rowHeight="211" id="kuO-hR-jcJ" customClass="CartEntityCell" customModule="MyDailyCalories" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="211"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="211"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kuO-hR-jcJ" id="kYL-tn-taJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="211"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cx5-Pp-V09">
-                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="203"/>
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="203"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Evs-HB-y3h" customClass="CustomCellView" customModule="MyDailyCalories" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="343" height="60"/>
@@ -2105,9 +2119,9 @@
                                             <color key="backgroundColor" red="0.1137269512" green="0.1137235239" blue="0.1137242243" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
                                                 <constraint firstItem="cx5-Pp-V09" firstAttribute="top" secondItem="kYL-tn-taJ" secondAttribute="top" id="7Qf-A8-7o9"/>
-                                                <constraint firstItem="cx5-Pp-V09" firstAttribute="leading" secondItem="kYL-tn-taJ" secondAttribute="leading" id="FxP-Ad-ICd"/>
+                                                <constraint firstItem="cx5-Pp-V09" firstAttribute="leading" secondItem="kYL-tn-taJ" secondAttribute="leading" constant="16" id="FxP-Ad-ICd"/>
                                                 <constraint firstAttribute="bottom" secondItem="cx5-Pp-V09" secondAttribute="bottom" constant="8" id="ZY4-wX-xO1"/>
-                                                <constraint firstAttribute="trailing" secondItem="cx5-Pp-V09" secondAttribute="trailing" id="kJZ-sE-I3k"/>
+                                                <constraint firstAttribute="trailing" secondItem="cx5-Pp-V09" secondAttribute="trailing" constant="16" id="kJZ-sE-I3k"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.1137269512" green="0.1137235239" blue="0.1137242243" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
@@ -2130,7 +2144,7 @@
                                 </prototypes>
                             </tableView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="UvO-aQ-MKt">
-                                <rect key="frame" x="153" y="111" width="37" height="37"/>
+                                <rect key="frame" x="169" y="111" width="37" height="37"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2157,14 +2171,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="calories-icon-4a" width="25" height="25"/>
-        <image name="grocery-icon-19" width="25" height="25"/>
-        <image name="login_page_image3" width="350" height="350"/>
-        <image name="profile-icon-2" width="25" height="25"/>
+        <image name="Icon-1024" width="2000" height="2000"/>
+        <image name="tab_bar_daily_cals" width="30" height="30"/>
+        <image name="tab_bar_foods" width="30" height="30"/>
+        <image name="tab_bar_settings" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="HJ4-z5-Ml8"/>
-        <segue reference="j1n-7l-jNk"/>
-        <segue reference="6E4-ln-v5A"/>
+        <segue reference="r7z-c6-6Dh"/>
+        <segue reference="ozl-AG-QEQ"/>
     </inferredMetricsTieBreakers>
 </document>

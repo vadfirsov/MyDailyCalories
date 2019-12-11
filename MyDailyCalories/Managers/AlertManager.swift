@@ -160,7 +160,6 @@ class AlertManager {
                     self.showAlertProductNameCantBeEmpty(inVC: vc)
                 }
             }
-            
         }
         alert.addTextField { (tf) in
             tf.placeholder = "Product Name"
@@ -171,18 +170,38 @@ class AlertManager {
         vc.present(alert, animated: true, completion: nil)
     }
     
-    func showAlertWithAuthError(inVC vc : UIViewController, message : String) {
+    func showAlertAddToMyProducts(inVC vc : UIViewController, food: Entity) {
+        let alert = UIAlertController(title: nil, message: "Add \(food.name) to \"My Products\"?", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default) { (_) in
+            Firebase.shared.saveNew(entity: food)
+        }
+        alert.addAction(cancel)
+        alert.addAction(ok)
+        vc.present(alert, animated: true, completion: nil)
+    }
+    
+    func showAlertFoodAddedToMyProducts(inVC vc : UIViewController) {
+        let alert = UIAlertController(title: "Food Added Successfully", message: nil, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(ok)
+        vc.present(alert, animated: true, completion: nil)
+    }
+    
+    func showAlertWithError(inVC vc : UIViewController, message : String) {
         let alert = UIAlertController(title: "Uh-Oh!", message: message, preferredStyle: .alert)
         alert.addAction(cancel)
         vc.present(alert, animated: true, completion: nil)
     }
     
-//    func showHintChooseCaloriesCap(inVC vc : UIViewController) {
-//        let alert = UIAlertController(title: "Hint!", message: "Tap on Calories on bottom to choose your daily calories cap 🤓", preferredStyle: .alert)
-//        let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
-//        alert.addAction(ok)
-//        vc.present(alert, animated: true, completion: nil)
-//    }
+    func showAlertAddAllFood(inVC vc : UIViewController, foods : [Entity]) {
+        let alert = UIAlertController(title: nil, message: "You are about to add all the foods to \"My Products\"", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default) { (_) in
+            Firebase.shared.saveFoodsAd(entities: foods)
+        }
+        alert.addAction(cancel)
+        alert.addAction(ok)
+        vc.present(alert, animated: true, completion: nil)
+    }
     
     private func showAlertNumbersOnly(inVC vc : UIViewController) {
         let alert = UIAlertController(title: "Please Use Only Numbers!", message: nil, preferredStyle: .alert)
@@ -194,5 +213,6 @@ class AlertManager {
         let alert = UIAlertController(title: "Product Name Can't Be Empty", message: nil, preferredStyle: .alert)
         alert.addAction(cancel)
         vc.present(alert, animated: true, completion: nil)
-    }    
+    }
+    
 }

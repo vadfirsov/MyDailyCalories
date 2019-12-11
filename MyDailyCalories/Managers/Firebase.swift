@@ -26,7 +26,7 @@ protocol FirebaseDelegate {
     func didLoggedOutWith(error : Error?)
     func didRecieve(firstLoginDateString : String)
     func didReceive(foods : [Entity])
-//    func didReceive(lastTimeWatchedAd : String)
+    func didReceive(error : Error)
 }
 
 extension FirebaseDelegate {
@@ -42,8 +42,6 @@ extension FirebaseDelegate {
     func didLoggedOutWith(error : Error?) {}
     func didRecieve(firstLoginDateString : String) {}
     func didReceive(foods : [Entity]) {}
-
-//    func didReceive(lastTimeWatchedAd : String) {}
 }
 
 class Firebase {
@@ -88,7 +86,6 @@ class Firebase {
 
     func checkIfUserLoggedIn() {
         let user = Auth.auth().currentUser
-        print(user != nil)
         delegate?.isUser(login: (user != nil))
     }
     
@@ -138,7 +135,9 @@ class Firebase {
         let uid = Auth.auth().currentUser?.uid ?? ""
         
         ref.child(users).child(uid).child(product.dateString).child(fullDate).setValue(product.productDict()) { [weak self] (error, ref) in
-            if error != nil { print(error!.localizedDescription) }
+            if error != nil {
+                self?.delegate?.didReceive(error: error!)
+            }
             else {
                 self?.loadProductsFrom(dateString: product.dateString)
                 self?.delegate?.productSavedSuccessfully()
@@ -151,7 +150,7 @@ class Firebase {
         let dateString = "\(Date())"
         ref.child(users).child(uid).child(first_login_date).setValue(dateString) { (error, _) in
             if error != nil {
-                print(error!.localizedDescription)
+                self.delegate?.didReceive(error: error!)
             }
             else {
                 self.loadUserFirstLoginDate()
@@ -164,7 +163,7 @@ class Firebase {
         let dateString = "\(Date())"
         ref.child(users).child(uid).child(last_time_ad_showed).setValue(dateString) { (error, _) in
             if error != nil {
-                print(error!.localizedDescription)
+                self.delegate?.didReceive(error: error!)
             }
         }
     }
@@ -182,7 +181,7 @@ class Firebase {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         ref.child(users).child(uid).child(cart).child(cartEntity.name).setValue(cartEntity.cartEntityDic()) { [weak self] (error, ref) in
             if error != nil {
-                print(error!.localizedDescription)
+                self?.delegate?.didReceive(error: error!)
             }
             self?.loadCart()
         }
@@ -191,7 +190,24 @@ class Firebase {
     func saveNew(entity : Entity) {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         ref.child(users).child(uid).child(my_entities).child(entity.name).setValue(entity.entityDict()) { [weak self] (error, ref) in
+            if error != nil {
+                self?.delegate?.didReceive(error: error!)
+            }
             self?.loadEntities()
+        }
+    }
+    
+    func saveFoodsAd(entities : [Entity]) {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        for entity in entities {
+            ref.child(users).child(uid).child(my_entities).child(entity.name).setValue(entity.entityDict()) { (error, _) in
+                if error != nil {
+                    self.delegate?.didReceive(error: error!)
+                }
+                else {
+                    self.loadEntities()
+                }
+            }
         }
     }
 
@@ -304,6 +320,9 @@ class Firebase {
     func delete(product : Product) {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         ref.child(users).child(uid).child(product.dateString).child("\(product.date)").removeValue { [weak self] (error, ref) in
+            if error != nil {
+                self?.delegate?.didReceive(error: error!)
+            }
             self?.loadProductsFrom(dateString: product.dateString)
         }
     }
@@ -311,6 +330,9 @@ class Firebase {
     func delete(entity : Entity) {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         ref.child(users).child(uid).child(my_entities).child(entity.name).removeValue { [weak self] (error, ref) in
+            if error != nil {
+                self?.delegate?.didReceive(error: error!)
+            }
             self?.loadEntities()
         }
     }
@@ -318,6 +340,9 @@ class Firebase {
     func delete(cartEntity : CartEntity) {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         ref.child(users).child(uid).child("cart").child(cartEntity.name).removeValue { [weak self] (error, ref) in
+            if error != nil {
+                self?.delegate?.didReceive(error: error!)
+            }
             self?.loadCart()
         }
     }
@@ -325,6 +350,9 @@ class Firebase {
     func deleteCart() {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         ref.child(users).child(uid).child(cart).removeValue { [weak self] (error, ref) in
+            if error != nil {
+                self?.delegate?.didReceive(error: error!)
+            }
             let emptyCart = [CartEntity]()
             self?.delegate?.didReceive(cart: emptyCart)
         }

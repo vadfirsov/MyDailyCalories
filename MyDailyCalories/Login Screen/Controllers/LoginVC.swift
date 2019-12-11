@@ -14,7 +14,7 @@ import FBSDKLoginKit
 
 class LoginVC : UIViewController {
     
-    private let segueID = "goToDailyCals"
+    private let segue_to_daily_cals = "go_to_daily_cals"
     private var isKeyboardShown = false
     
     @IBOutlet weak var tfEmail: CustomTextField! {
@@ -83,7 +83,7 @@ class LoginVC : UIViewController {
         sender.animateTap(bgColor: sender.animatedBgColor, borderColor: sender.animatedBorderColor)
         fbLoginManager.logIn(permissions: ["public_profile", "email"], from: self) { (loginResult, error) -> Void in
             if (error != nil) {
-                AlertManager.shared.showAlertWithAuthError(inVC: self, message: error!.localizedDescription)
+                AlertManager.shared.showAlertWithError(inVC: self, message: error!.localizedDescription)
                 return
             }
             else if let result = loginResult {
@@ -169,26 +169,29 @@ class LoginVC : UIViewController {
 }
 
 extension LoginVC : FirebaseDelegate {
+    func didReceive(error: Error) {
+        AlertManager.shared.showAlertWithError(inVC: self, message: error.localizedDescription)
+    }
     
     func loginSuccess() {
         loader.stopAnimating()
-        performSegue(withIdentifier: segueID, sender: self)
+        performSegue(withIdentifier: segue_to_daily_cals, sender: self)
     }
     
     func loginFailedWith(error: String) {
         loader.stopAnimating()
-        AlertManager.shared.showAlertWithAuthError(inVC: self, message: error)
+        AlertManager.shared.showAlertWithError(inVC: self, message: error)
     }
 
     func autoLogin() {
-        performSegue(withIdentifier: segueID, sender: self) //is needed?
+        performSegue(withIdentifier: segue_to_daily_cals, sender: self) //is needed?
     }
 }
 
 extension LoginVC : LoginDelegate {
     func authentication(error: String) {
         loader.stopAnimating()
-        AlertManager.shared.showAlertWithAuthError(inVC: self, message: error)
+        AlertManager.shared.showAlertWithError(inVC: self, message: error)
     }
 }
 
@@ -214,7 +217,7 @@ extension LoginVC : UITextFieldDelegate {
 extension LoginVC : GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if error != nil {
-            AlertManager.shared.showAlertWithAuthError(inVC: self, message: error.localizedDescription)
+            AlertManager.shared.showAlertWithError(inVC: self, message: error.localizedDescription)
         }
         else if user != nil {
             loader.startAnimating()

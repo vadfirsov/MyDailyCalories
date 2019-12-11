@@ -10,7 +10,7 @@ import UIKit
 
 class CustomTextField : UITextField {
     
-    private let standartColor = #colorLiteral(red: 1, green: 0.521980226, blue: 0.383310914, alpha: 1)
+    private let standartColor = #colorLiteral(red: 1, green: 0.6096229553, blue: 0, alpha: 1)
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)

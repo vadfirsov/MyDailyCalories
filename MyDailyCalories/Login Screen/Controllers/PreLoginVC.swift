@@ -9,8 +9,8 @@
 import UIKit
 
 class PreLoginVC : UIViewController {
-    private let goToLogin = "goToLogin"
-    private let goToMainScreen = "goToMainScreen"
+    private let segue_to_login = "go_to_login"
+    private let segue_to_daily_cals = "go_to_daily_cals"
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
@@ -33,10 +33,14 @@ class PreLoginVC : UIViewController {
 extension PreLoginVC : FirebaseDelegate {
     func isUser(login: Bool) {
         if login {
-            performSegue(withIdentifier: goToMainScreen, sender: self)
+            performSegue(withIdentifier: segue_to_daily_cals, sender: self)
         }
         else {
-            performSegue(withIdentifier: goToLogin, sender: self)
+            performSegue(withIdentifier: segue_to_login, sender: self)
         }
+    }
+    
+    func didReceive(error: Error) {
+        AlertManager.shared.showAlertWithError(inVC: self, message: error.localizedDescription)
     }
 }

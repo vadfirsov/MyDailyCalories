@@ -11,50 +11,92 @@ import UIKit
 class ReadyProductsListVC : UIViewController {
     
     private let cellID = "ready_product_cell_ID"
-    private var foods = [Entity]()
-    
+    private var foods =         [Entity]()
+    private var filteredFoods = [Entity]()
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
-    
-    @IBOutlet weak var loader: UIActivityIndicatorView!
-    
-    @IBOutlet weak var tableView: UITableView! {
-        didSet {
-            tableView.delegate = self
-            tableView.dataSource = self
-        }
-    }
+    @IBOutlet weak var loader:    UIActivityIndicatorView!
         
     override func viewDidLoad() {
         super.viewDidLoad()
         loader.startAnimating()
-        Firebase.shared.delegate = self
         Firebase.shared.loadFoods()
+        setDelegates()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        searchBar.resignFirstResponder()
+        navigationController?.popViewController(animated: false)
+    }
+    
+    @IBAction func addAllTapped(_ sender: UIBarButtonItem) {
+        AlertManager.shared.showAlertAddAllFood(inVC: self, foods: foods)
+    }
+    
+    
+    private func setDelegates() {
+        tableView.delegate =       self
+        tableView.dataSource =     self
+        Firebase.shared.delegate = self
+        searchBar.delegate =       self
     }
 }
 
 extension ReadyProductsListVC : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return foods.count
+        return filteredFoods.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as? ReadyProductCell {
-            cell.lblProductName.text = foods[indexPath.row].name
+            cell.lblProductName.text = filteredFoods[indexPath.row].name
             return cell
         }
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        AlertManager.shared.showAlertAddToMyProducts(inVC: self, food: foods[indexPath.row])
     }
 }
 
 extension ReadyProductsListVC : FirebaseDelegate {
     func didReceive(foods: [Entity]) {
         self.foods = foods
+        filteredFoods = foods
         loader.stopAnimating()
         tableView.reloadData()
     }
+    
+    func didReceive(entities: [Entity]) {
+        AlertManager.shared.showAlertFoodAddedToMyProducts(inVC: self)
+    }
+    
+    func didReceive(error: Error) {
+        AlertManager.shared.showAlertWithError(inVC: self, message: error.localizedDescription)
+    }
 }
 
+extension ReadyProductsListVC : UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if let searchText = searchBar.text {
+            filteredFoods = EntitiesFilter.shared.entities(foods, contain: searchText)
+            tableView.reloadData()
+        }
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        filteredFoods = foods
+        tableView.reloadData()
+    }
+}
 
 
 
