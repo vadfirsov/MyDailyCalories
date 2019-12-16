@@ -7,16 +7,12 @@ target 'MyDailyCalories' do
 
 inhibit_all_warnings!
 
-pod 'Firebase/Analytics'
-pod 'Firebase'
 pod 'Firebase/Database'
-pod 'Firebase/Auth'
 pod 'Google-Mobile-Ads-SDK'
 pod 'FirebaseUI/Auth'
 pod 'FirebaseUI/Google'
 pod 'FirebaseUI/Facebook'
 pod 'FirebaseUI/Phone'
-pod 'FacebookSDK'
 pod 'FacebookSDK/LoginKit'
 
   # Pods for MyDailyCalories
