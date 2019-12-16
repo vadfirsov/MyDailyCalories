@@ -14,6 +14,8 @@ pod 'FirebaseUI/Google'
 pod 'FirebaseUI/Facebook'
 pod 'FirebaseUI/Phone'
 pod 'FacebookSDK/LoginKit'
+pod 'Fabric', '~> 1.10.2'
+pod 'Crashlytics', '~> 3.14.0'
 
   # Pods for MyDailyCalories
 

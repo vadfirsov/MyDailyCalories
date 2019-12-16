@@ -56,10 +56,7 @@ class DailyCalsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         AdMob.shared.set(banner: bannerView, inVC: self)
-        
     }
-    
-
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -150,7 +147,7 @@ class DailyCalsVC: UIViewController {
     }
     
     private func updateProgressColor() {
-        let color = (totalCalories > maxDailyCalories) ? #colorLiteral(red: 1, green: 0, blue: 0.4891650677, alpha: 1) : #colorLiteral(red: 0.5527830124, green: 0.9990368485, blue: 0.239377737, alpha: 1)
+        let color = (totalCalories > maxDailyCalories) ? #colorLiteral(red: 0.9334908128, green: 0, blue: 0, alpha: 1) : #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
         btnDailyTotal.setTitleColor(color, for: .normal)
         progressBar.progressTintColor = color
     }
@@ -160,8 +157,10 @@ extension DailyCalsVC : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if loader.isAnimating || (products.isEmpty && lblDate.text != todayString) { return 0 }
-        else { return products.count }
+        if loader.isAnimating { return 0 }
+        if (products.isEmpty && lblDate.text != todayString) { return 0 }
+        if (products.isEmpty && lblDate.text == todayString) { return 1 }
+        return products.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

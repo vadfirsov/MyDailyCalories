@@ -11,8 +11,9 @@ import GoogleMobileAds
 
 class CalculatorVC : UIViewController {
     
-    private let segue_to_container = "show_container"
-    
+    private let segue_to_container =  "show_container"
+    private let segue_present_intro = "present_calculator_intro"
+
     @IBOutlet weak var cartContainer: UIView!
     
     @IBOutlet weak var lblCalories:   UILabel!
@@ -46,9 +47,12 @@ class CalculatorVC : UIViewController {
         }
     }
     
+    private var isSelfVisible = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         AdMob.shared.set(banner: bannerView, inVC: self)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,6 +60,23 @@ class CalculatorVC : UIViewController {
         setCalculatedLabels()
         addGestures()
         btn100g.isBtnSelected = true
+        isSelfVisible = true
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        //mockdata
+//        performSegue(withIdentifier: segue_present_intro, sender: self)
+                //mockdata
+        //        showIntro()
+        if HintsManager.shared.shouldShowIntroInCalculator == true {
+            showIntro()
+        }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        isSelfVisible = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -63,7 +84,17 @@ class CalculatorVC : UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    private func showIntro() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+            if self.isSelfVisible {
+                self.performSegue(withIdentifier: self.segue_present_intro, sender: self)
+               HintsManager.shared.shouldShowIntroInCalculator = false
+            }
+        }
+    }
+    
     @IBAction func addToCartTapped(_ sender: CustomButton) {
+        sender.animateTap()
         loader.startAnimating()
         sender.animateTap(bgColor: sender.animatedBgColor, borderColor: sender.animatedBorderColor)
         var cartEntity = CartEntity()
@@ -97,9 +128,7 @@ class CalculatorVC : UIViewController {
         AlertManager.shared.showAlertShouldAdd(product: product, inVC: self)
     }
     
-    @objc private func dismissKeyboard() {
-        view.endEditing(true)
-    }
+
     
     @objc func textFieldDidChange(_ textField: UITextField) {
         setCalculatedLabels()
@@ -109,6 +138,10 @@ class CalculatorVC : UIViewController {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self,
                                                                  action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
+    }
+    
+    @objc private func dismissKeyboard() {
+        view.endEditing(true)
     }
 
     private func getMultiplier() -> Double {
@@ -185,6 +218,11 @@ extension CalculatorVC : CartDelegate {
 extension Double {
     func roundedString() -> String {
         let rounded = String(format: "%.1f", self)
+        return rounded
+    }
+    
+    func noDecimelString() -> String {
+        let rounded = String(format: "%f", self)
         return rounded
     }
 }

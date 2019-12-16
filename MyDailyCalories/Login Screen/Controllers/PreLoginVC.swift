@@ -15,7 +15,7 @@ class PreLoginVC : UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         AdMob.shared.requestInterstitialAd()
-        Firebase.shared.loadUserWatchedAdDate()
+//        Firebase.shared.loadUserWatchedAdDate()
         Firebase.shared.delegate = self
         Firebase.shared.checkIfUserLoggedIn() //leak
         
@@ -25,7 +25,9 @@ class PreLoginVC : UIViewController {
     private func setUserDefaults() {
         if HintsManager.shared.shouldShowIntroInMyProducts == nil {
             HintsManager.shared.shouldShowIntroInMyProducts = true
-            print(HintsManager.shared.shouldShowIntroInMyProducts!)
+        }
+        if HintsManager.shared.shouldShowIntroInCalculator == nil {
+            HintsManager.shared.shouldShowIntroInCalculator = true
         }
     }
 }

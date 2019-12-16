@@ -49,6 +49,7 @@ class NewProductVC : UIViewController {
     }
     
     @IBAction func goToProducts(_ sender: CustomButton) {
+        sender.animateTap()
         let indexOfProductsTab = 1
         tabBarController?.selectedIndex = indexOfProductsTab
     }

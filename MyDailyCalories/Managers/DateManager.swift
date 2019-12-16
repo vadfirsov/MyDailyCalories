@@ -15,7 +15,7 @@ class DateManager {
     
     //mockdata
 //    let dayInSeconds : Double = 86400
-    let dayInSeconds : Double = 600
+//    let dayInSeconds : Double = 600
 
     
     func stringFrom(date: Date) -> String {
@@ -35,15 +35,15 @@ class DateManager {
         return date
     }
     
-    func isFullDayPassedSince(lastTimeWatchedAd: String) -> Bool {
-        if let firsLoginDate = dateFrom(string: lastTimeWatchedAd) {
-            let originTimeInterval =  firsLoginDate.timeIntervalSinceReferenceDate
-            let currentTimeInterval = Date().timeIntervalSinceReferenceDate
-            let secondsPassed =       currentTimeInterval - originTimeInterval
-            if secondsPassed > dayInSeconds {
-                return true
-            }
-        }
-        return false
-    }
+//    func isFullDayPassedSince(lastTimeWatchedAd: String) -> Bool {
+//        if let firsLoginDate = dateFrom(string: lastTimeWatchedAd) {
+//            let originTimeInterval =  firsLoginDate.timeIntervalSinceReferenceDate
+//            let currentTimeInterval = Date().timeIntervalSinceReferenceDate
+//            let secondsPassed =       currentTimeInterval - originTimeInterval
+//            if secondsPassed > dayInSeconds {
+//                return true
+//            }
+//        }
+//        return false
+//    }
 }

@@ -10,7 +10,7 @@ import UIKit
 
 class CustomCellView : UIView {
     
-    private let borderColor =     #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.1034621147)
+    private let borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.1034621147)
     private let bgColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.2009578339)
     
     required init?(coder: NSCoder) {
@@ -24,7 +24,6 @@ class CustomCellView : UIView {
         layer.borderWidth = 0.75
         backgroundColor = bgColor
         layer.borderColor = borderColor.cgColor
-//        addShadow()
     }
     
 //    private func addShadow() {

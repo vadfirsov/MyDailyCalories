@@ -203,6 +203,13 @@ class AlertManager {
         vc.present(alert, animated: true, completion: nil)
     }
     
+    func showAlertGenericMessage(inVC vc : UIViewController, message : String) {
+        let alert = UIAlertController(title: message, message: nil, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(ok)
+        vc.present(alert, animated: true, completion: nil)
+    }
+    
     private func showAlertNumbersOnly(inVC vc : UIViewController) {
         let alert = UIAlertController(title: "Please Use Only Numbers!", message: nil, preferredStyle: .alert)
         alert.addAction(cancel)

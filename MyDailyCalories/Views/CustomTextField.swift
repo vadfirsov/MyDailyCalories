@@ -10,7 +10,7 @@ import UIKit
 
 class CustomTextField : UITextField {
     
-    private let standartColor = #colorLiteral(red: 1, green: 0.6096229553, blue: 0, alpha: 1)
+    private let standartColor = #colorLiteral(red: 0, green: 0.6911629438, blue: 0.4488233924, alpha: 1)
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -19,7 +19,7 @@ class CustomTextField : UITextField {
     
     private func customize() {
         self.borderStyle = .none
-        self.layer.borderWidth = 1
+        self.layer.borderWidth = 1.5
         self.layer.borderColor = standartColor.cgColor
         self.backgroundColor = #colorLiteral(red: 1, green: 0.01462487131, blue: 0.45694381, alpha: 0)
         self.layer.cornerRadius = 8

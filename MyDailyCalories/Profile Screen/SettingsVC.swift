@@ -17,8 +17,21 @@ class SettingsVC : UIViewController {
         Firebase.shared.delegate = self
     }
     
-    @IBAction func logoutTapped(_ sender: UIButton) {
+    @IBAction func logoutTapped(_ sender: CustomButton) {
+        sender.animateTap()
         Firebase.shared.tryLogOut()
+    }
+    
+    @IBAction func resetHintsTapped(_ sender: CustomButton) {
+        AlertManager.shared.showAlertGenericMessage(inVC: self, message: "Hints were reset!")
+        HintsManager.shared.shouldShowIntroInCalculator = true
+        HintsManager.shared.shouldShowIntroInMyProducts = true
+        sender.animateTap()
+    }
+    
+    @IBAction func howCanWeImproveTapped(_ sender: CustomButton) {
+        sender.animateTap()
+
     }
 }
 

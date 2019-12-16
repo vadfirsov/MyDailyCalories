@@ -66,7 +66,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="gry-zn-g7v">
-                                <rect key="frame" x="20" y="323" width="335" height="218"/>
+                                <rect key="frame" x="20" y="277" width="335" height="264"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email  " textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6UK-KY-jtc" customClass="CustomTextField" customModule="MyDailyCalories" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="34"/>
@@ -101,8 +101,17 @@
                                             <action selector="googleSignInTapped:" destination="UN8-Q2-BVB" eventType="touchUpInside" id="qZw-an-6U9"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password Again" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cfP-UG-NAP" customClass="CustomTextField" customModule="MyDailyCalories" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="456-rZ-ITV" customClass="AppleButton" customModule="MyDailyCalories" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="184" width="335" height="34"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <state key="normal" title=" Sign in with Apple"/>
+                                        <connections>
+                                            <action selector="appleSignInTapped:" destination="UN8-Q2-BVB" eventType="touchUpInside" id="pZr-dQ-fCg"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password Again" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cfP-UG-NAP" customClass="CustomTextField" customModule="MyDailyCalories" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="230" width="335" height="34"/>
                                         <color key="textColor" red="0.25482437009999998" green="0.2470596135" blue="0.2470588088" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -119,7 +128,7 @@
                                     <segment title="Sign-In"/>
                                     <segment title="Sign-Up"/>
                                 </segments>
-                                <color key="selectedSegmentTintColor" red="0.95266991853713989" green="0.62837308645248413" blue="0.19981485605239868" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="selectedSegmentTintColor" red="0.0" green="0.67843137254901964" blue="0.46666666666666667" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <action selector="sameSegmentTapped:" destination="UN8-Q2-BVB" eventType="touchUpInside" id="bVh-H2-a4y"/>
                                     <action selector="segmentValueChanged:" destination="UN8-Q2-BVB" eventType="valueChanged" id="oWj-OC-Qdg"/>
@@ -148,6 +157,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="ciG-h7-wLC"/>
                     <connections>
+                        <outlet property="btnApple" destination="456-rZ-ITV" id="0Yh-MA-oM4"/>
                         <outlet property="btnFbSignIn" destination="ywz-xX-F7q" id="nbE-BQ-IxR"/>
                         <outlet property="btnGoogleSignIn" destination="b5N-6o-hZV" id="Mze-4s-uTM"/>
                         <outlet property="loader" destination="lN8-ud-EPy" id="MOS-E9-Uaf"/>
@@ -192,7 +202,7 @@
             <objects>
                 <navigationController modalPresentationStyle="fullScreen" id="Tq8-LG-ZyP" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="tab_bar_settings" id="abW-Gh-o8x"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ga5-wd-nZA">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="ga5-wd-nZA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.95266991850000005" green="0.62837308650000001" blue="0.19981485609999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -224,37 +234,62 @@
                                 <rect key="frame" x="0.0" y="56" width="375" height="542"/>
                                 <color key="backgroundColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="arK-Rd-fRM" customClass="CustomButton" customModule="MyDailyCalories" customModuleProvider="target">
-                                <rect key="frame" x="22" y="378" width="333" height="34"/>
-                                <state key="normal" title="Logout">
-                                    <color key="titleColor" red="0.98269696790000005" green="0.98067434330000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
-                                <connections>
-                                    <action selector="logoutTapped:" destination="8eb-Bd-xIw" eventType="touchUpInside" id="i69-QX-fwY"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPo-df-guF" customClass="CustomButton" customModule="MyDailyCalories" customModuleProvider="target">
-                                <rect key="frame" x="22" y="306" width="333" height="34"/>
-                                <state key="normal" title="Products">
-                                    <color key="titleColor" red="0.98269696790000005" green="0.98067434330000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
-                                <connections>
-                                    <segue destination="h0W-l4-dLM" kind="show" id="XiW-yt-3He"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="YX6-cD-E7e">
+                                <rect key="frame" x="20" y="245" width="335" height="213"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WeJ-cb-aVT" customClass="CustomButton" customModule="MyDailyCalories" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <state key="normal" title="How Can We Improve?">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="howCanWeImproveTapped:" destination="8eb-Bd-xIw" eventType="touchUpInside" id="t8h-uh-Z9c"/>
+                                            <segue destination="6fE-nk-l5S" kind="show" id="CkK-hV-ZP5"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E4W-69-lJt" customClass="CustomButton" customModule="MyDailyCalories" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="60" width="335" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <state key="normal" title="Reset Hints">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="resetHintsTapped:" destination="8eb-Bd-xIw" eventType="touchUpInside" id="ZK3-7E-CUi"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPo-df-guF" customClass="CustomButton" customModule="MyDailyCalories" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="120" width="335" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <state key="normal" title="Products">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="h0W-l4-dLM" kind="show" id="XiW-yt-3He"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="arK-Rd-fRM" customClass="CustomButton" customModule="MyDailyCalories" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="180" width="335" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <state key="normal" title="Logout">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="logoutTapped:" destination="8eb-Bd-xIw" eventType="touchUpInside" id="i69-QX-fwY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.1137254902" green="0.1137254902" blue="0.1137254902" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="arK-Rd-fRM" firstAttribute="leading" secondItem="Y4i-r0-TyC" secondAttribute="leading" constant="22" id="Iy8-Hc-gRn"/>
-                            <constraint firstItem="Y4i-r0-TyC" firstAttribute="trailing" secondItem="oPo-df-guF" secondAttribute="trailing" constant="20" id="Res-KS-Nfd"/>
+                            <constraint firstItem="YX6-cD-E7e" firstAttribute="leading" secondItem="Y4i-r0-TyC" secondAttribute="leading" constant="20" id="Ld1-p4-V1C"/>
                             <constraint firstItem="Y4i-r0-TyC" firstAttribute="trailing" secondItem="u4f-ip-DYo" secondAttribute="trailing" id="WCB-3o-Msw"/>
                             <constraint firstItem="u4f-ip-DYo" firstAttribute="top" secondItem="Y4i-r0-TyC" secondAttribute="top" id="ZhB-FH-UCf"/>
+                            <constraint firstItem="Y4i-r0-TyC" firstAttribute="bottom" secondItem="YX6-cD-E7e" secondAttribute="bottom" constant="140" id="j33-tW-Rgf"/>
+                            <constraint firstItem="Y4i-r0-TyC" firstAttribute="trailing" secondItem="YX6-cD-E7e" secondAttribute="trailing" constant="20" id="mUz-q1-pIM"/>
                             <constraint firstItem="Y4i-r0-TyC" firstAttribute="bottom" secondItem="u4f-ip-DYo" secondAttribute="bottom" id="stU-rn-m6X"/>
                             <constraint firstItem="u4f-ip-DYo" firstAttribute="leading" secondItem="Y4i-r0-TyC" secondAttribute="leading" id="vBx-Hr-Erj"/>
-                            <constraint firstItem="oPo-df-guF" firstAttribute="leading" secondItem="Y4i-r0-TyC" secondAttribute="leading" constant="22" id="vGK-og-VQV"/>
-                            <constraint firstItem="arK-Rd-fRM" firstAttribute="top" secondItem="oPo-df-guF" secondAttribute="bottom" constant="38" id="vxT-lN-Oun"/>
-                            <constraint firstItem="Y4i-r0-TyC" firstAttribute="trailing" secondItem="arK-Rd-fRM" secondAttribute="trailing" constant="20" id="yXs-ph-ByG"/>
-                            <constraint firstItem="Y4i-r0-TyC" firstAttribute="bottom" secondItem="arK-Rd-fRM" secondAttribute="bottom" constant="186" id="zG8-mO-fQZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Y4i-r0-TyC"/>
                     </view>
@@ -263,6 +298,96 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4JU-Ry-yGM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2364" y="1818"/>
+        </scene>
+        <!--MessageVC-->
+        <scene sceneID="ysJ-X7-3M0">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="6fE-nk-l5S" customClass="MessageVC" customModule="MyDailyCalories" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="B2a-S0-CZa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DbK-QF-LyO" customClass="GradiantViewOrange" customModule="MyDailyCalories" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="56" width="375" height="542"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="trr-wn-akD">
+                                <rect key="frame" x="20" y="176" width="335" height="162"/>
+                                <color key="backgroundColor" white="1" alpha="0.77672838184931503" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gVv-hh-sne" customClass="CustomButton" customModule="MyDailyCalories" customModuleProvider="target">
+                                <rect key="frame" x="19" y="346" width="336" height="33"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <state key="normal" title="Send"/>
+                                <connections>
+                                    <action selector="sendTapped:" destination="6fE-nk-l5S" eventType="touchUpInside" id="VTy-8C-m44"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How can we improve?:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YY4-iW-tSf">
+                                <rect key="frame" x="20" y="147" width="178.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4rw-k3-bKw">
+                                <rect key="frame" x="20" y="76" width="52" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6cd-3w-AKh" customClass="CustomTextField" customModule="MyDailyCalories" customModuleProvider="target">
+                                <rect key="frame" x="20" y="105" width="335" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="HeN-VO-mFC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="hxM-1e-9Ch">
+                                <rect key="frame" x="177.5" y="317" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="4dH-CK-ckl" firstAttribute="bottom" secondItem="DbK-QF-LyO" secondAttribute="bottom" id="0Ya-l4-9wE"/>
+                            <constraint firstItem="trr-wn-akD" firstAttribute="top" secondItem="YY4-iW-tSf" secondAttribute="bottom" constant="8" id="0rs-UC-bDO"/>
+                            <constraint firstItem="6cd-3w-AKh" firstAttribute="top" secondItem="4rw-k3-bKw" secondAttribute="bottom" constant="8" id="2CD-sZ-CWz"/>
+                            <constraint firstItem="hxM-1e-9Ch" firstAttribute="centerY" secondItem="4dH-CK-ckl" secondAttribute="centerY" id="8A7-6o-f7k"/>
+                            <constraint firstItem="6cd-3w-AKh" firstAttribute="trailing" secondItem="DbK-QF-LyO" secondAttribute="trailing" constant="-20" id="CnF-RX-W5U"/>
+                            <constraint firstItem="4dH-CK-ckl" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4rw-k3-bKw" secondAttribute="trailing" symbolic="YES" id="IxV-j7-SUs"/>
+                            <constraint firstItem="trr-wn-akD" firstAttribute="leading" secondItem="4dH-CK-ckl" secondAttribute="leading" constant="20" id="NS8-FP-3sX"/>
+                            <constraint firstItem="4dH-CK-ckl" firstAttribute="trailing" secondItem="gVv-hh-sne" secondAttribute="trailing" constant="20" id="Oi8-0M-e1U"/>
+                            <constraint firstItem="YY4-iW-tSf" firstAttribute="leading" secondItem="4dH-CK-ckl" secondAttribute="leading" constant="20" id="XGv-l4-8MW"/>
+                            <constraint firstItem="4dH-CK-ckl" firstAttribute="trailing" secondItem="DbK-QF-LyO" secondAttribute="trailing" id="Y0w-vh-cWo"/>
+                            <constraint firstItem="gVv-hh-sne" firstAttribute="leading" secondItem="4dH-CK-ckl" secondAttribute="leading" constant="19" id="dfG-h9-Zry"/>
+                            <constraint firstItem="6cd-3w-AKh" firstAttribute="leading" secondItem="DbK-QF-LyO" secondAttribute="leading" constant="20" id="fyp-IR-N8W"/>
+                            <constraint firstItem="4dH-CK-ckl" firstAttribute="bottom" secondItem="trr-wn-akD" secondAttribute="bottom" constant="260" id="ggx-Q1-6CU"/>
+                            <constraint firstItem="DbK-QF-LyO" firstAttribute="leading" secondItem="4dH-CK-ckl" secondAttribute="leading" id="hBc-q8-phc"/>
+                            <constraint firstItem="4rw-k3-bKw" firstAttribute="top" secondItem="4dH-CK-ckl" secondAttribute="top" constant="20" id="mte-mZ-0Dg"/>
+                            <constraint firstItem="4dH-CK-ckl" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="YY4-iW-tSf" secondAttribute="trailing" symbolic="YES" id="txu-bB-Ij4"/>
+                            <constraint firstItem="DbK-QF-LyO" firstAttribute="top" secondItem="4dH-CK-ckl" secondAttribute="top" id="vgY-XV-Gh5"/>
+                            <constraint firstItem="gVv-hh-sne" firstAttribute="top" secondItem="trr-wn-akD" secondAttribute="bottom" constant="8" id="w8N-KM-IE3"/>
+                            <constraint firstItem="4rw-k3-bKw" firstAttribute="leading" secondItem="4dH-CK-ckl" secondAttribute="leading" constant="20" id="xN8-ad-Ron"/>
+                            <constraint firstItem="hxM-1e-9Ch" firstAttribute="centerX" secondItem="4dH-CK-ckl" secondAttribute="centerX" id="zCG-Xv-vIo"/>
+                            <constraint firstItem="YY4-iW-tSf" firstAttribute="top" secondItem="6cd-3w-AKh" secondAttribute="bottom" constant="8" id="znq-4Y-eO3"/>
+                            <constraint firstItem="4dH-CK-ckl" firstAttribute="trailing" secondItem="trr-wn-akD" secondAttribute="trailing" constant="20" id="zzu-ln-jp5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4dH-CK-ckl"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="a5O-CN-nYO"/>
+                    <connections>
+                        <outlet property="loader" destination="hxM-1e-9Ch" id="fP5-4I-i5V"/>
+                        <outlet property="textViewMessage" destination="trr-wn-akD" id="3JP-zX-P12"/>
+                        <outlet property="tfName" destination="6cd-3w-AKh" id="IXS-oq-JxP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AEo-Kn-xdy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2364" y="2551.5742128935535"/>
         </scene>
         <!--Products-->
         <scene sceneID="CNU-5l-Mpq">
@@ -371,7 +496,7 @@
             <objects>
                 <navigationController modalPresentationStyle="fullScreen" id="okC-pz-H0n" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="tab_bar_foods" id="grp-zz-Mx1"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hRq-8e-2P1">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="hRq-8e-2P1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.95266991850000005" green="0.62837308650000001" blue="0.19981485609999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -405,7 +530,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AJo-NM-XUm">
                                 <rect key="frame" x="20" y="112" width="111" height="50"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                 <state key="normal" title="Name ↓">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -578,7 +703,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qb3-2Y-x4T">
                                                 <rect key="frame" x="0.0" y="0.0" width="52" height="50"/>
                                                 <color key="backgroundColor" red="0.1137269512" green="0.1137235239" blue="0.1137242243" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                                 <state key="normal" title="Cals">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -602,7 +727,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A2b-8J-ms3">
                                                 <rect key="frame" x="0.0" y="0.0" width="52" height="50"/>
                                                 <color key="backgroundColor" red="0.1137269512" green="0.1137235239" blue="0.1137242243" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                                 <state key="normal" title="Protein">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -625,7 +750,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WPo-OJ-Tq7">
                                                 <rect key="frame" x="0.0" y="0.0" width="52" height="50"/>
                                                 <color key="backgroundColor" red="0.1137269512" green="0.1137235239" blue="0.1137242243" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                                 <state key="normal" title="Carbs">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -648,7 +773,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U3y-ix-vZU">
                                                 <rect key="frame" x="0.0" y="0.0" width="52" height="50"/>
                                                 <color key="backgroundColor" white="0.33333333333333331" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                                 <state key="normal" title="Fat">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -730,7 +855,7 @@
                         <outletCollection property="titleBtns" destination="AJo-NM-XUm" collectionClass="NSMutableArray" id="yjy-iK-aA8"/>
                         <segue destination="M1U-EC-Bt8" kind="show" identifier="go_to_calculator" id="340-go-38q"/>
                         <segue destination="vRc-go-hJU" kind="show" identifier="go_to_add_new_product" id="j1n-7l-jNk"/>
-                        <segue destination="tzL-YN-DVm" kind="presentation" identifier="presentIntroView" id="JXo-FI-ieg"/>
+                        <segue destination="tzL-YN-DVm" kind="presentation" identifier="go_to_intro_view" id="JXo-FI-ieg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fMS-DL-k7f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -754,7 +879,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="AYL-bN-St9">
                                 <rect key="frame" x="50" y="156.5" width="275" height="30"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F60-BD-W46" customClass="CustomParentButton" customModule="MyDailyCalories" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F60-BD-W46" customClass="CustomButton" customModule="MyDailyCalories" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="122.5" height="30"/>
                                         <color key="backgroundColor" red="0.99601525069999997" green="0.52405595780000003" blue="0.38426378369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
@@ -765,7 +890,7 @@
                                             <action selector="loadProductsTapped:" destination="tzL-YN-DVm" eventType="touchUpInside" id="Pg6-Yh-kSX"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kjt-Ra-py0" customClass="CustomParentButton" customModule="MyDailyCalories" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kjt-Ra-py0" customClass="CustomButton" customModule="MyDailyCalories" customModuleProvider="target">
                                         <rect key="frame" x="152.5" y="0.0" width="122.5" height="30"/>
                                         <color key="backgroundColor" red="0.99601525069999997" green="0.52405595780000003" blue="0.38426378369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
@@ -788,7 +913,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.80219927226027399" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.7961793664383563" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="AYL-bN-St9" firstAttribute="top" secondItem="Af5-TZ-UHd" secondAttribute="bottom" constant="16" id="1Uc-sT-hNd"/>
                             <constraint firstItem="Af5-TZ-UHd" firstAttribute="top" secondItem="uza-Dc-SsS" secondAttribute="top" constant="120" id="Bsk-PG-DmK"/>
@@ -1048,11 +1173,190 @@
                         <outletCollection property="gramBtns" destination="qSU-8P-f1G" collectionClass="NSMutableArray" id="9pt-jd-Fnk"/>
                         <outletCollection property="gramBtns" destination="RyH-9b-h3F" collectionClass="NSMutableArray" id="cq0-hX-gRs"/>
                         <outletCollection property="gramBtns" destination="DH7-pk-vfz" collectionClass="NSMutableArray" id="VeC-X9-lfT"/>
+                        <segue destination="xht-IM-kFP" kind="presentation" identifier="present_calculator_intro" id="Bop-j0-zsk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cmh-Iz-GnL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="514.39999999999998" y="1629.5352323838083"/>
+            <point key="canvasLocation" x="514" y="1715"/>
+        </scene>
+        <!--Calculator IntroVC-->
+        <scene sceneID="lXO-Zk-Vqi">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="xht-IM-kFP" customClass="CalculatorIntroVC" customModule="MyDailyCalories" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Sdp-pB-lW6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H1G-R8-I9h" customClass="FocusView" customModule="MyDailyCalories" customModuleProvider="target">
+                                <rect key="frame" x="256" y="4" width="113" height="35"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add To Daily" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UHp-bh-73R">
+                                        <rect key="frame" x="0.0" y="0.0" width="113" height="35"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <color key="textColor" red="0.95266991850000005" green="0.62837308650000001" blue="0.19981485609999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="9VA-GP-Hfy"/>
+                                    <constraint firstItem="UHp-bh-73R" firstAttribute="leading" secondItem="H1G-R8-I9h" secondAttribute="leading" id="DQh-5v-edn"/>
+                                    <constraint firstItem="UHp-bh-73R" firstAttribute="top" secondItem="H1G-R8-I9h" secondAttribute="top" id="NJv-wA-jdD"/>
+                                    <constraint firstAttribute="trailing" secondItem="UHp-bh-73R" secondAttribute="trailing" id="cQG-8V-hRM"/>
+                                    <constraint firstAttribute="bottom" secondItem="UHp-bh-73R" secondAttribute="bottom" id="rBr-Rn-K83"/>
+                                    <constraint firstAttribute="width" constant="113" id="xax-lL-911"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezg-ad-4uS" customClass="CustomButton" customModule="MyDailyCalories" customModuleProvider="target">
+                                <rect key="frame" x="16" y="239" width="343" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Add to Cart"/>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="cKn-F9-lC6">
+                                <rect key="frame" x="16" y="196" width="343" height="29"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JFK-X6-cuH" customClass="SmallButton" customModule="MyDailyCalories" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="42" height="29"/>
+                                        <color key="backgroundColor" red="0.60060055990000005" green="0.75436747950000005" blue="0.77039629220000005" alpha="0.080854023969999994" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title=" 200g ">
+                                            <color key="titleColor" red="0.77039629220000005" green="0.36910772320000002" blue="0.35684347150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="gramButtonTapped:" destination="M1U-EC-Bt8" eventType="touchUpInside" id="CWk-GD-sHJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ay-Cr-2hx" customClass="SmallButton" customModule="MyDailyCalories" customModuleProvider="target">
+                                        <rect key="frame" x="54" y="0.0" width="48" height="29"/>
+                                        <color key="backgroundColor" red="0.20558497310000001" green="0.7828625441" blue="0.34891250730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title="  100g  ">
+                                            <color key="titleColor" red="0.77039629220000005" green="0.36910772320000002" blue="0.35684347150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="gramButtonTapped:" destination="M1U-EC-Bt8" eventType="touchUpInside" id="FYL-yE-YwM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVM-js-Cjk" customClass="SmallButton" customModule="MyDailyCalories" customModuleProvider="target">
+                                        <rect key="frame" x="114" y="0.0" width="34" height="29"/>
+                                        <color key="backgroundColor" red="0.60060055990000005" green="0.75436747950000005" blue="0.77039629220000005" alpha="0.080854023969999994" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title=" 50g ">
+                                            <color key="titleColor" red="0.77039629220000005" green="0.36910772320000002" blue="0.35684347150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="gramButtonTapped:" destination="M1U-EC-Bt8" eventType="touchUpInside" id="Z3C-98-XsV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IW8-Ww-IOb" customClass="SmallButton" customModule="MyDailyCalories" customModuleProvider="target">
+                                        <rect key="frame" x="160" y="0.0" width="31" height="29"/>
+                                        <color key="backgroundColor" red="0.60060055990000005" green="0.75436747950000005" blue="0.77039629220000005" alpha="0.080854023969999994" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title=" 15g ">
+                                            <color key="titleColor" red="0.77039629220000005" green="0.36910772320000002" blue="0.35684347150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="gramButtonTapped:" destination="M1U-EC-Bt8" eventType="touchUpInside" id="bBp-Is-PUH"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yTC-Hy-jHP" customClass="SmallButton" customModule="MyDailyCalories" customModuleProvider="target">
+                                        <rect key="frame" x="203" y="0.0" width="30" height="29"/>
+                                        <color key="backgroundColor" red="0.60060055990000005" green="0.75436747950000005" blue="0.77039629220000005" alpha="0.080854023969999994" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title=" 8g ">
+                                            <color key="titleColor" red="0.77039629220000005" green="0.36910772320000002" blue="0.35684347150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="gramButtonTapped:" destination="M1U-EC-Bt8" eventType="touchUpInside" id="vv5-Bf-adJ"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Custom g " textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ggU-yz-vdt" customClass="SmallTextField" customModule="MyDailyCalories" customModuleProvider="target">
+                                        <rect key="frame" x="245" y="0.0" width="98" height="29"/>
+                                        <color key="backgroundColor" red="0.98382954879999995" green="0.98820835870000001" blue="1" alpha="0.08350278253" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WP9-mf-a05" customClass="FocusView" customModule="MyDailyCalories" customModuleProvider="target">
+                                <rect key="frame" x="12" y="236" width="351" height="39"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="MpU-Db-v2J"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OBY-hZ-xnz" customClass="FocusView" customModule="MyDailyCalories" customModuleProvider="target">
+                                <rect key="frame" x="12" y="190" width="351" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.28941031678082191" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="gC0-j5-WIi"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to add food to your daily calories" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UDg-5m-FyR">
+                                <rect key="frame" x="80" y="57" width="279" height="41"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to add food to your daily calories" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eT0-La-vER">
+                                <rect key="frame" x="20" y="291" width="335" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to add food to your daily calories" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7tw-Ai-lZW">
+                                <rect key="frame" x="20" y="153.5" width="335" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.80112906678082196" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ezg-ad-4uS" secondAttribute="trailing" constant="16" id="2c3-74-mjY"/>
+                            <constraint firstItem="WP9-mf-a05" firstAttribute="top" secondItem="cKn-F9-lC6" secondAttribute="bottom" constant="11" id="4rh-Jp-I8L"/>
+                            <constraint firstItem="0Hx-Oq-jiA" firstAttribute="trailing" secondItem="UDg-5m-FyR" secondAttribute="trailing" constant="16" id="57c-ft-ERH"/>
+                            <constraint firstItem="WP9-mf-a05" firstAttribute="leading" secondItem="0Hx-Oq-jiA" secondAttribute="leading" constant="12" id="972-k6-V8E"/>
+                            <constraint firstItem="7tw-Ai-lZW" firstAttribute="leading" secondItem="0Hx-Oq-jiA" secondAttribute="leading" constant="20" id="AEs-BO-Uxi"/>
+                            <constraint firstItem="0Hx-Oq-jiA" firstAttribute="trailing" secondItem="cKn-F9-lC6" secondAttribute="trailing" constant="16" id="HdJ-55-0iW"/>
+                            <constraint firstItem="H1G-R8-I9h" firstAttribute="trailing" secondItem="0Hx-Oq-jiA" secondAttribute="trailing" constant="-6" id="I2i-BI-kwd"/>
+                            <constraint firstItem="0Hx-Oq-jiA" firstAttribute="trailing" secondItem="WP9-mf-a05" secondAttribute="trailing" constant="12" id="JBH-Zc-fMo"/>
+                            <constraint firstItem="0Hx-Oq-jiA" firstAttribute="trailing" secondItem="OBY-hZ-xnz" secondAttribute="trailing" constant="12" id="L2q-De-heC"/>
+                            <constraint firstItem="eT0-La-vER" firstAttribute="top" secondItem="WP9-mf-a05" secondAttribute="bottom" constant="16" id="Lo2-Oq-7qd"/>
+                            <constraint firstItem="cKn-F9-lC6" firstAttribute="leading" secondItem="0Hx-Oq-jiA" secondAttribute="leading" constant="16" id="QxG-ui-M7O"/>
+                            <constraint firstItem="0Hx-Oq-jiA" firstAttribute="trailing" secondItem="7tw-Ai-lZW" secondAttribute="trailing" constant="20" id="Qyl-V4-ncW"/>
+                            <constraint firstItem="UDg-5m-FyR" firstAttribute="leading" secondItem="0Hx-Oq-jiA" secondAttribute="leading" constant="80" id="U5d-xs-Ip6"/>
+                            <constraint firstItem="OBY-hZ-xnz" firstAttribute="top" secondItem="7tw-Ai-lZW" secondAttribute="bottom" constant="16" id="eRV-rr-qjf"/>
+                            <constraint firstItem="OBY-hZ-xnz" firstAttribute="leading" secondItem="0Hx-Oq-jiA" secondAttribute="leading" constant="12" id="fHD-4B-QRM"/>
+                            <constraint firstItem="UDg-5m-FyR" firstAttribute="top" secondItem="H1G-R8-I9h" secondAttribute="bottom" constant="18" id="gqx-6b-vQ2"/>
+                            <constraint firstItem="ezg-ad-4uS" firstAttribute="leading" secondItem="Sdp-pB-lW6" secondAttribute="leading" constant="16" id="jYo-v0-lrw"/>
+                            <constraint firstItem="WP9-mf-a05" firstAttribute="top" secondItem="OBY-hZ-xnz" secondAttribute="bottom" constant="6" id="m7X-Fb-tKW"/>
+                            <constraint firstItem="0Hx-Oq-jiA" firstAttribute="trailing" secondItem="eT0-La-vER" secondAttribute="trailing" constant="20" id="r2C-OW-vaJ"/>
+                            <constraint firstItem="H1G-R8-I9h" firstAttribute="top" secondItem="0Hx-Oq-jiA" secondAttribute="top" constant="4" id="sVI-5R-IKF"/>
+                            <constraint firstItem="ezg-ad-4uS" firstAttribute="top" secondItem="0Hx-Oq-jiA" secondAttribute="top" constant="239" id="tiK-XP-Co9"/>
+                            <constraint firstItem="eT0-La-vER" firstAttribute="leading" secondItem="0Hx-Oq-jiA" secondAttribute="leading" constant="20" id="ucl-TU-Wga"/>
+                            <constraint firstItem="WP9-mf-a05" firstAttribute="top" secondItem="0Hx-Oq-jiA" secondAttribute="top" constant="236" id="xXM-JF-hfZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0Hx-Oq-jiA"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="yHw-dF-0jE"/>
+                    <connections>
+                        <outlet property="btn100g" destination="8ay-Cr-2hx" id="1a6-5q-OIl"/>
+                        <outlet property="btnAddToCart" destination="ezg-ad-4uS" id="Fgl-uR-8yg"/>
+                        <outlet property="lblAddToCart" destination="eT0-La-vER" id="Eob-Gj-9eh"/>
+                        <outlet property="lblAddToDaily" destination="UDg-5m-FyR" id="f72-LO-YKn"/>
+                        <outlet property="lblGrams" destination="7tw-Ai-lZW" id="QCw-71-u6L"/>
+                        <outlet property="stackViewGrams" destination="cKn-F9-lC6" id="ukl-gu-PbC"/>
+                        <outlet property="viewAddToCartBtn" destination="WP9-mf-a05" id="VAe-jf-tRl"/>
+                        <outlet property="viewBarItem" destination="H1G-R8-I9h" id="mjG-3F-F5e"/>
+                        <outlet property="viewChooseGrams" destination="OBY-hZ-xnz" id="pbs-zM-h8s"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uS0-lL-UIX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="512.79999999999995" y="2462.5187406296855"/>
         </scene>
         <!--New EntityVC-->
         <scene sceneID="bgb-Be-XI5">
@@ -1790,7 +2094,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bdp-G4-Pc1" customClass="CustomButton" customModule="MyDailyCalories" customModuleProvider="target">
                                 <rect key="frame" x="20" y="329" width="335" height="33"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <state key="normal" title="Choose From Products List ➔">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>

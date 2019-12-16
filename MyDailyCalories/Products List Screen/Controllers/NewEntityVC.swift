@@ -49,7 +49,6 @@ class NewEntityVC : UIViewController {
         Firebase.shared.saveNew(entity: entity)
         self.navigationController?.popViewController(animated: true)
     }
-    
 }
 
 extension NewEntityVC : UITextFieldDelegate {

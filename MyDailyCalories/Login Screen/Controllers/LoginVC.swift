@@ -10,12 +10,13 @@ import UIKit
 import FirebaseUI
 import GoogleSignIn
 import FBSDKLoginKit
-//import FirebaseAu
+import AuthenticationServices
 
 class LoginVC : UIViewController {
     
     private let segue_to_daily_cals = "go_to_daily_cals"
     private var isKeyboardShown = false
+    private var currentNonce: String?
     
     @IBOutlet weak var tfEmail: CustomTextField! {
         didSet { tfEmail.setPlaceholder(string: "email") }
@@ -32,6 +33,8 @@ class LoginVC : UIViewController {
     @IBOutlet weak var segment:         CustomSegment!
     @IBOutlet weak var btnFbSignIn:     FacebookButton!
     @IBOutlet weak var btnGoogleSignIn: GoogleButton!
+    @IBOutlet weak var btnApple:        AppleButton!
+
 
     @IBOutlet var textFields: [UITextField]!
     
@@ -45,21 +48,15 @@ class LoginVC : UIViewController {
 
     }
     
-//    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-//        return UIInterfaceOrientationMask.portrait
-//    }
-//    
-//    override var shouldAutorotate: Bool {
-//        return false
-//    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         addGestures()
-        //mockdata
-        tfEmail.text = "test@t.com"
-        tfPw.text = "123456"
     }
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     
     @IBAction func segmentValueChanged(_ sender: UISegmentedControl) {
         hideShowTextFields()
@@ -75,6 +72,15 @@ class LoginVC : UIViewController {
         switch segment.isSignInChosen {
         case true : login.performSignIn()
         case false : login.performSignUp()
+        }
+    }
+    
+    
+    @IBAction func appleSignInTapped(_ sender: AppleButton) {
+        let appleSignIn = AppleSignIn()
+        if #available(iOS 13, *) {
+
+            currentNonce = appleSignIn.startSignInWithAppleFlow(inVC: self)
         }
     }
     
@@ -162,6 +168,7 @@ class LoginVC : UIViewController {
         tfPw2.isHidden =           segment.isSignInChosen
         btnFbSignIn.isHidden =     !segment.isSignInChosen
         btnGoogleSignIn.isHidden = !segment.isSignInChosen
+        btnApple.isHidden =        !segment.isSignInChosen
         if isKeyboardShown {
             tfPw.isHidden = false
         }
@@ -224,4 +231,42 @@ extension LoginVC : GIDSignInDelegate {
             Firebase.shared.signInWithGoogle(user: user)
         }
     }
+}
+
+//MOCKDATA APPLE DELEGATE
+@available(iOS 13.0, *)
+extension LoginVC: ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
+    
+    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        return ASPresentationAnchor()
+    }
+    
+
+  func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+    if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
+            guard let nonce = currentNonce else {
+                    fatalError("Invalid state: A login callback was received, but no login request was sent.")
+            }
+            guard let appleIDToken = appleIDCredential.identityToken else {
+                AlertManager.shared.showAlertWithError(inVC: self, message: "Unable to fetch identity token")
+                return
+            }
+            guard let idTokenString = String(data: appleIDToken, encoding: .utf8) else {
+                let errorMessage = "Unable to serialize token string from data: \(appleIDToken.debugDescription)"
+                AlertManager.shared.showAlertWithError(inVC: self, message: errorMessage)
+                return
+            }
+        
+        let credential = OAuthProvider.credential(withProviderID: "apple.com", idToken: idTokenString, rawNonce: nonce)
+        Firebase.shared.signInWithApple(credentials: credential)
+        }
+    
+    }
+
+    @available(iOS 13.0, *)
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+    // Handle error.
+        print("Sign in with Apple errored: \(error)")
+    }
+
 }

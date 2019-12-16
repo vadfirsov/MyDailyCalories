@@ -27,6 +27,7 @@ protocol FirebaseDelegate {
     func didRecieve(firstLoginDateString : String)
     func didReceive(foods : [Entity])
     func didReceive(error : Error)
+    func didSaveMessage()
 }
 
 extension FirebaseDelegate {
@@ -42,6 +43,8 @@ extension FirebaseDelegate {
     func didLoggedOutWith(error : Error?) {}
     func didRecieve(firstLoginDateString : String) {}
     func didReceive(foods : [Entity]) {}
+    func didSaveMessage() {}
+
 }
 
 class Firebase {
@@ -59,6 +62,7 @@ class Firebase {
     private let last_time_ad_showed = "last_time_ad_showed"
     private let users =               "users"
     private let foods =               "foods"
+    private let messages =            "messages"
     
     //MARK: AUTHENTICATION
     func signUpNewUser(email : String, pw : String) {
@@ -118,7 +122,11 @@ class Firebase {
         signInWith(credentials: credentials)
     }
     
-    private func signInWith(credentials : AuthCredential) {
+    func signInWithApple(credentials : AuthCredential) {
+        signInWith(credentials: credentials)
+    }
+    
+     private func signInWith(credentials : AuthCredential) {
         Auth.auth().signIn(with: credentials) { (user, error) in
              if error != nil {
                 self.tryLogOut()
@@ -158,15 +166,15 @@ class Firebase {
         }
     }
     
-    func saveAdShowedDate() {
-        guard let uid = Auth.auth().currentUser?.uid else { return }
-        let dateString = "\(Date())"
-        ref.child(users).child(uid).child(last_time_ad_showed).setValue(dateString) { (error, _) in
-            if error != nil {
-                self.delegate?.didReceive(error: error!)
-            }
-        }
-    }
+//    func saveAdShowedDate() {
+//        guard let uid = Auth.auth().currentUser?.uid else { return }
+//        let dateString = "\(Date())"
+//        ref.child(users).child(uid).child(last_time_ad_showed).setValue(dateString) { (error, _) in
+//            if error != nil {
+//                self.delegate?.didReceive(error: error!)
+//            }
+//        }
+//    }
     
     func save(dailyCaloriesGoal : String) {
         guard let uid = Auth.auth().currentUser?.uid else { return }
@@ -210,6 +218,20 @@ class Firebase {
             }
         }
     }
+    
+    func save(message : String) {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        let dateStamp = Int(Date().timeIntervalSinceReferenceDate)
+        let stringDateStamp = String(dateStamp)
+        ref.child(messages).child(uid).child(stringDateStamp).setValue(message) { (error, ref) in
+            if error != nil {
+                self.delegate?.didReceive(error: error!)
+            }
+            else {
+                self.delegate?.didSaveMessage()
+            }
+        }
+    }
 
     //MARK: LOAD
     func loadDailyCalorieGoal() {
@@ -249,19 +271,20 @@ class Firebase {
         }
     }
     
-    func loadUserWatchedAdDate() {
-        guard let uid = Auth.auth().currentUser?.uid else { return }
-        ref.child(users).child(uid).child(last_time_ad_showed).observeSingleEvent(of: .value) { (snap) in
-            if let snapValue = snap.value as? String {
-                if DateManager.shared.isFullDayPassedSince(lastTimeWatchedAd: snapValue) {
-                    AdMob.shared.shouldShowInterstitialAd = true
-                }
-            }
-            else {
-                self.saveAdShowedDate()
-            }
-        }
-    }
+    //DEPRICARED - DONE IN ADMOB ITSELF
+//    func loadUserWatchedAdDate() {
+//        guard let uid = Auth.auth().currentUser?.uid else { return }
+//        ref.child(users).child(uid).child(last_time_ad_showed).observeSingleEvent(of: .value) { (snap) in
+//            if let snapValue = snap.value as? String {
+//                if DateManager.shared.isFullDayPassedSince(lastTimeWatchedAd: snapValue) {
+//                    AdMob.shared.shouldShowInterstitialAd = true
+//                }
+//            }
+//            else {
+//                self.saveAdShowedDate()
+//            }
+//        }
+//    }
     
     func loadEntities() {
         guard let uid = Auth.auth().currentUser?.uid else { return }

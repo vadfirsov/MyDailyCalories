@@ -39,13 +39,14 @@ class CustomParentButton : UIButton {
     
     func animateTap(bgColor : UIColor, borderColor : UIColor) {
         let originBgColor =      backgroundColor
-        let originBorderColor =  layer.borderColor
+//        let originBorderColor =  layer.borderColor
         backgroundColor =        bgColor
         layer.borderColor =      borderColor.cgColor
-
+        let shadowColor = layer.shadowColor
+        self.layer.shadowColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)
         UIView.animate(withDuration: 0.2) {
             self.backgroundColor =   originBgColor
-            self.layer.borderColor = originBorderColor
+            self.layer.shadowColor = shadowColor
         }
     }
 }

@@ -15,6 +15,8 @@ class HintsManager {
     
     private let userDefs = UserDefaults.standard
     private let didShowIntroInMyProducts = "didShowIntroInMyProducts"
+    private let didShowIntroInCalculator = "didShowIntroInCalculator"
+
     
     var shouldShowIntroInMyProducts : Bool? {
         get {
@@ -25,6 +27,18 @@ class HintsManager {
         }
         set {
             userDefs.set(newValue, forKey: didShowIntroInMyProducts)
+        }
+    }
+    
+    var shouldShowIntroInCalculator : Bool? {
+        get {
+            if userDefs.value(forKey: didShowIntroInCalculator) == nil {
+                return nil
+            }
+            return userDefs.bool(forKey: didShowIntroInCalculator)
+        }
+        set {
+            userDefs.set(newValue, forKey: didShowIntroInCalculator)
         }
     }
 }

@@ -4,20 +4,23 @@ PODS:
     - AppAuth/ExternalUserAgent (= 1.3.0)
   - AppAuth/Core (1.3.0)
   - AppAuth/ExternalUserAgent (1.3.0)
-  - FacebookSDK/CoreKit (5.11.1):
+  - Crashlytics (3.14.0):
+    - Fabric (~> 1.10.2)
+  - Fabric (1.10.2)
+  - FacebookSDK/CoreKit (5.13.0):
     - FBSDKCoreKit (~> 5.0)
-  - FacebookSDK/LoginKit (5.11.1):
+  - FacebookSDK/LoginKit (5.13.0):
     - FacebookSDK/CoreKit
     - FBSDKLoginKit (~> 5.0)
-  - FBSDKCoreKit (5.11.1):
-    - FBSDKCoreKit/Basics (= 5.11.1)
-    - FBSDKCoreKit/Core (= 5.11.1)
-  - FBSDKCoreKit/Basics (5.11.1)
-  - FBSDKCoreKit/Core (5.11.1):
+  - FBSDKCoreKit (5.13.0):
+    - FBSDKCoreKit/Basics (= 5.13.0)
+    - FBSDKCoreKit/Core (= 5.13.0)
+  - FBSDKCoreKit/Basics (5.13.0)
+  - FBSDKCoreKit/Core (5.13.0):
     - FBSDKCoreKit/Basics
-  - FBSDKLoginKit (5.11.1):
-    - FBSDKLoginKit/Login (= 5.11.1)
-  - FBSDKLoginKit/Login (5.11.1):
+  - FBSDKLoginKit (5.13.0):
+    - FBSDKLoginKit/Login (= 5.13.0)
+  - FBSDKLoginKit/Login (5.13.0):
     - FBSDKCoreKit (~> 5.0)
   - Firebase/Auth (6.13.0):
     - Firebase/CoreOnly
@@ -61,7 +64,7 @@ PODS:
     - GoogleSignIn (~> 5.0)
   - FirebaseUI/Phone (8.4.0):
     - FirebaseUI/Auth
-  - Google-Mobile-Ads-SDK (7.52.0):
+  - Google-Mobile-Ads-SDK (7.53.0):
     - GoogleAppMeasurement (~> 6.0)
   - GoogleAppMeasurement (6.1.6):
     - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
@@ -111,6 +114,8 @@ PODS:
   - nanopb/encode (0.3.9011)
 
 DEPENDENCIES:
+  - Crashlytics (~> 3.14.0)
+  - Fabric (~> 1.10.2)
   - FacebookSDK/LoginKit
   - Firebase/Database
   - FirebaseUI/Auth
@@ -122,6 +127,8 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AppAuth
+    - Crashlytics
+    - Fabric
     - FacebookSDK
     - FBSDKCoreKit
     - FBSDKLoginKit
@@ -146,9 +153,11 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AppAuth: 73574f3013a1e65b9601a3ddc8b3158cce68c09d
-  FacebookSDK: 685f348afd31dd2dcab6f691974c07cac5fcf6e1
-  FBSDKCoreKit: 5aada61a229054694810f3cee231f986004b3c49
-  FBSDKLoginKit: 0e4572e0279e477103b57978e3ea05fac1dd673d
+  Crashlytics: 540b7e5f5da5a042647227a5e3ac51d85eed06df
+  Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
+  FacebookSDK: 0b3afb24ac85e166deb960aef086ceb1d07a43e9
+  FBSDKCoreKit: b1645dba3dfdba6102f2d4026fdbfca8114dc229
+  FBSDKLoginKit: 4aca55e93a63b1ff0cb9446208d49e32c13ab24a
   Firebase: 458d109512200d1aca2e1b9b6cf7d68a869a4a46
   FirebaseAuth: 7d0f84873926f6648bbd1391a318dfb1a26b5e4f
   FirebaseAuthInterop: 0ffa57668be100582bb7643d4fcb7615496c41fc
@@ -157,7 +166,7 @@ SPEC CHECKSUMS:
   FirebaseCoreDiagnosticsInterop: e9b1b023157e3a2fc6418b5cb601e79b9af7b3a0
   FirebaseDatabase: 963515d232ded06f36f6ce830507c94551866170
   FirebaseUI: 433550cb9e3d03ec7ee2c25f87493f76358d9b68
-  Google-Mobile-Ads-SDK: 62f6244637306cb60a1b4adda067f53224c7a860
+  Google-Mobile-Ads-SDK: 4b855e61f9c5a1a97cb55734ea372a4c36d00242
   GoogleAppMeasurement: dfe55efa543e899d906309eaaac6ca26d249862f
   GoogleDataTransport: 8e9b210c97d55fbff306cc5468ff91b9cb32dcf5
   GoogleDataTransportCCTSupport: ef79a4728b864946a8aafdbab770d5294faf3b5f
@@ -168,6 +177,6 @@ SPEC CHECKSUMS:
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
 
-PODFILE CHECKSUM: a998732caf879fdb7c6b3884fc46eb81da2cdcfb
+PODFILE CHECKSUM: be90ec21afd838134601fc210e5f9d3604ac39a6
 
 COCOAPODS: 1.5.3
