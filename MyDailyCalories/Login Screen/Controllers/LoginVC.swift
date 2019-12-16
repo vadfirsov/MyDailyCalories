@@ -40,12 +40,11 @@ class LoginVC : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        btnApple.isHidden = true
         Firebase.shared.delegate = self
         GIDSignIn.sharedInstance()?.presentingViewController = self
         GIDSignIn.sharedInstance()?.delegate = self
         setTextFields()
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,7 +55,6 @@ class LoginVC : UIViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-    
     
     @IBAction func segmentValueChanged(_ sender: UISegmentedControl) {
         hideShowTextFields()
@@ -168,7 +166,9 @@ class LoginVC : UIViewController {
         tfPw2.isHidden =           segment.isSignInChosen
         btnFbSignIn.isHidden =     !segment.isSignInChosen
         btnGoogleSignIn.isHidden = !segment.isSignInChosen
-        btnApple.isHidden =        !segment.isSignInChosen
+        if #available(iOS 13, *) {
+            btnApple.isHidden =    !segment.isSignInChosen
+        }
         if isKeyboardShown {
             tfPw.isHidden = false
         }
@@ -268,5 +268,4 @@ extension LoginVC: ASAuthorizationControllerDelegate, ASAuthorizationControllerP
     // Handle error.
         print("Sign in with Apple errored: \(error)")
     }
-
 }
