@@ -65,10 +65,6 @@ class CalculatorVC : UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        //mockdata
-//        performSegue(withIdentifier: segue_present_intro, sender: self)
-                //mockdata
-        //        showIntro()
         if HintsManager.shared.shouldShowIntroInCalculator == true {
             showIntro()
         }
@@ -100,9 +96,9 @@ class CalculatorVC : UIViewController {
         var cartEntity = CartEntity()
         
         cartEntity.calories = lblCalories.doubleFromText() ?? 0
-        cartEntity.protein = lblProtein.doubleFromText()   ?? 0
-        cartEntity.carbs = lblCarbs.doubleFromText()       ?? 0
-        cartEntity.fat = lblFat.doubleFromText()           ?? 0
+        cartEntity.protein =  lblProtein.doubleFromText()  ?? 0
+        cartEntity.carbs =    lblCarbs.doubleFromText()    ?? 0
+        cartEntity.fat =      lblFat.doubleFromText()      ?? 0
 
         cartEntity.grams = 100 * getMultiplier()
         cartEntity.name = entity.name

@@ -49,8 +49,7 @@ class MyProductsVC : UIViewController {
         setDelegates()
         AdMob.shared.showInterstitialAd(inVC: self)
         isSelfVisible = true
-        //mockdata
-//        showIntro()
+
         if HintsManager.shared.shouldShowIntroInMyProducts == true {
             showIntro()
         }

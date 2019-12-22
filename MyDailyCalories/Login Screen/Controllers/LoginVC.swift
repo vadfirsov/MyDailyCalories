@@ -50,6 +50,9 @@ class LoginVC : UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         addGestures()
+        
+        tfEmail.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -139,6 +142,10 @@ class LoginVC : UIViewController {
             tf.delegate = self
         }
         hideShowTextFields()
+        tfEmail.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        tfPw.layer.borderColor =    #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        tfPw2.layer.borderColor =   #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+
     }
         
     override func viewWillDisappear(_ animated: Bool) {
@@ -233,7 +240,6 @@ extension LoginVC : GIDSignInDelegate {
     }
 }
 
-//MOCKDATA APPLE DELEGATE
 @available(iOS 13.0, *)
 extension LoginVC: ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
     

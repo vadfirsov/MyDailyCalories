@@ -42,25 +42,40 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V1u-ss-i1W">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="340"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-1024" translatesAutoresizingMaskIntoConstraints="NO" id="BGG-tV-2dU">
+                                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-1024" translatesAutoresizingMaskIntoConstraints="NO" id="BGG-tV-2dU">
                                                 <rect key="frame" x="67.5" y="87.5" width="240" height="240"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="BGG-tV-2dU" secondAttribute="height" multiplier="1:1" id="S64-Xe-3GZ"/>
                                                     <constraint firstAttribute="height" constant="240" id="cHV-Ej-dsa"/>
                                                 </constraints>
                                             </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vegies_4" translatesAutoresizingMaskIntoConstraints="NO" id="qdK-1c-j0t">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Daily Calories" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Elz-hy-h4c">
+                                                <rect key="frame" x="20" y="223" width="335" height="42"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="Elz-hy-h4c" firstAttribute="leading" secondItem="V1u-ss-i1W" secondAttribute="leading" constant="20" id="4ve-ym-hCB"/>
                                             <constraint firstItem="BGG-tV-2dU" firstAttribute="centerY" secondItem="V1u-ss-i1W" secondAttribute="centerY" multiplier="1.22" id="AUg-Zh-qD5"/>
+                                            <constraint firstAttribute="trailing" secondItem="qdK-1c-j0t" secondAttribute="trailing" id="JLS-i0-ODi"/>
+                                            <constraint firstAttribute="trailing" secondItem="Elz-hy-h4c" secondAttribute="trailing" constant="20" id="UJN-sB-Hms"/>
+                                            <constraint firstItem="qdK-1c-j0t" firstAttribute="top" secondItem="V1u-ss-i1W" secondAttribute="top" id="erD-b8-QCc"/>
                                             <constraint firstItem="BGG-tV-2dU" firstAttribute="centerX" secondItem="V1u-ss-i1W" secondAttribute="centerX" id="hGt-8M-w6d"/>
                                             <constraint firstAttribute="height" constant="340" id="rAi-EC-UqE"/>
+                                            <constraint firstItem="qdK-1c-j0t" firstAttribute="leading" secondItem="V1u-ss-i1W" secondAttribute="leading" id="zbS-zD-aPQ"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.14505955576896667" green="0.14516586065292358" blue="0.14117598533630371" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="V1u-ss-i1W" firstAttribute="leading" secondItem="r3y-9K-mwO" secondAttribute="leading" id="P4C-po-Xx5"/>
+                                    <constraint firstAttribute="bottom" secondItem="qdK-1c-j0t" secondAttribute="bottom" id="UXV-DS-R9U"/>
                                     <constraint firstAttribute="trailing" secondItem="V1u-ss-i1W" secondAttribute="trailing" id="qBq-so-PzU"/>
                                     <constraint firstItem="V1u-ss-i1W" firstAttribute="top" secondItem="r3y-9K-mwO" secondAttribute="top" id="qP0-hv-NA5"/>
                                 </constraints>
@@ -144,6 +159,7 @@
                             <constraint firstItem="lN8-ud-EPy" firstAttribute="centerX" secondItem="ir7-HL-81e" secondAttribute="centerX" id="60k-TK-7dK"/>
                             <constraint firstItem="r3y-9K-mwO" firstAttribute="leading" secondItem="ir7-HL-81e" secondAttribute="leading" id="6nb-Dx-46v"/>
                             <constraint firstItem="ir7-HL-81e" firstAttribute="trailing" secondItem="gry-zn-g7v" secondAttribute="trailing" constant="20" id="Amw-JI-SVk"/>
+                            <constraint firstItem="6UK-KY-jtc" firstAttribute="top" secondItem="Elz-hy-h4c" secondAttribute="bottom" constant="12" id="RRK-It-Cpv"/>
                             <constraint firstItem="ir7-HL-81e" firstAttribute="trailing" secondItem="nv6-ku-vLa" secondAttribute="trailing" constant="20" id="Sf3-c0-bHG"/>
                             <constraint firstItem="nv6-ku-vLa" firstAttribute="top" secondItem="gry-zn-g7v" secondAttribute="bottom" constant="12" id="XAs-dd-epO"/>
                             <constraint firstItem="ir7-HL-81e" firstAttribute="bottom" secondItem="nv6-ku-vLa" secondAttribute="bottom" constant="80" id="a7W-fd-VVm"/>
@@ -173,7 +189,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="onI-CR-bDw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3247.826086956522" y="358.25892857142856"/>
+            <point key="canvasLocation" x="-3248.8000000000002" y="357.57121439280365"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="bNz-PP-2J2">
@@ -309,7 +325,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DbK-QF-LyO" customClass="GradiantViewOrange" customModule="MyDailyCalories" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="56" width="375" height="542"/>
-                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="trr-wn-akD">
                                 <rect key="frame" x="20" y="176" width="335" height="162"/>
@@ -1368,7 +1384,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FaY-3a-PcA" customClass="GradiantViewBlack" customModule="MyDailyCalories" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="56" width="375" height="542"/>
-                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="cMc-9W-jRB">
                                 <rect key="frame" x="20" y="116" width="335" height="193"/>
@@ -1966,7 +1982,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2NP-BK-285" customClass="GradiantViewBlack" customModule="MyDailyCalories" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="56" width="375" height="542"/>
-                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6bW-ll-xmj">
                                 <rect key="frame" x="20" y="116" width="335" height="193"/>
@@ -2378,7 +2394,7 @@
                                                                     <subviews>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DTM-wR-NB5" customClass="CustomButton" customModule="MyDailyCalories" customModuleProvider="target">
                                                                             <rect key="frame" x="0.0" y="0.0" width="107.5" height="39"/>
-                                                                            <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <state key="normal" title="Servings : 1">
                                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             </state>
@@ -2388,7 +2404,7 @@
                                                                         </button>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J1M-3t-Wx3" customClass="CustomButton" customModule="MyDailyCalories" customModuleProvider="target">
                                                                             <rect key="frame" x="117.5" y="0.0" width="108" height="39"/>
-                                                                            <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <state key="normal" title="Empty Cart">
                                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             </state>
@@ -2398,7 +2414,7 @@
                                                                         </button>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LoM-2i-snb" customClass="CustomButton" customModule="MyDailyCalories" customModuleProvider="target">
                                                                             <rect key="frame" x="235.5" y="0.0" width="107.5" height="39"/>
-                                                                            <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <state key="normal" title="Add To Daily">
                                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             </state>
@@ -2479,6 +2495,7 @@
         <image name="tab_bar_daily_cals" width="30" height="30"/>
         <image name="tab_bar_foods" width="30" height="30"/>
         <image name="tab_bar_settings" width="30" height="30"/>
+        <image name="vegies_4" width="187.5" height="333.5"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="HJ4-z5-Ml8"/>
