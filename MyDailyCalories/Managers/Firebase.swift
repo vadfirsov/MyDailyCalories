@@ -166,16 +166,6 @@ class Firebase {
         }
     }
     
-//    func saveAdShowedDate() {
-//        guard let uid = Auth.auth().currentUser?.uid else { return }
-//        let dateString = "\(Date())"
-//        ref.child(users).child(uid).child(last_time_ad_showed).setValue(dateString) { (error, _) in
-//            if error != nil {
-//                self.delegate?.didReceive(error: error!)
-//            }
-//        }
-//    }
-    
     func save(dailyCaloriesGoal : String) {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         ref.child(users).child(uid).child(daily_calories_goal).setValue(dailyCaloriesGoal) { [weak self] (error, ref) in

@@ -14,7 +14,7 @@ class CustomButton : CustomParentButton { //CustomParentButton
 //    private let bgColor =     #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     private let textColor =   #colorLiteral(red: 0.9664010406, green: 0.999112308, blue: 1, alpha: 1)
 //    private let textColor =   #colorLiteral(red: 0.1264530122, green: 0.125708729, blue: 0.1270299256, alpha: 1)
-    private let borderColor = #colorLiteral(red: 0.18590343, green: 0.7385808229, blue: 0.5299064517, alpha: 1)
+    private let borderColor = #colorLiteral(red: 0.1843137255, green: 0.737254902, blue: 0.5294117647, alpha: 1)
 //    private let borderColor = #colorLiteral(red: 0.9559559226, green: 0.9502728581, blue: 0.9603242278, alpha: 1)
 
 

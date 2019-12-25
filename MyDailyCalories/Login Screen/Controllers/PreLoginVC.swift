@@ -15,7 +15,6 @@ class PreLoginVC : UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         AdMob.shared.requestInterstitialAd()
-//        Firebase.shared.loadUserWatchedAdDate()
         Firebase.shared.delegate = self
         Firebase.shared.checkIfUserLoggedIn() //leak
         
