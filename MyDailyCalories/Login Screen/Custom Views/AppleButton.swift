@@ -22,7 +22,7 @@ class AppleButton : CustomParentButton {
     func setDesign() {
     
         self.backgroundColor = bgColor
-        self.setTitle(" Sign in with Apple", for: .normal)
+        self.setTitle(" " + NSLocalizedString("Sign-In with Apple", comment: ""), for: .normal)
         self.layer.borderColor = borderColor.cgColor
         self.setTitleColor(textColor, for: .normal)
     }

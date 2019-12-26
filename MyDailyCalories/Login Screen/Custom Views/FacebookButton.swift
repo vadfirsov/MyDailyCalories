@@ -26,7 +26,7 @@ class FacebookButton : CustomParentButton {
     
         self.backgroundColor = bgColor
         self.addIcon(named: "fb_icon")
-        self.setTitle("Sign-In with Facebook", for: .normal)
+        self.setTitle(NSLocalizedString("Sign-In with Facebook", comment: ""), for: .normal)
         self.layer.borderColor = borderColor.cgColor
         self.setTitleColor(textColor, for: .normal)
     }

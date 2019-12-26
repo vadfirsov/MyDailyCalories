@@ -25,18 +25,22 @@ class AlertManager {
     
     var delegate : AlertDelegate?
     
-    let cancel = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+    let cancel = UIAlertAction(title: NSLocalizedString("alert_cancel", comment: ""), style: .default, handler: nil)
     
     private func messageRemove(entityName : String) -> String {
-        return "You are about to remove entity: \(entityName)"
+        return NSLocalizedString("alert_remove_entity", comment: "") + "\(entityName)"
+    }
+    
+    private func locStr(_ string : String) -> String {
+        return NSLocalizedString("alert_" + string, comment: "")
     }
     
     func showAlertDeleteProduct(inVC vc : UIViewController, product : Product, index : Int) {
         
-        let alert = UIAlertController(title: "Uh-Oh!",
+        let alert = UIAlertController(title: locStr("uh_oh"),
                                       message: messageRemove(entityName: product.name),
                                       preferredStyle: .alert)
-        let ok = UIAlertAction(title: "OK", style: .default) { (action) in
+        let ok = UIAlertAction(title: locStr("ok"), style: .default) { (action) in
             Firebase.shared.delete(product: product)
             
         }
@@ -47,9 +51,9 @@ class AlertManager {
     
     func showAlertSetMaxDailyCalories(inVC vc : UIViewController) {
         let alert = UIAlertController(title: nil,
-                                      message: "Please Insert Your Daily Calories Goal",
+                                      message: NSLocalizedString("alert_insert_calorie_goal", comment: ""),
                                       preferredStyle: .alert)
-        let ok = UIAlertAction(title: "OK", style: .default) { (action) in
+        let ok = UIAlertAction(title: locStr("ok"), style: .default) { (action) in
 
             if let inputText = Int(alert.textFields?.first?.text ?? "n") {
                 Firebase.shared.save(dailyCaloriesGoal: "\(inputText)")
@@ -63,7 +67,7 @@ class AlertManager {
         alert.addAction(ok)
         
         alert.addTextField { (tf) in
-            tf.placeholder = "Numbers Only!"
+            tf.placeholder = NSLocalizedString("alert_num_only", comment: "")
             tf.autocapitalizationType = .words
         }
         
@@ -72,10 +76,10 @@ class AlertManager {
     
     func showAlertDeleteEntity(inVC vc : UIViewController, entity : Entity, index : Int) {
         
-        let alert = UIAlertController(title: "Uh-Oh!",
+        let alert = UIAlertController(title: NSLocalizedString("alert_uh_oh", comment: ""),
                                       message: messageRemove(entityName: entity.name),
                                       preferredStyle: .alert)
-        let ok = UIAlertAction(title: "OK", style: .default) { (action) in
+        let ok = UIAlertAction(title: locStr("ok"), style: .default) { (action) in
             Firebase.shared.delete(entity: entity)
         }
         alert.addAction(cancel)
@@ -84,10 +88,10 @@ class AlertManager {
     }
     
     func showAlertEmptyCart(inVC vc : UIViewController) {
-        let alert = UIAlertController(title: "Empty Cart?",
+        let alert = UIAlertController(title: NSLocalizedString("alert_empty_cart", comment: ""),
                                       message: nil,
                                       preferredStyle: .alert)
-        let ok = UIAlertAction(title: "OK", style: .default) { (action) in
+        let ok = UIAlertAction(title: locStr("ok"), style: .default) { (action) in
             Firebase.shared.deleteCart()
         }
         alert.addAction(cancel)
@@ -96,8 +100,8 @@ class AlertManager {
     }
     
     func showAlertChooseServings(inVC vc : UIViewController) {
-        let alert = UIAlertController(title: "Servings", message: nil, preferredStyle: .alert)
-        let ok = UIAlertAction(title: "OK", style: .default) { (action) in
+        let alert = UIAlertController(title: NSLocalizedString("alert_servings", comment: ""), message: nil, preferredStyle: .alert)
+        let ok = UIAlertAction(title: locStr("ok"), style: .default) { (action) in
             if let servings = Double(alert.textFields![0].text ?? "1") {
                 if vc is CartVC {
                     self.delegate = vc as! CartVC
@@ -117,8 +121,8 @@ class AlertManager {
     }
     
     func showAlertShouldAdd(product : Product, inVC vc : UIViewController) {
-        let alert = UIAlertController(title: "Add To Daily Calories?", message: nil, preferredStyle: .alert)
-        let ok = UIAlertAction(title: "OK", style: .default) { (_) in
+        let alert = UIAlertController(title: locStr("add_daily_cals"), message: nil, preferredStyle: .alert)
+        let ok = UIAlertAction(title: locStr("ok"), style: .default) { (_) in
             Firebase.shared.saveNew(product: product)
         }
         alert.addAction(cancel)
@@ -129,10 +133,10 @@ class AlertManager {
     
     func showAlertDeleteCartEntity(inVC vc : UIViewController, entity : CartEntity) {
         
-        let alert = UIAlertController(title: "Uh-Oh!",
+        let alert = UIAlertController(title: locStr("uh_oh"),
                                       message: messageRemove(entityName: entity.name),
                                       preferredStyle: .alert)
-        let ok = UIAlertAction(title: "OK", style: .default) { (action) in
+        let ok = UIAlertAction(title: locStr("ok"), style: .default) { (action) in
             Firebase.shared.delete(cartEntity: entity)            
         }
         alert.addAction(cancel)
@@ -141,19 +145,19 @@ class AlertManager {
     }
     
     func showAlertProductSaved(inVC vc : UIViewController) {
-        let alert = UIAlertController(title: "Yippee Ki-Yay", message: "Product Saved Successfully", preferredStyle: .alert)
-        let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let alert = UIAlertController(title: locStr("yey"), message: locStr("product_saved"), preferredStyle: .alert)
+        let ok = UIAlertAction(title: locStr("ok"), style: .default, handler: nil)
         alert.addAction(ok)
         vc.present(alert, animated: true, completion: nil)
     }
     
     func showAlertAddToDailyWithName(inVC vc : UIViewController, product : Product) {
-        let alert = UIAlertController(title: "Choose Name", message: nil, preferredStyle: .alert)
-        let ok = UIAlertAction(title: "OK", style: .default) { (_) in
+        let alert = UIAlertController(title: locStr("choose_name"), message: nil, preferredStyle: .alert)
+        let ok = UIAlertAction(title: locStr("ok"), style: .default) { (_) in
             if alert.textFields?[0] != nil {
                 if !(alert.textFields?[0].text?.isEmpty ?? true) {
                     var newProduct = product
-                    newProduct.name = alert.textFields![0].text ?? "No Name"
+                    newProduct.name = alert.textFields![0].text ?? self.locStr("no_name")
                     Firebase.shared.saveNew(product: newProduct)
                 }
                 else {
@@ -162,7 +166,7 @@ class AlertManager {
             }
         }
         alert.addTextField { (tf) in
-            tf.placeholder = "Product Name"
+            tf.placeholder = self.locStr("product_name")
             tf.autocapitalizationType = .words
         }
         alert.addAction(cancel)
@@ -171,8 +175,9 @@ class AlertManager {
     }
     
     func showAlertAddToMyProducts(inVC vc : UIViewController, food: Entity) {
-        let alert = UIAlertController(title: nil, message: "Add \(food.name) to \"My Products\"?", preferredStyle: .alert)
-        let ok = UIAlertAction(title: "OK", style: .default) { (_) in
+        let alert = UIAlertController(title: nil, message: locStr("add") + food.name + locStr("to_my_products"), preferredStyle: .alert)
+
+        let ok = UIAlertAction(title: locStr("ok"), style: .default) { (_) in
             Firebase.shared.saveNew(entity: food)
         }
         alert.addAction(cancel)
@@ -181,21 +186,21 @@ class AlertManager {
     }
     
     func showAlertFoodAddedToMyProducts(inVC vc : UIViewController) {
-        let alert = UIAlertController(title: "Food Added Successfully", message: nil, preferredStyle: .alert)
-        let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let alert = UIAlertController(title: locStr("food_added"), message: nil, preferredStyle: .alert)
+        let ok = UIAlertAction(title: locStr("ok"), style: .default, handler: nil)
         alert.addAction(ok)
         vc.present(alert, animated: true, completion: nil)
     }
     
     func showAlertWithError(inVC vc : UIViewController, message : String) {
-        let alert = UIAlertController(title: "Uh-Oh!", message: message, preferredStyle: .alert)
+        let alert = UIAlertController(title: locStr("uh_oh"), message: message, preferredStyle: .alert)
         alert.addAction(cancel)
         vc.present(alert, animated: true, completion: nil)
     }
     
     func showAlertAddAllFood(inVC vc : UIViewController, foods : [Entity]) {
-        let alert = UIAlertController(title: nil, message: "You are about to add all the foods to \"My Products\"", preferredStyle: .alert)
-        let ok = UIAlertAction(title: "OK", style: .default) { (_) in
+        let alert = UIAlertController(title: nil, message: locStr("about_to_add_all_to"), preferredStyle: .alert)
+        let ok = UIAlertAction(title: locStr("ok"), style: .default) { (_) in
             Firebase.shared.saveFoodsAd(entities: foods)
         }
         alert.addAction(cancel)
@@ -205,19 +210,19 @@ class AlertManager {
     
     func showAlertGenericMessage(inVC vc : UIViewController, message : String) {
         let alert = UIAlertController(title: message, message: nil, preferredStyle: .alert)
-        let ok = UIAlertAction(title: "OK", style: .default)
+        let ok = UIAlertAction(title: locStr("ok"), style: .default)
         alert.addAction(ok)
         vc.present(alert, animated: true, completion: nil)
     }
     
     private func showAlertNumbersOnly(inVC vc : UIViewController) {
-        let alert = UIAlertController(title: "Please Use Only Numbers!", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: locStr("only_nums"), message: nil, preferredStyle: .alert)
         alert.addAction(cancel)
         vc.present(alert, animated: true, completion: nil)
     }
     
     private func showAlertProductNameCantBeEmpty(inVC vc : UIViewController) {
-        let alert = UIAlertController(title: "Product Name Can't Be Empty", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: locStr("product_name_cant_empty"), message: nil, preferredStyle: .alert)
         alert.addAction(cancel)
         vc.present(alert, animated: true, completion: nil)
     }

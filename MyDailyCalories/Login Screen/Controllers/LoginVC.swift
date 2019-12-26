@@ -19,13 +19,13 @@ class LoginVC : UIViewController {
     private var currentNonce: String?
     
     @IBOutlet weak var tfEmail: CustomTextField! {
-        didSet { tfEmail.setPlaceholder(string: "email") }
+        didSet { tfEmail.setPlaceholder(string: NSLocalizedString("email", comment: "")) }
     }
     @IBOutlet weak var tfPw:    CustomTextField! {
-        didSet { tfPw.setPlaceholder(string: "password") }
+        didSet { tfPw.setPlaceholder(string: NSLocalizedString("password", comment: "")) }
     }
     @IBOutlet weak var tfPw2:   CustomTextField!{
-        didSet { tfPw2.setPlaceholder(string: "repeat password") }
+        didSet { tfPw2.setPlaceholder(string: NSLocalizedString("confirm password", comment: "")) }
     }
     
     @IBOutlet weak var loader: UIActivityIndicatorView!
@@ -275,3 +275,5 @@ extension LoginVC: ASAuthorizationControllerDelegate, ASAuthorizationControllerP
         print("Sign in with Apple errored: \(error)")
     }
 }
+
+

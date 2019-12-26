@@ -59,11 +59,14 @@ class MessageVC : UIViewController {
     
     private func isTextfieldsValid() -> Bool {
         if tfName.text == nil || tfName.text == "" {
-            AlertManager.shared.showAlertWithError(inVC: self, message: "Name can't be empty!")
+            let alert_name_empty = NSLocalizedString("alert_name_empty", comment: "")
+            AlertManager.shared.showAlertWithError(inVC: self, message: alert_name_empty)
             return false
         }
         else if textViewMessage.text == "" {
-            AlertManager.shared.showAlertWithError(inVC: self, message: "Message body can't be empty!")
+            let alert_body_empty = NSLocalizedString("alert_body_empty", comment: "")
+
+            AlertManager.shared.showAlertWithError(inVC: self, message: alert_body_empty)
             return false
         }
         loader.startAnimating()
@@ -95,7 +98,8 @@ extension MessageVC : FirebaseDelegate {
     }
     
     func didSaveMessage() {
-        AlertManager.shared.showAlertGenericMessage(inVC: self, message: "Thanks! Message was sent!")
+        let alert_message_sent = NSLocalizedString("alert_message_sent", comment: "")
+        AlertManager.shared.showAlertGenericMessage(inVC: self, message: alert_message_sent)
         loader.stopAnimating()
     }
     

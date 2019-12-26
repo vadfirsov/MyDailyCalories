@@ -12,9 +12,9 @@ class CalculatorIntroVC : UIViewController {
     
     private let segue_present_intro = "present_calculator_intro"
     
-    private let addToDailyText = "Tap to add the product to your daily calories 🤓"
-    private let gramsText = "Tap to choose how many grams you would like to calculate 🤓"
-    private let addToCartText = "You can add products to your \"Cart\" to calculate multile ingredients at once 🤓"
+    private let addToDailyText = NSLocalizedString("hint_add_product", comment: "")
+    private let gramsText = NSLocalizedString("hint_choose_grams", comment: "")
+    private let addToCartText = NSLocalizedString("hint_can_calculate", comment: "")
     
     @IBOutlet weak var viewBarItem:      FocusView!
     @IBOutlet weak var viewAddToCartBtn: FocusView!

@@ -52,7 +52,7 @@
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vegies_4" translatesAutoresizingMaskIntoConstraints="NO" id="qdK-1c-j0t">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Daily Calories" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Elz-hy-h4c">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Daily Calories" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Elz-hy-h4c">
                                                 <rect key="frame" x="20" y="223" width="335" height="42"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -83,7 +83,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="gry-zn-g7v">
                                 <rect key="frame" x="20" y="277" width="335" height="264"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email  " textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6UK-KY-jtc" customClass="CustomTextField" customModule="MyDailyCalories" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="mocklabel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6UK-KY-jtc" customClass="CustomTextField" customModule="MyDailyCalories" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="m2V-ps-vEM"/>
@@ -92,7 +92,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password " textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NZ4-Zs-0SF" customClass="CustomTextField" customModule="MyDailyCalories" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="mocklabel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NZ4-Zs-0SF" customClass="CustomTextField" customModule="MyDailyCalories" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="46" width="335" height="34"/>
                                         <color key="textColor" red="0.25482437014579773" green="0.24705961346626282" blue="0.24705880880355835" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -102,7 +102,7 @@
                                         <rect key="frame" x="0.0" y="92" width="335" height="34"/>
                                         <color key="backgroundColor" red="0.68301332889999999" green="0.77890866660000002" blue="0.96620899439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                        <state key="normal" title="FACEBOOK LOGIN"/>
+                                        <state key="normal" title="mocklabel"/>
                                         <connections>
                                             <action selector="fbSignInTapped:" destination="UN8-Q2-BVB" eventType="touchUpInside" id="u2R-hn-Qi7"/>
                                         </connections>
@@ -111,7 +111,7 @@
                                         <rect key="frame" x="0.0" y="138" width="335" height="34"/>
                                         <color key="backgroundColor" red="0.68301332889999999" green="0.77890866660000002" blue="0.96620899439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                        <state key="normal" title="GOOGLE LOGIN"/>
+                                        <state key="normal" title="GOOGLE LOGIN mocklabel"/>
                                         <connections>
                                             <action selector="googleSignInTapped:" destination="UN8-Q2-BVB" eventType="touchUpInside" id="qZw-an-6U9"/>
                                         </connections>
@@ -120,12 +120,12 @@
                                         <rect key="frame" x="0.0" y="184" width="335" height="34"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                        <state key="normal" title=" Sign in with Apple"/>
+                                        <state key="normal" title=" Sign in with Apple mocklabel"/>
                                         <connections>
                                             <action selector="appleSignInTapped:" destination="UN8-Q2-BVB" eventType="touchUpInside" id="pZr-dQ-fCg"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password Again" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cfP-UG-NAP" customClass="CustomTextField" customModule="MyDailyCalories" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="mocklabel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cfP-UG-NAP" customClass="CustomTextField" customModule="MyDailyCalories" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="230" width="335" height="34"/>
                                         <color key="textColor" red="0.25482437009999998" green="0.2470596135" blue="0.2470588088" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -432,7 +432,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pb5-43-whA" customClass="CustomCellView" customModule="MyDailyCalories" customModuleProvider="target">
                                                     <rect key="frame" x="8" y="4" width="359" height="112"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gay-9N-lpz">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mocklabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gay-9N-lpz">
                                                             <rect key="frame" x="8" y="45.5" width="343" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -892,11 +892,11 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="AYL-bN-St9">
-                                <rect key="frame" x="50" y="156.5" width="275" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="AYL-bN-St9">
+                                <rect key="frame" x="50" y="156.5" width="275" height="100"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F60-BD-W46" customClass="CustomButton" customModule="MyDailyCalories" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="122.5" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="119.5" height="29"/>
                                         <color key="backgroundColor" red="0.99601525069999997" green="0.52405595780000003" blue="0.38426378369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                         <state key="normal" title="Load Products">
@@ -907,7 +907,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kjt-Ra-py0" customClass="CustomButton" customModule="MyDailyCalories" customModuleProvider="target">
-                                        <rect key="frame" x="152.5" y="0.0" width="122.5" height="30"/>
+                                        <rect key="frame" x="155.5" y="0.0" width="119.5" height="29"/>
                                         <color key="backgroundColor" red="0.99601525069999997" green="0.52405595780000003" blue="0.38426378369999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                         <state key="normal" title="Add New">
@@ -919,7 +919,7 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="a4A-FF-A0S"/>
+                                    <constraint firstAttribute="height" constant="100" id="XjZ-Kn-P9U"/>
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PiM-6T-kbw">
@@ -1205,11 +1205,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H1G-R8-I9h" customClass="FocusView" customModule="MyDailyCalories" customModuleProvider="target">
-                                <rect key="frame" x="256" y="4" width="113" height="35"/>
+                                <rect key="frame" x="273.5" y="4" width="95.5" height="35"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add To Daily" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UHp-bh-73R">
-                                        <rect key="frame" x="0.0" y="0.0" width="113" height="35"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="95.5" height="35"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.95266991850000005" green="0.62837308650000001" blue="0.19981485609999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -1221,7 +1221,6 @@
                                     <constraint firstItem="UHp-bh-73R" firstAttribute="top" secondItem="H1G-R8-I9h" secondAttribute="top" id="NJv-wA-jdD"/>
                                     <constraint firstAttribute="trailing" secondItem="UHp-bh-73R" secondAttribute="trailing" id="cQG-8V-hRM"/>
                                     <constraint firstAttribute="bottom" secondItem="UHp-bh-73R" secondAttribute="bottom" id="rBr-Rn-K83"/>
-                                    <constraint firstAttribute="width" constant="113" id="xax-lL-911"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezg-ad-4uS" customClass="CustomButton" customModule="MyDailyCalories" customModuleProvider="target">
@@ -1622,7 +1621,7 @@
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eUg-cW-r2P">
                                                                             <rect key="frame" x="0.0" y="0.0" width="52" height="60"/>
                                                                             <subviews>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tFI-pD-9Rk">
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mocklabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tFI-pD-9Rk">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="52" height="60"/>
                                                                                     <color key="backgroundColor" red="0.77039629220000005" green="0.36910772320000002" blue="0.35684347150000001" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
                                                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
@@ -1641,7 +1640,7 @@
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FOO-9j-070">
                                                                             <rect key="frame" x="56" y="0.0" width="52" height="60"/>
                                                                             <subviews>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MeW-nQ-giP">
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mocklabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MeW-nQ-giP">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="52" height="60"/>
                                                                                     <color key="backgroundColor" red="0.77039629220000005" green="0.36910772320000002" blue="0.35684347150000001" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
                                                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
@@ -1659,7 +1658,7 @@
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6dM-1D-64z">
                                                                             <rect key="frame" x="112" y="0.0" width="52" height="60"/>
                                                                             <subviews>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rni-cy-WPJ">
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mocklabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rni-cy-WPJ">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="52" height="60"/>
                                                                                     <color key="backgroundColor" red="0.77039629220000005" green="0.36910772320000002" blue="0.35684347150000001" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
                                                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
@@ -1677,7 +1676,7 @@
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zGC-KS-VLX">
                                                                             <rect key="frame" x="168" y="0.0" width="52" height="60"/>
                                                                             <subviews>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ha6-kt-MOY">
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mocklabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ha6-kt-MOY">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="52" height="60"/>
                                                                                     <color key="backgroundColor" red="0.77039629220000005" green="0.36910772320000002" blue="0.35684347150000001" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
                                                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
@@ -1694,7 +1693,7 @@
                                                                         </view>
                                                                     </subviews>
                                                                 </stackView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u03-4F-8d1">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mocklabel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u03-4F-8d1">
                                                                     <rect key="frame" x="20" y="0.0" width="103" height="60"/>
                                                                     <color key="backgroundColor" red="0.77039629220000005" green="0.36910772320000002" blue="0.35684347150000001" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
@@ -1801,7 +1800,7 @@
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carbs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jdB-Bf-Ss9">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carbs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jdB-Bf-Ss9" customClass="AdjustableTextLabel" customModule="MyDailyCalories" customModuleProvider="target">
                                         <rect key="frame" x="112" y="0.0" width="52" height="50"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

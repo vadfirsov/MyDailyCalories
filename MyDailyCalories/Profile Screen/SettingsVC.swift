@@ -23,7 +23,8 @@ class SettingsVC : UIViewController {
     }
     
     @IBAction func resetHintsTapped(_ sender: CustomButton) {
-        AlertManager.shared.showAlertGenericMessage(inVC: self, message: "Hints were reset!")
+        let alert_hints_reset = NSLocalizedString("alert_hints_reset", comment: "")
+        AlertManager.shared.showAlertGenericMessage(inVC: self, message: alert_hints_reset)
         HintsManager.shared.shouldShowIntroInCalculator = true
         HintsManager.shared.shouldShowIntroInMyProducts = true
         sender.animateTap()

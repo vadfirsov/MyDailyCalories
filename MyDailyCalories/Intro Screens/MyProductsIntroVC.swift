@@ -26,9 +26,10 @@ class MyProductsIntroVC : UIViewController {
         setLabel()
         addTapGesture()
     }
-    
+
     private func setLabel() {
-        let attributedString = NSMutableAttributedString(string: "Pssst!.. \n Here you can load ready-to-use products or add your own products that you use daily! \n *You can always go back to Settings and add / remove ready-to-use products 🤓")
+        let localizedString = NSLocalizedString("hint_pssst", comment: "")
+        let attributedString = NSMutableAttributedString(string: localizedString)
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 10
         attributedString.addAttribute(NSAttributedString.Key.paragraphStyle,

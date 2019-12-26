@@ -25,7 +25,7 @@ class GoogleButton : CustomParentButton {
     func setDesign() {
         self.backgroundColor = bgColor
         addIcon(named: "google_icon")
-        self.setTitle("Sign-In with Google", for: .normal)
+        self.setTitle(NSLocalizedString("Sign-In with Google", comment: ""), for: .normal)
         self.setTitleColor(textColor, for: .normal)
         self.layer.borderColor = borderColor.cgColor
     }

@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  MyDailyCalories
+
+  Created by pionet\Alex.s on 25/12/2019.
+  Copyright © 2019 VADIM FIRSOV. All rights reserved.
+*/
+
+"email" =                 "email";
+"password" =              "password";
+"confirm password" =      "confirm password";
+"Sign-In with Facebook" = "Sign-In with Facebook";
+"Sign-In with Google" =   "Sign-In with Google";
+"Sign-In with Apple" =    "Sign-In with Apple";
+
+

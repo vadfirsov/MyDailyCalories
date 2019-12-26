@@ -23,6 +23,7 @@ class CustomButton : CustomParentButton { //CustomParentButton
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        titleLabel?.numberOfLines = 0
         setDesign()
     }
     

@@ -1,0 +1,46 @@
+/* 
+  Localizable.strings
+  MyDailyCalories
+
+  Created by pionet\Alex.s on 25/12/2019.
+  Copyright © 2019 VADIM FIRSOV. All rights reserved.
+*/
+
+"email" =                 "email";
+"password" =              "password";
+"confirm password" =      "confirm password";
+"Sign-In with Facebook" = "Sign-In with Facebook";
+"Sign-In with Google" =   "Sign-In with Google";
+"Sign-In with Apple" =    "Sign-In with Apple";
+
+//ALERT MANAGER STRINGS
+"alert_cancel" =                  "Cancel";
+"alert_remove_entity" =           "You are about to remove entity: ";
+"alert_uh_oh" =                   "Uh-Oh!";
+"alert_ok" =                      "OK";
+"alert_insert_calorie_goal" =     "Please Insert Your Daily Calories Goal";
+"alert_num_only" =                "Numbers Only!";
+"alert_empty_cart" =              "Empty Cart?";
+"alert_servings" =                "Servings";
+"alert_digits_only" =             "Digits Only";
+"alert_add_daily_cals" =          "Add To Daily Calories?";
+"alert_yey" =                     "Yippee Ki-Yay!";
+"alert_product_saved" =           "Product Saved Successfully";
+"alert_choose_name" =             "Choose Name";
+"alert_no_name" =                 "No Name";
+"alert_product_name" =            "Product Name";
+"alert_add" =                     "Add ";
+"alert_to_my_products" =          " to \"My Products\"?";
+"alert_food_added" =              "Food Added Successfully";
+"alert_about_to_add_all_to" =     "You are about to add all the foods to ";
+"alert_only_nums" =               "Please Use Only Numbers!";
+"alert_product_name_cant_empty" = "Product Name Can't Be Empty";
+
+//HINTS SCREENS
+"hint_add_product" = "Tap to add the product to your daily calories 🤓";
+"hint_choose_grams" = "Tap to choose how many grams you would like to calculate 🤓";
+"hint_can_calculate" = "You can add products to your \"Cart\" to calculate multile ingredients at once 🤓";
+"hint_pssst" = "Pssst!.. \n Here you can load ready-to-use products or add your own products that you use daily! \n *You can always go back to Settings and add / remove ready-to-use products 🤓";
+
+
+
