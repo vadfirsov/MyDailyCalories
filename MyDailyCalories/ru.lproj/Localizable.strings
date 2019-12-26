@@ -34,11 +34,11 @@
 "alert_food_added" =              "Food Added Successfully";
 "alert_about_to_add_all_to" =     "You are about to add all the foods to ";
 "alert_only_nums" =               "Please Use Only Numbers!";
-"alert_product_name_cant_empty" = "Product Name Can't Be Empty";"
+"alert_product_name_cant_empty" = "Product Name Can't Be Empty";
 
 //HINTS SCREENS
-"hint_add_product" = "Нажмите, чтобы добавить продукт в ваши ежедневные калории 🤓";
-"hint_choose_grams" = "Нажмите, чтобы выбрать, сколько граммов вы хотите рассчитать 🤓";
+"hint_add_product" =   "Нажмите, чтобы добавить продукт в ваши ежедневные калории 🤓";
+"hint_choose_grams" =  "Нажмите, чтобы выбрать, сколько граммов вы хотите рассчитать 🤓";
 "hint_can_calculate" = "Вы можете добавить продукты в 'корзину', чтобы одновременно подсчитать несколько ингредиентов 🤓";
 "hint_pssst" = "Здесь вы можете загрузить готовые продукты или добавить свои собственные продукты, которые вы используете ежедневно! \n *Вы всегда можете вернуться в настройки и добавить / удалить готовые продукты 🤓";
 
@@ -46,8 +46,8 @@
 "alert_hints_reset" = "Hints were reset!";
 
 //MESSAGE VC
-"alert_name_empty" = "Name can't be empty!";
-"alert_body_empty" = "Message body can't be empty!";
-"alert_message_sent" = "Thanks! Message was sent!";"
+"alert_name_empty" =   "Name can't be empty!";
+"alert_body_empty" =   "Message body can't be empty!";
+"alert_message_sent" = "Thanks! Message was sent!";
 
 //AUTHENTICATION
