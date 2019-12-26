@@ -38,7 +38,8 @@ class SmallTextField : UITextField {
         self.textColor = selectedTitleColor
                 
         let attributes = [ NSAttributedString.Key.foregroundColor: placeholderColor]
-        self.attributedPlaceholder = NSAttributedString(string: "custom gr", attributes: attributes)
+        let custom_g = NSLocalizedString("small_tf_custom_g", comment: "")
+        self.attributedPlaceholder = NSAttributedString(string: custom_g, attributes: attributes)
     }
     
     func updateDesign() {

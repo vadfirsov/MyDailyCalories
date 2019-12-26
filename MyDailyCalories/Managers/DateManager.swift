@@ -25,6 +25,12 @@ class DateManager {
         return dateFormatter.string(from: date)
     }
     
+    func stringFromLocal(date: Date) -> String {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .medium
+            return dateFormatter.string(from: date)
+        }
+    
     func dateFrom(string : String) -> Date? {
         let index = string.index(string.startIndex, offsetBy: 19)
         let mySubstring = String(string[..<index])

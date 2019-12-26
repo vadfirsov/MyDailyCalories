@@ -14,27 +14,27 @@
 "Sign-In with Apple" =    "Войти с помощью Apple";
 
 //ALERT MANAGER STRINGS
-"alert_cancel" =                  "Cancel";
-"alert_remove_entity" =           "You are about to remove entity: ";
-"alert_uh_oh" =                   "Uh-Oh!";
-"alert_ok" =                      "OK";
-"alert_insert_calorie_goal" =     "Please Insert Your Daily Calories Goal";
-"alert_num_only" =                "Numbers Only!";
-"alert_empty_cart" =              "Empty Cart?";
-"alert_servings" =                "Servings";
-"alert_digits_only" =             "Digits Only";
-"alert_add_daily_cals" =          "Add To Daily Calories?";
-"alert_yey" =                     "Yippee Ki-Yay!";
-"alert_product_saved" =           "Product Saved Successfully";
-"alert_choose_name" =             "Choose Name";
-"alert_no_name" =                 "No Name";
-"alert_product_name" =            "Product Name";
-"alert_add" =                     "Add ";
-"alert_to_my_products" =          " to \"My Products\"?";
-"alert_food_added" =              "Food Added Successfully";
-"alert_about_to_add_all_to" =     "You are about to add all the foods to ";
-"alert_only_nums" =               "Please Use Only Numbers!";
-"alert_product_name_cant_empty" = "Product Name Can't Be Empty";
+"alert_cancel" =                  "Отменить";
+"alert_remove_entity" =           "Вы собираетесь удалить объек : ";
+"alert_uh_oh" =                   "Упс!";
+"alert_ok" =                      "Ок";
+"alert_insert_calorie_goal" =     "Введите ваше ежедневное количество калорий";
+"alert_num_only" =                "Используйте цифры!";
+"alert_empty_cart" =              "Опустошить корзину?";
+"alert_servings" =                "Порции";
+"alert_digits_only" =             "Только цифры";
+"alert_add_daily_cals" =          "Добавить в ежедневные калории?";
+"alert_yey" =                     "Ура!";
+"alert_product_saved" =           "Продукт успешно сохранен";
+"alert_choose_name" =             "Выберите имя";
+"alert_no_name" =                 "Без имени";
+"alert_product_name" =            "Имя продукта";
+"alert_add" =                     "Добавить ";
+"alert_to_my_products" =          " в \"Мои продукты\"?";
+"alert_food_added" =              "Продукт успешно добавлен";
+"alert_about_to_add_all_to" =     "Вы хотите добавить все продукты в ";
+"alert_only_nums" =               "Используйте только цифры!";
+"alert_product_name_cant_empty" = "Имя продукта не может быть пустым";
 
 //HINTS SCREENS
 "hint_add_product" =   "Нажмите, чтобы добавить продукт в ваши ежедневные калории 🤓";
@@ -43,11 +43,32 @@
 "hint_pssst" = "Здесь вы можете загрузить готовые продукты или добавить свои собственные продукты, которые вы используете ежедневно! \n *Вы всегда можете вернуться в настройки и добавить / удалить готовые продукты 🤓";
 
 //SETTINGS
-"alert_hints_reset" = "Hints were reset!";
+"alert_hints_reset" = "Подсказки сброшены!";
 
 //MESSAGE VC
-"alert_name_empty" =   "Name can't be empty!";
-"alert_body_empty" =   "Message body can't be empty!";
-"alert_message_sent" = "Thanks! Message was sent!";
+"alert_name_empty" =   "Имя не может быть пустым!";
+"alert_body_empty" =   "Сообщения не может быть пустым!";
+"alert_message_sent" = "Спасибо! Сообщения было отправлено!";
 
 //AUTHENTICATION
+"auth_valid_email" =   "Предоставьте действительный адрес электронной почты";
+"auth_pw_dont_match" = "Пароль не совпадает";
+
+//CART VC
+"cart_servings" = "Порции :";
+
+//CART ENTITY CELL
+"cart_cell_no_name" = "Нет имени";
+"cart_cell_kcal" =    "кал: ";
+"cart_cell_gram" =    "грам: ";
+"cart_cell_protein" = "белки: ";
+"cart_cell_carbs" =   "угл: ";
+"cart_cell_fat" =     "жиры: ";
+
+//DAILY CALS VC
+"daily_tap_choose_calorie_cap" = "Нажмите, чтобы выбрать ваше ежедневное количество калорий";
+"daily_calories" =               " Калирий"; //1533 / 2000 Calories
+"daily_today" =                  "Сегодня";
+
+//SMAL TEXT FIELD
+"small_tf_custom_g" = " другое ";

@@ -42,5 +42,33 @@
 "hint_can_calculate" = "You can add products to your \"Cart\" to calculate multile ingredients at once 🤓";
 "hint_pssst" = "Pssst!.. \n Here you can load ready-to-use products or add your own products that you use daily! \n *You can always go back to Settings and add / remove ready-to-use products 🤓";
 
+//SETTINGS
+"alert_hints_reset" = "Hints were reset!";
 
+//MESSAGE VC
+"alert_name_empty" =   "Name can't be empty!";
+"alert_body_empty" =   "Message body can't be empty!";
+"alert_message_sent" = "Thanks! Message was sent!";
 
+//AUTHENTICATION
+"auth_valid_email" =   "Please provide a valid email";
+"auth_pw_dont_match" = "Password don't match";
+
+//CART VC
+"cart_servings" = "Servings :";
+
+//CART ENTITY CELL
+"cart_cell_no_name" = "No Name";
+"cart_cell_kcal" =    "kCal: ";
+"cart_cell_gram" =    "Gram: ";
+"cart_cell_protein" = "Protein: ";
+"cart_cell_carbs" =   "Carbs: ";
+"cart_cell_fat" =     "Fat: ";
+
+//DAILY CALS VC
+"daily_tap_choose_calorie_cap" = "Tap To Choose Daily Calories Cap";
+"daily_calories" =               " Calories"; //1533 / 2000 Calories
+"daily_today" = "Today";
+
+//SMAL TEXT FIELD
+"small_tf_custom_g" = "custom g";

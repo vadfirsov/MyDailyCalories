@@ -18,7 +18,7 @@ class CartEntityCell : UITableViewCell {
     var parentVC : CartVC?
     
     private var summedProduct : Product {
-        return Product(name:     "No Name",
+        return Product(name:     locStr("no_name"),
                        calories: lblTotalCalories.text ?? "0",
                        protein:  lblTotalProtein.text  ?? "0",
                        carbs:    lblTotalCarbs.text    ?? "0",
@@ -62,18 +62,24 @@ class CartEntityCell : UITableViewCell {
         viewActionButtons.isHidden =   true
     }
     
+    private func locStr(_ string : String) -> String {
+        return NSLocalizedString("cart_cell_" + string, comment: "")
+    }
+    
     private func setLabels(withCartEntity cartEntity : CartEntity) {
         lblName.text =     cartEntity.name
-        lblCalories.text = "kCal: \(cartEntity.calories.roundedString())"
-        lblGrams.text =    "Gram: \(cartEntity.grams.roundedString())"
-        lblProtein.text =  "Protein: \(cartEntity.protein.roundedString())"
-        lblCartbs.text =   "Carbs: \(cartEntity.protein.roundedString())"
-        lblFat.text =      "Fat: \(cartEntity.protein.roundedString())"
+        lblCalories.text = locStr("kcal") + "\(cartEntity.calories.roundedString())"
+        lblGrams.text =    locStr("gram") + "\(cartEntity.grams.roundedString())"
+        lblProtein.text =  locStr("protein") + "\(cartEntity.protein.roundedString())"
+        lblCartbs.text =   locStr("carbs") + "\(cartEntity.protein.roundedString())"
+        lblFat.text =      locStr("fat") + "\(cartEntity.protein.roundedString())"
     }
     
     private func setCalculatedTotalNutritions() {
         
     }
+    
+    
     
     func addGesture() {
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPressed))

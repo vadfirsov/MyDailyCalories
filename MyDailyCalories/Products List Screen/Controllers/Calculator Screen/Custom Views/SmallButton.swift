@@ -20,6 +20,7 @@ class SmallButton : UIButton {
     }
     
     private func customize() {
+        titleLabel?.textAlignment = .center
         setBorders()
         addShadow()
         isBtnSelected = false

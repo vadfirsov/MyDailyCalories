@@ -26,14 +26,18 @@ class Authentication {
         self.pw2 =   pw2
     }
     
+    private func locStr(_ string : String) -> String {
+        return NSLocalizedString("auth_" + string, comment: "")
+    }
+    
     func performSignUp() {
         if !isValid(email : email) {
-            let errorString = "Please provide a valid email"
+            let errorString = locStr("valid_email")
             delegate?.authentication(error: errorString)
             return
         }
         else if pw != pw2! {
-            let errorString = "Password don't match"
+            let errorString = locStr("pw_dont_match")
             delegate?.authentication(error: errorString)
             return
         }
@@ -46,7 +50,7 @@ class Authentication {
             Firebase.shared.signIn(email: email, pw: pw)
         }
         else {
-            let errorString = "Please provide a valid email"
+            let errorString = locStr("valid_email")
             delegate?.authentication(error: errorString)
         }
     }

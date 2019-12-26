@@ -65,7 +65,8 @@ extension CartVC : UITableViewDelegate, UITableViewDataSource  {
                 cell.viewActionButtons.isHidden = false
                 cell.viewTotalNutritions.isHidden = false
                 cell.setLastCellLabels(withSummedCart: sumOfCartEntities())
-                cell.btnServings.setTitle("Servings : \(Int(servings))", for: .normal)
+                let btnTitle = NSLocalizedString("cart_servings", comment: "") + "\(Int(servings))"
+                cell.btnServings.setTitle(btnTitle, for: .normal)
                 cell.parentVC = self
             }
             return cell

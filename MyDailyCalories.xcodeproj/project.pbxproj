@@ -120,6 +120,9 @@
 		DA280744238D6FE800C6547A /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		DA53D4AF2393B9D10071F3BC /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		DA7DC1152394089D009B6CF7 /* MyDailyCalories.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyDailyCalories.entitlements; sourceTree = "<group>"; };
+		DA9F0A4123B4C05200EA9C62 /* he-IL */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "he-IL"; path = "he-IL.lproj/Main.strings"; sourceTree = "<group>"; };
+		DA9F0A4223B4C05200EA9C62 /* he-IL */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "he-IL"; path = "he-IL.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		DA9F0A4323B4C05200EA9C62 /* he-IL */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "he-IL"; path = "he-IL.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		DAA4BD35238FAE3600A34F68 /* AdMob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMob.swift; sourceTree = "<group>"; };
 		DAB0116D238E69F800539CAD /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		DAC0D2EA2386DC4400BFC4C4 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
@@ -472,6 +475,7 @@
 				fr,
 				de,
 				it,
+				"he-IL",
 			);
 			mainGroup = DAD7EE842386646200D251F1;
 			productRefGroup = DAD7EE8E2386646200D251F1 /* Products */;
@@ -660,6 +664,7 @@
 				69F97D7F23B38AA800096E99 /* fr */,
 				69F97D8223B38AAE00096E99 /* de */,
 				69F97D8523B38AB900096E99 /* it */,
+				DA9F0A4323B4C05200EA9C62 /* he-IL */,
 			);
 			name = Localizable.strings;
 			path = MyDailyCalories;
@@ -676,6 +681,7 @@
 				69F97D7D23B38AA800096E99 /* fr */,
 				69F97D8023B38AAE00096E99 /* de */,
 				69F97D8323B38AB900096E99 /* it */,
+				DA9F0A4123B4C05200EA9C62 /* he-IL */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -691,6 +697,7 @@
 				69F97D7E23B38AA800096E99 /* fr */,
 				69F97D8123B38AAE00096E99 /* de */,
 				69F97D8423B38AB900096E99 /* it */,
+				DA9F0A4223B4C05200EA9C62 /* he-IL */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

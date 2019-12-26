@@ -1,0 +1,74 @@
+/* 
+  Localizable.strings
+  MyDailyCalories
+
+  Created by pionet\Alex.s on 25/12/2019.
+  Copyright © 2019 VADIM FIRSOV. All rights reserved.
+*/
+
+"email" =                 "email";
+"password" =              "password";
+"confirm password" =      "confirm password";
+"Sign-In with Facebook" = "Sign-In with Facebook";
+"Sign-In with Google" =   "Sign-In with Google";
+"Sign-In with Apple" =    "Sign-In with Apple";
+
+//ALERT MANAGER STRINGS
+"alert_cancel" =                  "ביטול";
+"alert_remove_entity" =           "אתה עומד למחוק את המאכל: ";
+"alert_uh_oh" =                   "אופס!";
+"alert_ok" =                      "או-קיי";
+"alert_insert_calorie_goal" =     "הכנס את כמות הקלוריות היומית שלך";
+"alert_num_only" =                "השתמש רק במספרים!";
+"alert_empty_cart" =              "לרוקן עגלה?";
+"alert_servings" =                "מנות";
+"alert_digits_only" =             "רק ספרות";
+"alert_add_daily_cals" =          "להוסיף לקלוריות היומיות שלך?";
+"alert_yey" =                     "הידד!";
+"alert_product_saved" =           "המוצר נשמר בהצלחה";
+"alert_choose_name" =             "בחר שם";
+"alert_no_name" =                 "אין שם";
+"alert_product_name" =            "שם המוצר";
+"alert_add" =                     "הוסף ";
+"alert_to_my_products" =          " ל- \"המוצרים שלי\"?";
+"alert_food_added" =              "המוצר הוסף בהצלחה";
+"alert_about_to_add_all_to" =     "להוסיף את כל המאכלים ל ";
+"alert_only_nums" =               "בבקשה השתמש רק בספרות!";
+"alert_product_name_cant_empty" = "שם המוצר לא יכול להיות ריק";
+
+//HINTS SCREENS
+"hint_add_product" = "לחץ כדי להוסיף את המוצר לקלוריות היומיות שלך 🤓";
+"hint_choose_grams" = "בחר כמה גרמים תרצה לחשב 🤓";
+"hint_can_calculate" = "אפשר להוסיף מוצרים ל- \"עגלה\" כדי לחשב כמה מוצרים בו זמנית 🤓";
+"hint_pssst" = "כאן אתה יכול לטעון מוצרים ממאגר המוצרים המוכנים לשימוש או להוסיף מוצרים ומאכלים משלך כדי להשתמש בהם ביום יום! \n *אתה תמיד יכול לחזור להגדרות ולהוסיף / להסיר מוצרים מוכנים לשימוש 🤓";
+
+//SETTINGS
+"alert_hints_reset" = "הרמזים אופסו בהצלחה!";
+
+//MESSAGE VC
+"alert_name_empty" =   "השם לא יכול להיות ריק!";
+"alert_body_empty" =   "גוף ההודעה לא יכול להיות ריק!";
+"alert_message_sent" = "תודה! ההודעה נשלחה בהצלחה!";
+
+//AUTHENTICATION
+"auth_valid_email" =   "הכנס אימייל תקין";
+"auth_pw_dont_match" = "הססמה לא תואמת";
+
+//CART VC
+"cart_servings" = "מנות :";
+
+//CART ENTITY CELL
+"cart_cell_no_name" = "אין שם";
+"cart_cell_kcal" =    "קל׳: ";
+"cart_cell_gram" =    "גרם: ";
+"cart_cell_protein" = "חלבון: ";
+"cart_cell_carbs" =   "פחממות: ";
+"cart_cell_fat" =     "שומן: ";
+
+//DAILY CALS VC
+"daily_tap_choose_calorie_cap" = "לחץ כדי לבחור כמות קלוריות יומית";
+"daily_calories" =               " קלוריות"; //1533 / 2000 Calories
+"daily_today" =                  "היום";
+
+//SMAL TEXT FIELD
+"small_tf_custom_g" = " אחר ";

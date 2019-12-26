@@ -12,7 +12,9 @@ import GoogleMobileAds
 
 class DailyCalsVC: UIViewController {
 
-    private let todayString = "Today"
+    private var todayString : String {
+        return locStr("today")
+    }
     private let cellID = "ProductCellID"
     private var products : [Product] = []
     private var dateToDisplay = Date()
@@ -45,10 +47,15 @@ class DailyCalsVC: UIViewController {
         }
     }
     
+    private func locStr(_ string : String) -> String {
+        return NSLocalizedString("daily_" + string, comment: "")
+    }
+    
     private var dailyCalsLabel : String {
-        var btnLabel = "Tap To Choose Daily Calories Cap"
+        var btnLabel = locStr("tap_choose_calorie_cap")
         if maxDailyCalories > 0 {
-            btnLabel = "\(Int(totalCalories)) / \(Int(maxDailyCalories)) Calories"
+            
+            btnLabel = "\(Int(totalCalories)) / \(Int(maxDailyCalories))" + locStr("calories")
         }
         return btnLabel
     }
@@ -88,8 +95,8 @@ class DailyCalsVC: UIViewController {
         else if sender == btnPrev { timeInterval = -86400 }
         
         dateToDisplay = dateToDisplay.addingTimeInterval(timeInterval)
-        let nextDate = DateManager.shared.stringFrom(date: dateToDisplay)
-        if nextDate == DateManager.shared.stringFrom(date: Date()) {
+        let nextDate = DateManager.shared.stringFromLocal(date: dateToDisplay)
+        if nextDate == DateManager.shared.stringFromLocal(date: Date()) {
             lblDate.text = todayString
         }
         else {

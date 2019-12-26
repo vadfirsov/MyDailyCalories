@@ -24,8 +24,11 @@ class MyProductsVC : UIViewController {
     @IBOutlet weak var btnCarbs:   UIButton!
     @IBOutlet weak var btnFat:     UIButton!
     @IBOutlet weak var btnName:    UIButton! {
-        didSet { btnName.contentHorizontalAlignment = .left }
-    }
+        didSet { if #available(iOS 11.0, *) {
+            btnName.contentHorizontalAlignment = .leading
+        } else {
+            btnName.contentHorizontalAlignment = .center
+            } } }
     
     @IBOutlet weak var bannerAdd: GADBannerView!
     @IBOutlet var titleBtns: [UIButton]!
