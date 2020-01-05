@@ -86,24 +86,6 @@
 		69F97D6323B37C3700096E99 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		69F97D7123B385A300096E99 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		69F97D7323B385A800096E99 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
-		69F97D7423B38A5E00096E99 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
-		69F97D7523B38A5E00096E99 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		69F97D7623B38A5E00096E99 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
-		69F97D7723B38A9500096E99 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
-		69F97D7823B38A9500096E99 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		69F97D7923B38A9600096E99 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		69F97D7A23B38A9A00096E99 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
-		69F97D7B23B38A9B00096E99 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		69F97D7C23B38A9B00096E99 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
-		69F97D7D23B38AA800096E99 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
-		69F97D7E23B38AA800096E99 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		69F97D7F23B38AA800096E99 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
-		69F97D8023B38AAE00096E99 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
-		69F97D8123B38AAE00096E99 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		69F97D8223B38AAE00096E99 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
-		69F97D8323B38AB900096E99 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Main.strings; sourceTree = "<group>"; };
-		69F97D8423B38AB900096E99 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		69F97D8523B38AB900096E99 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		69F97D8623B39D9C00096E99 /* AdjustableTextLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjustableTextLabel.swift; sourceTree = "<group>"; };
 		917D9D84576B0F058E1CDE48 /* Pods_MyDailyCalories.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyDailyCalories.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA08C8C6238FCCE5003EB10C /* PreLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreLoginVC.swift; sourceTree = "<group>"; };
@@ -469,12 +451,6 @@
 				en,
 				Base,
 				ru,
-				es,
-				"zh-Hans",
-				ja,
-				fr,
-				de,
-				it,
 				"he-IL",
 			);
 			mainGroup = DAD7EE842386646200D251F1;
@@ -658,12 +634,6 @@
 			children = (
 				69F97D7123B385A300096E99 /* en */,
 				69F97D7323B385A800096E99 /* ru */,
-				69F97D7623B38A5E00096E99 /* es */,
-				69F97D7923B38A9600096E99 /* zh-Hans */,
-				69F97D7C23B38A9B00096E99 /* ja */,
-				69F97D7F23B38AA800096E99 /* fr */,
-				69F97D8223B38AAE00096E99 /* de */,
-				69F97D8523B38AB900096E99 /* it */,
 				DA9F0A4323B4C05200EA9C62 /* he-IL */,
 			);
 			name = Localizable.strings;
@@ -675,12 +645,6 @@
 			children = (
 				DAD7EE972386646200D251F1 /* Base */,
 				69F97D6223B37C3700096E99 /* ru */,
-				69F97D7423B38A5E00096E99 /* es */,
-				69F97D7723B38A9500096E99 /* zh-Hans */,
-				69F97D7A23B38A9A00096E99 /* ja */,
-				69F97D7D23B38AA800096E99 /* fr */,
-				69F97D8023B38AAE00096E99 /* de */,
-				69F97D8323B38AB900096E99 /* it */,
 				DA9F0A4123B4C05200EA9C62 /* he-IL */,
 			);
 			name = Main.storyboard;
@@ -691,12 +655,6 @@
 			children = (
 				DAD7EE9C2386646400D251F1 /* Base */,
 				69F97D6323B37C3700096E99 /* ru */,
-				69F97D7523B38A5E00096E99 /* es */,
-				69F97D7823B38A9500096E99 /* zh-Hans */,
-				69F97D7B23B38A9B00096E99 /* ja */,
-				69F97D7E23B38AA800096E99 /* fr */,
-				69F97D8123B38AAE00096E99 /* de */,
-				69F97D8423B38AB900096E99 /* it */,
 				DA9F0A4223B4C05200EA9C62 /* he-IL */,
 			);
 			name = LaunchScreen.storyboard;
