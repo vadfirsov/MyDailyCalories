@@ -41,6 +41,10 @@ class ReadyProductsListVC : UIViewController {
         Firebase.shared.delegate = self
         searchBar.delegate =       self
     }
+    
+    private func locStr(_ string : String) -> String {
+        return NSLocalizedString("auth_" + string, comment: "")
+    }
 }
 
 extension ReadyProductsListVC : UITableViewDelegate, UITableViewDataSource {

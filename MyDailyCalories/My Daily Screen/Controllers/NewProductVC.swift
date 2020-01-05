@@ -64,6 +64,10 @@ class NewProductVC : UIViewController {
             }
         }
     }
+    
+    private func locStr(_ string : String) -> String {
+        return NSLocalizedString("new_daily_" + string, comment: "")
+    }
 }
 
 extension NewProductVC : UITextFieldDelegate {

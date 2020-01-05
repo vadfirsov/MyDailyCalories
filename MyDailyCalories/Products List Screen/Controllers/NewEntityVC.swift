@@ -49,6 +49,10 @@ class NewEntityVC : UIViewController {
         Firebase.shared.saveNew(entity: entity)
         self.navigationController?.popViewController(animated: true)
     }
+    
+    private func locStr(_ string : String) -> String {
+        return NSLocalizedString("auth_" + string, comment: "")
+    }
 }
 
 extension NewEntityVC : UITextFieldDelegate {

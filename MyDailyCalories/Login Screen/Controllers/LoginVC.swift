@@ -18,16 +18,10 @@ class LoginVC : UIViewController {
     private var isKeyboardShown = false
     private var currentNonce: String?
     
-    @IBOutlet weak var tfEmail: CustomTextField! {
-        didSet { tfEmail.setPlaceholder(string: NSLocalizedString("email", comment: "")) }
-    }
-    @IBOutlet weak var tfPw:    CustomTextField! {
-        didSet { tfPw.setPlaceholder(string: NSLocalizedString("password", comment: "")) }
-    }
-    @IBOutlet weak var tfPw2:   CustomTextField!{
-        didSet { tfPw2.setPlaceholder(string: NSLocalizedString("confirm password", comment: "")) }
-    }
-    
+    @IBOutlet weak var lblAppTitle: UILabel!
+    @IBOutlet weak var tfEmail: CustomTextField!
+    @IBOutlet weak var tfPw:    CustomTextField!
+    @IBOutlet weak var tfPw2:   CustomTextField!
     @IBOutlet weak var loader: UIActivityIndicatorView!
     
     @IBOutlet weak var segment:         CustomSegment!
@@ -52,6 +46,7 @@ class LoginVC : UIViewController {
         addGestures()
         
         tfEmail.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        setLabels()
         
     }
 
@@ -180,6 +175,21 @@ class LoginVC : UIViewController {
             tfPw.isHidden = false
         }
     }
+    
+    private func setLabels() {
+        
+        func locStr(_ string : String) -> String {
+            return NSLocalizedString("login_" + string, comment: "")
+        }
+        
+        lblAppTitle.text = locStr("")
+        tfEmail.placeholder = locStr("email_placeholder")
+        tfPw.placeholder = locStr("pw_placeholder")
+        tfPw2.placeholder = locStr("config_pw_placeholder")
+        segment.setTitle(locStr("sign_in_btn"), forSegmentAt: 0)
+        segment.setTitle(locStr("sign_up_btn"), forSegmentAt: 1)
+        lblAppTitle.text = locStr("my_daily_cals")
+    }
 }
 
 extension LoginVC : FirebaseDelegate {
@@ -195,10 +205,6 @@ extension LoginVC : FirebaseDelegate {
     func loginFailedWith(error: String) {
         loader.stopAnimating()
         AlertManager.shared.showAlertWithError(inVC: self, message: error)
-    }
-
-    func autoLogin() {
-        performSegue(withIdentifier: segue_to_daily_cals, sender: self) //is needed?
     }
 }
 

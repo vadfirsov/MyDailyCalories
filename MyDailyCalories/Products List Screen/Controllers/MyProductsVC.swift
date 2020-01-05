@@ -118,6 +118,10 @@ class MyProductsVC : UIViewController {
             introVC.delegate = self
         }
     }
+    
+    private func locStr(_ string : String) -> String {
+        return NSLocalizedString("auth_" + string, comment: "")
+    }
 }
 
 extension MyProductsVC : UITableViewDelegate, UITableViewDataSource {

@@ -29,6 +29,7 @@ class PreLoginVC : UIViewController {
             HintsManager.shared.shouldShowIntroInCalculator = true
         }
     }
+    
 }
 
 extension PreLoginVC : FirebaseDelegate {

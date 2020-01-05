@@ -50,6 +50,10 @@ class CartVC : UIViewController {
         sumOfCart.devidePropertiesBy(servings)
         return sumOfCart
     }
+    
+    private func locStr(_ string : String) -> String {
+        return NSLocalizedString("auth_" + string, comment: "")
+    }
 }
 
 extension CartVC : UITableViewDelegate, UITableViewDataSource  {

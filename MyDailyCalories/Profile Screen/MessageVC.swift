@@ -89,6 +89,10 @@ class MessageVC : UIViewController {
     @objc private func dismissKeyboard() {
         view.endEditing(true)
     }
+    
+    private func locStr(_ string : String) -> String {
+        return NSLocalizedString("auth_" + string, comment: "")
+    }
 }
 
 extension MessageVC : FirebaseDelegate {

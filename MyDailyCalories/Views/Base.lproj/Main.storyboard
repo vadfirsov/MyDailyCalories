@@ -176,6 +176,7 @@
                         <outlet property="btnApple" destination="456-rZ-ITV" id="0Yh-MA-oM4"/>
                         <outlet property="btnFbSignIn" destination="ywz-xX-F7q" id="nbE-BQ-IxR"/>
                         <outlet property="btnGoogleSignIn" destination="b5N-6o-hZV" id="Mze-4s-uTM"/>
+                        <outlet property="lblAppTitle" destination="Elz-hy-h4c" id="7Ku-QR-4ne"/>
                         <outlet property="loader" destination="lN8-ud-EPy" id="MOS-E9-Uaf"/>
                         <outlet property="segment" destination="nv6-ku-vLa" id="w1X-ce-ML1"/>
                         <outlet property="tfEmail" destination="6UK-KY-jtc" id="2jG-3q-Y2k"/>
@@ -2485,7 +2486,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JNJ-xT-QV8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1463.2" y="1629.5352323838083"/>
+            <point key="canvasLocation" x="1302" y="1715"/>
         </scene>
     </scenes>
     <resources>

@@ -184,6 +184,10 @@ class CalculatorVC : UIViewController {
             }
         }
     }
+    
+    private func locStr(_ string : String) -> String {
+        return NSLocalizedString("auth_" + string, comment: "")
+    }
 }
 
 extension CalculatorVC : UITextFieldDelegate {

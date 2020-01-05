@@ -34,6 +34,10 @@ class SettingsVC : UIViewController {
         sender.animateTap()
 
     }
+    
+    private func locStr(_ string : String) -> String {
+        return NSLocalizedString("auth_" + string, comment: "")
+    }
 }
 
 extension SettingsVC : FirebaseDelegate {
