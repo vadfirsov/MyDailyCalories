@@ -8,14 +8,10 @@
 
 import UIKit
 
-protocol EntityCellDelegate {
-    func tappedLonglyOnCell(index : Int)
-}
-
 class EntityCell: UITableViewCell {
     
-    var delegate : EntityCellDelegate?
     var index = 0
+    var tappedLongely : ((Int) -> Void)?
     
     @IBOutlet weak var lblName:     UILabel!
     @IBOutlet weak var lblCalories: UILabel!
@@ -29,7 +25,7 @@ class EntityCell: UITableViewCell {
     }
     
     @objc func longPressed() {
-        delegate?.tappedLonglyOnCell(index: index)
+        tappedLongely?(index)
     }
     
     func setWith(entity : Entity, index: Int) {

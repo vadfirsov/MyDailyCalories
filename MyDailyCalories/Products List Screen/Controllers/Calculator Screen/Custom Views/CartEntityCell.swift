@@ -7,15 +7,12 @@
 //
 
 import UIKit
-protocol CartCellDelegate {
-    func tappedLonglyOnCell(atIndex index : Int)
-}
 
 class CartEntityCell : UITableViewCell {
     
-    var delegate : CartCellDelegate?
     var index = 0
     var parentVC : CartVC?
+    var tappedLongely : ((Int) -> Void)?
     
     private var summedProduct : Product {
         return Product(name:     locStr("no_name"),
@@ -76,7 +73,7 @@ class CartEntityCell : UITableViewCell {
     }
     
     private func setCalculatedTotalNutritions() {
-        
+        tappedLongely?(index)
     }
     
     
@@ -87,7 +84,7 @@ class CartEntityCell : UITableViewCell {
     }
     
     @objc func longPressed() {
-        delegate?.tappedLonglyOnCell(atIndex: index)
+            
     }
     
     @IBAction func servingsTapped(_ sender: CustomButton) {

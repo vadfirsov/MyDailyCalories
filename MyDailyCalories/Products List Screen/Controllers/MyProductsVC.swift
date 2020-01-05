@@ -122,6 +122,10 @@ class MyProductsVC : UIViewController {
     private func locStr(_ string : String) -> String {
         return NSLocalizedString("auth_" + string, comment: "")
     }
+    
+    private func tappedLonglyOnCell(index: Int) {
+        AlertManager.shared.showAlertDeleteEntity(inVC: self, entity: filteredEntities[index], index: index)
+    }
 }
 
 extension MyProductsVC : UITableViewDelegate, UITableViewDataSource {
@@ -135,7 +139,7 @@ extension MyProductsVC : UITableViewDelegate, UITableViewDataSource {
             let entity = filteredEntities[indexPath.row]
             cell.setWith(entity : entity, index: indexPath.row)
             cell.addGesture()
-            cell.delegate = self
+            cell.tappedLongely = self.tappedLonglyOnCell
             return cell
         }
         return UITableViewCell()
@@ -162,12 +166,6 @@ extension MyProductsVC : FirebaseDelegate {
     
     func didReceive(error: Error) {
         AlertManager.shared.showAlertWithError(inVC: self, message: error.localizedDescription)
-    }
-}
-
-extension MyProductsVC : EntityCellDelegate {
-    func tappedLonglyOnCell(index: Int) {
-        AlertManager.shared.showAlertDeleteEntity(inVC: self, entity: filteredEntities[index], index: index)
     }
 }
 

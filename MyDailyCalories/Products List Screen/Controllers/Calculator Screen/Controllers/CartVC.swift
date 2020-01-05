@@ -54,6 +54,10 @@ class CartVC : UIViewController {
     private func locStr(_ string : String) -> String {
         return NSLocalizedString("auth_" + string, comment: "")
     }
+    
+    private func tappedLonglyOnCell(atIndex index: Int) {
+        AlertManager.shared.showAlertDeleteCartEntity(inVC: self, entity: cart[index])
+    }
 }
 
 extension CartVC : UITableViewDelegate, UITableViewDataSource  {
@@ -64,7 +68,7 @@ extension CartVC : UITableViewDelegate, UITableViewDataSource  {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as? CartEntityCell {
             cell.setCell(withCartEntity: cart[indexPath.row], index : indexPath.row)
-            cell.delegate = self
+            cell.tappedLongely = self.tappedLonglyOnCell
             if cart.count - 1 == indexPath.row {
                 cell.viewActionButtons.isHidden = false
                 cell.viewTotalNutritions.isHidden = false
@@ -104,11 +108,5 @@ extension CartVC : AlertDelegate {
         self.servings = servings
         tableView.reloadData()
 //        updateLabels()
-    }
-}
-
-extension CartVC : CartCellDelegate {
-    func tappedLonglyOnCell(atIndex index: Int) {
-        AlertManager.shared.showAlertDeleteCartEntity(inVC: self, entity: cart[index])
     }
 }

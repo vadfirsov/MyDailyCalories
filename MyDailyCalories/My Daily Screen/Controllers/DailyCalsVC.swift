@@ -158,6 +158,11 @@ class DailyCalsVC: UIViewController {
         btnDailyTotal.setTitleColor(color, for: .normal)
         progressBar.progressTintColor = color
     }
+    
+    private func tappedLonglyOnCell(atIndex index : Int) {
+        let product = products[index]
+        AlertManager.shared.showAlertDeleteProduct(inVC: self, product: product, index: index)
+    }
 }
 
 extension DailyCalsVC : UITableViewDelegate, UITableViewDataSource {
@@ -178,7 +183,7 @@ extension DailyCalsVC : UITableViewDelegate, UITableViewDataSource {
             }
             else {
                 cell.setWith(product: products[indexPath.row], index: indexPath.row)
-                cell.delegate = self
+                cell.tappedLongely = self.tappedLonglyOnCell
             }
             return cell
         }
@@ -212,22 +217,6 @@ extension DailyCalsVC : FirebaseDelegate {
     
     func didReceive(error: Error) {
         AlertManager.shared.showAlertWithError(inVC: self, message: error.localizedDescription)
-    }
-}
-
-extension DailyCalsVC : ProductCellDelegate {
-    
-    func tappedLonglyOnCell(atIndex index : Int) {
-        let product = products[index]
-        AlertManager.shared.showAlertDeleteProduct(inVC: self, product: product, index: index)
-    }
-    
-    func savedNew(product: Product) {
-        loader.startAnimating()
-        var p = product
-        p.dateString = DateManager.shared.stringFrom(date: dateToDisplay)
-        Firebase.shared.saveNew(product: p)
-        tableView.reloadData()
     }
 }
 

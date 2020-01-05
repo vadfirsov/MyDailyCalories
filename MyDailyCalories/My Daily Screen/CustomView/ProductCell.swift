@@ -8,15 +8,11 @@
 
 import UIKit
 
-protocol ProductCellDelegate {
-    func savedNew(product : Product)
-    func tappedLonglyOnCell(atIndex index : Int)
-}
 
 class ProductCell : UITableViewCell {
     
-    var delegate : ProductCellDelegate?
     var index = 0
+    var tappedLongely : ((Int) -> Void)?
     
     @IBOutlet weak var tfName:     UILabel!
     @IBOutlet weak var tfCalories: UILabel!
@@ -33,7 +29,7 @@ class ProductCell : UITableViewCell {
     }
     
     @objc func longPressed() {
-        delegate?.tappedLonglyOnCell(atIndex: index)
+        tappedLongely?(index)
     }
     
     func setWith(product : Product, index: Int) {
