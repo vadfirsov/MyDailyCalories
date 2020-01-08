@@ -19,17 +19,29 @@ class MessageVC : UIViewController {
     @IBOutlet weak var tfName: CustomTextField!
     @IBOutlet weak var loader: UIActivityIndicatorView!
     
+    @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var lblHowCanWeImprove: UILabel!
+    
+    @IBOutlet weak var btnSend: CustomButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setDelegates()
         customizeTextView()
         customizeTf()
         addGestures()
+        setLocalized()
     }
     
     private func setDelegates() {
         tfName.becomeFirstResponder()
         Firebase.shared.delegate = self
+    }
+    
+    private func setLocalized() {
+        lblName.text = locStr("name")
+        lblHowCanWeImprove.text = locStr("improve")
+        btnSend.setTitle(locStr("send"), for: .normal)
     }
     
     private func customizeTextView() {
@@ -59,14 +71,11 @@ class MessageVC : UIViewController {
     
     private func isTextfieldsValid() -> Bool {
         if tfName.text == nil || tfName.text == "" {
-            let alert_name_empty = NSLocalizedString("alert_name_empty", comment: "")
-            AlertManager.shared.showAlertWithError(inVC: self, message: alert_name_empty)
+            AlertManager.shared.showAlertWithError(inVC: self, message: locStr("alert_name_empty"))
             return false
         }
         else if textViewMessage.text == "" {
-            let alert_body_empty = NSLocalizedString("alert_body_empty", comment: "")
-
-            AlertManager.shared.showAlertWithError(inVC: self, message: alert_body_empty)
+            AlertManager.shared.showAlertWithError(inVC: self, message: locStr("alert_body_empty"))
             return false
         }
         loader.startAnimating()
@@ -91,7 +100,7 @@ class MessageVC : UIViewController {
     }
     
     private func locStr(_ string : String) -> String {
-        return NSLocalizedString("auth_" + string, comment: "")
+        return NSLocalizedString("message_" + string, comment: "")
     }
 }
 
@@ -102,8 +111,7 @@ extension MessageVC : FirebaseDelegate {
     }
     
     func didSaveMessage() {
-        let alert_message_sent = NSLocalizedString("alert_message_sent", comment: "")
-        AlertManager.shared.showAlertGenericMessage(inVC: self, message: alert_message_sent)
+        AlertManager.shared.showAlertGenericMessage(inVC: self, message: locStr("alert_message_sent"))
         loader.stopAnimating()
     }
     

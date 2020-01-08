@@ -311,6 +311,12 @@
                         <viewLayoutGuide key="safeArea" id="Y4i-r0-TyC"/>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="p1W-yw-gOK"/>
+                    <connections>
+                        <outlet property="btnImprove" destination="WeJ-cb-aVT" id="b8a-1U-1mA"/>
+                        <outlet property="btnLogout" destination="arK-Rd-fRM" id="KTs-Me-cxD"/>
+                        <outlet property="btnProducts" destination="oPo-df-guF" id="sSJ-xt-4Ns"/>
+                        <outlet property="btnResetHints" destination="E4W-69-lJt" id="JYW-Xr-zKO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4JU-Ry-yGM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -397,6 +403,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="a5O-CN-nYO"/>
                     <connections>
+                        <outlet property="btnSend" destination="gVv-hh-sne" id="1fN-pq-Bwe"/>
+                        <outlet property="lblHowCanWeImprove" destination="YY4-iW-tSf" id="0hc-HN-KP5"/>
+                        <outlet property="lblName" destination="4rw-k3-bKw" id="zZL-wd-LE5"/>
                         <outlet property="loader" destination="hxM-1e-9Ch" id="fP5-4I-i5V"/>
                         <outlet property="textViewMessage" destination="trr-wn-akD" id="3JP-zX-P12"/>
                         <outlet property="tfName" destination="6cd-3w-AKh" id="IXS-oq-JxP"/>

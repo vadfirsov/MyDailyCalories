@@ -51,7 +51,6 @@ class DailyCalsVC: UIViewController {
     
     
     private func setLocalizedLabels() {
-        self.title =      locStr("vc_title")
         lblName.text =    locStr("name")
         lblCals.text =    locStr("cals")
         lblCarbs.text =   locStr("carbs")
@@ -64,6 +63,7 @@ class DailyCalsVC: UIViewController {
         btnNext.setTitle(locStr("next"), for: .normal)
         btnPrev.setTitle(locStr("prev"), for: .normal)
         
+        navigationItem.title = locStr("vc_title")
         
     }
     

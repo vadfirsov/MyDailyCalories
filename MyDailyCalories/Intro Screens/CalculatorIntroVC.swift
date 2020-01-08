@@ -12,7 +12,7 @@ class CalculatorIntroVC : UIViewController {
     
     private let segue_present_intro = "present_calculator_intro"
     
-    private let addToDailyText = NSLocalizedString("calc_hint_add_product", comment: "")
+    private let addToDailyText = NSLocalizedString("calc_hint_add_to_daily", comment: "")
     private let gramsText = NSLocalizedString("calc_hint_choose_grams", comment: "")
     private let addToCartText = NSLocalizedString("calc_hint_can_calculate", comment: "")
     
@@ -23,8 +23,8 @@ class CalculatorIntroVC : UIViewController {
     @IBOutlet weak var btnAddToCart: CustomButton!
     
     @IBOutlet weak var lblHintAddToDaily: UILabel!
-    @IBOutlet weak var lblAddToCart:         UILabel!
-    @IBOutlet weak var lblGrams:             UILabel!
+    @IBOutlet weak var lblAddToCart:      UILabel!
+    @IBOutlet weak var lblGrams:          UILabel!
     
     @IBOutlet weak var stackViewGrams: UIStackView!
     

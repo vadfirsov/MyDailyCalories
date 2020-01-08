@@ -10,13 +10,12 @@
 "login_email_placeholder" =      "אימייל";
 "login_pw_placeholder" =         "סיסמה";
 "login_config_pw_placeholder" =  "אשר סיסמה";
-"login_sign_in_btn" = "הכנס";
-"login_sign_up_btn" = "הרשם";
-"login_my_daily_cals" = "המאזן הקלורי שלי";
-"Sign-In with Facebook" = "הכנס בעזרת Facebook";
-"Sign-In with Google" =   "הכנס בעזרת Google";
-"Sign-In with Apple" =    "הכנס בעזרת Apple";
-
+"login_sign_in_btn" =            "הכנס";
+"login_sign_up_btn" =            "הרשם";
+"login_my_daily_cals" =          "המאזן הקלורי שלי";
+"Sign-In with Facebook" =        "הכנס בעזרת Facebook";
+"Sign-In with Google" =          "הכנס בעזרת Google";
+"Sign-In with Apple" =           "הכנס בעזרת Apple";
 
 //ALERT MANAGER STRINGS
 "alert_cancel" =                  "ביטול";
@@ -146,6 +145,7 @@
 "settings_reset_hints" =       "אפס רמזים";
 "settings_products" =          "מוצרים קיימים";
 "settings_logout" =            "יציאה";
+"settings_vc_title" =           "הגדרות";
 
 //MESSAGE VC
 "message_alert_name_empty" =   "שם לא יכול להיות ריק!";

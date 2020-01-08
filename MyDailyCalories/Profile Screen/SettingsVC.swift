@@ -12,9 +12,15 @@ import GoogleSignIn
 
 class SettingsVC : UIViewController {
     
+    @IBOutlet weak var btnImprove:    CustomButton!
+    @IBOutlet weak var btnResetHints: CustomButton!
+    @IBOutlet weak var btnProducts:   CustomButton!
+    @IBOutlet weak var btnLogout:     CustomButton!
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         Firebase.shared.delegate = self
+        setLocalized()
     }
     
     @IBAction func logoutTapped(_ sender: CustomButton) {
@@ -37,6 +43,14 @@ class SettingsVC : UIViewController {
     
     private func locStr(_ string : String) -> String {
         return NSLocalizedString("settings_" + string, comment: "")
+    }
+    
+    private func setLocalized() {
+        btnLogout.setTitle(locStr("logout"),          for: .normal)
+        btnImprove.setTitle(locStr("improve"),        for: .normal)
+        btnProducts.setTitle(locStr("products"),      for: .normal)
+        btnResetHints.setTitle(locStr("reset_hints"), for: .normal)
+        navigationItem.title = locStr("vc_title")
     }
     
 //    "settings_alert_hints_reset" = "Hints were reset!";

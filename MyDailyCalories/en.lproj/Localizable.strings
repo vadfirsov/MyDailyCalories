@@ -5,16 +5,17 @@
   Created by pionet\Alex.s on 25/12/2019.
   Copyright © 2019 VADIM FIRSOV. All rights reserved.
 */
+
 //LOGIN VC
 "login_email_placeholder" =     "email";
 "login_pw_placeholder" =        "password";
 "login_config_pw_placeholder" = "confirm password";
-"login_sign_in_btn" = "Sign-in";
-"login_sign_up_btn" = "Sign-up";
-"login_my_daily_cals" = "My Daily Calories";
-"Sign-In with Facebook" = "Sign-In with Facebook";
-"Sign-In with Google" =   "Sign-In with Google";
-"Sign-In with Apple" =    "Sign-In with Apple";
+"login_sign_in_btn" =           "Sign-in";
+"login_sign_up_btn" =           "Sign-up";
+"login_my_daily_cals" =         "My Daily Calories";
+"Sign-In with Facebook" =       "Sign-In with Facebook";
+"Sign-In with Google" =         "Sign-In with Google";
+"Sign-In with Apple" =          "Sign-In with Apple";
 
 //ALERT MANAGER STRINGS
 "alert_cancel" =                  "Cancel";
@@ -121,7 +122,6 @@
 //CART VC
 "cart_servings" =   "Servings :";
 
-
 //CALCULATOR INTRO
 "calc_hint_add_to_daily" =  "Tap to add food to your daily calories 🤓";
 "calc_hint_choose_grams" =  "Tap to choose how many grams you would like to calculate 🤓";
@@ -145,6 +145,7 @@
 "settings_reset_hints" =       "Reset Hints";
 "settings_products" =          "Products";
 "settings_logout" =            "Logout";
+"setting_vc_title" =           "Settings";
 
 //MESSAGE VC
 "message_alert_name_empty" =   "Name can't be empty!";

@@ -73,9 +73,7 @@ class MyProductsVC : UIViewController {
         btnProtein.setTitle(locStr("btn_protein"), for: .normal)
         btnFat.setTitle(locStr("btn_fat"),     for: .normal)
         searchBar.placeholder = locStr("search_placeholder")
-        self.title =            locStr("vc_title")
-        btnNew.title =          locStr("new")
-
+        navigationItem.title = locStr("vc_title")
     }
     
     private func setDelegates() {

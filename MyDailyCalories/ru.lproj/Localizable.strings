@@ -6,14 +6,15 @@
   Copyright © 2019 VADIM FIRSOV. All rights reserved.
 */
 
-"login_email_placeholder" =                 "е-мейл";
-"login_pw_placeholder" =              "пароль";
-"login_config_pw_placeholder" =      "подтвердите пароль";
-"login_sign_in_btn" = "Войти";
-"login_sign_up_btn" = "Зарегистрироваться";
-"Sign-In with Facebook" = "Войти с помощью Facebook";
-"Sign-In with Google" =   "Войти с помощью Google";
-"Sign-In with Apple" =    "Войти с помощью Apple";
+//LOGIN VC
+"login_email_placeholder" =     "е-мейл";
+"login_pw_placeholder" =        "пароль";
+"login_config_pw_placeholder" = "подтвердите пароль";
+"login_sign_in_btn" =           "Войти";
+"login_sign_up_btn" =           "Зарегистрироваться";
+"Sign-In with Facebook" =       "Войти с помощью Facebook";
+"Sign-In with Google" =         "Войти с помощью Google";
+"Sign-In with Apple" =          "Войти с помощью Apple";
 
 //ALERT MANAGER STRINGS
 "alert_cancel" =                  "Отменить";
@@ -38,157 +39,121 @@
 "alert_only_nums" =               "Используйте только цифры!";
 "alert_product_name_cant_empty" = "Имя продукта не может быть пустым";
 
-//HINTS SCREENS
-"hint_add_product" =   "Нажмите, чтобы добавить продукт в ваши ежедневные калории 🤓";
-"hint_choose_grams" =  "Нажмите, чтобы выбрать, сколько граммов вы хотите рассчитать 🤓";
-"hint_can_calculate" = "Вы можете добавить продукты в 'корзину', чтобы одновременно подсчитать несколько ингредиентов 🤓";
-"hint_pssst" = "Здесь вы можете загрузить готовые продукты или добавить свои собственные продукты, которые вы используете ежедневно! \n *Вы всегда можете вернуться в настройки и добавить / удалить готовые продукты 🤓";
-
-//SETTINGS
-"alert_hints_reset" = "Подсказки сброшены!";
-
-//MESSAGE VC
-"alert_name_empty" =   "Имя не может быть пустым!";
-"alert_body_empty" =   "Сообщения не может быть пустым!";
-"alert_message_sent" = "Спасибо! Сообщения было отправлено!";
-
-//AUTHENTICATION
-"auth_valid_email" =   "Предоставьте действительный адрес электронной почты";
-"auth_pw_dont_match" = "Пароль не совпадает";
-
-//CART VC
-"cart_servings" = "Порции :";
-
-//CART ENTITY CELL
-"cart_cell_no_name" = "Нет имени";
-"cart_cell_kcal" =    "кал: ";
-"cart_cell_gram" =    "грам: ";
-"cart_cell_protein" = "белки: ";
-"cart_cell_carbs" =   "угл: ";
-"cart_cell_fat" =     "жиры: ";
-
-//DAILY CALS VC
+//DAILY CALORIES VC
+"daily_vc_title" =               "Ежедневные калории";
 "daily_tap_choose_calorie_cap" = "Нажмите, чтобы выбрать ваше ежедневное количество калорий";
 "daily_calories" =               " Калирий"; //1533 / 2000 Calories
 "daily_today" =                  "Сегодня";
-
-//SMAL TEXT FIELD
-"small_tf_custom_g" = " другое ";
-
-//--------------------------
-//DAILY CALORIES VC
-"daily_vc_title" =               "Ежедневные калории";
-"daily_tap_choose_calorie_cap" = "Tap To Choose Daily Calories Cap";
-"daily_calories" =               " Calories"; //1533 / 2000 Calories
-"daily_today" =                  "Today";
-"daily_add_new_meal" =           "Add New Meal / Snack? ➔";
-"daily_prev" =                   "Prev";
-"daily_next" =                   "Next";
-"daily_add" =                    "Add";
-"daily_name" =                   "";
-"daily_cals" =                   "";
-"daily_protein" =                "";
-"daily_carbs" =                  "";
-"daily_fat" =                    "";
-"daily_total" =                  "";
+"daily_add_new_meal" =           "Добавить новый продукт? ➔";
+"daily_prev" =                   "Пред";
+"daily_next" =                   "След";
+"daily_add" =                    "Добавить";
+"daily_name" =                   "Имя";
+"daily_cals" =                   "Кал";
+"daily_protein" =                "Белки";
+"daily_carbs" =                  "Угл";
+"daily_fat" =                    "Жир";
+"daily_total" =                  "Всего: ";
 
 //ADD TO DAILY VC
-"new_daily_what_eat" = "What did you eat?";
-"new_daily_calories" = "Calories";
-"new_daily_carbs" =    "Carbs";
-"new_daily_fat" =      "Fat";
-"new_daily_protein" =  "Protein";
-"new_daily_choose" =   "Choose From Products List ➔";
-"new_daily_save" =     "Save";
-
+"new_daily_what_eat" = "Что вы ели?";
+"new_daily_calories" = "Калории";
+"new_daily_carbs" =    "Угл";
+"new_daily_fat" =      "Жиры";
+"new_daily_protein" =  "Белки";
+"new_daily_choose" =   "Выбрать из продуктов ➔";
+"new_daily_save" =     "Срхранить";
 
 //MY PRODUCTS VC
-"products_vc_title" =           "My Products";
-"products_btn_name" =           "Name";
-"products_btn_cals" =           "Cals";
-"products_btn_protein" =        "Protein";
+"products_vc_title" =           "Мои продукты";
+"products_btn_name" =           "Имя";
+"products_btn_cals" =           "Кал";
+"products_btn_protein" =        "Белки";
 "products_btn_carbs" =          "Carbs";
 "products_btn_fat" =            "Fat";
 "products_new" =                "New";
 "products_search_placeholder" = "Search by product name";
 
 //PRODUCTS INTRO
-"prod_hint_text" = "Pssst!.. \n Here you can load ready-to-use products or add your own products that you use daily! \n *You can always go back to Settings and add / remove ready-to-use products 🤓";
-"prod_hint_btn_load" = "Load Products";
-"prod_hint_or" = "or";
-"prod_hint_btn_add" = "Add New";
+"prod_hint_text" = "Здесь вы можете загрузить готовые продукты или добавить свои собственные продукты, которые вы используете ежедневно! \n *Вы всегда можете вернуться в настройки и добавить / удалить готовые продукты 🤓";
+"prod_hint_btn_load" = "Загрузить";
+"prod_hint_or" = "или";
+"prod_hint_btn_add" = "Добавить новый";
 
 //ADD NEW FOOD
-"new_food_name" =     "Product Name";
-"new_food_calories" = "Calories / 100g";
-"new_food_carbs" =    "Carbs / 100g";
-"new_food_protein" =  "Protein / 100g";
-"new_food_fat" =      "Fat / 100g";
-"new_food_save" =     "Save";
+"new_food_name" =     "Имя продукта";
+"new_food_calories" = "Калории / 100 г";
+"new_food_carbs" =    "Углеводы / 100 г";
+"new_food_protein" =  "Белок / 100 г";
+"new_food_fat" =      "Жир / 100 г";
+"new_food_save" =     "Сохранить";
 
 //CALCULATOR VC
-"calc_cals" =         "Calories";
-"calc_protein" =      "Protein";
-"calc_carbs" =        "Carbs";
-"calc_fat" =          "Fat";
-"calc_200g" =         "200g";
-"calc_100g" =         "100g";
-"calc_50g" =          "50g";
-"calc_15g" =          "15g";
-"calc_8g" =           "8g";
-"calc_tf_custom_g" =  "custom g";
-"calc_add_to_daily" = "Add To Daily";
-"calc_add_to_cart" =  "Add To Cart";
+"calc_cals" =         "Калории";
+"calc_protein" =      "Белок";
+"calc_carbs" =        "Угл";
+"calc_fat" =          "Жиры";
+"calc_200g" =         "200г";
+"calc_100g" =         "100г";
+"calc_50g" =          "50г";
+"calc_15g" =          "15г";
+"calc_8g" =           "8г";
+"calc_tf_custom_g" =  "граммы";
+"calc_add_to_daily" = "+В ежедневные";
+"calc_add_to_cart" =  "+В корзину";
 
 //CART VC CELL
-"cart_cell_no_name" =        "No Name";
-"cart_cell_kcal" =           "kCal: ";
-"cart_cell_gram" =           "Gram: ";
-"cart_cell_protein" =        "Protein: ";
-"cart_cell_carbs" =          "Carbs: ";
-"cart_cell_fat" =            "Fat: ";
-"cart_cell_total_nutrions" = "Total Nutrions :";
-"cart_cell_calories" =       "Calories :";
-"cart_cell_protein" =        "Protein :";
+"cart_cell_no_name" =        "Нет имени";
+"cart_cell_kcal" =           "кал: ";
+"cart_cell_gram" =           "грам: ";
+"cart_cell_protein" =        "белки: ";
+"cart_cell_carbs" =          "угл: ";
+"cart_cell_fat" =            "жиры: ";
+"cart_cell_total_nutrions" = "Всего нутрионов: ";
+"cart_cell_calories" =       "Калории:";
+"cart_cell_protein" =        "Белок:";
 "cart_cell_carbs" =          "Carbs :";
-"cart_cell_fat" =            "Fat :";
-"cart_cell_servings" =       "Servings :";
-"cart_cell_emprty_cart" =    "Emprty Cart";
-"cart_cell_add_to_daily" =   "Add To Daily";
+"cart_cell_fat" =            "Углеводы:";
+"cart_cell_servings" =       "Порций:";
+"cart_cell_emprty_cart" =    "Опустошить";
+"cart_cell_add_to_daily" =   "+В ежедневные";
+
+
 
 //CART VC
-"cart_servings" =   "Servings :";
-
+"cart_servings" = "Порции :";
 
 //CALCULATOR INTRO
-"calc_hint_add_to_daily" =  "Tap to add food to your daily calories 🤓";
-"calc_hint_choose_grams" =  "Tap to choose how many grams you would like to calculate 🤓";
-"calc_hint_can_calculate" = "You can add products to your \"Cart\" to calculate multile ingredients at once 🤓";
-"calc_hint_200g" = "200g";
-"calc_hint_100g" = "100g";
-"calc_hint_50g" =  "50g";
-"calc_hint_15g" =  "15g";
-"calc_hint_8g" =   "8g";
-"calc_hint_custom_g" = "custom g";
-"calc_hint_btn_add_to_daily" = "Add To Daily";
-"calc_hint_add_to_cart" =  "Add To Cart";
+"calc_hint_add_to_daily" =  "Нажмите, чтобы добавить продукт в ваши ежедневные калории 🤓";
+"calc_hint_choose_grams" =  "Нажмите, чтобы выбрать, сколько граммов вы хотите рассчитать 🤓";
+"calc_hint_can_calculate" = "Вы можете добавить продукты в 'корзину', чтобы одновременно подсчитать несколько ингредиентов 🤓";
+"calc_hint_200g" = "200г";
+"calc_hint_100g" = "100г";
+"calc_hint_50g" =  "50г";
+"calc_hint_15g" =  "15г";
+"calc_hint_8g" =   "8г";
+"calc_hint_custom_g" = "граммы";
+"calc_hint_btn_add_to_daily" = "+В ежедневные";
+"calc_hint_add_to_cart" =  "+В корзину";
 
 //AUTHENTICATION
-"auth_valid_email" =   "Please provide a valid email";
-"auth_pw_dont_match" = "Password don't match";
+"auth_valid_email" =   "Предоставьте действительный адрес электронной почты";
+"auth_pw_dont_match" = "Пароль не совпадает";
 
 //SETTINGS VC
-"settings_alert_hints_reset" = "Hints were reset!";
+"settings_alert_hints_reset" = "Подсказки сброшены!";
 "settings_improve" =           "How Can We Improve?";
-"settings_reset_hints" =       "Reset Hints";
-"settings_products" =          "Products";
-"settings_logout" =            "Logout";
+"settings_reset_hints" =       "Сброс подсказок";
+"settings_products" =          "Продукты";
+"settings_logout" =            "Выйти";
+"setting_vc_title" =           "Настройки";
 
 //MESSAGE VC
-"message_alert_name_empty" =   "Name can't be empty!";
-"message_alert_body_empty" =   "Message body can't be empty!";
-"message_alert_message_sent" = "Thanks! Message was sent!";
+"message_alert_name_empty" =   "Имя не может быть пустым!";
+"message_alert_body_empty" =   "Сообщения не может быть пустым!";
+"message_alert_message_sent" = "Спасибо! Сообщения было отправлено!";
 "message_name" =               "Name:";
-"message_improve" =            "How can we improve?:";
-"message_send" =               "Send";
+"message_improve" =            "Как мы можем улучшить?:";
+"message_send" =               "Отправить";
+
 
