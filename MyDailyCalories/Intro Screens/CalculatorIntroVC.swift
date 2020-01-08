@@ -12,9 +12,9 @@ class CalculatorIntroVC : UIViewController {
     
     private let segue_present_intro = "present_calculator_intro"
     
-    private let addToDailyText = NSLocalizedString("hint_add_product", comment: "")
-    private let gramsText = NSLocalizedString("hint_choose_grams", comment: "")
-    private let addToCartText = NSLocalizedString("hint_can_calculate", comment: "")
+    private let addToDailyText = NSLocalizedString("calc_hint_add_product", comment: "")
+    private let gramsText = NSLocalizedString("calc_hint_choose_grams", comment: "")
+    private let addToCartText = NSLocalizedString("calc_hint_can_calculate", comment: "")
     
     @IBOutlet weak var viewBarItem:      FocusView!
     @IBOutlet weak var viewAddToCartBtn: FocusView!
@@ -22,16 +22,21 @@ class CalculatorIntroVC : UIViewController {
     
     @IBOutlet weak var btnAddToCart: CustomButton!
     
-    
-    @IBOutlet weak var btn100g: SmallButton! {
-        didSet { btn100g.isBtnSelected = true }
-    }
-    
-    @IBOutlet weak var lblAddToDaily:        UILabel!
+    @IBOutlet weak var lblHintAddToDaily: UILabel!
     @IBOutlet weak var lblAddToCart:         UILabel!
     @IBOutlet weak var lblGrams:             UILabel!
     
     @IBOutlet weak var stackViewGrams: UIStackView!
+    
+    @IBOutlet weak var tfCustomGrams: SmallTextField!
+    @IBOutlet weak var lblAddToDaily:        UILabel!
+    @IBOutlet weak var btn200g: SmallButton!
+    @IBOutlet weak var btn50g:  SmallButton!
+    @IBOutlet weak var btn8g:   SmallButton!
+    @IBOutlet weak var btn15g:  SmallButton!
+    @IBOutlet weak var btn100g: SmallButton! {
+        didSet { btn100g.isBtnSelected = true }
+    }
     
     private var stage = 1
     
@@ -43,13 +48,25 @@ class CalculatorIntroVC : UIViewController {
         super.viewDidLoad()
         updateView()
         addTapGesture()
-        
-        set(label: lblAddToDaily, text: addToDailyText)
-        set(label: lblGrams, text: gramsText)
-        set(label: lblAddToCart, text: addToCartText)
-
-
+        setLocalized()
     }
+    
+    private func setLocalized() {
+        
+        lblAddToDaily.text = locStr("btn_add_to_daily")
+        btn200g.setTitle(locStr("200g"), for: .normal)
+        btn100g.setTitle(locStr("100g"), for: .normal)
+        btn50g.setTitle(locStr("50g"),   for: .normal)
+        btn15g.setTitle(locStr("15g"),   for: .normal)
+        btn8g.setTitle(locStr("8g"),     for: .normal)
+        btnAddToCart.setTitle(locStr("add_to_cart"), for: .normal)
+        tfCustomGrams.placeholder = locStr("custom_g")
+        
+        set(label: lblHintAddToDaily, text: addToDailyText)
+        set(label: lblGrams,          text: gramsText)
+        set(label: lblAddToCart,      text: addToCartText)
+    }
+    
     
     private func addTapGesture() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(tappedOnScreen))
@@ -81,7 +98,7 @@ class CalculatorIntroVC : UIViewController {
             viewChooseGrams.isHidden =  false
             viewAddToCartBtn.isHidden = true
             lblGrams.isHidden =         false
-            lblAddToDaily.isHidden =    true
+            lblHintAddToDaily.isHidden =    true
             animate(view: viewChooseGrams)
             borderAnimation(onView: viewChooseGrams)
             
@@ -136,4 +153,10 @@ class CalculatorIntroVC : UIViewController {
         label.attributedText = attributedString
         label.textAlignment = .center
     }
+    
+    private func locStr(_ string : String) -> String {
+        return NSLocalizedString("calc_hint_" + string, comment: "")
+    }
+    
+    
 }

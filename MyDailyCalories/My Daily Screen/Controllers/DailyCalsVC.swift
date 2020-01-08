@@ -27,7 +27,7 @@ class DailyCalsVC: UIViewController {
     
     @IBOutlet weak var loader: UIActivityIndicatorView!
     
-    @IBOutlet weak var btnDailyTotal: UIButton!
+    @IBOutlet weak var btnDailyTotal: UIButton! //?
     @IBOutlet weak var btnNext:       UIButton!
     @IBOutlet weak var btnPrev:       UIButton!
     
@@ -40,12 +40,41 @@ class DailyCalsVC: UIViewController {
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var bannerView: GADBannerView!
     
+    @IBOutlet weak var addBtn: UIBarButtonItem!
+    
+    @IBOutlet weak var lblName:    UILabel!
+    @IBOutlet weak var lblCals:    UILabel!
+    @IBOutlet weak var lblCarbs:   UILabel!
+    @IBOutlet weak var lblProtein: UILabel!
+    @IBOutlet weak var lblFat:     UILabel!
+    @IBOutlet weak var lblTotal:   UILabel!
+    
+    
+    private func setLocalizedLabels() {
+        self.title =      locStr("vc_title")
+        lblName.text =    locStr("name")
+        lblCals.text =    locStr("cals")
+        lblCarbs.text =   locStr("carbs")
+        lblProtein.text = locStr("protein")
+        lblFat.text =     locStr("fat")
+        lblTotal.text =   locStr("total")
+        addBtn.title =    locStr("add")
+        lblDate.text =    locStr("today")
+
+        btnNext.setTitle(locStr("next"), for: .normal)
+        btnPrev.setTitle(locStr("prev"), for: .normal)
+        
+        
+    }
+    
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.delegate =   self
             tableView.dataSource = self
         }
     }
+    
+    
     
     private func locStr(_ string : String) -> String {
         return NSLocalizedString("daily_" + string, comment: "")
@@ -60,8 +89,11 @@ class DailyCalsVC: UIViewController {
         return btnLabel
     }
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setLocalizedLabels()
         AdMob.shared.set(banner: bannerView, inVC: self)
     }
     

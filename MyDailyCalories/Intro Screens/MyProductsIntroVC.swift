@@ -18,6 +18,7 @@ class MyProductsIntroVC : UIViewController {
     
     @IBOutlet weak var lblMessage: UILabel!
     
+    @IBOutlet weak var lblOr: UILabel!
     @IBOutlet weak var btnLoadProducts:  CustomButton!
     @IBOutlet weak var btnAddNewProduct: CustomButton!
     
@@ -25,10 +26,11 @@ class MyProductsIntroVC : UIViewController {
         super.viewDidLoad()
         setLabel()
         addTapGesture()
+        setLocalized()
     }
 
     private func setLabel() {
-        let localizedString = NSLocalizedString("hint_pssst", comment: "")
+        let localizedString = locStr("text")
         let attributedString = NSMutableAttributedString(string: localizedString)
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 10
@@ -37,6 +39,16 @@ class MyProductsIntroVC : UIViewController {
                                       range:NSMakeRange(0, attributedString.length))
         lblMessage.attributedText = attributedString
         lblMessage.textAlignment = .center
+    }
+    
+    private func setLocalized() {
+        btnLoadProducts.setTitle(locStr("btn_load"), for: .normal)
+        btnAddNewProduct.setTitle(locStr("btn_add"), for: .normal)
+        lblOr.text = locStr("or")
+    }
+    
+    private func locStr(_ string : String) -> String {
+        return NSLocalizedString("prod_hint_" + string, comment: "")
     }
     
     @IBAction func loadProductsTapped(_ sender: CustomButton) {

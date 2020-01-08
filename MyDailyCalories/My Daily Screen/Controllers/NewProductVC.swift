@@ -18,17 +18,35 @@ class NewProductVC : UIViewController {
     @IBOutlet weak var tfName:     UITextField! {
         didSet { tfName.becomeFirstResponder() }
     }
-
-    @IBOutlet weak var bannerView: GADBannerView!
+    
+    @IBOutlet weak var lblWhatAte:  UILabel!
+    @IBOutlet weak var lblCalories: UILabel!
+    @IBOutlet weak var lblCarbs:    UILabel!
+    @IBOutlet weak var lblProtein:  UILabel!
+    @IBOutlet weak var lblFat:      UILabel!
+    @IBOutlet weak var btnChooseFromList: CustomButton!
+    @IBOutlet weak var btnSave:           UIBarButtonItem!
+    @IBOutlet weak var bannerView:        GADBannerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         AdMob.shared.set(banner: bannerView, inVC: self)
+        setLocalized()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
         bannerView = nil 
+    }
+    
+    private func setLocalized() {
+        lblWhatAte.text =  locStr("what_eat")
+        lblCalories.text = locStr("calories")
+        lblCarbs.text =    locStr("carbs")
+        lblProtein.text =  locStr("protein")
+        lblFat.text =      locStr("fat")
+        btnSave.title =    locStr("save")
+        btnChooseFromList.setTitle(locStr("choose"), for: .normal)
     }
        
     @IBOutlet var textFields: [UITextField]! {

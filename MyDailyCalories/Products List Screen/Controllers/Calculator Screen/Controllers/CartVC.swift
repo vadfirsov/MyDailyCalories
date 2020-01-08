@@ -16,6 +16,7 @@ class CartVC : UIViewController {
     
     private let cellID = "cartCellID"
     private var servings : Double = 1
+
     
     var delegate : CartDelegate?
     
@@ -36,7 +37,7 @@ class CartVC : UIViewController {
         Firebase.shared.delegate = self
         Firebase.shared.loadCart()
     }
-
+    
     private func sumOfCartEntities() -> CartEntity {
         var sumOfCart = CartEntity()
         for cartEntity in cart {
@@ -52,7 +53,7 @@ class CartVC : UIViewController {
     }
     
     private func locStr(_ string : String) -> String {
-        return NSLocalizedString("auth_" + string, comment: "")
+        return NSLocalizedString("cart_" + string, comment: "")
     }
     
     private func tappedLonglyOnCell(atIndex index: Int) {
@@ -73,7 +74,7 @@ extension CartVC : UITableViewDelegate, UITableViewDataSource  {
                 cell.viewActionButtons.isHidden = false
                 cell.viewTotalNutritions.isHidden = false
                 cell.setLastCellLabels(withSummedCart: sumOfCartEntities())
-                let btnTitle = NSLocalizedString("cart_servings", comment: "") + "\(Int(servings))"
+                let btnTitle = locStr("servings") + "\(Int(servings))"
                 cell.btnServings.setTitle(btnTitle, for: .normal)
                 cell.parentVC = self
             }

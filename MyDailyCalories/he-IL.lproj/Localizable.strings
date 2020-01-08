@@ -41,39 +41,117 @@
 "alert_only_nums" =               "בבקשה השתמש רק בספרות!";
 "alert_product_name_cant_empty" = "שם המוצר לא יכול להיות ריק";
 
-//HINTS SCREENS
-"hint_add_product" = "לחץ כדי להוסיף את המוצר לקלוריות היומיות שלך 🤓";
-"hint_choose_grams" = "בחר כמה גרמים תרצה לחשב 🤓";
-"hint_can_calculate" = "אפשר להוסיף מוצרים ל- \"עגלה\" כדי לחשב כמה מוצרים בו זמנית 🤓";
-"hint_pssst" = "כאן אתה יכול לטעון מוצרים ממאגר המוצרים המוכנים לשימוש או להוסיף מוצרים ומאכלים משלך כדי להשתמש בהם ביום יום! \n *אתה תמיד יכול לחזור להגדרות ולהוסיף / להסיר מוצרים מוכנים לשימוש 🤓";
-
-//SETTINGS
-"alert_hints_reset" = "הרמזים אופסו בהצלחה!";
-
-//MESSAGE VC
-"alert_name_empty" =   "השם לא יכול להיות ריק!";
-"alert_body_empty" =   "גוף ההודעה לא יכול להיות ריק!";
-"alert_message_sent" = "תודה! ההודעה נשלחה בהצלחה!";
-
-//AUTHENTICATION
-"auth_valid_email" =   "הכנס אימייל תקין";
-"auth_pw_dont_match" = "הססמה לא תואמת";
-
-//CART VC
-"cart_servings" = "מנות :";
-
-//CART ENTITY CELL
-"cart_cell_no_name" = "אין שם";
-"cart_cell_kcal" =    "קל׳: ";
-"cart_cell_gram" =    "גרם: ";
-"cart_cell_protein" = "חלבון: ";
-"cart_cell_carbs" =   "פחממות: ";
-"cart_cell_fat" =     "שומן: ";
-
-//DAILY CALS VC
+//DAILY CALORIES VC
+"daily_vc_title" =               "מאזן קלורי יומי";
 "daily_tap_choose_calorie_cap" = "לחץ כדי לבחור כמות קלוריות יומית";
 "daily_calories" =               " קלוריות"; //1533 / 2000 Calories
 "daily_today" =                  "היום";
+"daily_add_new_meal" =           "הוסף מאכל חדש? ←";
+"daily_prev" =                   "הקודם";
+"daily_next" =                   "הבא";
+"daily_add" =                    "הוסף";
+"daily_total" =                  "סה״כ :";
+"daily_name" =                   "שם";
+"daily_cals" =                   "קלוריות";
+"daily_protein" =                "חלבון";
+"daily_carbs" =                  "פחממה";
+"daily_fat" =                    "שומן";
 
-//SMAL TEXT FIELD
-"small_tf_custom_g" = " אחר ";
+//ADD NEW "TO DAILY VC
+"new_daily_what_eat" = "מה אכלת?";
+"new_daily_calories" = "קלוריות";
+"new_daily_carbs" =    "פחמימות";
+"new_daily_fat" =      "שומן";
+"new_daily_protein" =  "חלבון";
+"new_daily_choose" =   "בחר מוצר מהרשימה הקיימת ←";
+"new_daily_save" =     "שמור";
+
+//MY PRODUCTS VC
+"products_vc_title" =           "המוצרים שלי";
+"products_btn_name" =           "שם";
+"products_btn_cals" =           "קלוריות";
+"products_btn_protein" =        "חלבון";
+"products_btn_carbs" =          "פחמימות";
+"products_btn_fat" =            "שומן";
+"products_new" =                "חדש";
+"products_search_placeholder" = "חפש לפי שם מוצר";
+
+//PRODUCTS INTRO
+"prod_hint_text" = "כאן אתה יכול לטעון מוצרים ממאגר המוצרים המוכנים לשימוש או להוסיף מוצרים ומאכלים משלך כדי להשתמש בהם ביום יום! \n *אתה תמיד יכול לחזור להגדרות ולהוסיף / להסיר מוצרים מוכנים לשימוש 🤓";
+"prod_hint_btn_load" = "טען מוצרים";
+"prod_hint_or" =       "או";
+"prod_hint_btn_add" = "הוסף חדש";
+
+//ADD NEW FOOD
+"new_food_name" =     "שם מוצר";
+"new_food_calories" = "קלוריות / 100ג׳";
+"new_food_carbs" =    "פחמימות / 100ג׳";
+"new_food_protein" =  "חלבון / 100ג׳";
+"new_food_fat" =      "שומן / 100ג׳";
+"new_food_save" =     "שמור";
+
+//CALCULATOR VC
+"calc_cals" =         "קלוריות";
+"calc_protein" =      "חלבון";
+"calc_carbs" =        "פחמימות";
+"calc_fat" =          "שומן";
+"calc_200g" =         "200ג׳";
+"calc_100g" =         "100ג׳";
+"calc_50g" =          "50ג׳";
+"calc_15g" =          "15ג׳";
+"calc_8g" =           "8ג׳";
+"calc_tf_custom_g" =  "בחר משקל";
+"calc_add_to_daily" = "הוסף למאזן היומי";
+"calc_add_to_cart" =  "הוסף לסל";
+
+//CART VC CELL
+"cart_cell_no_name" =        "ללא שם";
+"cart_cell_kcal" =           "קל׳:";
+"cart_cell_gram" =           "גרם: ";
+"cart_cell_protein" =        "חלבון: ";
+"cart_cell_carbs" =          "פחממה: ";
+"cart_cell_fat" =            "שומן: ";
+"cart_cell_total_nutrions" = "סה״כ: ";
+"cart_cell_calories" =       "קלוריות: ";
+"cart_cell_protein" =        "חלבון: ";
+"cart_cell_carbs" =          "פחממה: ";
+"cart_cell_fat" =            "שומן: ";
+"cart_cell_servings" =       "מנות: ";
+"cart_cell_emprty_cart" =    "רוקן סל";
+"cart_cell_add_to_daily" =   "הוסף ליומי";
+
+//CART VC
+"cart_servings" = "מנות: ";
+
+//CALCULATOR INTRO
+"calc_hint_add_to_daily" =  "לחץ כדי להוסיף למאזן הקלוריות היומי שלך 🤓";
+"calc_hint_choose_grams" =  "לחץ כדי לבחור לפי כמה גרמים לחשב את המאכל 🤓";
+"calc_hint_can_calculate" = "באפשרותך להוסיף מאכלים ל״סל״ כדי לחשב כמה מצרחים ביחד ולחלק למנות 🤓";
+"calc_hint_200g" = "200ג׳";
+"calc_hint_100g" = "100ג׳";
+"calc_hint_50g" =  "50ג׳";
+"calc_hint_15g" =  "15ג׳";
+"calc_hint_8g" =   "8ג׳";
+"calc_hint_custom_g" = "בחר משקל";
+"calc_hint_btn_add_to_daily" = "הוסף למאזן היומי";
+"calc_hint_add_to_cart" =  "הוסך לסל";
+
+//AUTHENTICATION
+"auth_valid_email" =   "בבקשה השתמש באימייל תקין";
+"auth_pw_dont_match" = "הסיסמה לא מתאימה";
+
+//SETTINGS VC
+"settings_alert_hints_reset" = "הרמזים אופסו!";
+"settings_improve" =           "איך נוכל להשתפר?";
+"settings_reset_hints" =       "אפס רמזים";
+"settings_products" =          "מוצרים קיימים";
+"settings_logout" =            "יציאה";
+
+//MESSAGE VC
+"message_alert_name_empty" =   "שם לא יכול להיות ריק!";
+"message_alert_body_empty" =   "הודעה לא יכולה להיות ריקה!";
+"message_alert_message_sent" = "תודה רבה! ההודעה נשלחה בהצלחה";
+"message_name" =               "שם: ";
+"message_improve" =            "איך נולך להשתפר?:";
+"message_send" =               "שלח";
+

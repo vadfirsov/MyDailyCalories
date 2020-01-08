@@ -19,6 +19,7 @@ class MyProductsVC : UIViewController {
     private var filteredEntities = [Entity]()
     private var choosenEntityIndex = 200
 
+    @IBOutlet weak var btnNew:     UIBarButtonItem!
     @IBOutlet weak var btnCal:     UIButton!
     @IBOutlet weak var btnProtein: UIButton!
     @IBOutlet weak var btnCarbs:   UIButton!
@@ -49,6 +50,7 @@ class MyProductsVC : UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+        setLocalized()
         setDelegates()
         AdMob.shared.showInterstitialAd(inVC: self)
         isSelfVisible = true
@@ -62,6 +64,18 @@ class MyProductsVC : UIViewController {
         super.viewWillDisappear(true)
         searchBar.resignFirstResponder()
         isSelfVisible = false
+    }
+
+    private func setLocalized() {
+        btnName.setTitle(locStr("btn_name"), for: .normal)
+        btnCal.setTitle(locStr("btn_cals"),     for: .normal)
+        btnCarbs.setTitle(locStr("btn_carbs"),   for: .normal)
+        btnProtein.setTitle(locStr("btn_protein"), for: .normal)
+        btnFat.setTitle(locStr("btn_fat"),     for: .normal)
+        searchBar.placeholder = locStr("search_placeholder")
+        self.title =            locStr("vc_title")
+        btnNew.title =          locStr("new")
+
     }
     
     private func setDelegates() {
@@ -120,7 +134,7 @@ class MyProductsVC : UIViewController {
     }
     
     private func locStr(_ string : String) -> String {
-        return NSLocalizedString("auth_" + string, comment: "")
+        return NSLocalizedString("products_" + string, comment: "")
     }
     
     private func tappedLonglyOnCell(index: Int) {

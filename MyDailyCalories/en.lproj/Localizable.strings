@@ -48,7 +48,12 @@
 "daily_prev" =                   "Prev";
 "daily_next" =                   "Next";
 "daily_add" =                    "Add";
-"daily_total" =                  "Total :";
+"daily_total" =                  "Total:";
+"daily_name" =                   "Name";
+"daily_cals" =                   "Cals";
+"daily_protein" =                "Protein";
+"daily_carbs" =                  "Carbs";
+"daily_fat" =                    "Fat";
 
 //ADD TO DAILY VC
 "new_daily_what_eat" = "What did you eat?";
@@ -114,7 +119,8 @@
 "cart_cell_add_to_daily" =   "Add To Daily";
 
 //CART VC
-"cart_servings" = "Servings :";
+"cart_servings" =   "Servings :";
+
 
 //CALCULATOR INTRO
 "calc_hint_add_to_daily" =  "Tap to add food to your daily calories 🤓";
@@ -125,7 +131,8 @@
 "calc_hint_50g" =  "50g";
 "calc_hint_15g" =  "15g";
 "calc_hint_8g" =   "8g";
-"calc_hint_add_to_daily" = "Add To Daily";
+"calc_hint_custom_g" = "custom g";
+"calc_hint_btn_add_to_daily" = "Add To Daily";
 "calc_hint_add_to_cart" =  "Add To Cart";
 
 //AUTHENTICATION

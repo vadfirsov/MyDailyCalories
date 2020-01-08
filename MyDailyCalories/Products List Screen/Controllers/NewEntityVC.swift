@@ -20,13 +20,32 @@ class NewEntityVC : UIViewController {
         didSet { tfName.becomeFirstResponder() }
     }
     
+    @IBOutlet weak var btnSave: UIBarButtonItem!
+    
+    @IBOutlet weak var lblName:    UILabel!
+    @IBOutlet weak var lblCals:    UILabel!
+    @IBOutlet weak var lblCarbs:   UILabel!
+    @IBOutlet weak var lblProtein: UILabel!
+    @IBOutlet weak var lblFat:     UILabel!
+    
     @IBOutlet var textFields: [UITextField]! 
     
     @IBOutlet weak var bannerView: GADBannerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setLocalized()
 //        AdMobManager.shared.set(banner: bannerView, inVC: self)
+    }
+    
+    private func setLocalized() {
+
+        lblName.text =    locStr("name")
+        lblCarbs.text =   locStr("carbs")
+        lblCals.text =    locStr("calories")
+        lblProtein.text = locStr("protein")
+        lblFat.text =     locStr("fat")
+        btnSave.title =   locStr("save")
     }
     
     private func moveToNextTF() {
@@ -50,8 +69,9 @@ class NewEntityVC : UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    
     private func locStr(_ string : String) -> String {
-        return NSLocalizedString("auth_" + string, comment: "")
+        return NSLocalizedString("new_food_" + string, comment: "")
     }
 }
 

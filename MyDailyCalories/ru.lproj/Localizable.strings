@@ -74,3 +74,121 @@
 
 //SMAL TEXT FIELD
 "small_tf_custom_g" = " другое ";
+
+//--------------------------
+//DAILY CALORIES VC
+"daily_vc_title" =               "Ежедневные калории";
+"daily_tap_choose_calorie_cap" = "Tap To Choose Daily Calories Cap";
+"daily_calories" =               " Calories"; //1533 / 2000 Calories
+"daily_today" =                  "Today";
+"daily_add_new_meal" =           "Add New Meal / Snack? ➔";
+"daily_prev" =                   "Prev";
+"daily_next" =                   "Next";
+"daily_add" =                    "Add";
+"daily_name" =                   "";
+"daily_cals" =                   "";
+"daily_protein" =                "";
+"daily_carbs" =                  "";
+"daily_fat" =                    "";
+"daily_total" =                  "";
+
+//ADD TO DAILY VC
+"new_daily_what_eat" = "What did you eat?";
+"new_daily_calories" = "Calories";
+"new_daily_carbs" =    "Carbs";
+"new_daily_fat" =      "Fat";
+"new_daily_protein" =  "Protein";
+"new_daily_choose" =   "Choose From Products List ➔";
+"new_daily_save" =     "Save";
+
+
+//MY PRODUCTS VC
+"products_vc_title" =           "My Products";
+"products_btn_name" =           "Name";
+"products_btn_cals" =           "Cals";
+"products_btn_protein" =        "Protein";
+"products_btn_carbs" =          "Carbs";
+"products_btn_fat" =            "Fat";
+"products_new" =                "New";
+"products_search_placeholder" = "Search by product name";
+
+//PRODUCTS INTRO
+"prod_hint_text" = "Pssst!.. \n Here you can load ready-to-use products or add your own products that you use daily! \n *You can always go back to Settings and add / remove ready-to-use products 🤓";
+"prod_hint_btn_load" = "Load Products";
+"prod_hint_or" = "or";
+"prod_hint_btn_add" = "Add New";
+
+//ADD NEW FOOD
+"new_food_name" =     "Product Name";
+"new_food_calories" = "Calories / 100g";
+"new_food_carbs" =    "Carbs / 100g";
+"new_food_protein" =  "Protein / 100g";
+"new_food_fat" =      "Fat / 100g";
+"new_food_save" =     "Save";
+
+//CALCULATOR VC
+"calc_cals" =         "Calories";
+"calc_protein" =      "Protein";
+"calc_carbs" =        "Carbs";
+"calc_fat" =          "Fat";
+"calc_200g" =         "200g";
+"calc_100g" =         "100g";
+"calc_50g" =          "50g";
+"calc_15g" =          "15g";
+"calc_8g" =           "8g";
+"calc_tf_custom_g" =  "custom g";
+"calc_add_to_daily" = "Add To Daily";
+"calc_add_to_cart" =  "Add To Cart";
+
+//CART VC CELL
+"cart_cell_no_name" =        "No Name";
+"cart_cell_kcal" =           "kCal: ";
+"cart_cell_gram" =           "Gram: ";
+"cart_cell_protein" =        "Protein: ";
+"cart_cell_carbs" =          "Carbs: ";
+"cart_cell_fat" =            "Fat: ";
+"cart_cell_total_nutrions" = "Total Nutrions :";
+"cart_cell_calories" =       "Calories :";
+"cart_cell_protein" =        "Protein :";
+"cart_cell_carbs" =          "Carbs :";
+"cart_cell_fat" =            "Fat :";
+"cart_cell_servings" =       "Servings :";
+"cart_cell_emprty_cart" =    "Emprty Cart";
+"cart_cell_add_to_daily" =   "Add To Daily";
+
+//CART VC
+"cart_servings" =   "Servings :";
+
+
+//CALCULATOR INTRO
+"calc_hint_add_to_daily" =  "Tap to add food to your daily calories 🤓";
+"calc_hint_choose_grams" =  "Tap to choose how many grams you would like to calculate 🤓";
+"calc_hint_can_calculate" = "You can add products to your \"Cart\" to calculate multile ingredients at once 🤓";
+"calc_hint_200g" = "200g";
+"calc_hint_100g" = "100g";
+"calc_hint_50g" =  "50g";
+"calc_hint_15g" =  "15g";
+"calc_hint_8g" =   "8g";
+"calc_hint_custom_g" = "custom g";
+"calc_hint_btn_add_to_daily" = "Add To Daily";
+"calc_hint_add_to_cart" =  "Add To Cart";
+
+//AUTHENTICATION
+"auth_valid_email" =   "Please provide a valid email";
+"auth_pw_dont_match" = "Password don't match";
+
+//SETTINGS VC
+"settings_alert_hints_reset" = "Hints were reset!";
+"settings_improve" =           "How Can We Improve?";
+"settings_reset_hints" =       "Reset Hints";
+"settings_products" =          "Products";
+"settings_logout" =            "Logout";
+
+//MESSAGE VC
+"message_alert_name_empty" =   "Name can't be empty!";
+"message_alert_body_empty" =   "Message body can't be empty!";
+"message_alert_message_sent" = "Thanks! Message was sent!";
+"message_name" =               "Name:";
+"message_improve" =            "How can we improve?:";
+"message_send" =               "Send";
+

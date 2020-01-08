@@ -28,6 +28,13 @@ class CalculatorVC : UIViewController {
     
     @IBOutlet weak var loader: UIActivityIndicatorView!
     
+    @IBOutlet weak var btnAddToDaily:  UIBarButtonItem!
+    @IBOutlet weak var btnAddToCart:   CustomButton!
+    @IBOutlet weak var lblNameCals:    UILabel!
+    @IBOutlet weak var lblNameProtein: UILabel!
+    @IBOutlet weak var lblNameCarbs:   UILabel!
+    @IBOutlet weak var lblNameFat:     UILabel!
+    
     @IBOutlet weak var btn200g:       SmallButton!
     @IBOutlet weak var btn100g:       SmallButton!
     @IBOutlet weak var btnSpoon:      SmallButton!
@@ -57,6 +64,7 @@ class CalculatorVC : UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        setLocalized()
         setCalculatedLabels()
         addGestures()
         btn100g.isBtnSelected = true
@@ -78,6 +86,26 @@ class CalculatorVC : UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
         navigationController?.popViewController(animated: true)
+    }
+    
+    private func setLocalized() {
+        btn50g.setTitle(locStr("50g"),       for: .normal)
+        btn100g.setTitle(locStr("100g"),     for: .normal)
+        btn200g.setTitle(locStr("200g"),     for: .normal)
+        btnSpoon.setTitle(locStr("15g"),     for: .normal)
+        btnTableSpoon.setTitle(locStr("8g"), for: .normal)
+        btnAddToCart.setTitle(locStr("add_to_cart"), for: .normal)
+
+
+        tfCustomGrams.placeholder = locStr("tf_custom_g")
+        
+        lblNameFat.text =     locStr("fat")
+        lblNameCals.text =    locStr("cals")
+        lblNameCarbs.text =   locStr("carbs")
+        lblNameProtein.text = locStr("protein")
+        
+        btnAddToDaily.title = locStr("add_to_daily")
+        
     }
     
     private func showIntro() {
@@ -186,7 +214,7 @@ class CalculatorVC : UIViewController {
     }
     
     private func locStr(_ string : String) -> String {
-        return NSLocalizedString("auth_" + string, comment: "")
+        return NSLocalizedString("calc_" + string, comment: "")
     }
 }
 

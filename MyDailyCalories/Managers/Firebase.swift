@@ -260,22 +260,7 @@ class Firebase {
             }
         }
     }
-    
-    //DEPRICARED - DONE IN ADMOB ITSELF
-//    func loadUserWatchedAdDate() {
-//        guard let uid = Auth.auth().currentUser?.uid else { return }
-//        ref.child(users).child(uid).child(last_time_ad_showed).observeSingleEvent(of: .value) { (snap) in
-//            if let snapValue = snap.value as? String {
-//                if DateManager.shared.isFullDayPassedSince(lastTimeWatchedAd: snapValue) {
-//                    AdMob.shared.shouldShowInterstitialAd = true
-//                }
-//            }
-//            else {
-//                self.saveAdShowedDate()
-//            }
-//        }
-//    }
-    
+
     func loadEntities() {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         ref.child(users).child(uid).child(my_entities).observeSingleEvent(of: .value) { (snap) in
@@ -371,52 +356,3 @@ class Firebase {
         }
     }
 }
-
-//protocol NetworkDelegate {
-//    func didReceiveError(description : String)
-//    func didReceive(data : Data)
-//}
-//
-//class Networking {
-//
-//    var delegate : NetworkDelegate?
-//
-//    private let appID =  ""
-//    private let appKey = ""
-//
-//    func performSession(urlString : String) {
-//        guard let request = makeRequestFrom(urlString: urlString) else {
-//            delegate?.didReceiveError(description: "The URL is bad.")
-//            return
-//        }
-//        let _ = URLSession.shared.dataTask(with: request) { (data, response, error) in
-//            DispatchQueue.main.async {
-//                // delegates not called when weak self
-//                if error != nil {
-//                    self.delegate?.didReceiveError(description: error!.localizedDescription)
-//                }
-//                else if data != nil {
-//                    self.delegate?.didReceive(data: data!)
-//                }
-//            }
-//        }.resume()
-//    }
-//
-//    private func makeRequestFrom(urlString : String) -> URLRequest? {
-//        guard let url = URL(string: urlString) else { return nil }
-//        var request = URLRequest(url: url)
-//        request.setValue(appID,  forHTTPHeaderField: "x-app-id")
-//        request.setValue(appKey, forHTTPHeaderField: "x-app-key")
-//        request.setValue("Content-Type", forHTTPHeaderField: "application/json")
-//
-//        let json: [String: Any] = ["query": "banana"]
-//
-//        if let jsonData = try? JSONSerialization.data(withJSONObject: json) {
-//            request.httpBody = jsonData
-//            request.httpMethod = "POST"
-//            return request
-//        }
-//
-//        return nil
-//    }
-//}

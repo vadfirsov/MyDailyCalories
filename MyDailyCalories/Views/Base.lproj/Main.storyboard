@@ -861,6 +861,7 @@
                         <outlet property="btnCarbs" destination="WPo-OJ-Tq7" id="bKs-v2-CAK"/>
                         <outlet property="btnFat" destination="U3y-ix-vZU" id="dZk-1l-ph9"/>
                         <outlet property="btnName" destination="AJo-NM-XUm" id="RL4-0w-4RR"/>
+                        <outlet property="btnNew" destination="fRw-cQ-XXV" id="HPI-s9-pv1"/>
                         <outlet property="btnProtein" destination="A2b-8J-ms3" id="fFo-kU-S5h"/>
                         <outlet property="loader" destination="9zz-XH-aVh" id="bb3-9s-P8R"/>
                         <outlet property="searchBar" destination="0wv-VF-5mb" id="yLm-Pb-k8f"/>
@@ -948,6 +949,7 @@
                         <outlet property="btnAddNewProduct" destination="Kjt-Ra-py0" id="7Lp-zY-PJN"/>
                         <outlet property="btnLoadProducts" destination="F60-BD-W46" id="RCE-ui-EPo"/>
                         <outlet property="lblMessage" destination="Af5-TZ-UHd" id="sgq-Xx-Ki5"/>
+                        <outlet property="lblOr" destination="PiM-6T-kbw" id="MC9-xf-vr6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jtc-PP-fBD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1175,6 +1177,8 @@
                         <outlet property="btn100g" destination="HZH-0A-UFl" id="wEm-mK-krI"/>
                         <outlet property="btn200g" destination="qSU-8P-f1G" id="rKo-bB-XCX"/>
                         <outlet property="btn50g" destination="RyH-9b-h3F" id="8dp-Y6-DhH"/>
+                        <outlet property="btnAddToCart" destination="hgL-bi-dKX" id="qcF-RB-bHf"/>
+                        <outlet property="btnAddToDaily" destination="Q9R-ug-hOp" id="dKW-5a-JKg"/>
                         <outlet property="btnSpoon" destination="DH7-pk-vfz" id="r3x-fq-Hwz"/>
                         <outlet property="btnTableSpoon" destination="goF-Hf-zwL" id="cAi-LJ-cah"/>
                         <outlet property="cartContainer" destination="kep-5j-rHC" id="eYj-hd-VUl"/>
@@ -1182,7 +1186,11 @@
                         <outlet property="lblCalories" destination="x3t-mt-7t4" id="x8R-bI-pWk"/>
                         <outlet property="lblCarbs" destination="Qmn-9O-0vJ" id="AyT-OL-AEK"/>
                         <outlet property="lblFat" destination="VTC-S2-tdW" id="0kW-LV-KH8"/>
-                        <outlet property="lblProtein" destination="OO0-9I-wXS" id="RzS-DA-zl2"/>
+                        <outlet property="lblNameCals" destination="uJ3-4f-8O9" id="cEm-Zx-Dbd"/>
+                        <outlet property="lblNameCarbs" destination="aX8-n5-2sr" id="4fo-Cg-Hhd"/>
+                        <outlet property="lblNameFat" destination="lzv-9U-bQg" id="vRX-5d-LsD"/>
+                        <outlet property="lblNameProtein" destination="pMl-Kc-5vF" id="ZA6-9G-Jlp"/>
+                        <outlet property="lblProtein" destination="OO0-9I-wXS" id="fNL-si-jbX"/>
                         <outlet property="loader" destination="yZn-66-L6p" id="NBa-g7-h1j"/>
                         <outlet property="tfCustomGrams" destination="sl1-lp-BgX" id="OmX-Wq-JYr"/>
                         <outletCollection property="gramBtns" destination="goF-Hf-zwL" collectionClass="NSMutableArray" id="3CF-bB-kiB"/>
@@ -1360,11 +1368,17 @@
                     <navigationItem key="navigationItem" id="yHw-dF-0jE"/>
                     <connections>
                         <outlet property="btn100g" destination="8ay-Cr-2hx" id="1a6-5q-OIl"/>
+                        <outlet property="btn15g" destination="IW8-Ww-IOb" id="9zu-ac-l11"/>
+                        <outlet property="btn200g" destination="JFK-X6-cuH" id="b1e-JX-fXc"/>
+                        <outlet property="btn50g" destination="cVM-js-Cjk" id="Imb-5s-JRT"/>
+                        <outlet property="btn8g" destination="yTC-Hy-jHP" id="XlO-9J-Arj"/>
                         <outlet property="btnAddToCart" destination="ezg-ad-4uS" id="Fgl-uR-8yg"/>
                         <outlet property="lblAddToCart" destination="eT0-La-vER" id="Eob-Gj-9eh"/>
-                        <outlet property="lblAddToDaily" destination="UDg-5m-FyR" id="f72-LO-YKn"/>
+                        <outlet property="lblAddToDaily" destination="UHp-bh-73R" id="0hf-tt-1Ng"/>
                         <outlet property="lblGrams" destination="7tw-Ai-lZW" id="QCw-71-u6L"/>
+                        <outlet property="lblHintAddToDaily" destination="UDg-5m-FyR" id="Yo2-5s-P61"/>
                         <outlet property="stackViewGrams" destination="cKn-F9-lC6" id="ukl-gu-PbC"/>
+                        <outlet property="tfCustomGrams" destination="ggU-yz-vdt" id="fjj-fC-j8n"/>
                         <outlet property="viewAddToCartBtn" destination="WP9-mf-a05" id="VAe-jf-tRl"/>
                         <outlet property="viewBarItem" destination="H1G-R8-I9h" id="mjG-3F-F5e"/>
                         <outlet property="viewChooseGrams" destination="OBY-hZ-xnz" id="pbs-zM-h8s"/>
@@ -1537,6 +1551,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="bannerView" destination="17i-op-4Qp" id="JoB-ZU-nGT"/>
+                        <outlet property="btnSave" destination="lHh-hf-BRH" id="2wp-Hp-OWY"/>
+                        <outlet property="lblCals" destination="z4P-8p-pko" id="LqZ-TK-9wV"/>
+                        <outlet property="lblCarbs" destination="dZY-fG-fe4" id="3cF-mM-xOg"/>
+                        <outlet property="lblFat" destination="wbw-na-RWD" id="hyF-9t-bGd"/>
+                        <outlet property="lblName" destination="a3h-1b-0L1" id="uG5-rX-rai"/>
+                        <outlet property="lblProtein" destination="qwh-bd-tiP" id="7d0-II-z54"/>
                         <outlet property="tfCalories" destination="vTK-Fe-Zjt" id="76n-jY-66G"/>
                         <outlet property="tfCarbs" destination="CXH-fn-A0B" id="7Vn-ti-id0"/>
                         <outlet property="tfFat" destination="HBC-Pq-AyW" id="8WA-tM-8g0"/>
@@ -1752,6 +1772,7 @@
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
                                             <outlet property="addNewProductView" destination="PSa-r7-1sE" id="5MS-GT-G3F"/>
+                                            <outlet property="btnAddNewMeal" destination="JQF-ll-6jU" id="DCk-Gp-eTy"/>
                                             <outlet property="productView" destination="eR5-bs-TbF" id="jhJ-hJ-oAM"/>
                                             <outlet property="tfCalories" destination="tFI-pD-9Rk" id="eC5-xG-uBU"/>
                                             <outlet property="tfCarbs" destination="Rni-cy-WPJ" id="PEm-cZ-7Gz"/>
@@ -1954,11 +1975,18 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addBtn" destination="TvP-NG-set" id="COu-A8-lDW"/>
                         <outlet property="bannerView" destination="1Oo-Qn-i7i" id="Nlp-Nm-RTk"/>
                         <outlet property="btnDailyTotal" destination="Hjr-yg-XDm" id="pva-NY-jlt"/>
                         <outlet property="btnNext" destination="h2C-MD-J4j" id="cEj-YF-SS8"/>
                         <outlet property="btnPrev" destination="bvV-vw-AJC" id="Qnz-3V-QAh"/>
+                        <outlet property="lblCals" destination="w2m-tE-RSn" id="5HJ-fN-TYp"/>
+                        <outlet property="lblCarbs" destination="jdB-Bf-Ss9" id="dcr-Gz-k3r"/>
                         <outlet property="lblDate" destination="il2-QG-DqB" id="2Xz-3s-DuT"/>
+                        <outlet property="lblFat" destination="YDn-1e-fkH" id="cXu-PV-tur"/>
+                        <outlet property="lblName" destination="ihd-wn-9u4" id="2z7-gY-RLY"/>
+                        <outlet property="lblProtein" destination="4BI-Xz-lxO" id="baT-yH-Ni7"/>
+                        <outlet property="lblTotal" destination="IKS-9Q-Dqe" id="HnO-2E-yGl"/>
                         <outlet property="lblTotalCalories" destination="mdo-63-PZt" id="EjE-uj-9ik"/>
                         <outlet property="lblTotalCarbs" destination="bxG-YO-mIk" id="lr7-E0-Qgo"/>
                         <outlet property="lblTotalFat" destination="feL-O3-IWk" id="QIC-c0-eJ4"/>
@@ -2148,6 +2176,13 @@
                     </navigationItem>
                     <connections>
                         <outlet property="bannerView" destination="dYu-OI-tAi" id="iuk-2j-rai"/>
+                        <outlet property="btnChooseFromList" destination="Bdp-G4-Pc1" id="Yup-yb-03O"/>
+                        <outlet property="btnSave" destination="gW5-q2-ihA" id="Quu-tw-LUI"/>
+                        <outlet property="lblCalories" destination="Zpm-w4-oEZ" id="bw4-kg-lHr"/>
+                        <outlet property="lblCarbs" destination="z1t-WW-ICS" id="Z7s-vB-GPl"/>
+                        <outlet property="lblFat" destination="cYZ-Eb-HV6" id="hhv-i4-dHY"/>
+                        <outlet property="lblProtein" destination="hGV-WQ-93H" id="iOY-UH-Cs7"/>
+                        <outlet property="lblWhatAte" destination="edl-Kk-XOD" id="OrP-T2-r8y"/>
                         <outlet property="tfCalories" destination="QsV-aW-ufr" id="ALk-EU-f8R"/>
                         <outlet property="tfCarbs" destination="f1C-Od-EQX" id="cQm-7T-3Rk"/>
                         <outlet property="tfFat" destination="TiM-uM-ujl" id="iQs-Ty-SWA"/>
@@ -2189,7 +2224,7 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Evs-HB-y3h" customClass="CustomCellView" customModule="MyDailyCalories" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="343" height="60"/>
                                                             <subviews>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lul-Qz-T1p">
+                                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="lul-Qz-T1p">
                                                                     <rect key="frame" x="0.0" y="0.0" width="343" height="60"/>
                                                                     <subviews>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u9t-MD-YaW">

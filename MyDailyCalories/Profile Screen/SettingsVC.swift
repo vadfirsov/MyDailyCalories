@@ -23,7 +23,7 @@ class SettingsVC : UIViewController {
     }
     
     @IBAction func resetHintsTapped(_ sender: CustomButton) {
-        let alert_hints_reset = NSLocalizedString("alert_hints_reset", comment: "")
+        let alert_hints_reset = locStr("alert_hints_reset")
         AlertManager.shared.showAlertGenericMessage(inVC: self, message: alert_hints_reset)
         HintsManager.shared.shouldShowIntroInCalculator = true
         HintsManager.shared.shouldShowIntroInMyProducts = true
@@ -36,8 +36,14 @@ class SettingsVC : UIViewController {
     }
     
     private func locStr(_ string : String) -> String {
-        return NSLocalizedString("auth_" + string, comment: "")
+        return NSLocalizedString("settings_" + string, comment: "")
     }
+    
+//    "settings_alert_hints_reset" = "Hints were reset!";
+//    "settings_improve" =           "How Can We Improve?";
+//    "settings_reset_hints" =       "Reset Hints";
+//    "settings_products" =          "Products";
+//    "settings_logout" =            "Logout";
 }
 
 extension SettingsVC : FirebaseDelegate {

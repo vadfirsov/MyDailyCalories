@@ -19,6 +19,13 @@ class ProductCell : UITableViewCell {
     @IBOutlet weak var tfProtein:  UILabel!
     @IBOutlet weak var tfCarbs:    UILabel!
     @IBOutlet weak var tfFat:      UILabel!
+    @IBOutlet weak var btnAddNewMeal: UIButton! {
+        didSet {
+            let locStr = NSLocalizedString("daily_add_new_meal", comment: "")
+            btnAddNewMeal.setTitle(locStr, for: .normal)
+            
+        }
+    }
     
     @IBOutlet weak var productView:       CustomCellView!
     @IBOutlet weak var addNewProductView: CustomCellView!
