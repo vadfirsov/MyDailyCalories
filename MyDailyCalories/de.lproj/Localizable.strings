@@ -8,151 +8,151 @@
 
 //LOGIN VC
 "login_email_placeholder" =     "email";
-"login_pw_placeholder" =        "password";
-"login_config_pw_placeholder" = "confirm password";
-"login_sign_in_btn" =           "Sign-in";
-"login_sign_up_btn" =           "Sign-up";
-"login_my_daily_cals" =         "My Daily Calories";
-"Sign-In with Facebook" =       "Sign-In with Facebook";
-"Sign-In with Google" =         "Sign-In with Google";
-"Sign-In with Apple" =          "Sign-In with Apple";
+"login_pw_placeholder" =        "Passwort";
+"login_config_pw_placeholder" = "Kennwort bestätigen";
+"login_sign_in_btn" =           "Einloggen";
+"login_sign_up_btn" =           "Anmelden";
+"login_my_daily_cals" =         "Meine täglichen Kalorien";
+"Sign-In with Facebook" =       "Mit Facebook anmelden";
+"Sign-In with Google" =         "Anmeldung mit Google";
+"Sign-In with Apple" =          "Mit Apple anmelden";
 
 //ALERT MANAGER STRINGS
-"alert_cancel" =                  "Cancel";
-"alert_remove_entity" =           "You are about to remove entity: ";
-"alert_uh_oh" =                   "Uh-Oh!";
+"alert_cancel" =                  "Stornieren";
+"alert_remove_entity" =           "Sie sind dabei, eine Entität zu entfernen: ";
+"alert_uh_oh" =                   "Oh, oh!";
 "alert_ok" =                      "OK";
-"alert_insert_calorie_goal" =     "Please Insert Your Daily Calories Goal";
-"alert_num_only" =                "Numbers Only!";
-"alert_empty_cart" =              "Empty Cart?";
-"alert_servings" =                "Servings";
-"alert_digits_only" =             "Digits Only";
-"alert_add_daily_cals" =          "Add To Daily Calories?";
-"alert_yey" =                     "Yippee Ki-Yay!";
-"alert_product_saved" =           "Product Saved Successfully";
-"alert_choose_name" =             "Choose Name";
-"alert_no_name" =                 "No Name";
-"alert_product_name" =            "Product Name";
-"alert_add" =                     "Add ";
-"alert_to_my_products" =          " to \"My Products\"?";
-"alert_food_added" =              "Food Added Successfully";
-"alert_about_to_add_all_to" =     "You are about to add all the foods to ";
-"alert_only_nums" =               "Please Use Only Numbers!";
-"alert_product_name_cant_empty" = "Product Name Can't Be Empty";
+"alert_insert_calorie_goal" =     "Bitte geben Sie Ihr tägliches Kalorienziel ein";
+"alert_num_only" =                "Nur Zahlen!";
+"alert_empty_cart" =              "Leerer Warenkorb?";
+"alert_servings" =                "Portionen";
+"alert_digits_only" =             "Ziffern nur";
+"alert_add_daily_cals" =          "Zu den täglichen Kalorien hinzufügen?";
+"alert_yey" =                     "Yippee KI Yay!";
+"alert_product_saved" =           "Produkt erfolgreich gespeichert";
+"alert_choose_name" =             "Wähle Name";
+"alert_no_name" =                 "Kein Name";
+"alert_product_name" =            "Produktname";
+"alert_add" =                     "Hinzufügen ";
+"alert_to_my_products" =          " zu \"Meine Produkte\" hinzu?";
+"alert_food_added" =              "Lebensmittel erfolgreich hinzugefügt";
+"alert_about_to_add_all_to" =     "Sie sind dabei, alle Lebensmittel hinzuzufügen ";
+"alert_only_nums" =               "Bitte nur Zahlen verwenden!";
+"alert_product_name_cant_empty" = "Der Produktname darf nicht leer sein";
 
 //DAILY CALORIES VC
-"daily_vc_title" =               "Daily Calories";
-"daily_tap_choose_calorie_cap" = "Tap To Choose Daily Calories Cap";
-"daily_calories" =               " Calories"; //1533 / 2000 Calories
-"daily_today" =                  "Today";
-"daily_add_new_meal" =           "Add New Meal / Snack? ➔";
-"daily_prev" =                   "Prev";
-"daily_next" =                   "Next";
-"daily_add" =                    "Add";
-"daily_total" =                  "Total:";
+"daily_vc_title" =               "Tägliche Kalorien";
+"daily_tap_choose_calorie_cap" = "Tippen Sie auf, um das Tageskalorienlimit auszuwählen";
+"daily_calories" =               " Kalorien"; //1533 / 2000 Calories
+"daily_today" =                  "Heute";
+"daily_add_new_meal" =           "Neue Mahlzeit hinzufügen? ➔";
+"daily_prev" =                   "Vorherige";
+"daily_next" =                   "Nächster";
+"daily_add" =                    "Hinzufügen";
+"daily_total" =                  "Gesamt:";
 "daily_name" =                   "Name";
-"daily_cals" =                   "Cals";
+"daily_cals" =                   "Kalorien";
 "daily_protein" =                "Protein";
 "daily_carbs" =                  "Carbs";
-"daily_fat" =                    "Fat";
+"daily_fat" =                    "Fett";
 
 //ADD TO DAILY VC
-"new_daily_what_eat" = "What did you eat?";
-"new_daily_calories" = "Calories";
+"new_daily_what_eat" = "Was hast du gegessen?";
+"new_daily_calories" = "Kalorien";
 "new_daily_carbs" =    "Carbs";
-"new_daily_fat" =      "Fat";
+"new_daily_fat" =      "Fett";
 "new_daily_protein" =  "Protein";
-"new_daily_choose" =   "Choose From Products List ➔";
-"new_daily_save" =     "Save";
+"new_daily_choose" =   "Wählen Sie aus der Produktliste ➔";
+"new_daily_save" =     "speichern";
 
 //MY PRODUCTS VC
-"products_vc_title" =           "My Products";
+"products_vc_title" =           "Meine Produkte";
 "products_btn_name" =           "Name";
 "products_btn_cals" =           "Cals";
 "products_btn_protein" =        "Protein";
 "products_btn_carbs" =          "Carbs";
-"products_btn_fat" =            "Fat";
-"products_new" =                "New";
-"products_search_placeholder" = "Search by product name";
+"products_btn_fat" =            "Fett";
+"products_new" =                "Neu";
+"products_search_placeholder" = "Suche nach Produktnamen";
 
 //PRODUCTS INTRO
-"prod_hint_text" = "Pssst!.. \n Here you can load ready-to-use products or add your own products that you use daily! \n *You can always go back to Settings and add / remove ready-to-use products 🤓";
-"prod_hint_btn_load" = "Load Products";
-"prod_hint_or" = "or";
-"prod_hint_btn_add" = "Add New";
+"prod_hint_text" = "Pssst! .. \n Hier können Sie gebrauchsfertige Produkte laden oder Ihre eigenen Produkte hinzufügen, die Sie täglich verwenden! \n *Sie können jederzeit zu Einstellungen zurückkehren und gebrauchsfertige Produkte hinzufügen / entfernen 🤓";
+"prod_hint_btn_load" = "Produkte laden";
+"prod_hint_or" = "oder";
+"prod_hint_btn_add" = "neu hinzufügen";
 
 //ADD NEW FOOD
-"new_food_name" =     "Product Name";
-"new_food_calories" = "Calories / 100g";
+"new_food_name" =     "Produktname";
+"new_food_calories" = "Kalorien / 100g";
 "new_food_carbs" =    "Carbs / 100g";
 "new_food_protein" =  "Protein / 100g";
-"new_food_fat" =      "Fat / 100g";
-"new_food_save" =     "Save";
+"new_food_fat" =      "Fett / 100g";
+"new_food_save" =     "speichern";
 
 //CALCULATOR VC
-"calc_cals" =         "Calories";
+"calc_cals" =         "Kalorien";
 "calc_protein" =      "Protein";
 "calc_carbs" =        "Carbs";
-"calc_fat" =          "Fat";
+"calc_fat" =          "Fett";
 "calc_200g" =         "200g";
 "calc_100g" =         "100g";
 "calc_50g" =          "50g";
 "calc_15g" =          "15g";
 "calc_8g" =           "8g";
-"calc_tf_custom_g" =  "custom g";
-"calc_add_to_daily" = "Add To Daily";
-"calc_add_to_cart" =  "Add To Cart";
+"calc_tf_custom_g" =  "Gramm";
+"calc_add_to_daily" = "Täglich hinzufügen";
+"calc_add_to_cart" =  "In den Warenkorb legen";
 
 //CART VC CELL
-"cart_cell_no_name" =        "No Name";
+"cart_cell_no_name" =        "Kein Name";
 "cart_cell_kcal" =           "kCal: ";
-"cart_cell_gram" =           "Gram: ";
+"cart_cell_gram" =           "Gramm: ";
 "cart_cell_protein" =        "Protein: ";
 "cart_cell_carbs" =          "Carbs: ";
-"cart_cell_fat" =            "Fat: ";
-"cart_cell_total_nutrions" = "Total Nutrions :";
-"cart_cell_calories" =       "Calories :";
+"cart_cell_fat" =            "Fett: ";
+"cart_cell_total_nutrions" = "Gesamtnahrung :";
+"cart_cell_calories" =       "Kalorien :";
 "cart_cell_protein" =        "Protein :";
 "cart_cell_carbs" =          "Carbs :";
-"cart_cell_fat" =            "Fat :";
-"cart_cell_servings" =       "Servings :";
-"cart_cell_emprty_cart" =    "Emprty Cart";
-"cart_cell_add_to_daily" =   "Add To Daily";
+"cart_cell_fat" =            "Fett :";
+"cart_cell_servings" =       "Portionen :";
+"cart_cell_emprty_cart" =    "Wagen leeren";
+"cart_cell_add_to_daily" =   "Täglich hinzufügen";
 
 //CART VC
-"cart_servings" =   "Servings :";
+"cart_servings" =   "Portionen :";
 
 //CALCULATOR INTRO
-"calc_hint_add_to_daily" =  "Tap to add food to your daily calories 🤓";
-"calc_hint_choose_grams" =  "Tap to choose how many grams you would like to calculate 🤓";
-"calc_hint_can_calculate" = "You can add products to your \"Cart\" to calculate multile ingredients at once 🤓";
+"calc_hint_add_to_daily" =  "Tippen Sie auf, um Ihre täglichen Kalorien um Nahrung zu ergänzen 🤓";
+"calc_hint_choose_grams" =  "Tippen Sie auf, um festzulegen, wie viele Gramm Sie berechnen möchten 🤓";
+"calc_hint_can_calculate" = "Sie können Ihrem \"Einkaufswagen\" Produkte hinzufügen, um mehrere Zutaten gleichzeitig zu berechnen 🤓";
 "calc_hint_200g" = "200g";
 "calc_hint_100g" = "100g";
 "calc_hint_50g" =  "50g";
 "calc_hint_15g" =  "15g";
 "calc_hint_8g" =   "8g";
-"calc_hint_custom_g" = "custom g";
-"calc_hint_btn_add_to_daily" = "Add To Daily";
-"calc_hint_add_to_cart" =  "Add To Cart";
+"calc_hint_custom_g" = "Gramm";
+"calc_hint_btn_add_to_daily" = "Täglich hinzufügen";
+"calc_hint_add_to_cart" =  "In den Warenkorb legen";
 
 //AUTHENTICATION
-"auth_valid_email" =   "Please provide a valid email";
-"auth_pw_dont_match" = "Password don't match";
+"auth_valid_email" =   "Bitte geben Sie eine gültige E-Mail-Adresse an";
+"auth_pw_dont_match" = "Passwort stimmt nicht überein";
 
 //SETTINGS VC
-"settings_alert_hints_reset" = "Hints were reset!";
-"settings_improve" =           "How Can We Improve?";
-"settings_reset_hints" =       "Reset Hints";
-"settings_products" =          "Products";
-"settings_logout" =            "Logout";
-"setting_vc_title" =           "Settings";
+"settings_alert_hints_reset" = "Hinweise wurden zurückgesetzt!";
+"settings_improve" =           "Wie können wir uns verbessern?";
+"settings_reset_hints" =       "Hinweise zurücksetzen";
+"settings_products" =          "Produkte";
+"settings_logout" =            "Ausloggen";
+"setting_vc_title" =           "die Einstellungen";
 
 //MESSAGE VC
-"message_alert_name_empty" =   "Name can't be empty!";
-"message_alert_body_empty" =   "Message body can't be empty!";
-"message_alert_message_sent" = "Thanks! Message was sent!";
+"message_alert_name_empty" =   "Name darf nicht leer sein!";
+"message_alert_body_empty" =   "Nachrichtentext darf nicht leer sein!";
+"message_alert_message_sent" = "Vielen Dank! Nachricht wurde gesendet!";
 "message_name" =               "Name:";
-"message_improve" =            "How can we improve?:";
-"message_send" =               "Send";
+"message_improve" =            "Wie können wir uns verbessern?:";
+"message_send" =               "Senden";
 
 
