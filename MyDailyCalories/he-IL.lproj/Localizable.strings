@@ -6,12 +6,17 @@
   Copyright © 2019 VADIM FIRSOV. All rights reserved.
 */
 
-"email" =                 "email";
-"password" =              "password";
-"confirm password" =      "confirm password";
-"Sign-In with Facebook" = "Sign-In with Facebook";
-"Sign-In with Google" =   "Sign-In with Google";
-"Sign-In with Apple" =    "Sign-In with Apple";
+//LOGIN VC
+"login_email_placeholder" =      "אימייל";
+"login_pw_placeholder" =         "סיסמה";
+"login_config_pw_placeholder" =  "אשר סיסמה";
+"login_sign_in_btn" = "הכנס";
+"login_sign_up_btn" = "הרשם";
+"login_my_daily_cals" = "המאזן הקלורי שלי";
+"Sign-In with Facebook" = "הכנס בעזרת Facebook";
+"Sign-In with Google" =   "הכנס בעזרת Google";
+"Sign-In with Apple" =    "הכנס בעזרת Apple";
+
 
 //ALERT MANAGER STRINGS
 "alert_cancel" =                  "ביטול";

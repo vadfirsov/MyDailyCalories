@@ -182,13 +182,14 @@ class LoginVC : UIViewController {
             return NSLocalizedString("login_" + string, comment: "")
         }
         
-        lblAppTitle.text = locStr("")
+        lblAppTitle.text =    locStr("")
         tfEmail.placeholder = locStr("email_placeholder")
-        tfPw.placeholder = locStr("pw_placeholder")
-        tfPw2.placeholder = locStr("config_pw_placeholder")
+        tfPw.placeholder =    locStr("pw_placeholder")
+        tfPw2.placeholder =   locStr("config_pw_placeholder")
+        lblAppTitle.text =    locStr("my_daily_cals")
+
         segment.setTitle(locStr("sign_in_btn"), forSegmentAt: 0)
         segment.setTitle(locStr("sign_up_btn"), forSegmentAt: 1)
-        lblAppTitle.text = locStr("my_daily_cals")
     }
 }
 

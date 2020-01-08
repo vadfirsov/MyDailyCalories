@@ -74,6 +74,7 @@
 		69368AB9239A5809009BE537 /* GradientViewBlack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientViewBlack.swift; sourceTree = "<group>"; };
 		69368ABB239A5B87009BE537 /* SmallButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallButton.swift; sourceTree = "<group>"; };
 		69368ABD239AC5DE009BE537 /* SmallTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallTextField.swift; sourceTree = "<group>"; };
+		6936C1CA23C5D8D300D3F31F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		693736B8239E98DC003D0137 /* MyProductsIntroVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProductsIntroVC.swift; sourceTree = "<group>"; };
 		693736BA239F8874003D0137 /* HintsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintsManager.swift; sourceTree = "<group>"; };
 		693736BC239F8EB6003D0137 /* ReadyProductsListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadyProductsListVC.swift; sourceTree = "<group>"; };
@@ -646,6 +647,7 @@
 				DAD7EE972386646200D251F1 /* Base */,
 				69F97D6223B37C3700096E99 /* ru */,
 				DA9F0A4123B4C05200EA9C62 /* he-IL */,
+				6936C1CA23C5D8D300D3F31F /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

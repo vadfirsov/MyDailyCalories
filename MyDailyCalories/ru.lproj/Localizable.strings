@@ -6,9 +6,11 @@
   Copyright © 2019 VADIM FIRSOV. All rights reserved.
 */
 
-"email" =                 "е-мейл";
-"password" =              "пароль";
-"confirm password" =      "подтвердите пароль";
+"login_email_placeholder" =                 "е-мейл";
+"login_pw_placeholder" =              "пароль";
+"login_config_pw_placeholder" =      "подтвердите пароль";
+"login_sign_in_btn" = "Войти";
+"login_sign_up_btn" = "Зарегистрироваться";
 "Sign-In with Facebook" = "Войти с помощью Facebook";
 "Sign-In with Google" =   "Войти с помощью Google";
 "Sign-In with Apple" =    "Войти с помощью Apple";
