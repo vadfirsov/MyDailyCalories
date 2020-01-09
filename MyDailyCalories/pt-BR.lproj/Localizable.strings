@@ -111,10 +111,10 @@
 "cart_cell_carbs" =          "Carbs: ";
 "cart_cell_fat" =            "Fat: ";
 "cart_cell_total_nutrions" = "Total Nutrions :";
-"cart_cell_calories" =       "Calories :";
-"cart_cell_protein" =        "Protein :";
-"cart_cell_carbs" =          "Carbs :";
-"cart_cell_fat" =            "Fat :";
+"cart_cell_total_calories" =       "Calories :";
+"cart_cell_total_protein" =        "Protein :";
+"cart_cell_total_carbs" =          "Carbs :";
+"cart_cell_total_fat" =            "Fat :";
 "cart_cell_servings" =       "Servings :";
 "cart_cell_emprty_cart" =    "Emprty Cart";
 "cart_cell_add_to_daily" =   "Add To Daily";

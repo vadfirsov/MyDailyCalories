@@ -65,7 +65,8 @@ class AlertManager {
         }
         alert.addAction(cancel)
         alert.addAction(ok)
-        
+        alert.isAccessibilityElement = true
+
         alert.addTextField { (tf) in
             tf.placeholder = NSLocalizedString("alert_num_only", comment: "")
             tf.autocapitalizationType = .words
@@ -82,6 +83,8 @@ class AlertManager {
         let ok = UIAlertAction(title: locStr("ok"), style: .default) { (action) in
             Firebase.shared.delete(entity: entity)
         }
+        alert.isAccessibilityElement = true
+
         alert.addAction(cancel)
         alert.addAction(ok)
         vc.present(alert, animated: true, completion: nil)
@@ -94,6 +97,7 @@ class AlertManager {
         let ok = UIAlertAction(title: locStr("ok"), style: .default) { (action) in
             Firebase.shared.deleteCart()
         }
+        alert.isAccessibilityElement = true
         alert.addAction(cancel)
         alert.addAction(ok)
         vc.present(alert, animated: true, completion: nil)
@@ -112,6 +116,7 @@ class AlertManager {
                 self.showAlertNumbersOnly(inVC: vc)
             }
         }
+        alert.isAccessibilityElement = true
         alert.addTextField { (tf) in
             tf.placeholder = "Digits Only"
             tf.autocapitalizationType = .words
@@ -125,6 +130,7 @@ class AlertManager {
         let ok = UIAlertAction(title: locStr("ok"), style: .default) { (_) in
             Firebase.shared.saveNew(product: product)
         }
+        alert.isAccessibilityElement = true
         alert.addAction(cancel)
         alert.addAction(ok)
         vc.present(alert, animated: true, completion: nil)
@@ -139,6 +145,7 @@ class AlertManager {
         let ok = UIAlertAction(title: locStr("ok"), style: .default) { (action) in
             Firebase.shared.delete(cartEntity: entity)            
         }
+        alert.isAccessibilityElement = true
         alert.addAction(cancel)
         alert.addAction(ok)
         vc.present(alert, animated: true, completion: nil)
@@ -165,6 +172,7 @@ class AlertManager {
                 }
             }
         }
+        alert.isAccessibilityElement = true
         alert.addTextField { (tf) in
             tf.placeholder = self.locStr("product_name")
             tf.autocapitalizationType = .words
@@ -180,6 +188,7 @@ class AlertManager {
         let ok = UIAlertAction(title: locStr("ok"), style: .default) { (_) in
             Firebase.shared.saveNew(entity: food)
         }
+        alert.isAccessibilityElement = true
         alert.addAction(cancel)
         alert.addAction(ok)
         vc.present(alert, animated: true, completion: nil)
@@ -188,13 +197,16 @@ class AlertManager {
     func showAlertFoodAddedToMyProducts(inVC vc : UIViewController) {
         let alert = UIAlertController(title: locStr("food_added"), message: nil, preferredStyle: .alert)
         let ok = UIAlertAction(title: locStr("ok"), style: .default, handler: nil)
+        alert.isAccessibilityElement = true
         alert.addAction(ok)
+        alert.isAccessibilityElement = true
         vc.present(alert, animated: true, completion: nil)
     }
     
     func showAlertWithError(inVC vc : UIViewController, message : String) {
         let alert = UIAlertController(title: locStr("uh_oh"), message: message, preferredStyle: .alert)
         alert.addAction(cancel)
+        alert.isAccessibilityElement = true
         vc.present(alert, animated: true, completion: nil)
     }
     
@@ -205,6 +217,7 @@ class AlertManager {
         }
         alert.addAction(cancel)
         alert.addAction(ok)
+        alert.isAccessibilityElement = true
         vc.present(alert, animated: true, completion: nil)
     }
     
@@ -212,18 +225,21 @@ class AlertManager {
         let alert = UIAlertController(title: message, message: nil, preferredStyle: .alert)
         let ok = UIAlertAction(title: locStr("ok"), style: .default)
         alert.addAction(ok)
+        alert.isAccessibilityElement = true
         vc.present(alert, animated: true, completion: nil)
     }
     
     private func showAlertNumbersOnly(inVC vc : UIViewController) {
         let alert = UIAlertController(title: locStr("only_nums"), message: nil, preferredStyle: .alert)
         alert.addAction(cancel)
+        alert.isAccessibilityElement = true
         vc.present(alert, animated: true, completion: nil)
     }
     
     private func showAlertProductNameCantBeEmpty(inVC vc : UIViewController) {
         let alert = UIAlertController(title: locStr("product_name_cant_empty"), message: nil, preferredStyle: .alert)
         alert.addAction(cancel)
+        alert.isAccessibilityElement = true
         vc.present(alert, animated: true, completion: nil)
     }
     

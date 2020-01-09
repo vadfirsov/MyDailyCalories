@@ -21,6 +21,7 @@ class SettingsVC : UIViewController {
         super.viewWillAppear(true)
         Firebase.shared.delegate = self
         setLocalized()
+        setAccessibilities()
     }
     
     @IBAction func logoutTapped(_ sender: CustomButton) {
@@ -53,11 +54,13 @@ class SettingsVC : UIViewController {
         navigationItem.title = locStr("vc_title")
     }
     
-//    "settings_alert_hints_reset" = "Hints were reset!";
-//    "settings_improve" =           "How Can We Improve?";
-//    "settings_reset_hints" =       "Reset Hints";
-//    "settings_products" =          "Products";
-//    "settings_logout" =            "Logout";
+    private func setAccessibilities() {
+        btnLogout.isAccessibilityElement =      true
+        btnImprove.isAccessibilityElement =     true
+        btnProducts.isAccessibilityElement =    true
+        btnResetHints.isAccessibilityElement =  true
+        navigationItem.isAccessibilityElement = true
+    }
 }
 
 extension SettingsVC : FirebaseDelegate {

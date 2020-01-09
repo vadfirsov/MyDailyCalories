@@ -35,7 +35,6 @@ class NewEntityVC : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setLocalized()
-//        AdMobManager.shared.set(banner: bannerView, inVC: self)
     }
     
     private func setLocalized() {
@@ -46,6 +45,20 @@ class NewEntityVC : UIViewController {
         lblProtein.text = locStr("protein")
         lblFat.text =     locStr("fat")
         btnSave.title =   locStr("save")
+        
+        lblName.isAccessibilityElement =    true
+        lblCarbs.isAccessibilityElement =   true
+        lblCals.isAccessibilityElement =    true
+        lblProtein.isAccessibilityElement = true
+        lblFat.isAccessibilityElement =     true
+        btnSave.isAccessibilityElement =    true
+        
+        tfCalories.isAccessibilityElement = true
+        tfCarbs.isAccessibilityElement =    true
+        tfProtein.isAccessibilityElement =  true
+        tfFat.isAccessibilityElement =      true
+        tfName.isAccessibilityElement =     true
+        
     }
     
     private func moveToNextTF() {

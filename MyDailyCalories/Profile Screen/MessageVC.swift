@@ -31,6 +31,7 @@ class MessageVC : UIViewController {
         customizeTf()
         addGestures()
         setLocalized()
+        setAccessibilities()
     }
     
     private func setDelegates() {
@@ -42,6 +43,12 @@ class MessageVC : UIViewController {
         lblName.text = locStr("name")
         lblHowCanWeImprove.text = locStr("improve")
         btnSend.setTitle(locStr("send"), for: .normal)
+    }
+    
+    private func setAccessibilities() {
+        lblName.isAccessibilityElement = true
+        lblHowCanWeImprove.isAccessibilityElement = true
+        btnSend.isAccessibilityElement = true
     }
     
     private func customizeTextView() {

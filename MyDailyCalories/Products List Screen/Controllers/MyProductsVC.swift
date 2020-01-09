@@ -67,13 +67,24 @@ class MyProductsVC : UIViewController {
     }
 
     private func setLocalized() {
-        btnName.setTitle(locStr("btn_name"), for: .normal)
-        btnCal.setTitle(locStr("btn_cals"),     for: .normal)
-        btnCarbs.setTitle(locStr("btn_carbs"),   for: .normal)
+        btnName.setTitle(locStr("btn_name"),       for: .normal)
+        btnCal.setTitle(locStr("btn_cals"),        for: .normal)
+        btnCarbs.setTitle(locStr("btn_carbs"),     for: .normal)
         btnProtein.setTitle(locStr("btn_protein"), for: .normal)
-        btnFat.setTitle(locStr("btn_fat"),     for: .normal)
+        btnFat.setTitle(locStr("btn_fat"),         for: .normal)
+        btnNew.title = locStr("new")
         searchBar.placeholder = locStr("search_placeholder")
-        navigationItem.title = locStr("vc_title")
+        navigationItem.title =  locStr("vc_title")
+        
+        btnName.isAccessibilityElement =        true
+        btnCal.isAccessibilityElement =         true
+        btnCarbs.isAccessibilityElement =       true
+        btnProtein.isAccessibilityElement =     true
+        btnFat.isAccessibilityElement =         true
+        searchBar.isAccessibilityElement =      true
+        navigationItem.isAccessibilityElement = true
+        btnNew.isAccessibilityElement =         true
+        
     }
     
     private func setDelegates() {

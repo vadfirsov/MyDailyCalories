@@ -111,10 +111,10 @@
 "cart_cell_carbs" =          "Carbs: ";
 "cart_cell_fat" =            "la grasa: ";
 "cart_cell_total_nutrions" = "Nutrición total :";
-"cart_cell_calories" =       "Calorías :";
-"cart_cell_protein" =        "Proteína :";
-"cart_cell_carbs" =          "Carbs :";
-"cart_cell_fat" =            "la grasa :";
+"cart_cell_total_calories" =       "Calorías :";
+"cart_cell_total_protein" =        "Proteína :";
+"cart_cell_total_carbs" =          "Carbs :";
+"cart_cell_total_fat" =            "la grasa :";
 "cart_cell_servings" =       "Porciones :";
 "cart_cell_emprty_cart" =    "Vaciar su carro";
 "cart_cell_add_to_daily" =   "Agregar a diario";

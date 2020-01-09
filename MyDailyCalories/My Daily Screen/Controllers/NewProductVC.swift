@@ -32,6 +32,7 @@ class NewProductVC : UIViewController {
         super.viewDidLoad()
         AdMob.shared.set(banner: bannerView, inVC: self)
         setLocalized()
+        setAccessibilities()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -47,6 +48,16 @@ class NewProductVC : UIViewController {
         lblFat.text =      locStr("fat")
         btnSave.title =    locStr("save")
         btnChooseFromList.setTitle(locStr("choose"), for: .normal)
+    }
+    
+    private func setAccessibilities() {
+        lblWhatAte.isAccessibilityElement =  true
+        lblCalories.isAccessibilityElement = true
+        lblCarbs.isAccessibilityElement =    true
+        lblProtein.isAccessibilityElement =  true
+        lblFat.isAccessibilityElement =      true
+        btnSave.isAccessibilityElement =     true
+        btnChooseFromList.isAccessibilityElement = true
     }
        
     @IBOutlet var textFields: [UITextField]! {

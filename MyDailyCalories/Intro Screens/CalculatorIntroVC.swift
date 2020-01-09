@@ -49,6 +49,21 @@ class CalculatorIntroVC : UIViewController {
         updateView()
         addTapGesture()
         setLocalized()
+        setAccessibilities()
+    }
+    
+    private func setAccessibilities() {
+        lblAddToDaily.isAccessibilityElement =     true
+        lblAddToCart.isAccessibilityElement =      true
+        btn200g.isAccessibilityElement =           true
+        btn100g.isAccessibilityElement =           true
+        btn50g.isAccessibilityElement =            true
+        btn8g.isAccessibilityElement =             true
+        btn15g.isAccessibilityElement =            true
+        btnAddToCart.isAccessibilityElement =      true
+        lblHintAddToDaily.isAccessibilityElement = true
+        lblGrams.isAccessibilityElement =          true
+        lblAddToCart.isAccessibilityElement =      true
     }
     
     private func setLocalized() {

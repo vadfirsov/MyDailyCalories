@@ -12,4 +12,7 @@ class ReadyProductCell : UITableViewCell {
     
     @IBOutlet weak var lblProductName: UILabel!
     
+    override func awakeFromNib() {
+        lblProductName.isAccessibilityElement = true
+    }
 }

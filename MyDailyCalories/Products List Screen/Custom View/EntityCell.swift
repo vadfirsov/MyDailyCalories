@@ -19,6 +19,11 @@ class EntityCell: UITableViewCell {
     @IBOutlet weak var lblCarbs:    UILabel!
     @IBOutlet weak var lblFat:      UILabel!
         
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setAccessibilites()
+    }
     func addGesture() {
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPressed))
         self.addGestureRecognizer(longPress)
@@ -39,6 +44,19 @@ class EntityCell: UITableViewCell {
         
         addGesture()
         self.index =      index
+    }
+    
+    private func setAccessibilites() {
+        lblName.isAccessibilityElement =     true
+        lblName.accessibilityHint = "Product name"
+        lblCalories.isAccessibilityElement = true
+        lblCalories.accessibilityHint = "Product calories"
+        lblCarbs.isAccessibilityElement =    true
+        lblCarbs.accessibilityHint = "Product carbs"
+        lblProtein.isAccessibilityElement =  true
+        lblProtein.accessibilityHint = "Product protein"
+        lblFat.isAccessibilityElement =      true
+        lblFat.accessibilityHint = "Product fat"
     }
 }
 

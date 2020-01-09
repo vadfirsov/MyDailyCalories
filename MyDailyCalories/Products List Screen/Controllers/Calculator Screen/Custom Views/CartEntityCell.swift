@@ -29,6 +29,7 @@ class CartEntityCell : UITableViewCell {
     @IBOutlet weak var lblFat:      UILabel!
     @IBOutlet weak var lblProtein:  UILabel!
     
+    @IBOutlet weak var lblTotalNutrions: UILabel!
     @IBOutlet weak var lblTotalCalories: UILabel!
     @IBOutlet weak var lblTotalProtein:  UILabel!
     @IBOutlet weak var lblTotalCarbs:    UILabel!
@@ -65,18 +66,35 @@ class CartEntityCell : UITableViewCell {
     
     private func setLabels(withCartEntity cartEntity : CartEntity) {
         lblName.text =     cartEntity.name
-        lblCalories.text = locStr("kcal") + "\(cartEntity.calories.roundedString())"
-        lblGrams.text =    locStr("gram") + "\(cartEntity.grams.roundedString())"
+        lblCalories.text = locStr("kcal") +    "\(cartEntity.calories.roundedString())"
+        lblGrams.text =    locStr("gram") +    "\(cartEntity.grams.roundedString())"
         lblProtein.text =  locStr("protein") + "\(cartEntity.protein.roundedString())"
-        lblCartbs.text =   locStr("carbs") + "\(cartEntity.protein.roundedString())"
-        lblFat.text =      locStr("fat") + "\(cartEntity.protein.roundedString())"
+        lblCartbs.text =   locStr("carbs") +   "\(cartEntity.protein.roundedString())"
+        lblFat.text =      locStr("fat") +     "\(cartEntity.protein.roundedString())"
+
+        lblTotalNutrions.text = locStr("cart_cell_total_nutrions")
+        lblTotalCalories.text = locStr("cart_cell_total_calories")
+        lblTotalProtein.text =  locStr("cart_cell_total_protein")
+        lblTotalCarbs.text =    locStr("cart_cell_total_carbs")
+        lblTotalFat.text =      locStr("cart_cell_total_fat")
+        
+        lblName.isAccessibilityElement =     true
+        lblCalories.isAccessibilityElement = true
+        lblGrams.isAccessibilityElement =    true
+        lblCartbs.isAccessibilityElement =   true
+        lblProtein.isAccessibilityElement =  true
+        lblFat.isAccessibilityElement =      true
+        
+        lblTotalNutrions.isAccessibilityElement = true
+        lblTotalCalories.isAccessibilityElement = true
+        lblTotalProtein.isAccessibilityElement =  true
+        lblTotalCarbs.isAccessibilityElement =    true
+        lblTotalFat.isAccessibilityElement =      true
     }
     
     private func setCalculatedTotalNutritions() {
         tappedLongely?(index)
     }
-    
-    
     
     func addGesture() {
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPressed))

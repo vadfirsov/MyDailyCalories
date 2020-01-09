@@ -27,6 +27,7 @@ class MyProductsIntroVC : UIViewController {
         setLabel()
         addTapGesture()
         setLocalized()
+        setAccessibilities()
     }
 
     private func setLabel() {
@@ -45,6 +46,13 @@ class MyProductsIntroVC : UIViewController {
         btnLoadProducts.setTitle(locStr("btn_load"), for: .normal)
         btnAddNewProduct.setTitle(locStr("btn_add"), for: .normal)
         lblOr.text = locStr("or")
+    }
+    
+    private func setAccessibilities() {
+        btnLoadProducts.isAccessibilityElement =  true
+        btnAddNewProduct.isAccessibilityElement = true
+        lblOr.isAccessibilityElement =            true
+        lblMessage.isAccessibilityElement =       true
     }
     
     private func locStr(_ string : String) -> String {

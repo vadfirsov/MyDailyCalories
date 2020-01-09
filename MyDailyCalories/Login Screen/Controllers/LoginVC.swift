@@ -29,7 +29,6 @@ class LoginVC : UIViewController {
     @IBOutlet weak var btnGoogleSignIn: GoogleButton!
     @IBOutlet weak var btnApple:        AppleButton!
 
-
     @IBOutlet var textFields: [UITextField]!
     
     override func viewDidLoad() {
@@ -39,6 +38,7 @@ class LoginVC : UIViewController {
         GIDSignIn.sharedInstance()?.presentingViewController = self
         GIDSignIn.sharedInstance()?.delegate = self
         setTextFields()
+        setAccesibility()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -182,14 +182,23 @@ class LoginVC : UIViewController {
             return NSLocalizedString("login_" + string, comment: "")
         }
         
-        lblAppTitle.text =    locStr("")
-        tfEmail.placeholder = locStr("email_placeholder")
-        tfPw.placeholder =    locStr("pw_placeholder")
-        tfPw2.placeholder =   locStr("config_pw_placeholder")
-        lblAppTitle.text =    locStr("my_daily_cals")
+        tfEmail.attributedPlaceholder = NSAttributedString(string: locStr("email_placeholder"),
+        attributes: [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)])
+        tfPw.attributedPlaceholder = NSAttributedString(string: locStr("pw_placeholder"),
+        attributes: [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)])
+        tfPw2.attributedPlaceholder = NSAttributedString(string: locStr("config_pw_placeholder"),
+        attributes: [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)])
 
         segment.setTitle(locStr("sign_in_btn"), forSegmentAt: 0)
         segment.setTitle(locStr("sign_up_btn"), forSegmentAt: 1)
+    }
+    
+    private func setAccesibility() {
+        lblAppTitle.isAccessibilityElement = true
+        tfEmail.isAccessibilityElement =     true
+        tfPw.isAccessibilityElement =        true
+        tfPw2.isAccessibilityElement =       true
+        segment.isAccessibilityElement =     true
     }
 }
 

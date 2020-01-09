@@ -30,6 +30,23 @@ class ProductCell : UITableViewCell {
     @IBOutlet weak var productView:       CustomCellView!
     @IBOutlet weak var addNewProductView: CustomCellView!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setAccessibilities()
+    }
+    
+    private func setAccessibilities() {
+        tfName.isAccessibilityElement =        true
+        tfName.accessibilityHint = "Name"
+        tfCarbs.isAccessibilityElement =       true
+        tfCalories.accessibilityHint = "Calories"
+        tfCalories.isAccessibilityElement =    true
+        tfFat.accessibilityHint = "Fat"
+        tfFat.isAccessibilityElement =         true
+        tfCarbs.accessibilityHint = "Carbs"
+        btnAddNewMeal.isAccessibilityElement = true
+    }
+    
     private func addGesture() {
            let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPressed))
            self.addGestureRecognizer(longPress)

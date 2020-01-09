@@ -106,6 +106,23 @@ class CalculatorVC : UIViewController {
         
         btnAddToDaily.title = locStr("add_to_daily")
         
+        btn50g.isAccessibilityElement =         true
+        btn100g.isAccessibilityElement =        true
+        btn200g.isAccessibilityElement =        true
+        btnSpoon.isAccessibilityElement =       true
+        btnTableSpoon.isAccessibilityElement =  true
+        btnAddToCart.isAccessibilityElement =   true
+        tfCustomGrams.isAccessibilityElement =  true
+        lblNameFat.isAccessibilityElement =     true
+        lblNameCals.isAccessibilityElement =    true
+        lblNameProtein.isAccessibilityElement = true
+        btnAddToDaily.isAccessibilityElement =  true
+        lblFat.isAccessibilityElement =         true
+        lblNameProtein.isAccessibilityElement = true
+        lblNameCals.isAccessibilityElement =    true
+        lblCarbs.isAccessibilityElement =       true
+        lblCalories.isAccessibilityElement =    true
+        
     }
     
     private func showIntro() {

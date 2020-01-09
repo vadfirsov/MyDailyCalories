@@ -67,14 +67,28 @@ class DailyCalsVC: UIViewController {
         
     }
     
+    private func setAccessibilities() {
+        lblName.isAccessibilityElement =    true
+        lblCals.isAccessibilityElement =    true
+        lblCarbs.isAccessibilityElement =   true
+        lblProtein.isAccessibilityElement = true
+        lblFat.isAccessibilityElement =     true
+        lblTotal.isAccessibilityElement =   true
+        addBtn.isAccessibilityElement =     true
+        lblDate.isAccessibilityElement =    true
+
+        btnNext.isAccessibilityElement =    true
+        btnPrev.isAccessibilityElement =    true
+        
+        navigationItem.isAccessibilityElement = true
+    }
+    
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.delegate =   self
             tableView.dataSource = self
         }
     }
-    
-    
     
     private func locStr(_ string : String) -> String {
         return NSLocalizedString("daily_" + string, comment: "")
@@ -94,6 +108,7 @@ class DailyCalsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setLocalizedLabels()
+        setAccessibilities()
         AdMob.shared.set(banner: bannerView, inVC: self)
     }
     
@@ -127,12 +142,13 @@ class DailyCalsVC: UIViewController {
         else if sender == btnPrev { timeInterval = -86400 }
         
         dateToDisplay = dateToDisplay.addingTimeInterval(timeInterval)
-        let nextDate = DateManager.shared.stringFromLocal(date: dateToDisplay)
-        if nextDate == DateManager.shared.stringFromLocal(date: Date()) {
+        let nextDateLocal = DateManager.shared.stringFromLocal(date: dateToDisplay)
+        let nextDate = DateManager.shared.stringFrom(date: dateToDisplay)
+        if nextDateLocal == DateManager.shared.stringFromLocal(date: Date()) {
             lblDate.text = todayString
         }
         else {
-            lblDate.text = nextDate
+            lblDate.text = nextDateLocal
         }
         loader.startAnimating()
         Firebase.shared.loadProductsFrom(dateString: nextDate)
@@ -147,6 +163,7 @@ class DailyCalsVC: UIViewController {
         AlertManager.shared.delegate =    self
         Firebase.shared.delegate = self
         loader.startAnimating()
+
         Firebase.shared.loadProductsFrom(dateString: DateManager.shared.stringFrom(date: dateToDisplay))
         Firebase.shared.loadDailyCalorieGoal()
     }
